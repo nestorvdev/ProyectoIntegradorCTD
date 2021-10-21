@@ -120,6 +120,7 @@ header.header {
     header.header{
       padding: 5px 16px;
     }
+  }
   
   @media all and (max-width: 415px) {
     /* Header */
