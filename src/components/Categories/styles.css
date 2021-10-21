@@ -1,7 +1,7 @@
 .categoryContainer { 
     width: 100%;   
     display:flex;
-    justify-content: center; 
+    justify-content: space-around; 
     background-color: white;  
     position: absolute;
     top: 265px;       
@@ -9,7 +9,8 @@
 
 .categoryBox{
     color: var(--secondary-color);
-    display: flex;            
+    display: flex;       
+    justify-content: space-around;      
 }
 
 .categoryCard {
