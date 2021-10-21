@@ -5,11 +5,11 @@ import './styles.css';
 function SearchForm() {
   return (
     <form className="search-form" action="">
-      <div>
+      <div className="icon-select-box">
         <i className="fas fa-map-marker-alt location"></i>
         <Select type="city" title="¿A dónde vamos?" />
       </div>
-      <div>
+      <div className="icon-select-box">
         <i className="fas fa-calendar-day calendar"></i>
         <Select type="date" title="Check in - Check out" />
       </div>

@@ -6,7 +6,7 @@ header.header {
     height: 80px;
     justify-content: space-between;
     padding: 5px 32px;
-    position: fixed;
+/*     position: fixed; */
     width: 100%;
     z-index: 100;
   }
