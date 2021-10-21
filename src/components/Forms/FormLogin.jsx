@@ -3,7 +3,7 @@ import { Link } from "react-router-3"
 
 export default function FormLogin(){
     return(
-        <div className={`${styles.container} ${styles.login}`}>
+        <div className={styles.container}>
             <h3>Iniciar sesión</h3>
             <form className={styles.formFlex}>
                 <div className={styles.inputLabel}>

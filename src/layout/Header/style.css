@@ -54,6 +54,10 @@ header.header {
     padding: 5pt;
     width: 206px;
   }
+
+  .hideButton{
+    display:none;
+  }
   
   /* css contenedor user  */
   

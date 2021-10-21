@@ -1,7 +1,33 @@
 import styles from "./Forms.module.css";
 import { Link } from "react-router-3";
+import React, { useState } from "react";
 
 export default function FormCreate() {
+    const[name, setName] = useState("");
+    const handleChangeName = (event) => {
+        setName(event.target.value)
+    }
+
+    const [surname, setSurname] = useState("");
+    const handleChangeSurname = (e) => {
+        setSurname(e.target.value)
+    }
+
+    const[email, setEmail] = useState("");
+    const handleChangeEmail = (event) => {
+        setEmail(event.target.value)
+    }
+
+    const[password, setPassword] = useState("");
+    const handleChangePassword = (event) => {
+        setPassword(event.target.value)
+    }
+
+    const[confirmPassword, setConfirmPassword] = useState("");
+    const handleChangeConfirmPassword = (event) => {
+        setConfirmPassword(event.target.value)
+    }
+    
     return (
         <div className={styles.container}>
             <h3>Crear cuenta</h3>
@@ -9,24 +35,24 @@ export default function FormCreate() {
                 <div className={styles.fullName}>
                     <div className={styles.inputLabel}>
                         <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name"/>
+                        <input type="text" name="name" id="name" value={name} onChange={handleChangeName}/>
                     </div>
                     <div className={styles.inputLabel}>
                         <label for="surname">Apellido</label>
-                        <input type="text" name="surname" id="surname"/>
+                        <input type="text" name="surname" id="surname" value = {surname} onChange={handleChangeSurname}/>
                     </div>
                 </div>
                 <div className={styles.inputLabel}>
                     <label for="email">Correo electrónico</label>
-                    <input type="email" name="email" id="email"/>
+                    <input type="email" name="email" id="email" value = {email} onChange={handleChangeEmail}/>
                 </div>
                 <div className={styles.inputLabel}>
                     <label for="password">Contraseña</label>
-                    <input type="password" name="password" id="password"/>
+                    <input type="password" name="password" id="password" value = {password} onChange = {handleChangePassword}/>
                 </div>
                 <div className={styles.inputLabel}>
                     <label for="confirm-password">Confirmar contraseña</label>
-                    <input type="password" name="confirm-password" id="confirm-password"/>
+                    <input type="password" name="confirm-password" id="confirm-password" value = {confirmPassword} onChange = {handleChangeConfirmPassword}/>
                 </div>
                 <div className={`${styles.inputLabel} ${styles.boton}`}>
                     <button type="submit">Crear cuenta</button>

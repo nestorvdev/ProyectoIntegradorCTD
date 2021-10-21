@@ -1,19 +1,18 @@
-.container,
 .inputLabel,
 .formFlex{
     display: flex;
     flex-direction: column;
-    height: 100%;
+    /*height: 100%;*/
 }
 
 .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    padding: 11rem 0; 
+    height: 82vh;
 }
 
-.login{
-    padding: 14rem;
-}
 .container h3{
     color: var(--primary-color);
     font-size: var(--heading1);
@@ -77,5 +76,30 @@
 
 .inputLabel p a{
     color: #4285F4;
+}
+
+/* media queries */
+  
+@media all and (max-width: 769px) {
+    .inputLabel input,
+    .boton button,
+    .inputLabel input[type="text"]{
+        width: 346px;
+    }
+
+    .fullName{
+        flex-direction: column;
+    }
+    .container{
+        justify-content: space-evenly;
+    }
+}
+
+@media all and (max-width: 415px) {
+    .inputLabel input,
+    .boton button,
+    .inputLabel input[type="text"]{
+        width: 300px;
+    }
 }
 
