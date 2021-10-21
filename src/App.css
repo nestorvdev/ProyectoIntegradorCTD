@@ -24,3 +24,8 @@
     box-sizing: border-box;
     font-family: 'Quicksand', Arial, Helvetica, sans-serif; 
 }
+
+body {
+    background-color: var(--quaternary-color);
+    height: 100vh;
+}
