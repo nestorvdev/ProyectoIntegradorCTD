@@ -1,0 +1,141 @@
+header.header {
+    align-items: center;
+    background-color: white;
+    display: flex;
+    flex-wrap: nowrap;
+    height: 80px;
+    justify-content: space-between;
+    padding: 5px 32px;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+  }
+  
+  /* css contenedor logo  */
+  header.header a {
+    text-decoration: none;
+  }
+  
+  .home div.logo {
+    align-items: flex-end;
+    display: flex;
+  }
+  
+  .home div.logo img {
+    height: 52px;
+    width: 71px;
+  }
+  
+  .home div.logo h3 {
+    color: var(--tertiary-color);
+    display: flex;
+    font-size: var(--heading3);
+    font-style: italic;
+    font-weight: var(--font-regular);
+    padding-left: 12px;
+    width: 270px;
+  }
+  
+  /* css contenedor botones  */
+  
+  div.buttons {
+    display: flex;
+    padding-right: 8px;
+  }
+  
+  div.buttons button {
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+    font-size: var(--button1);
+    font-weight: var(--font-bold);
+    margin: 0 10px;
+    padding: 5pt;
+    width: 206px;
+  }
+  
+  /* css contenedor user  */
+  
+  div.user {
+    display: none; /* cambiar a flex para mostrarlo */
+  }
+  
+  div.user div {
+    padding: 0 5px;
+  }
+  
+  div.user div.logoName {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  div.user div.logoName p {
+    background-color: var(--secondary-color);
+    border-radius: 50%;
+    color: white;
+    font-size: var(--heading2);
+    font-weight: var(--font-bold);
+    padding: 5px;
+  }
+  
+  div.user div.text h3 {
+    font-size: var(--heading3);
+  }
+  
+  div.user div.text h3.great {
+    opacity: 50%;
+  }
+  
+  div.user div.text h3.name {
+    color: var(--primary-color);
+  }
+  
+  div.user div.close {
+    position: relative;
+    right: 20px;
+    top: -10px;
+  }
+  
+  /* css contenedor mobile  */
+  
+  div.mobile {
+    display: none; /* cambiar a block para mostrarlo */
+    justify-content: center;
+    margin-left: 20px;
+  }
+  
+  /* media queries */
+  
+  @media all and (max-width: 769px) {
+    /* Header */
+    a.home div.logo h3 {
+      display: none;
+    }
+  
+    div.buttons button {
+      width: 164px;
+    }
+  }
+  
+  @media all and (max-width: 415px) {
+    /* Header */
+  
+    header.header {
+      height: 93px;
+      padding: 5px 11px;
+    }
+  
+    a.home div.logo img {
+      height: 50px;
+    }
+  
+    div.buttons {
+      display: none;
+    }
+  
+    div.mobile {
+      display: block;
+    }
+  }
