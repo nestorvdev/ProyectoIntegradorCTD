@@ -4,9 +4,7 @@
   flex-direction: column;
   padding: 2rem;
   text-align: center;
-  width: 100vw;
-/*   position: absolute;
-  top: 10%; */
+  width: 100%;
 }
 
 .container h1 {
@@ -31,7 +29,7 @@
   color: var(--secondary-color);
   font-size: var(--text1);
   font-weight: var(--font-medium);
-  padding: 0.8rem 10rem 0.8rem 2.5rem;
+  padding: 0.8rem 8rem 0.8rem 2.5rem;
 }
 
 /* cities.form-control.fas option { 
@@ -65,7 +63,11 @@
 
 @media all and (max-width: 769px) {
   .city, .date, .button-search {
-    padding: 0.8rem 2.5rem 0.8rem;
+    padding: 0.6rem 2rem 0.6rem;
+  }
+
+  .container h1 {
+    font-size: var(--heading2);
   }
 
   .location, .calendar {
@@ -79,10 +81,6 @@
     flex-direction: column;
   }
 
-  .container h1 {
-    font-size: var(--heading2);
-  }
-
   .city, .date, .button-search {
     width: 85vw;
     margin: 1rem;
@@ -94,4 +92,3 @@
     width: 3%;
   }
 }
-
