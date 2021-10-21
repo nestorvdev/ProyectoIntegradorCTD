@@ -1,0 +1,84 @@
+@import "../../styles/variables.css";
+
+.container,
+.inputLabel,
+.formFlex{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.container{
+    align-items: center;
+    height: 83vh;/*La altura se le da restandole lo que miden el header y el footer mediante calc*/
+    padding: 6% 33% 5%;    
+}
+
+.login{
+    padding: 10.5% 33% 10%;
+}
+.container h3{
+    color: var(--primary-color);
+    font-size: var(--heading1);
+    font-weight: var(--font-bold);
+    margin-bottom: 25px;
+}
+
+.formFlex{
+    justify-content: space-between;
+}
+
+.fullName{
+    display: flex;
+    justify-content:space-between;
+}
+
+.inputLabel label{
+    color: var(--secondary-color);
+    font-size: var(--text2);
+    font-weight: var(--font-medium);
+}
+
+.inputLabel {
+    height: 65px;
+    justify-content: space-between;
+}
+
+.input-label input,
+.boton button{
+    height: 40px;
+    width: 468px;
+    border-radius: 5px;
+    border:0;
+    box-shadow: 1px 1px 2px 2px #d1cfcf;
+}
+.inputLabel input[type="text"]{
+    width:228px;
+}
+
+.boton button,
+.inputLabel p{
+    width: 206px;
+    align-self: center;
+}
+
+.boton{
+    margin-top: 50px;
+}
+
+.inputLabel button{
+    font-size: var(--button2);
+    font-weight: var(--font-bold);
+    background-color: var(--primary-color);
+    color: white;
+}
+.inputLabel p,
+.inputLabel p a{
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.inputLabel p a{
+    color: #4285F4;
+}
+
