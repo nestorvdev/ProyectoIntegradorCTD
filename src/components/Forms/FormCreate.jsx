@@ -1,4 +1,5 @@
-import styles from "./Forms.module.css"
+import styles from "./Forms.module.css";
+import { Link } from "react-router-3";
 
 export default function FormCreate() {
     return (
@@ -29,7 +30,7 @@ export default function FormCreate() {
                 </div>
                 <div className={`${styles.inputLabel} ${styles.boton}`}>
                     <button type="submit">Crear cuenta</button>
-                    <p>¿Ya tienes una cuenta?<a href="./login.html"> Iniciar sesión</a></p>
+                    <p>¿Ya tienes una cuenta?<Link to="/login"> Iniciar sesión</Link></p>
                 </div>
             </form>
         </div>

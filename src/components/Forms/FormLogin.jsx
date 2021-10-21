@@ -1,4 +1,5 @@
 import styles from "./Forms.module.css"
+import { Link } from "react-router-3"
 
 export default function FormLogin(){
     return(
@@ -15,7 +16,7 @@ export default function FormLogin(){
                 </div>
                 <div className={`${styles.inputLabel} ${styles.boton}`}>
                     <button type="submit">Ingresar</button>
-                    <p>¿Aún no tenés cuenta?<a href="./registro.html"> Registrate</a></p>
+                    <p>¿Aún no tenés cuenta?<Link to="/create"> Registrate</Link></p>
                 </div>
             </form>
         </div>

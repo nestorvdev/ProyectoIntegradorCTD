@@ -12,8 +12,8 @@ export default function Header() {
                 </div>
             </Link>
             <div className="buttons">
-                <Link to="/login"><button>Crear Cuenta</button></Link>
-                <Link to="/create"><button>Iniciar Sesion</button></Link>
+                <Link to="/create"><button>Crear Cuenta</button></Link>
+                <Link to="/login"><button>Iniciar Sesion</button></Link>
             </div>
             <div className="user">
                 <div className="logoName">
