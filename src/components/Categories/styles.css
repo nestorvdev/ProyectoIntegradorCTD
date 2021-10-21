@@ -73,12 +73,45 @@
     font-size: var(--text2);
 }
 
-@media all and (max-width: 768px) {
+@media all and (max-width: 769px) {    
+    .categoryBox{      
+        flex-wrap:wrap;                   
+    }
 
+    .categoryCard {
+        width: 45.2vw;            
+    }
+    
+    .categoryImage {          
+        width: 45.2vw;
+        height:181.3px; 
+    }
+
+    .categoryType {        
+        height: 62.7px;       
+    }
 }
 
-@media all and (max-width: 414px) {
+@media all and (max-width: 415px) {
+    .categoryCard {
+        width: 94.7vw;            
+    }
 
+    .categoryImage {          
+        width: 94.7vw;
+        height:205.1px; 
+    }
+
+    .categoryType {        
+        height: 70.9px;       
+    }
+
+    .categoryBlock h2 {  
+        font-size: var(--heading3);
+        margin-bottom: 3px;
+        margin-top: 36px;        
+    }
+    
 }
 
 
