@@ -3,8 +3,8 @@
     display:flex;
     justify-content: space-around; 
     background-color: white;  
-    position: absolute;
-    top: 265px;       
+   /*  position: absolute; */
+   /*  top: 265px;        */
 }
 
 .categoryBox{
@@ -68,6 +68,8 @@
 .categoryType h3 {
     font-size: var(--heading3);
     font-weight: var(--font-bold);
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .categoryType p {
