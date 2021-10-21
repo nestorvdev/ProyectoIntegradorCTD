@@ -1,5 +1,9 @@
 import React from 'react';
 import styles from './styles.module.css'; 
+import logoFacebook from "./img/icon facebook.png";
+import logoLinkedin from "./img/icon linkedin.png";
+import logoTwitter from "./img/tweet.png";
+import logoInstagram from "./img/icon ig.png"
 
 function Footer() {
     return (
@@ -8,10 +12,10 @@ function Footer() {
             <h3 className={styles.footerTittle} >2021 @ Digital Booking</h3>
         </div>
         <div className={styles.icons}>
-            <img className={styles.iconsImg} src={"img/icon facebook.png"} alt="" />
-            <img className={styles.iconsImg} src={"img/icon linkedin.png"} alt="" />
-            <img className={styles.iconsImg} src={"img/tweet.png"} alt="" />
-            <img className={styles.iconsImg} src={"img/icon ig.png"} alt="" />
+            <img className={styles.iconsImg} src={logoFacebook} alt="" />
+            <img className={styles.iconsImg} src={logoLinkedin} alt="" />
+            <img className={styles.iconsImg} src={logoTwitter} alt="" />
+            <img className={styles.iconsImg} src={logoInstagram} alt="" />
         </div>
     </footer>
     );

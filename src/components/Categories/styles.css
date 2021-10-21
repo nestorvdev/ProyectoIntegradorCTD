@@ -1,15 +1,16 @@
 .categoryContainer { 
     width: 100%;   
     display:flex;
-    justify-content: center; 
+    justify-content: space-around; 
     background-color: white;  
-    position: absolute;
-    top: 265px;       
+   /*  position: absolute; */
+   /*  top: 265px;        */
 }
 
 .categoryBox{
     color: var(--secondary-color);
-    display: flex;            
+    display: flex;       
+    justify-content: space-around;      
 }
 
 .categoryCard {
@@ -67,6 +68,8 @@
 .categoryType h3 {
     font-size: var(--heading3);
     font-weight: var(--font-bold);
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .categoryType p {

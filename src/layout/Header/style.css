@@ -6,7 +6,8 @@ header.header {
     height: 80px;
     justify-content: space-between;
     padding: 5px 32px;
-/*     position: fixed; */
+    position: fixed; 
+    top:0;
     width: 100%;
     z-index: 100;
   }
@@ -115,7 +116,10 @@ header.header {
     }
   
     div.buttons button {
-      width: 164px;
+      width: 144px;
+    }
+    header.header{
+      padding: 5px 16px;
     }
   }
   
