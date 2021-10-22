@@ -1,0 +1,6 @@
+com\proyecto\integrador\controller\CategoriaController.class
+com\proyecto\integrador\service\CategoriaService.class
+com\proyecto\integrador\repository\ICategoriaRepository.class
+com\proyecto\integrador\IntegradorApplication.class
+com\proyecto\integrador\entity\Categoria.class
+com\proyecto\integrador\service\CategoriaServiceImpl.class

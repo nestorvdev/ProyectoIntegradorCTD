@@ -1,13 +1,19 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
+/* import DatePicker from "react-datepicker"; */
 import "react-datepicker/dist/react-datepicker.css";
+import Calendar from './Calendar';
 import "./styles.css";
 
 function SelectDate() {
-  const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date());
+  /*   const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date()); */
+
+  const [value, setValue] = useState([null, null]);
+
   return (
-    <div className="date">
+    <button onClick={() => <Calendar />}>Check in - Check out</button>
+
+    /* <div className="date">
       <DatePicker
         className="date-box"
         selected={startDate}
@@ -25,7 +31,7 @@ function SelectDate() {
         minDate={startDate}
         onChange={(date) => setEndDate(date)}
       />
-    </div>
+    </div> */
   );
 }
 
