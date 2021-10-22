@@ -10,8 +10,8 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-@Table(name = "categorias")
-public class Categoria {
+@Table(name = "categories")
+public class Category {
     @Id
     @Column(name = "id", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,17 +23,17 @@ public class Categoria {
     @Column(name = "url", nullable = false)
     private String url;
 
-    public Categoria() {
+    public Category() {
     }
 
-    public Categoria(Integer id, String title, String description, String url) {
+    public Category(Integer id, String title, String description, String url) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.url = url;
     }
 
-    public Categoria(String title, String description, String url) {
+    public Category(String title, String description, String url) {
         this.title = title;
         this.description = description;
         this.url = url;
