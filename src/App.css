@@ -27,22 +27,19 @@
 
 body {
     background-color: var(--quaternary-color);
-    height: 100vh;
+    /* height: 100vh; */
 }
 
-/* .container,
-.categoryContainer {
-  position: relative !important; 
-  top: 80px !important;
-}
- */
+
 main {
     padding-bottom: 80px;
     position: relative !important; 
     top: 80px !important;
+    min-height: calc(100vh - 180px);
 }
 
 @media all and (max-width: 769px) {
+    
 }
 
 @media all and (max-width: 415px) {
