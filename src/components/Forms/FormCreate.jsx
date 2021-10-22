@@ -27,11 +27,56 @@ export default function FormCreate() {
     const handleChangeConfirmPassword = (event) => {
         setConfirmPassword(event.target.value)
     }
+
+    const[errores, setErrores] = useState([])
+
+    const credencialesValidas = {
+        email:"grupo1@digital.com",
+        password: "1234567"
+    }
+
+    const validarPassword = () => {
+        let passwordValida = true;
+        if(password.length <= 6){
+            setErrores(["La contraseña debe tener más de 6 caracteres"])
+            passwordValida = false;
+        }
+        if(password!==confirmPassword){
+            setErrores(["Las contraseñas deben ser iguales"])
+            passwordValida = false;
+        }
+
+        return passwordValida;
+    }
+
+    const validarCredenciales = () => {
+        let credencialesSonValidas = true;
+        if(email !== credencialesValidas.email || password !== credencialesValidas.password){
+            setErrores(["Por favor vuelva a intentarlo. Las credenciales son inválidas"])
+            credencialesSonValidas = false;
+        }
+        return credencialesSonValidas;
+    }
+
+    /*const validarEmail = () => {
+        const resultado= /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email);
+        setErrores(["Coloque un mail válido"])
+        return resultado;
+    }*/
+
+    const sendData = (event) => {
+        if(!validarPassword() || !validarCredenciales()){
+            event.preventDefault();
+        }else{
+            event.preventDefault();
+            window.location.pathname = ""
+        }
+    }
     
     return (
         <div className={styles.container}>
             <h3>Crear cuenta</h3>
-            <form className={styles.formFlex}>
+            <form className={styles.formFlex} onSubmit={sendData}>
                 <div className={styles.fullName}>
                     <div className={styles.inputLabel}>
                         <label for="name">Nombre</label>
@@ -54,6 +99,7 @@ export default function FormCreate() {
                     <label for="confirm-password">Confirmar contraseña</label>
                     <input type="password" name="confirm-password" id="confirm-password" value = {confirmPassword} onChange = {handleChangeConfirmPassword}/>
                 </div>
+                <ul>{errores.map((error)=> {return <li className={styles.error}>{error}</li>})}</ul>
                 <div className={`${styles.inputLabel} ${styles.boton}`}>
                     <button type="submit">Crear cuenta</button>
                     <p>¿Ya tienes una cuenta?<Link to="/login"> Iniciar sesión</Link></p>

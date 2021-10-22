@@ -52,6 +52,11 @@
     width:228px;
 }
 
+.error{
+    color: red;
+    font-weight: bold;
+}
+
 .boton button,
 .inputLabel p{
     width: 206px;
