@@ -20,7 +20,7 @@
   color: var(--primary-color);
   font-size: var(--heading1);
   font-weight: var(--font-bold);
-  /* margin-bottom: 25px; */
+  margin-bottom: 25px;
 }
 
 .formFlex {
