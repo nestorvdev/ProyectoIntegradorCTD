@@ -9,8 +9,10 @@ function Cards() {
         <div className="cardsContainer">
             <div className="cardsBlock">
                 <h2>Recomendaciones</h2>
-                {data.map(e => <Card img={e.img} category={e.category} title={e.title} location={e.location} description={e.description} />)}
-            </div>            
+                <div class="cardsBox">
+                    {data.map(e => <Card img={e.img} category={e.category} title={e.title} location={e.location} description={e.description} />)}
+                </div>
+            </div>
         </div>
     );
 }

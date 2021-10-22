@@ -1,15 +1,6 @@
-.cardsContainer {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;   
+.cardsContainer {        
     display:flex;
-    justify-content: center;      
-}
-
-.cardsBlock {
-    width: 100%;
-    
-       
+    justify-content: flex-start;         
 }
 
 .cardsBlock h2 {    
@@ -18,8 +9,20 @@
     font-weight: var(--font-bold);
     margin-bottom: 9px;
     margin-left: 7px;    
-    margin-top: 16px;
-    
+    margin-top: 16px;     
+ 
+}
+
+.cardsBlock {
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+}
+
+.cardsBox {
+    display: flex;
+    flex-wrap: wrap;    
+    justify-content: space-evenly; 
 }
 
 .cardBox {
@@ -32,7 +35,12 @@
     display: flex;
     height: 279px;  
     justify-content: space-between;
-    width: 52vw;        
+    margin-bottom: 10px;
+    width: 46.5vw;        
+}
+
+.cardBox:hover {
+    box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.50);  
 }
 
 .cardImage  {
@@ -81,6 +89,11 @@
     display: flex;
     font-size: var(--text3);
     text-transform: uppercase;
+}
+
+.cardCategory .star {
+    width: 14px;
+    height: 14px;
 }
 
 .cardCategory p, .iconLocation {
@@ -150,6 +163,7 @@
 .cardDescription span {
     color: var(--primary-color);
     font-weight: var(--font-bold);
+    margin-left: 3px;
 }
 
 .cardButton2 {

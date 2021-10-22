@@ -50,26 +50,22 @@ export default function FormCreate() {
     }
 
     const validarCredenciales = () => {
-        let credencialesSonValidas = true;
-        if(email !== credencialesValidas.email || password !== credencialesValidas.password){
-            setErrores(["Por favor vuelva a intentarlo. Las credenciales son inválidas"])
-            credencialesSonValidas = false;
+        let existenCredenciales = false;
+        if(email === credencialesValidas.email){
+            existenCredenciales = true;
         }
-        return credencialesSonValidas;
+        return existenCredenciales;
     }
 
-    /*const validarEmail = () => {
-        const resultado= /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/.test(email);
-        setErrores(["Coloque un mail válido"])
-        return resultado;
-    }*/
-
     const sendData = (event) => {
-        if(!validarPassword() || !validarCredenciales()){
+        if(!validarPassword()){
             event.preventDefault();
+        }else if(validarCredenciales()){
+            event.preventDefault();
+            setErrores(["El usuario ya existe."])
         }else{
             event.preventDefault();
-            window.location.pathname = ""
+            window.location.pathname = "/login"
         }
     }
     
@@ -80,11 +76,11 @@ export default function FormCreate() {
                 <div className={styles.fullName}>
                     <div className={styles.inputLabel}>
                         <label for="name">Nombre</label>
-                        <input type="text" name="name" id="name" value={name} onChange={handleChangeName}/>
+                        <input type="text" name="name" id="name" value={name} onChange={handleChangeName} required/>
                     </div>
                     <div className={styles.inputLabel}>
                         <label for="surname">Apellido</label>
-                        <input type="text" name="surname" id="surname" value = {surname} onChange={handleChangeSurname}/>
+                        <input type="text" name="surname" id="surname" value = {surname} onChange={handleChangeSurname} required/>
                     </div>
                 </div>
                 <div className={styles.inputLabel}>

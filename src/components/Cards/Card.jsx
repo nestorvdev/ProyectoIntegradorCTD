@@ -2,7 +2,7 @@ import React from 'react';
 import './styles.css';
 import iconWifi from "./img/iconWifi.svg";
 import iconHeart from "./img/iconHeart.svg";
-import iconStar from "./img/iconStar.svg";
+import iconStar from "./img/starOrange.png";
 import iconEight from "./img/iconEight.svg";
 import iconRectangle from "./img/iconRectangle.svg";
 import iconLocation from "./img/IconLocation.svg";
@@ -40,11 +40,11 @@ function Card(props) {
                     <div className="cardHeadline">
                         <div className="cardCategory">
                             <p>{category}</p>
-                            <img src={iconStar} alt="" />
-                            <img src={iconStar} alt="" />
-                            <img src={iconStar} alt="" />
-                            <img src={iconStar} alt="" />
-                            <img src={iconStar} alt="" />
+                            <img class="star" src={iconStar} alt="" />
+                            <img class="star" src={iconStar} alt="" />
+                            <img class="star" src={iconStar} alt="" />
+                            <img class="star" src={iconStar} alt="" />
+                            <img class="star" src={iconStar} alt="" />
                         </div>
                         <div className="cardName">{title}</div>
                     </div>
