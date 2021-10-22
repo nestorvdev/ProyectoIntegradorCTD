@@ -8,11 +8,11 @@ function SearchForm() {
     <form className="search-form" action="">
       <div className="icon-select-box">
         <i className="fas fa-map-marker-alt location"></i>
-        <SelectCity type="city" title="¿A dónde vamos?" />
+        <SelectCity />
       </div>
       <div className="icon-select-box">
         <i className="fas fa-calendar-day calendar"></i>
-        <SelectDate type="date" title="Check in - Check out" />
+        <SelectDate />
       </div>
       <button className="button-search">Buscar</button>
     </form>

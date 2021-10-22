@@ -1,11 +1,10 @@
 import React from "react";
-import './styles.css';
+import "./styles.css";
 
-function SelectCity(props) {
-  const { type, title } = props;
+function SelectCity() {
   return (
-    <select className={type} name={type} id={type} required>
-      <option hidden>{title}</option>
+    <select className="city" name="city" id="city" required>
+      <option hidden>¿A dónde vamos?</option>
       <option value="buenos-aires">Buenos Aires</option>
       <option value="cordoba">Córdoba</option>
       <option value="mendoza">Mendoza</option>
