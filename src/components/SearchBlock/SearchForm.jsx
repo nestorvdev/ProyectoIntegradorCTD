@@ -5,16 +5,16 @@ import './styles.css';
 
 function SearchForm() {
   return (
-    <form className="search-form" action="">
-      <div className="icon-select-box">
+    <form className="grid-container" action="">
+      <div className="icon-select-box grid-item">
         <i className="fas fa-map-marker-alt location"></i>
         <SelectCity />
       </div>
-      <div className="icon-select-box">
+      <div className="icon-select-box grid-item">
         <i className="fas fa-calendar-day calendar"></i>
         <SelectDate />
       </div>
-      <button className="button-search">Buscar</button>
+      <button className="button-search limitation">Buscar</button>
     </form>
   );
 }
