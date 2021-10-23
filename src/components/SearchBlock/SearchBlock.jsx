@@ -2,7 +2,7 @@ import React from 'react';
 import SearchForm from './SearchForm';
 import './styles.css';
 
-function Search() {
+function SearchBlock() {
     return (
         <div className="container">
             <h1>Buscá ofertas en hoteles, casas y mucho más</h1>
@@ -11,4 +11,4 @@ function Search() {
     )
 }
 
-export default Search;
+export default SearchBlock;
