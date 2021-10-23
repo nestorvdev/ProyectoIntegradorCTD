@@ -1,6 +1,8 @@
 .cardsContainer {
   display: flex;
   justify-content: flex-start;
+  padding: 0 2%;
+  ;
 }
 
 .cardsBlock h2 {
@@ -8,7 +10,6 @@
   font-size: var(--heading2);
   font-weight: var(--font-bold);
   margin-bottom: 9px;
-  margin-left: 3vw;
   margin-top: 16px;
 }
 
@@ -21,8 +22,12 @@
 .cardsBox {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
 }
+/* 
+.cardBox:nth-child(even){
+  margin-left:1%;
+} */
 
 .cardBox {
   align-items: center;
@@ -32,9 +37,9 @@
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   color: var(--secondary-color);
   display: flex;
-  height: 279px;
-  justify-content: flex-end;
-  margin: 5px 10px;
+  height: 283px;
+  justify-content: space-evenly;
+  margin: 5px 0;
   max-width: 780px; 
   width: 46vw;
   min-width: 635px;
@@ -46,12 +51,9 @@
 }
 
 .cardImage {
-  /* background-image: url("https://cdn.pixabay.com/photo/2017/05/31/10/23/manor-house-2359884_960_720.jpg"); */
   background-size: cover;
   border-radius: 10px;
   height: 93%;
-  margin-left: 1px;
-  margin-right: 10px;
   width: 47%;
   position: relative;
 }
@@ -69,7 +71,7 @@
   top: 10px;
   right: 10px;
   width: 25px;
-  z-index: 100;
+  z-index: 99;
 }
 
 
@@ -79,7 +81,6 @@
   flex-direction: column;
   height: 93%;
   justify-content: space-between;
-  margin: 0 12px;
   width: 47%;
 }
 
@@ -102,6 +103,7 @@
 .cardName {
   font-size: var(--heading3);
   font-weight: var(--font-bold);
+  max-width: 100%;
 }
 
 .cardHeaderBox {
@@ -117,6 +119,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.cardHeadline {
+  max-width: 70%;
 }
 
 .cardScore {
@@ -138,6 +144,8 @@
 .cardScoreWords {
   font-size: var(--text3);
   font-weight: var(--font-bold);
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .cardLocation {
@@ -168,12 +176,10 @@
 }
 
 .cardDescription p {
-  
   font-weight: var(--font-bold);
   padding: 0 2px;
   overflow: hidden;
   max-height: 50px;
-  
 }
 
 .cardDescription span {
@@ -197,28 +203,35 @@
   width: 100%;
 }
 
+
+@media all and (max-width:1330px){
+  .cardsBox{
+    justify-content: center;
+  }
+}
+
 @media all and (max-width: 769px) {
   .cardBox {
   max-width: 710px; 
-  width: 90vw;
+  width: 97vw;
   min-width: 585px;
   }
 }
 
 @media all and (max-width: 610px){
   .cardBox {
-    height: 558px;
+    height: 566px;
     min-width: 90vw;
+    width: 95vw;
+    margin: 5px 0;
     }
 
     .cardImage{
-      width: 94%;
+      width: 98%;
       height: 47%;
     }
     .cardInfo{
-      width: 94%;
+      width: 98%;
       height: 47%;
     }
-
 }
-
