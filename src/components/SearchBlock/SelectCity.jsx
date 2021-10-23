@@ -3,7 +3,7 @@ import "./styles.css";
 
 function SelectCity() {
   return (
-    <select className="city" name="city" id="city" required>
+    <select className="city limitation" name="city" id="city" required>
       <option hidden>¿A dónde vamos?</option>
       <option value="buenos-aires">Buenos Aires</option>
       <option value="cordoba">Córdoba</option>

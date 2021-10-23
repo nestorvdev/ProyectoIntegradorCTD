@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
@@ -8,10 +7,11 @@ import StaticDateRangePicker from "@mui/lab/StaticDateRangePicker";
 import Box from "@mui/material/Box";
 import "./styles.css";
 
-function Calendar() {
-    const [value, setValue] = useState([null, null]);
-    return (
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
+function Calendar(props) {
+  const [value, setValue] = useState([null, null]);
+  return (
+    <div className={props.calendarState}>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
         <StaticDateRangePicker
           displayStaticWrapperAs="desktop"
           value={value}
@@ -27,7 +27,8 @@ function Calendar() {
           )}
         />
       </LocalizationProvider>
-    );
+    </div>
+  );
 }
 
 export default Calendar;
