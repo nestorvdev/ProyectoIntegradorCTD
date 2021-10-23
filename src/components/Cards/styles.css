@@ -1,192 +1,224 @@
-.cardsContainer {        
-    display:flex;
-    justify-content: flex-start;         
+.cardsContainer {
+  display: flex;
+  justify-content: flex-start;
 }
 
-.cardsBlock h2 {    
-    color: var(--secondary-color); 
-    font-size: var(--heading2);
-    font-weight: var(--font-bold);
-    margin-bottom: 9px;
-    margin-left: 7px;    
-    margin-top: 16px;     
- 
+.cardsBlock h2 {
+  color: var(--secondary-color);
+  font-size: var(--heading2);
+  font-weight: var(--font-bold);
+  margin-bottom: 9px;
+  margin-left: 3vw;
+  margin-top: 16px;
 }
 
 .cardsBlock {
-    display:flex;
-    flex-direction: column;
-    justify-content: flex-start; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .cardsBox {
-    display: flex;
-    flex-wrap: wrap;    
-    justify-content: space-evenly; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .cardBox {
-    align-items: center;    
-    background-color: white;
-    border: 1px solid #DFE4EA;  
-    border-radius: 10px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    color: var(--secondary-color);   
-    display: flex;
-    height: 279px;  
-    justify-content: space-between;
-    margin-bottom: 10px;
-    width: 46.5vw;        
+  align-items: center;
+  background-color: white;
+  border: 1px solid #dfe4ea;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: var(--secondary-color);
+  display: flex;
+  height: 279px;
+  justify-content: flex-end;
+  margin: 5px 10px;
+  max-width: 780px; 
+  width: 46vw;
+  min-width: 635px;
+  flex-wrap: wrap;
 }
 
 .cardBox:hover {
-    box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.50);  
+  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
-.cardImage  {
-    /* background-image: url("https://cdn.pixabay.com/photo/2017/05/31/10/23/manor-house-2359884_960_720.jpg"); */
-    background-size: cover;
-    border-radius: 10px;
-    height:93%;
-    margin-left: 1px;
-    margin-right: 10px;   
-    width:48.5%;    
+.cardImage {
+  /* background-image: url("https://cdn.pixabay.com/photo/2017/05/31/10/23/manor-house-2359884_960_720.jpg"); */
+  background-size: cover;
+  border-radius: 10px;
+  height: 93%;
+  margin-left: 1px;
+  margin-right: 10px;
+  width: 47%;
+  position: relative;
 }
 
 .cardImage .image {
-    border-radius: 10px;
-    height:100%;   
-    width: 100%
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .cardImage .iconHeart {
-    height: 25px;
-    position: relative;
-    bottom: -25px;
-    left: 100px;
-    width: 25px;
-    z-index: 100;    
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 25px;
+  z-index: 100;
 }
 
-.cardImage svg {              
-    bottom: -17px;
-    left: 240px;
-    position: relative;
-    z-index: 100;
-}
 
 .cardInfo {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    height:93%;
-    justify-content: space-between;
-    margin: 0 12px;
-    width: 48.5%;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  height: 93%;
+  justify-content: space-between;
+  margin: 0 12px;
+  width: 47%;
 }
 
 .cardCategory {
-    display: flex;
-    font-size: var(--text3);
-    text-transform: uppercase;
+  display: flex;
+  font-size: var(--text3);
+  text-transform: uppercase;
 }
 
 .cardCategory .star {
-    width: 14px;
-    height: 14px;
+  width: 14px;
+  height: 14px;
 }
 
-.cardCategory p, .iconLocation {
-    margin-right: 4px;
+.cardCategory p,
+.iconLocation {
+  margin-right: 4px;
 }
 
 .cardName {
-    font-size: var(--heading3);
-    font-weight: var(--font-bold);
+  font-size: var(--heading3);
+  font-weight: var(--font-bold);
 }
 
 .cardHeaderBox {
-    align-items: center;
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.cardHeadline, .cardScore {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+.cardHeadline,
+.cardScore {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cardScore {
-    align-items: flex-end;
+  align-items: flex-end;
 }
 
+.cardScoreNumber{
+    min-width: 45px;
+}
+
+
 .cardScore .iconEight {
-    bottom: 5.5px;
-    left: 23px;
-    position: relative;
-    z-index: 99;
+  bottom: 5.5px;
+  left: 23px;
+  position: relative;
+  z-index: 99;
 }
 
 .cardScoreWords {
-    font-size: var(--text3);
-    font-weight: var(--font-bold);
+  font-size: var(--text3);
+  font-weight: var(--font-bold);
 }
 
 .cardLocation {
-    font-size: var(--text3);
-    font-weight: var(--font-bold);
+  font-size: var(--text3);
+  font-weight: var(--font-bold);
 }
 
-.cardLocation span{
-    color: var(--primary-color);
-    font-weight: var(--font-bold);
-    margin-left: 3px;
-    text-transform: uppercase;
+.cardLocation span {
+  color: var(--primary-color);
+  font-weight: var(--font-bold);
+  margin-left: 3px;
+  text-transform: uppercase;
 }
 
 .cardIcons {
-    display:flex;    
+  display: flex;
 }
 
 .cardIcons .iconSwimming {
-    margin-left: 7px;
+  margin-left: 7px;
 }
 
 .cardDescription {
-    font-size: var(--text3);
-    font-weight: var(--font-bold);
+  font-size: var(--text3);
+  font-weight: var(--font-bold);
+  overflow: hidden;
+  padding-top: 5px;
+}
+
+.cardDescription p {
+  
+  font-weight: var(--font-bold);
+  padding: 0 2px;
+  overflow: hidden;
+  max-height: 50px;
+  
 }
 
 .cardDescription span {
-    color: var(--primary-color);
-    font-weight: var(--font-bold);
-    margin-left: 3px;
+  color: var(--primary-color);
+  font-weight: var(--font-bold);
+  margin-left: 3px;
+  margin-top: 8px;
 }
 
 .cardButton2 {
-    background-color: var(--primary-color);
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
-    color: white;  
-    font-size: var(--text3);
-    font-weight: var(--font-bold);
-    height: 40px;
-    justify-content: center;
-    text-align: center;
-    width: 100%;  
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+  color: white;
+  font-size: var(--text3);
+  font-weight: var(--font-bold);
+  height: 40px;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
 }
 
-@media all and (max-width: 769px) {    
-    
+@media all and (max-width: 769px) {
+  .cardBox {
+  max-width: 710px; 
+  width: 90vw;
+  min-width: 585px;
+  }
 }
 
-@media all and (max-width: 415px) {
-    
+@media all and (max-width: 610px){
+  .cardBox {
+    height: 558px;
+    min-width: 90vw;
+    }
+
+    .cardImage{
+      width: 94%;
+      height: 47%;
+    }
+    .cardInfo{
+      width: 94%;
+      height: 47%;
+    }
+
 }
-
-
 
