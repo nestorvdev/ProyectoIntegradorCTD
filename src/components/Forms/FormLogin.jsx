@@ -2,16 +2,14 @@ import styles from "./Forms.module.css"
 import { Link } from "react-router-3"
 import { useState } from "react";
 
+
 /*
 PENDIENTES
-- Que los campos nombre y apellido sean obligatorios.
 - Que figure el nombre del usuario cuando esta logueado.
-- Que en crear cuenta, si las credenciales son iguales a las guardadas, diga que el usuario ya esta creado, 
-que inicie sesion.
 - Hover de botones
 */
 
-export default function FormLogin(){
+export default function FormLogin(props){
 
     const[email, setEmail] = useState("");
     const handleChangeEmail = (event) => {
@@ -40,11 +38,11 @@ export default function FormLogin(){
     }
 
     const sendData = (event) => {
-        if(!validarCredenciales()){
-            event.preventDefault();
-        }else{
-            event.preventDefault();
-            window.location.pathname = ""
+        event.preventDefault();
+        if(validarCredenciales()){
+            props.route.setLog(true)
+            sessionStorage.setItem("log", "true")
+            window.location.pathname = "/"
         }
     }
 
