@@ -23,7 +23,9 @@ export default function Header(props) {
         }
     };
 
-    const log = (props.isLogged)?"user loggedIn":"user"; //para cambiar la clase segun este loggueado o no
+    const showUserName = (props.isLogged)?"user loggedIn":"user"; //para cambiar la clase segun este loggueado o no y
+    //que aparezca el nombre del usuario
+    const hideButtons = (props.isLogged)?"buttons user":"buttons";//Para esconder los botones cuando esta logueado
 
     return (
         <header className="header">
@@ -33,11 +35,11 @@ export default function Header(props) {
                     <h3>Sentite como en tu hogar</h3>
                 </div>
             </Link>
-            <div className="buttons">
+            <div className={hideButtons}>
                 <Link to="/create"><button className={ activeCreate? "hideButton":null } onClick={()=>toggleClass("createButton")}>Crear Cuenta</button></Link>
                 <Link to="/login"><button className={ activeLogin? "hideButton":null } onClick={()=>toggleClass("loginButton")}>Iniciar Sesion</button></Link>
             </div>
-            <div className={log}>
+            <div className={showUserName}>
                 <div className="logoName">
                     <p>BR</p>
                 </div>

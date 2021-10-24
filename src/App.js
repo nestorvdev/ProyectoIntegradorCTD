@@ -10,7 +10,7 @@ import { Router, Route, browserHistory , IndexRoute} from "react-router-3";
 import './App.css';
 
 function App() {
-  const [log, setLog] = useState(sessionStorage.getItem("log")=="true"?true:false)
+  const [log, setLog] = useState(sessionStorage.getItem("log")==="true"?true:false)
 
   return (
     <Router history={browserHistory}>
