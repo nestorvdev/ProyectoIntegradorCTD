@@ -21,10 +21,13 @@
   font-size: var(--heading1);
   font-weight: var(--font-bold);
   margin-bottom: 25px;
+  width: 100%;
+  text-align: center;
 }
 
 .formFlex {
   justify-content: space-between;
+  width: 100%;
 }
 
 .fullName {
@@ -41,6 +44,7 @@
 .inputLabel {
   height: 65px;
   justify-content: space-between;
+  align-items: center;
 }
 
 .inputLabel input,
@@ -55,9 +59,14 @@
   width: 228px;
 }
 
-.error{
-    color: red;
-    font-weight: bold;
+form ul {
+  height: 20px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }
 
 .boton button,
@@ -99,7 +108,7 @@
     flex-direction: column;
   }
   .container {
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
   }
 }
 

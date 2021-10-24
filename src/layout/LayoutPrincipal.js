@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom"
 export default function LayoutPrincipal(props) {
     return (
         <BrowserRouter>
-            <Header />
+            <Header isLogged={props.route.isLogged}/>
             <main>
                 {props.children}
             </main>
