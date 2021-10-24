@@ -73,11 +73,13 @@
 }
 
 .selected-dates-button {
-  text-align: center;
+  text-align: right;
+  font-size: var(--button1);
+  font-weight: var(--font-bold);
   position: absolute;
   right: 3%;
   bottom: 4%;
-  padding: 0.4rem 6rem 0.4rem 6rem;
+  padding: 0.4rem 3.5rem;
 }
 
 .calendar-button {

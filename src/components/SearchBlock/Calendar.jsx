@@ -7,13 +7,21 @@ import StaticDateRangePicker from "@mui/lab/StaticDateRangePicker";
 import Box from "@mui/material/Box";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./styles.css";
+const {format} = require('date-fns');
 
 function Calendar(props) {
   const [value, setValue] = useState([null, null]);
+
+  const startDate = new Date(value[0]);
+  const endDate = new Date(value[1]);
+  const startDateToString = `${format(startDate, 'dd')} de ${format(startDate, 'MMM')}`;
+  const endDateToString = `${format(endDate, 'dd')} de ${format(endDate, 'MMM')}`;
+  
   const handleSelection = (event) => {
     event.preventDefault();
-    props.handleSelected(`${value}`);
+    props.handleSelected(`${startDateToString} - ${endDateToString}`);
   }
+  
   const theme = createTheme({
     palette: {
       primary: {
@@ -21,6 +29,7 @@ function Calendar(props) {
       },
     },
   });
+  
   return (
     <div className={props.calendarState}>
       <ThemeProvider theme={theme}>
