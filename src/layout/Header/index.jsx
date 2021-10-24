@@ -1,10 +1,11 @@
+//import { PROPERTY_TYPES } from '@babel/types';
 import React, {useState} from 'react';
 import {Link} from "react-router-3";
 import logo from "./img/logo 1DB.png";
 import logoMobile from "./img/menu.png";
 import './style.css';
 
-export default function Header() {
+export default function Header(props) {
 
     const[activeCreate, setIsActiveCreate] = useState(false)
     const[activeLogin, setIsActiveLogin] = useState(false) 
@@ -22,6 +23,8 @@ export default function Header() {
         }
     };
 
+    const log = (props.isLogged)?"user loggedIn":"user"; //para cambiar la clase segun este loggueado o no
+
     return (
         <header className="header">
             <Link to="/" className="home" onClick={()=>toggleClass()}>
@@ -34,7 +37,7 @@ export default function Header() {
                 <Link to="/create"><button className={ activeCreate? "hideButton":null } onClick={()=>toggleClass("createButton")}>Crear Cuenta</button></Link>
                 <Link to="/login"><button className={ activeLogin? "hideButton":null } onClick={()=>toggleClass("loginButton")}>Iniciar Sesion</button></Link>
             </div>
-            <div className="user">
+            <div className={log}>
                 <div className="logoName">
                     <p>BR</p>
                 </div>

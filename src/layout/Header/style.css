@@ -63,7 +63,12 @@ header.header {
   /* css contenedor user  */
   
   div.user {
-    display: none; /* cambiar a flex para mostrarlo */
+    display: none; 
+  }
+  
+  /*Clase para que se vea el usuario en el header cuando inicia sesion*/
+  div.loggedIn {
+    display: flex;
   }
   
   div.user div {
