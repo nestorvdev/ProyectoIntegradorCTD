@@ -1,37 +1,23 @@
 import React, { useState } from "react";
-/* import DatePicker from "react-datepicker"; */
-import "react-datepicker/dist/react-datepicker.css";
-import Calendar from './Calendar';
+import Calendar from "./Calendar";
 import "./styles.css";
 
 function SelectDate() {
-  /*   const [startDate, setStartDate] = useState(new Date());
-  const [endDate, setEndDate] = useState(new Date()); */
-
-  const [value, setValue] = useState([null, null]);
-
+  const [calendarState, calendarSetState] = useState("hidden");
+  const haddleToggle = (event) => {
+    event.preventDefault();
+    calendarSetState(calendarState === "hidden" ? "visible" : "hidden");
+  };
+  const [buttonState, buttonSetState] = useState("Check in - Check out");
+  const handleSelected = (value) => {
+    buttonSetState(value);
+    calendarSetState("hidden");
+  }
   return (
-    <button onClick={() => <Calendar />}>Check in - Check out</button>
-
-    /* <div className="date">
-      <DatePicker
-        className="date-box"
-        selected={startDate}
-        selectsStart
-        startDate={startDate}
-        endDate={endDate} // add the endDate to your startDate DatePicker now that it is defined
-        onChange={(date) => setStartDate(date)}
-      />
-      <DatePicker
-        className="date-box"
-        selected={endDate}
-        selectsEnd
-        startDate={startDate}
-        endDate={endDate}
-        minDate={startDate}
-        onChange={(date) => setEndDate(date)}
-      />
-    </div> */
+    <div className="calendar-button">
+      <button className="date" onClick={haddleToggle}>{buttonState}</button>
+      <Calendar calendarState={calendarState} handleSelected={handleSelected}/>
+    </div>
   );
 }
 

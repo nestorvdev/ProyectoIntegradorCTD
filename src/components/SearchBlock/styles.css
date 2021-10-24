@@ -1,26 +1,28 @@
 .container {
   background-color: var(--tertiary-color);
-  display: flex;
-  flex-direction: column;
-  padding: 2rem;
   text-align: center;
   width: 100%;
+  max-height: 173px;
+  position: relative;
 }
 
+.grid-container {
+  background-color: var(--tertiary-color);
+  display: grid;
+  grid-gap: 0rem 1rem; 
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 50px;
+  padding: 2% 5%;
+  width: 100%;
+  max-height: 173px;
+}
 .container h1 {
   color: #ffffff;
   font-size: var(--heading1);
   font-weight: var(--font-bold);
-  margin-bottom: 2rem;
+  padding: 1rem;
 }
 
-.search-form {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.city,
 .date {
   display: flex;
   appearance: none;
@@ -30,77 +32,133 @@
   color: var(--secondary-color);
   font-size: var(--text2);
   font-weight: var(--font-medium);
-  padding: 0.8rem 4rem 0.8rem 2.5rem;
+  padding: 0.6rem 11rem 0.6rem 2.5rem;
+  max-width: 300px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.date {
+  min-height: 50px;
 }
 
-.date-box {
-  border: none;
-  margin-left: 12%;
-  font-size: var(--text2);
-  font-weight: var(--font-medium);
-  width: 100px;
+.limitation {
+  max-height: 50px;
 }
-.react-datepicker-wrapper {
-  align-self: center;
-}
-
-/* cities.form-control.fas option { 
-  font-family: Font Awesome\ 5 Free;
-  font-weight: 700; 
-} */
 
 .location, .calendar {
     align-self: center;
     color: var(--secondary-color);
     font-size: 26px;
-    position: relative;
-    top: 10%;
-    left: 9%;
+    position: absolute;
+    top: 63%;
+    left: 6%;
+    z-index: 2;
+}
+.calendar {
+  left: 37%;
 }
 
 .icon-select-box {
   display: flex;
 }
 
-.button-search {
+.button-search, .selected-dates-button {
   color: #FFFFFF;
   background: var(--primary-color);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
   font-size: var(--button2);
   font-weight: var(--font-bold);
-  margin-left: 1.3rem;
-  padding: 0.8rem 6rem;
+  max-width: 272px;
+}
+
+.selected-dates-button {
+  text-align: center;
+  position: absolute;
+  right: 3%;
+  bottom: 4%;
+  padding: 0.4rem 6rem 0.4rem 6rem;
+}
+
+.calendar-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  position: relative;
+  z-index: 2;
+}
+
+.city-container {
+  display: flex;
+  position: relative;
+}
+.city-name {
+  flex-direction: column;
+}
+
+.option-location-icon {
+  position: absolute;
+  font-size: 20px;
+  top: 20%;
+  left: -13%;
 }
 
 @media all and (max-width: 769px) {
-  .city, .date, .button-search {
-    padding: 0.6rem 2rem 0.6rem;
+  .css-1rv6p7s-ValueContainer, .date, .button-search {
+    max-width: 220px;
   }
-
+  .limitation {
+    padding-left: 30px;
+    padding-right: 40px;
+  }
   .container h1 {
     font-size: var(--heading2);
   }
-
   .location, .calendar {
-    font-size: 20px;
-    left: 12%;
+    top: 62%;
+  }
+  .calendar {
+    left: 38.5%;
   }
 }
 
 @media all and (max-width: 415px) {
-  .search-form {
-    flex-direction: column;
+  .container, .grid-container {
+    max-height: 643px;
   }
-
-  .city, .date, .button-search {
-    width: 85vw;
-    margin: 1rem;
+  .grid-container {
+    grid-template-columns: 100%;
+    grid-template-rows: 33.3% 33.3% 33.3%;
   }
-
+  .date, .button-search {
+    min-height: 50px;
+    max-width: 373px;
+    padding: 0.6rem 12rem 0.6rem 2.5rem;
+    margin: 0.8rem 0rem;
+  }
+  .date {
+    margin-bottom: 0rem;
+  }
+  .calendar-button {
+    max-height: 50px;
+  }
+  .icon-select-box {
+    max-height: 100px;
+  }
+  .button-search {
+    padding: 0.6rem 5rem;
+  }
   .location, .calendar {
-    font-size: 26px;
-    left: 10%;
-    width: 3%;
+    left: 7.5%;
+    top: 40.5%;
+  }
+  .calendar {
+    top: 62%;
   }
 }
