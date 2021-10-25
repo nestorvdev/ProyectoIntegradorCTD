@@ -1,15 +1,20 @@
 header.header {
-    align-items: center;
     background-color: white;
     display: flex;
     flex-wrap: nowrap;
     height: 80px;
-    justify-content: space-between;
     padding: 5px 32px;
     position: fixed; 
     top:0;
     width: 100%;
     z-index: 100;
+  }
+
+  .headerTop{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
   }
   
   /* css contenedor logo  */
@@ -53,7 +58,7 @@ header.header {
     font-weight: var(--font-bold);
     margin: 0 10px;
     padding: 5pt;
-    width: 206px;
+    width: 15vw;
   }
 
   .hideButton{

@@ -27,6 +27,7 @@
 .formFlex {
   height: 54vh;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
 }
 
@@ -37,6 +38,7 @@
 .fullName {
   display: flex;
   justify-content: space-between;
+  width: 34vw;
 }
 
 .inputLabel label {
@@ -54,13 +56,13 @@
 .inputLabel input,
 .boton button {
   height: 40px;
-  width: 468px;
+  width: 34vw;
   border-radius: 5px;
   border: 0;
   box-shadow: 1px 1px 2px 2px #d1cfcf;
 }
 .inputLabel input[type="text"] {
-  width: 228px;
+  width: 16.5vw;
 }
 
 form ul {

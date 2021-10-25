@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const BurgerWrapper = styled.nav`
+export const MenuBurgerWrapper = styled.nav`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -11,11 +11,11 @@ export const BurgerWrapper = styled.nav`
   
   
   right: ${props => (props.show ? "0" : "-100%")};
-  width: 73vw;
+
   height: 100vh;
+  width: 73vw;
   transition: right 0.3s linear;
   
-
   @media only screen and (min-width: 415px) {
     display:none;
   }
@@ -30,33 +30,33 @@ export const BurgerWrapper = styled.nav`
   }
 
   
-.close {
-  color: white;
-  padding:5px 10px;
-  font-weight: var(--font-bold);
-  font-size: 24px;
-}
+  .close {
+    color: white;
+    padding:5px 10px;
+    font-weight: var(--font-bold);
+    font-size: 24px;
+  }
 
-.close a{
-  text-decoration: none;
-}
+  .close a{
+    text-decoration: none;
+  }
 
-.avatar{
+  .avatar{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     justify-self: flex-end;
     padding: 5px 12px;
-}
+  }
 
-.logoMobile{
+  .logoMobile{
     align-items: center;
     color: var(--tertiary-color);
     display: flex;
     flex-wrap: wrap;
-}
+  }
 
-.logoMobile p {
+  .logoMobile p {
     background-color: var(--secondary-color);
     border-radius: 50%;
     color: white;
@@ -65,31 +65,31 @@ export const BurgerWrapper = styled.nav`
     padding: 5px;
   }
 
-.text h3, .mobileBody p {
+  .text h3, .mobileBody p {
     font-size: var(--heading3);
     font-weight: var(--font-bold);
     
   }
   
-.text h3.great {
+  .text h3.great {
     color:var(--quaternary-color);
     opacity: 50%;
     text-align: right;
   }
   
-.text h3.name {
+  .text h3.name {
     color: var(--secondary-color);
   }
   
-.textMenu{
+  .textMenu{
     font-weight: var(--font-bold);
     color: white;
     font-size: var(--heading2);
     text-align: right;
     padding:5px 12px;
-}
+  }
 
-.mobileBody{
+  .mobileBody{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -97,22 +97,25 @@ export const BurgerWrapper = styled.nav`
     height:62.5vh;
     padding: 31px 12px;
     width: 73vw;
-}
+  }
 
-.botones{
+  .botones{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
     height: 10vh;
-    
-}
+  }
 
-.botones p{
-  color: var(--secondary-color);
-}
+  .botones img{
+    width:67vw
+  }
 
-.mobileFooter{
+  .botones p{
+    color: var(--secondary-color);
+  }
+
+  .mobileFooter{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -120,41 +123,40 @@ export const BurgerWrapper = styled.nav`
     padding-right: 20px;
     height: 14vh;
     width:73vw;
-}
+  }
 
-.logOut{
+  .logOut{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     height: 2.5vh;
-}
+  }
 
-.logOut div{
+  .logOut div{
     font-weight: var(--font-medium);
     font-size: 12px;
-}
+  }
 
-.logOut div a{
-  text-decoration: none;
+  .logOut div a{
+    text-decoration: none;
     color: var(--primary-color);
-    
-}
-.iconsMobile{
+  }
+  
+  .iconsMobile{
     display: flex;
     align-items: flex-end;
     justify-content: space-between;
     width: 33vw;
     height: 6vh;
-}
+  }
 
-/*PARA ESCONDER EL AVATAR CUANDO NO ESTA LOGUEADO Y EL CERRAR SESION*/
-.hide{
+  .hide{
     display: none;
     text-align:right;
-}
+  }
 
-.subir{
-  justify-content:flex-start;
-}
+  .subir{
+    justify-content:flex-start;
+  }
 
 `

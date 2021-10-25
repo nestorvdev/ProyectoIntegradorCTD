@@ -5,15 +5,15 @@ import logoTwitter from "./img/IconTw.png";
 import logoIg from "./img/IconIg.png";
 import line from "./img/Line.png";
 import ValidCredentials from "../../credentials/ValidCredentials";
-import { BurgerWrapper } from "./BurgerWrapped";
+import { MenuBurgerWrapper } from "./MenuBurgerWrapped.jsx";
 
-export default function MenuMobile( {show, handleShow, handleHide, isLogged, iniciales, activeLogin, activeCreate, handleLogOut} ) {
+export default function MenuMobile({ show, handleHide, isLogged, iniciales, activeLogin, activeCreate, handleLogOut }) {
 
     const hideObject = (isLogged) ? "hide" : null;//Para esconder los botones cuando esta logueado
-    const showObject =(isLogged) ? null : "hide"; //Para que se vea el avatar cuando se loguea
+    const showObject = (isLogged) ? null : "hide"; //Para que se vea el avatar cuando se loguea
 
     return (
-        <BurgerWrapper className="containerMobile" show={show}>
+        <MenuBurgerWrapper show={show} className="containerMobile">
             <div className="mobileHeader">
                 <div className="close" onClick={handleHide}>X</div>
                 <div className={`avatar ${showObject}`}>
@@ -28,10 +28,10 @@ export default function MenuMobile( {show, handleShow, handleHide, isLogged, ini
                 <p className={`textMenu ${hideObject}`}>MENÚ</p>
             </div>
             <div className="mobileBody">
-                <div className={`botones ${hideObject} ${(!activeLogin && activeCreate)?"subir":null}`}>
+                <div className={`botones ${hideObject} ${(!activeLogin && activeCreate) ? "subir" : null}`}>
                     <Link to="/create" onClick={handleHide}><p className={(!activeLogin && activeCreate) ? "hide" : null} >Crear cuenta</p></Link>
-                    <img className={`iconsImgMobile ${activeCreate || activeLogin? "hide" : null}`} src={line} alt="" />
-                    <Link to="/login" onClick={handleHide}><p className={(!activeCreate && activeLogin)? "hide" : null} >Iniciar sesión</p></Link>
+                    <img className={`${activeCreate || activeLogin ? "hide" : null}`} src={line} alt="" />
+                    <Link to="/login" onClick={handleHide}><p className={(!activeCreate && activeLogin) ? "hide" : null} >Iniciar sesión</p></Link>
                 </div>
             </div>
             <div className="mobileFooter">
@@ -46,7 +46,7 @@ export default function MenuMobile( {show, handleShow, handleHide, isLogged, ini
                     <img src={logoIg} alt="" />
                 </div>
             </div>
-        </BurgerWrapper>
+        </MenuBurgerWrapper>
     )
 }
 

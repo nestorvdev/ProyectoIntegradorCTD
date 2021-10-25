@@ -31,7 +31,9 @@ body {
     background-color: var(--quaternary-color);
     /* height: 100vh; */
 }
-
+.opacity{
+    background-color: rgba(0,0,0, 0.4)
+}
 
 main {
     padding-bottom: 80px;
