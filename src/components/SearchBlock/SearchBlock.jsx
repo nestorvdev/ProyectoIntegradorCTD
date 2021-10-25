@@ -5,8 +5,10 @@ import './styles.css';
 function SearchBlock() {
     return (
         <div className="container">
-            <h1>Buscá ofertas en hoteles, casas y mucho más</h1>
-            <SearchForm />
+            <div className="subContainer">
+                <h1>Buscá ofertas en hoteles, casas y mucho más</h1>
+                <SearchForm />
+            </div>
         </div>
     )
 }

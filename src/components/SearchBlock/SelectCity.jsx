@@ -14,14 +14,28 @@ function SelectCity() {
     indicatorsContainer: () => ({
       display: 'none',
     }),
+  
     valueContainer: () => ({
       display: 'flex',
       alignItems: 'center',
-      backgroundColor: '#FFFFFF',
+      backgroundColor: '#FFFFFF', 
       boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)',
       borderRadius: '5px',
-      padding: '0.4rem 6rem 0.65rem 2.5rem',
+      width: '100%',
+      height: '100%',
+      margin: '0',
+      padding: '0 0 0 10%',
+      
+      /* padding: '0.4rem 6rem 0.65rem 2.5rem', */
     }),
+
+    control: () => ({
+      height: '100%',
+    }),
+    container: () => ({
+      boxShadow: '0px 1px 5px rgb(0 0 0 / 15%)',
+    }),
+
     placeholder: () => ({
       color: '#31363F',
       fontSize: '12pt',
@@ -38,13 +52,11 @@ function SelectCity() {
   ];
 
   return (
-    <div className='limitation'>
       <Select
         placeholder='¿A dónde vamos?'
         styles={customStyles}
         options={options}
       />
-    </div>
   );
 }
 
