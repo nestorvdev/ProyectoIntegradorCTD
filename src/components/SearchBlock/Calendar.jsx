@@ -33,7 +33,7 @@ function Calendar(props) {
       primary: {
         main: "#F0572D",
       },
-    }
+    },
   });
 
   return (
@@ -53,9 +53,11 @@ function Calendar(props) {
               </React.Fragment>
             )}
           />
-          <button className="selected-dates-button" onClick={handleSelection}>
-            Aplicar
-          </button>
+          <div className="container-calendar-selected-dates">
+            <button className="selected-dates-button" onClick={handleSelection}>
+              Aplicar
+            </button>
+          </div>
         </LocalizationProvider>
       </ThemeProvider>
     </div>

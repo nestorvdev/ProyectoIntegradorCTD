@@ -76,16 +76,20 @@
   border-radius: 5px;
   font-size: var(--button2);
   font-weight: var(--font-bold);
+}
 
+.container-calendar-selected-dates {
+  width: 100%;
+  background-color: white;
+  padding: 0 1rem 1rem 0;
+  text-align: right;
 }
 
 .selected-dates-button {
   text-align: right;
   font-size: var(--button1);
   font-weight: var(--font-bold);
-  position: absolute;
-  right: 3%;
-  bottom: 4%;
+  position: relative;
   padding: 0.4rem 3.5rem;
 }
 
@@ -221,42 +225,11 @@ div.icon-select-box>div>div:first-child{
   .icon-select-box {
     width: 100%;
   }
+}
 
-
-
- /*  .container,
-  .grid-container {
-    max-height: 643px;
+@media all and (max-width: 415px) {
+  .container-calendar-selected-dates {
+    padding: 0 0 1rem 0;
+    text-align: center;
   }
-  .grid-container {
-    grid-template-columns: 100%;
-    grid-template-rows: 33.3% 33.3% 33.3%;
-  }
-  .date,
-  .button-search {
-   
-    
-    padding: 0.6rem 12rem 0.6rem 2.5rem;
-    margin: 0.8rem 0rem;
-  }
-  .date {
-    margin-bottom: 0rem;
-  }
-  .calendar-button {
-    max-height: 50px;
-  }
-  .icon-select-box {
-    max-height: 100px;
-  }
-  .button-search {
-    padding: 0.6rem 5rem;
-  }
-  .location,
-  .calendar {
-    left: 7.5%;
-    top: 40.5%;
-  }
-  .calendar {
-    top: 62%;
-  } */
 }
