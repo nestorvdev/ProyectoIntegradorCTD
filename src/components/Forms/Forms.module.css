@@ -20,12 +20,15 @@
   color: var(--primary-color);
   font-size: var(--heading1);
   font-weight: var(--font-bold);
-  padding-bottom: 25px;
+  margin-bottom: 25px;
+  width: 100%;
+  text-align: center;
 }
 
 .formFlex {
   height: 54vh;
   justify-content: space-between;
+  width: 100%;
 }
 
 .login{
@@ -46,6 +49,7 @@
 .inputLabel {
   height: 65px;
   justify-content: space-between;
+  align-items: center;
 }
 
 .inputLabel input,
@@ -60,11 +64,14 @@
   width: 228px;
 }
 
-.error{
-    color: red;
-    font-weight: bold;
-    padding: 1vh 0;
-    text-align: right;
+form ul {
+  height: 20px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  text-align: center;
 }
 
 .boton button,
@@ -106,21 +113,7 @@
     flex-direction: column;
   }
   .container {
-    align-items: center;
-    height: 82vh;
-  }
-
-  .container h3 {
-    align-self: center;
-    padding-bottom: 59px;
-  }
-
-  .login{
-    height:51vh;
-  }
-
-  .error{
-    width: 346px;
+    /* justify-content: space-evenly; */
   }
 }
 

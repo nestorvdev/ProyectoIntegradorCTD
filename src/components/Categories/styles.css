@@ -56,7 +56,7 @@
   font-weight: var(--font-bold);
   margin-bottom: 9px;
   margin-left: 7px;
-  margin-top: 16px;
+  padding-top: 16px;
 }
 
 .categoryType {
