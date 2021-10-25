@@ -6,6 +6,7 @@ import "./styles.css";
 
 function SelectCity() {
   const customStyles = {
+    // usar el de control
     option: () => ({
       textAlign: 'left',
       borderBottom: 'solid 2px #F0572D',
@@ -17,6 +18,7 @@ function SelectCity() {
   
     valueContainer: () => ({
       display: 'flex',
+<<<<<<< HEAD
       alignItems: 'center',
       backgroundColor: '#FFFFFF', 
       boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)',
@@ -31,6 +33,15 @@ function SelectCity() {
 
     control: () => ({
       height: '100%',
+=======
+      maxWidth: '300px',
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      backgroundColor: '#FFFFFF',
+      boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)',
+      borderRadius: '5px',
+      padding: '0.6rem 11rem 0.6rem 2.5rem',
+>>>>>>> 1b4b0ee20d3c147d2237738a6f11b481ce70861b
     }),
     container: () => ({
       boxShadow: '0px 1px 5px rgb(0 0 0 / 15%)',
@@ -45,7 +56,7 @@ function SelectCity() {
   }
   
   const options = [
-    { value: 'buenos-aires', label: <CityOption city='Buenos Aires' /> },
+    { value: 'buenos-aires', label: <CityOption city='Buenos Aires'/> },
     { value: 'mendoza', label: <CityOption city='Mendoza'/> },
     { value: 'cordoba', label: <CityOption city='Córdoba'/> },
     { value: 'bariloche', label: <CityOption city='San Carlos de Bariloche'/> },
