@@ -111,6 +111,13 @@
   z-index: 2;
 }
 
+.visible-tablet {
+  position: absolute;
+  top: 120%;
+  right: 0;
+  z-index: 2;
+}
+
 .city-container {
   display: flex;
   position: relative;
