@@ -2,7 +2,7 @@ import styles from "./Forms.module.css";
 import { Link } from "react-router-3";
 import React, { useState } from "react";
 
-export default function FormCreate() {
+export default function FormCreate(props) {
     const[name, setName] = useState("");
     const handleChangeName = (event) => {
         setName(event.target.value)
@@ -69,6 +69,7 @@ export default function FormCreate() {
         }
     }
     
+
     return (
         <div className={styles.container}>
             <h3>Crear cuenta</h3>
@@ -95,7 +96,7 @@ export default function FormCreate() {
                     <label for="confirm-password">Confirmar contraseña</label>
                     <input type="password" name="confirm-password" id="confirm-password" value = {confirmPassword} onChange = {handleChangeConfirmPassword}/>
                 </div>
-                <ul>{errores.map((error)=> {return <li className={styles.error}>{error}</li>})}</ul>
+                <div>{errores.map((error)=> {return <p className={styles.error}>{error}</p>})}</div>
                 <div className={`${styles.inputLabel} ${styles.boton}`}>
                     <button type="submit">Crear cuenta</button>
                     <p>¿Ya tienes una cuenta?<Link to="/login"> Iniciar sesión</Link></p>

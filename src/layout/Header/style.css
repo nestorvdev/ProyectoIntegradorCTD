@@ -103,6 +103,8 @@ header.header {
   }
   
   div.user div.close {
+    font-size: 22px;
+    font-weight: var(--font-bold);
     position: relative;
     right: 20px;
     top: -10px;
@@ -128,6 +130,7 @@ header.header {
       width: 144px;
     }
     header.header{
+      height: 99px;
       padding: 5px 16px;
     }
   }
@@ -150,5 +153,9 @@ header.header {
   
     div.mobile {
       display: block;
+    }
+
+    div.loggedIn{
+      display: none;
     }
   }

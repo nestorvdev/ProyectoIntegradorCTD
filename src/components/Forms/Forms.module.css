@@ -2,15 +2,15 @@
 .formFlex {
   display: flex;
   flex-direction: column;
-  /*height: 100%;*/
 }
 
 .container {
   display: flex;
   flex-direction: column;
+  height: 82vh;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  /*position: absolute;*/
   top: 0;
   bottom: 0;
   width: 100%;
@@ -20,11 +20,16 @@
   color: var(--primary-color);
   font-size: var(--heading1);
   font-weight: var(--font-bold);
-  margin-bottom: 25px;
+  padding-bottom: 25px;
 }
 
 .formFlex {
+  height: 54vh;
   justify-content: space-between;
+}
+
+.login{
+  height: 41vh;
 }
 
 .fullName {
@@ -58,6 +63,8 @@
 .error{
     color: red;
     font-weight: bold;
+    padding: 1vh 0;
+    text-align: right;
 }
 
 .boton button,
@@ -99,14 +106,41 @@
     flex-direction: column;
   }
   .container {
-    justify-content: space-evenly;
+    align-items: center;
+    height: 82vh;
+  }
+
+  .container h3 {
+    align-self: center;
+    padding-bottom: 59px;
+  }
+
+  .login{
+    height:51vh;
+  }
+
+  .error{
+    width: 346px;
   }
 }
 
 @media all and (max-width: 415px) {
+  .container {
+    height: 78vh;
+    justify-content: space-evenly;
+  }
+
+  .container h3 {
+    padding-bottom: 25px;
+  }
+  
   .inputLabel input,
   .boton button,
   .inputLabel input[type="text"] {
+    width: 300px;
+  }
+
+  .error{
     width: 300px;
   }
 }

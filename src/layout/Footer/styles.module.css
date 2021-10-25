@@ -29,6 +29,7 @@
   /*Footer */
   .footer {
     padding: 0 19px;
+    z-index: 0;
   }
 
   .icons {
