@@ -1,6 +1,7 @@
-com\proyecto\integrador\controller\CategoriaController.class
-com\proyecto\integrador\service\CategoriaService.class
-com\proyecto\integrador\repository\ICategoriaRepository.class
+com\proyecto\integrador\DTO\CategoryDTO.class
+com\proyecto\integrador\repository\ICategoryRepository.class
+com\proyecto\integrador\service\CategoryServiceImpl.class
+com\proyecto\integrador\service\CategoryService.class
+com\proyecto\integrador\controller\CategoryController.class
 com\proyecto\integrador\IntegradorApplication.class
-com\proyecto\integrador\entity\Categoria.class
-com\proyecto\integrador\service\CategoriaServiceImpl.class
+com\proyecto\integrador\entity\Category.class

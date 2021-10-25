@@ -129,6 +129,7 @@
 .city-name {
   flex-direction: column;
   position: relative;
+
 }
 
 .option-location-icon {
@@ -141,17 +142,29 @@ div.icon-select-box>div>div:first-child{
  border: 0;
 }
 
-.iconCityBar{
+.iconCityBar {
   display: inline-block;
   width: 32px;
   height: 32px;
   content: "";
   position: absolute;
   background: url("img/localizador.png") no-repeat;
-  z-index: 2;
-  left: 3%;
-  top: 7%;
+  z-index:2;
+  left: 2%;
+  top: 22%;
  }
+
+  .city-icon{
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  content: "";
+  position: absolute;
+  background: url("img/Vector.png") no-repeat;  
+  z-index: -2;
+  left: -8%;
+  top: 22%;
+  }
 
  .calendar {
   display: inline-block;
@@ -162,7 +175,7 @@ div.icon-select-box>div>div:first-child{
   background: url("img/calendar.png") no-repeat;
   z-index: 2;
   left: 4%;
-  top: 14%;
+  top: 25%;
  }
 
  /* pendiente reducir las dos clases anteriores */  
