@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 import FormLogin from "./components/Forms/FormLogin.jsx"
 import FormCreate from "./components/Forms/FormCreate.jsx";
@@ -14,7 +14,6 @@ function App() {
   const [log, setLog] = useState(sessionStorage.getItem("log")==="true"?true:false)
 
   return (
-    
     <Router history={browserHistory}>
       <Route path="/" component={LayoutPrincipal} isLogged = {log} >
         <IndexRoute component={Home}/>

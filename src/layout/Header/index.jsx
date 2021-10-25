@@ -1,4 +1,3 @@
-//import { PROPERTY_TYPES } from '@babel/types';
 import React, { useState, useEffect } from 'react';
 import { Link } from "react-router-3";
 import ValidCredentials from '../../credentials/ValidCredentials';
@@ -12,24 +11,8 @@ export default function Header(props) {
 
     const [activeCreate, setIsActiveCreate] = useState((window.location.pathname==="/create")?true:false)
     const [activeLogin, setIsActiveLogin] = useState((window.location.pathname==="/login")?true:false)
-    const [activeHome, setActiveHome] = useState((window.location.pathname==="/")?true:false)
-
-    /*function toggleClass(name) {
-        const ruta = window.location.pathname;
-        console.log("headerRuta", ruta);
-        if (name === "createButton") {
-            setIsActiveCreate(true)
-            setIsActiveLogin(false)
-        } else if (name === "loginButton") {
-            setIsActiveLogin(true)
-            setIsActiveCreate(false)
-        } else if("home"||ruta==="/"){
-            setIsActiveLogin(false)
-            setIsActiveCreate(false)
-        }
-    };*/
+    
     const ruta = window.location.pathname;
-    console.log("ruta",ruta);
 
     function hide() {
         if (ruta==="/login") {
@@ -48,12 +31,8 @@ export default function Header(props) {
         ()=> hide()
     )
     
-    console.log("header ruta",window.location.pathname);
-    console.log("activeLogin", activeLogin);
-    console.log("activeCreate", activeCreate);
-    const showUserName = (props.isLogged) ? "user loggedIn" : "user"; //para cambiar la clase segun este loggueado o no y
-    //que aparezca el nombre del usuario
-    const hideButtons = (props.isLogged) ? "buttons user" : "buttons";//Para esconder los botones cuando esta logueado
+    const showUserName = (props.isLogged) ? "user loggedIn" : "user"; 
+    const hideButtons = (props.isLogged) ? "buttons user" : "buttons";
     const iniciales = `${ValidCredentials.nombre.slice(0, 1).toUpperCase()}${ValidCredentials.apellido.slice(0, 1).toUpperCase()}`
 
     

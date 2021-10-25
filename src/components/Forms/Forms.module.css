@@ -10,7 +10,6 @@
   height: 82vh;
   justify-content: center;
   align-items: center;
-  /*position: absolute;*/
   top: 0;
   bottom: 0;
   width: 100%;
@@ -112,9 +111,7 @@ form ul {
   .fullName {
     flex-direction: column;
   }
-  .container {
-    /* justify-content: space-evenly; */
-  }
+ 
 }
 
 @media all and (max-width: 415px) {

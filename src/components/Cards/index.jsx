@@ -10,7 +10,7 @@ function Cards() {
             <div className="cardsBlock">
                 <h2>Recomendaciones</h2>
                 <div className="cardsBox">
-                    {data.map(e => <Card img={e.img} category={e.category} title={e.title} location={e.location} description={e.description} />)}
+                    {data.map((e, index) => <Card img={e.img} category={e.category} title={e.title} location={e.location} description={e.description} key={index}/>)}
                 </div>
             </div>
         </div>
