@@ -50,8 +50,7 @@
   padding-left: 14%;
 }
 
-.limitation {
-}
+
 /* 
 .location,
 .calendar {
@@ -175,10 +174,11 @@ div.icon-select-box>div>div:first-child{
  } */
 
 
-@media all and(max-width:1100px){
+@media all and(max-width:1200px){
   .calendar-button > div {
-    right: 0;
+   right: 0;
   }
+
 }
 
 @media all and (max-width: 769px) {
