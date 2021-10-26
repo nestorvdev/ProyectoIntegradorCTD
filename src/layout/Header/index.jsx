@@ -50,8 +50,8 @@ export default function Header({ isLogged, showBurger, setShowBurger }) {
     }
 
     return (
-        <HeaderWrapper className="header" >
-            <div className={showBurger === true ? "headerTop opacity" : "headerTop"}>
+        <HeaderWrapper className="header delimiter" >
+            <div className={showBurger === true ? "headerTop opacity delimiterChild" : "headerTop delimiterChild"}>
                 <Link to="/" className="home" onClick={handleHide}>
                     <div className="logo">
                         <img src={logo} alt="logo" />

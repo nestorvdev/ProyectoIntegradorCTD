@@ -3,11 +3,13 @@ header.header {
     display: flex;
     flex-wrap: nowrap;
     height: 80px;
-    padding: 5px 32px;
+   
+    padding-top: 5px;
     position: fixed; 
     top:0;
     width: 100%;
     z-index: 100;
+    justify-content: center;
   }
 
   .headerTop{
@@ -15,6 +17,8 @@ header.header {
     width: 100%;
     justify-content: space-between;
     align-items: center;
+    padding-left: clamp(10px,3.9%,40px);
+    padding-right: clamp(10px,3.9%,40px);
   }
   
   /* css contenedor logo  */

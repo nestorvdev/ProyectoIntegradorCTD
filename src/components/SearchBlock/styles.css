@@ -10,12 +10,13 @@
 }
 
 .subContainer {
-  width: 90vw;
-  max-width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  padding-left: clamp(10px,3.9%,40px);
+  padding-right: clamp(10px,3.9%,40px);
 }
 
 .grid-container {

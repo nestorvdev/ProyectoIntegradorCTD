@@ -4,8 +4,8 @@ import './styles.css';
 
 function SearchBlock() {
     return (
-        <div className="container">
-            <div className="subContainer">
+        <div className="container delimiter">
+            <div className="subContainer delimiterChild">
                 <h1>Buscá ofertas en hoteles, casas y mucho más</h1>
                 <SearchForm />
             </div>

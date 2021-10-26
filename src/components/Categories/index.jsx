@@ -5,8 +5,8 @@ import Category from './Category'
 function Categories() {    
     return (
         <>
-            <div className="categoryContainer">
-                <div className="categoryBlock">
+            <div className="categoryContainer delimiter">
+                <div className="categoryBlock delimiterChild">
                     <h2>Buscar por tipo de alojamiento</h2>
                     <div className="categoryBox">
                         <Category title="Hoteles" image="image1" />
