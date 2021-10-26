@@ -27,7 +27,7 @@ function SelectCity() {
       width: '100%',
       height: '100%',
       margin: '0',
-      padding: '0 0 0 0%', 
+      padding: '0 0 0 0%',       
       /* flexWrap: 'nowrap',
       justifyContent: 'flex-start', */
       //color: '#0046F9',  
@@ -45,7 +45,7 @@ function SelectCity() {
       backgroundColor: '#FFFFFF',
       boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)',
       borderRadius: '5px',
-      padding: '0.6rem 11rem 0.6rem 2.5rem',
+      padding: '0.6rem 11rem 0.6rem 2.5rem',      
       //color: '#F90000',
       //display: 'flex',
       //justifyContent: 'flex-start',

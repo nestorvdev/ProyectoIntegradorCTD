@@ -16,7 +16,7 @@ export default function LayoutPrincipal(props) {
                 <main>
                     {props.children}
                 </main>
-                <Footer />
+                <Footer showBurger={showBurger}/>
             </BrowserRouter>
         </div>
     )

@@ -5,10 +5,10 @@ import logoLinkedin from "./img/icon linkedin.png";
 import logoTwitter from "./img/tweet.png";
 import logoInstagram from "./img/icon ig.png"
 
-function Footer() {
+function Footer({ showBurger }) {
     return (
-        <footer className={`${styles.footer} delimiter`}>
-            <div className={`${styles.delimiterChild} delimiterChild`}>
+        <footer className={`${styles.footer} delimiter`} >
+            <div className={`${styles.delimiterChild} delimiterChild ${showBurger === true ? "opacity":null}`}>
                 <div>
                     <h3 className={styles.footerTittle} >2021 @ Digital Booking</h3>
                 </div>
