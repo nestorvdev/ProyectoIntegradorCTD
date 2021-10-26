@@ -144,6 +144,7 @@ header.header {
     /* Header */
   
     header.header {
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
       height: 93px;
       padding: 5px 11px;
     }
