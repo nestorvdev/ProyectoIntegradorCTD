@@ -1,5 +1,3 @@
-import { red } from "@mui/material/colors";
-import { flexbox } from "@mui/system";
 import React from "react";
 import Select from 'react-select';
 import CityOption from './CityOption';
@@ -9,10 +7,12 @@ import "./styles.css";
 function SelectCity() {
   const customStyles = {
     // usar el de control
-    option: () => ({      
+    option: () => ({    
+      
       textAlign: 'left',
       borderBottom: 'solid 2px #F0572D',
-      padding: '0.5rem 2.5rem',     
+      padding: '0.5rem 2.5rem',  
+      
     }),
     indicatorsContainer: () => ({
       display: 'none',
@@ -28,16 +28,10 @@ function SelectCity() {
       height: '100%',
       margin: '0',
       padding: '0 0 0 0%',       
-      /* flexWrap: 'nowrap',
-      justifyContent: 'flex-start', */
-      //color: '#0046F9',  
-      //backgroundColor: 'green', 
-     
-      /* padding: '0.4rem 6rem 0.65rem 2.5rem', */
     }),
 
-    control: (/* styles, { data, isDisabled, isFocused, isSelected } */) => ({
-      /* ...styles, */
+    control: (styles) => ({
+      ...styles,
       height: '100%',
       maxWidth: '100%',
       whiteSpace: 'nowrap',
@@ -45,11 +39,7 @@ function SelectCity() {
       backgroundColor: '#FFFFFF',
       boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)',
       borderRadius: '5px',
-      padding: '0.6rem 11rem 0.6rem 2.5rem',      
-      //color: '#F90000',
-      //display: 'flex',
-      //justifyContent: 'flex-start',
-      
+      padding: '0.6rem 11rem 0.6rem 2.5rem',            
     }),
     container: () => ({
       boxShadow: '0px 1px 5px rgb(0 0 0 / 15%)',
