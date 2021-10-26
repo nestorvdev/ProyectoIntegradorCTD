@@ -2,7 +2,7 @@ import React from "react";
 import Select from 'react-select';
 import CityOption from './CityOption';
 import "./styles.css";
-import localizador from './img/localizador.png'
+import localizador from './img/Vector.png'
 
 
 function SelectCity() {
@@ -89,6 +89,7 @@ function SelectCity() {
     singleValue:()=>({
       display: 'flex',
     }),
+ 
 
   }
 
