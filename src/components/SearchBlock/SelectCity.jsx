@@ -5,7 +5,11 @@ import "./styles.css";
 import vector from './img/Vector.png'
 import localizador from './img/localizador.png'
 
+
 function SelectCity() {
+
+  const heightControl = window.innerWidth<=600? '100%': '40px';
+
   const customStyles = {
     option: () => ({
       textAlign: 'left',
@@ -37,28 +41,28 @@ function SelectCity() {
       display: 'flex',
       alignItems: 'center',
       backgroundColor: '#FFFFFF',
-      boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)',
+      /* boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)', */
       borderRadius: '5px',
       width: '100%',
       height: '100%',
       margin: '0',
       padding: '0 0 0 0%',
+      border: 'none',
+      textAlign: 'left',
     }),
 
     control: (styles) => ({
       ...styles,
-      height: '100%',
+      height: `${heightControl}`,
       maxWidth: '100%',
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       backgroundColor: '#FFFFFF',
       boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)',
-      borderRadius: '5px',
       padding: '0.6rem 1rem 0.6rem 2.5rem',
       display: 'inline-block',
       width: '100%',
-      postion: 'relative',
-      ':before': {
+        ':before': {
         backgroundImage: `url(${localizador})`,
         backgroundRepeat: 'no-repeat',
         borderRadius: '10px',

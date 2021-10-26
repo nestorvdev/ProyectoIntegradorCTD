@@ -39,6 +39,7 @@ form.grid-container > div {
 }
 
 .date {
+  background-color: white;
   border:0;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
@@ -57,6 +58,7 @@ form.grid-container > div {
   position: relative;
   width: clamp(254px,33vw,420px);
   max-width: 420px;
+  height: 40px;
 }
 
 .button-search,
@@ -93,6 +95,7 @@ form.grid-container > div {
   position: relative;
   height: 100%;
   background-color: #ffffff;
+  border-radius: 5px;
 }
 
 
