@@ -110,7 +110,7 @@ form.grid-container>div{
 .calendar-button > div {
 
   position: absolute;
-  top: 120%;
+  top: 120%;  
 }
 
 .hidden {
@@ -157,7 +157,7 @@ div.icon-select-box>div>div:first-child{
   position: absolute;
   background: url("img/localizador.png") no-repeat;
   z-index:2;
-  left: 2%;
+  left: 3%;
   top: 22%;
  }
 
@@ -180,7 +180,7 @@ div.icon-select-box>div>div:first-child{
   content: "";
   position: absolute;
   background: url("img/calendar.png") no-repeat;
-  z-index: 2;
+  z-index: 1;
   left: 4%;
   top: 25%;
  }
@@ -227,6 +227,13 @@ div.icon-select-box>div>div:first-child{
   .container h1 {
     font-size: var(--heading2);
   }
+  .city-icon{    
+    left: -17%;    
+  }
+
+  .iconCityBar {
+    left: 4%;    
+  }
 }
 
 @media all and (max-width: 660px) {
@@ -255,5 +262,17 @@ div.icon-select-box>div>div:first-child{
   .container-calendar-selected-dates {
     padding: 0 0 1rem 0;
     text-align: center;
+  }
+
+  .city-icon{    
+    left: -10%;    
+  }
+
+  .iconCityBar {
+    left: 3%;    
+  }
+
+  .calendar {
+    left: 3%;
   }
 }
