@@ -2,32 +2,63 @@ import React from "react";
 import Select from 'react-select';
 import CityOption from './CityOption';
 import "./styles.css";
+import localizador from './img/localizador.png'
 
 
 function SelectCity() {
   const customStyles = {
     // usar el de control
-    option: () => ({    
-      
+    option: () => ({
+
       textAlign: 'left',
       borderBottom: 'solid 2px #F0572D',
-      padding: '0.5rem 2.5rem',  
-      
+      padding: '0.5rem 2.5rem',
+      zIndex: '10',
+      width: '100%',
+      position:'relative',
+      ':after': {
+        /* background: `red`, */
+        backgroundImage: `url(${localizador})`,
+        backgroundRepeat: 'no-repeat',
+        borderRadius: '10px',
+        content: '" "',
+        display: 'block',
+        marginRight: '8px',
+        height: '25px',
+        width: '25px',
+        position: 'absolute',
+        left: '10px', 
+        top:'12px',
+        
+        /* 
+                background: 'url("img/localizador.png") no- repeat',
+                borderRadius: 10,
+                content: '" "',
+                marginRight: 8,
+                display: 'inline-block',
+                width: '32px',
+                height: '32px',
+                position: 'absolute',
+                zIndex: '2',
+                left: '3%',
+                top: '22%', */
+      },
+
     }),
     indicatorsContainer: () => ({
       display: 'none',
     }),
-  
+
     valueContainer: () => ({
       display: 'flex',
       alignItems: 'center',
-      backgroundColor: '#FFFFFF', 
+      backgroundColor: '#FFFFFF',
       boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)',
       borderRadius: '5px',
       width: '100%',
       height: '100%',
       margin: '0',
-      padding: '0 0 0 0%',       
+      padding: '0 0 0 0%',
     }),
 
     control: (styles) => ({
@@ -39,8 +70,10 @@ function SelectCity() {
       backgroundColor: '#FFFFFF',
       boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)',
       borderRadius: '5px',
-      padding: '0.6rem 11rem 0.6rem 2.5rem',            
-    }),
+      padding: '0.6rem 1rem 0.6rem 2.5rem',
+      display: 'inline-block',
+      /*       padding: '0.6rem 11rem 0.6rem 2.5rem', */    
+}),
     container: () => ({
       boxShadow: '0px 1px 5px rgb(0 0 0 / 15%)',
     }),
@@ -49,34 +82,39 @@ function SelectCity() {
       color: '#31363F',
       fontSize: '12pt',
       fontWeight: 500,
-      width: '150px',
+      /* width: '150px', */
+      width: '100%',
     }),
-    
+    singleValue:()=>({
+      display: 'flex',
+    }),
+
   }
-  
+
   const options = [
-    { value: 'buenos-aires', label: <CityOption city='Buenos Aires'/>},
-    { value: 'mendoza', label: <CityOption city='Mendoza' />},
-    { value: 'cordoba', label: <CityOption city='Córdoba'/>},
-    { value: 'bariloche', label: <CityOption city='San Carlos de Bariloche' />},
-  ];  
+    { value: 'buenos-aires, Argentina', label: <CityOption city='Buenos Aires' /> },
+    { value: 'mendoza, Argentina', label: <CityOption city='Mendoza' /> },
+    { value: 'cordoba, Argentina', label: <CityOption city='Córdoba' /> },
+    { value: 'bariloche, Argentina', label: <CityOption city='San Carlos de Bariloche' /> },
+  ];
 
   return (
-      <Select
-        placeholder='¿A dónde vamos?'
-        styles={customStyles}
-        //isOptionSelected={(option, value) => option.value === option.label2}
-        options={options}
-        //isSelected={(option, value) => value.value === option.label2}
-        //getOptionLabel={(option) => `${option.label}`}
-        /* defaultValue={flavourOptions[0]}
-          isClearable
-          isSearchable
-          name="color"
-          options={flavourOptions}
-          getOptionLabel={(option) => `${option.value}: ${option.label}`} */
-        
-      />
+    <Select
+      placeholder='¿A dónde vamos?'
+      styles={customStyles}
+      //isOptionSelected={(option, value) => option.value === option.label2}
+      options={options}
+    //isSelected={(option, value) => value.value === option.label2}
+    //getOptionLabel={(option) => `${option.label}`}
+    /* defaultValue={flavourOptions[0]}
+      name="color"
+      options={flavourOptions}
+      */
+      isSearchable
+      isClearable
+      getOptionValue={(option) => `${option.value}:`} 
+
+    />
   );
 }
 
