@@ -79,7 +79,7 @@ export default function FormCreate(props) {
                         <label for="name">Nombre</label>
                         <input type="text" name="name" id="name" value={name} onChange={handleChangeName} required/>
                     </div>
-                    <div className={styles.inputLabel}>
+                    <div className={`${styles.inputLabel} ${styles.apellido}`}>
                         <label for="surname">Apellido</label>
                         <input type="text" name="surname" id="surname" value = {surname} onChange={handleChangeSurname} required/>
                     </div>

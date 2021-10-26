@@ -7,7 +7,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 82vh;
+  height: 86vh;
   justify-content: center;
   align-items: center;
   top: 0;
@@ -26,18 +26,19 @@
 
 .formFlex {
   height: 54vh;
-  justify-content: space-between;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
 }
 
 .login{
-  height: 41vh;
+  height: 35vh;
 }
 
 .fullName {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 34vw;
 }
 
@@ -50,7 +51,7 @@
 .inputLabel {
   height: 65px;
   justify-content: space-between;
-  align-items: center;
+  
 }
 
 .inputLabel input,
@@ -60,6 +61,9 @@
   border-radius: 5px;
   border: 0;
   box-shadow: 1px 1px 2px 2px #d1cfcf;
+}
+.inputLabel input{
+  padding-left: 10px;
 }
 .inputLabel input[type="text"] {
   width: 16.5vw;
@@ -82,7 +86,7 @@ form ul {
 }
 
 .boton {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .inputLabel button {
@@ -109,9 +113,18 @@ form ul {
   .inputLabel input[type="text"] {
     width: 346px;
   }
+  .formFlex{
+    height:60vh;
+  }
 
   .fullName {
     flex-direction: column;
+  }
+  .apellido{
+    margin-top: 5px;
+  }
+  .login{
+    height:45vh;
   }
  
 }
@@ -123,6 +136,7 @@ form ul {
   }
 
   .container h3 {
+    margin:0;
     padding-bottom: 25px;
   }
   
@@ -135,4 +149,5 @@ form ul {
   .error{
     width: 300px;
   }
+
 }

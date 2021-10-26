@@ -3,13 +3,6 @@ import { Link } from "react-router-3"
 import { useState } from "react";
 import ValidCredentials from "../../credentials/ValidCredentials";
 
-
-/*
-PENDIENTES
-- Que figure el nombre del usuario cuando esta logueado.
-- Hover de botones
-*/
-
 export default function FormLogin(props){
 
     const[email, setEmail] = useState("");
@@ -45,7 +38,7 @@ export default function FormLogin(props){
     return(
         <div className={styles.container}>
             <h3>Iniciar sesión</h3>
-            <form className={`${styles.formFlex}${styles.login}`} onSubmit={sendData}>
+            <form className={`${styles.formFlex} ${styles.login}`} onSubmit={sendData}>
                 <div className={styles.inputLabel}>
                     <label for="email">Correo electrónico</label>
                     <input type="email" name="email" id="email" value = {email} onChange={handleChangeEmail}/>

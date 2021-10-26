@@ -194,6 +194,10 @@ div.icon-select-box>div>div:first-child{
 
 @media all and (max-width: 769px) {
 
+  .container{
+    padding: 25px 0;
+  }
+
   .container h1 {
    
     font-size: var(--heading2);
