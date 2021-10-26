@@ -28,7 +28,7 @@ export default function FormCreate(props) {
         setConfirmPassword(event.target.value)
     }
 
-    const[errores, setErrores] = useState([])
+    const[error, setError] = useState("")
 
     const credencialesValidas = {
         email:"grupo1@digital.com",
@@ -38,11 +38,15 @@ export default function FormCreate(props) {
     const validarPassword = () => {
         let passwordValida = true;
         if(password.length <= 6){
-            setErrores(["La contraseña debe tener más de 6 caracteres"])
+            setError("La contraseña debe tener más de 6 caracteres")
             passwordValida = false;
         }
-        if(password!==confirmPassword){
-            setErrores(["Las contraseñas deben ser iguales"])
+        if(confirmPassword.length===0){
+            setError("Este campo es obligatorio")
+            passwordValida = false;
+        }
+        if(confirmPassword.length>0 && password!==confirmPassword){
+            setError("Las contraseñas deben ser iguales")
             passwordValida = false;
         }
 
@@ -62,13 +66,12 @@ export default function FormCreate(props) {
             event.preventDefault();
         }else if(validarCredenciales()){
             event.preventDefault();
-            setErrores(["El usuario ya existe."])
+            setError(["El usuario ya existe."])
         }else{
             event.preventDefault();
             window.location.pathname = "/login"
         }
     }
-    
 
     return (
         <div className={styles.container}>
@@ -92,11 +95,11 @@ export default function FormCreate(props) {
                     <label for="password">Contraseña</label>
                     <input type="password" name="password" id="password" value = {password} onChange = {handleChangePassword}/>
                 </div>
-                <div className={styles.inputLabel}>
+                <div className = {`${styles.inputLabel} ${error==="Este campo es obligatorio"?styles.inputError:null}`}>
                     <label for="confirm-password">Confirmar contraseña</label>
                     <input type="password" name="confirm-password" id="confirm-password" value = {confirmPassword} onChange = {handleChangeConfirmPassword}/>
                 </div>
-                <div>{errores.map((error)=> {return <p className={styles.error}>{error}</p>})}</div>
+                <div>{(error!=="")?(<p className={styles.error}>{error}</p>):null}</div>
                 <div className={`${styles.inputLabel} ${styles.boton}`}>
                     <button type="submit">Crear cuenta</button>
                     <p>¿Ya tienes una cuenta?<Link to="/login"> Iniciar sesión</Link></p>
