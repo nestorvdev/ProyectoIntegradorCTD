@@ -116,8 +116,9 @@ form ul {
 @media all and (max-width: 769px) {
   .inputLabel input,
   .boton button,
-  .inputLabel input[type="text"] {
-    width: 346px;
+  .inputLabel input[type="text"],
+  .error {
+    width: 45vw;
   }
   .formFlex{
     height:60vh;
@@ -148,12 +149,9 @@ form ul {
   
   .inputLabel input,
   .boton button,
-  .inputLabel input[type="text"] {
-    width: 300px;
-  }
-
+  .inputLabel input[type="text"],
   .error{
-    width: 300px;
+    width: 72vw;
   }
 
 }
