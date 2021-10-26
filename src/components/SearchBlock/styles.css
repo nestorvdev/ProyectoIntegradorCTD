@@ -22,7 +22,7 @@
 .grid-container {
   background-color: var(--tertiary-color);
   width: 100%;
-  min-height: 40px;
+  max-height: 40px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
@@ -39,7 +39,7 @@ form.grid-container > div {
 }
 
 .date {
-  background-color: #ffffff;
+  border:0;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   color: var(--secondary-color);
@@ -55,7 +55,7 @@ form.grid-container > div {
 
 .icon-select-box {
   position: relative;
-  width: 35%;
+  width: clamp(254px,33vw,420px);
   max-width: 420px;
 }
 
@@ -68,6 +68,9 @@ form.grid-container > div {
   font-size: var(--button2);
   font-weight: var(--font-bold);
 }
+.button-search{
+  width: clamp(124px,18vw,206px);
+}
 
 .container-calendar-selected-dates {
   width: 100%;
@@ -75,6 +78,8 @@ form.grid-container > div {
   padding: 0 1rem 1rem 0;
   text-align: right;
 }
+
+
 
 .selected-dates-button {
   text-align: right;
@@ -87,6 +92,19 @@ form.grid-container > div {
 .calendar-button {
   position: relative;
   height: 100%;
+  background-color: #ffffff;
+}
+
+
+.calendar-button::before {
+  display: inline-block;
+  width: 24px;
+  height: 25px;
+  content: "";
+  position: absolute;
+  background: url("img/calendar.png") no-repeat;
+  left: 4%;
+  top: 25%;
 }
 
 .calendar-button > div {
@@ -106,13 +124,14 @@ form.grid-container > div {
 .visible-tablet {
   position: absolute;
   top: 120%;
-  right: 0;
+  right: -50%;
   z-index: 100;
 }
 
 .city-container {
   display: flex;
   position: relative;
+  
 }
 .city-name {
   flex-direction: column;
@@ -129,41 +148,6 @@ div.icon-select-box > div > div:first-child {
   border: 0;
 }
 
-.iconCityBar {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  content: "";
-  position: absolute;
-  background: url("img/localizador.png") no-repeat;
-  z-index:2;
-  left: 3%;
-  top: 22%;
-}
-
-.city-icon {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  content: "";
-  position: absolute;
-  background: url("img/Vector.png") no-repeat;
-  z-index: -2;
-  left: -8%;
-  top: 22%;
-}
-
-.calendar {
-  display: inline-block;
-  width: 24px;
-  height: 25px;
-  content: "";
-  position: absolute;
-  background: url("img/calendar.png") no-repeat;
-  z-index: 1;
-  left: 4%;
-  top: 25%;
-}
 /* pendiente reducir las dos clases anteriores */
 
 div.icon-select-box > div:nth-child(2),
@@ -198,27 +182,31 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
   }
 }
 
-@media all and (max-width: 660px) {
+@media all and (max-width: 600px) {
+  
+  
   .grid-container {
-    flex-wrap: nowrap;
-  }
-
-  .grid-container {
-    background-color: var(--tertiary-color);
-    display: grid;
-    grid-column-gap: 0;
-    grid-row-gap: 8px;
-    grid-template-columns: 100%;
-    grid-template-rows: 40px 40px 40px;
-    width: 100%;
-    min-height: 40px;
+    flex-direction: column;
+    max-height: 100%;
   }
   .icon-select-box {
     width: 100%;
     max-width: 100%;
   }
-}
 
+  form.grid-container > div {
+    height: 50px;
+  }
+  form.grid-container>div:nth-child(2){
+    margin:10px 0;
+  }
+  .button-search{
+    width: 100%;
+    height: 50px;
+  }
+
+}
+/*
 @media all and (max-width: 415px) {
   .container-calendar-selected-dates {
     padding: 0 0 1rem 0;
@@ -236,4 +224,4 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
   .calendar {
     left: 3%;
   }
-}
+} */

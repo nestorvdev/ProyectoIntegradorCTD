@@ -51,7 +51,7 @@ function Card(props) {
                     <img className="iconSwimming" src={iconSwimming} alt="" />
                 </div>
                 <div className="cardDescription">
-                    <p>{props.description}</p>
+                    <p>{description}</p>
                     <span>más...</span>
                 </div>
                 <button className="cardButton2">Ver más</button>

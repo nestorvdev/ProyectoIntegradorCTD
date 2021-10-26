@@ -7,10 +7,11 @@ function SelectDate() {
   const [responsiveState, responsiveSetState] = useState("desktop");
 
   const haddleToggle = (event) => {
-    const windowSize = window.innerWidth <= 1080 ? "visible-tablet" : "visible";
+    /* const windowSize = window.innerWidth <= 1080 ? "visible-tablet" : "visible"; */
+    const windowSize = window.innerWidth >=680 ? (window.innerWidth<=1080?"visible-tablet" :"visible") : "visible";
     event.preventDefault();
     calendarSetState(calendarState === "hidden" ? windowSize : "hidden");
-    responsiveSetState(window.innerWidth < 415  ? "mobile" : "desktop");
+    responsiveSetState(window.innerWidth < 680 ? "mobile" : "desktop");
   };
 
   const [buttonState, buttonSetState] = useState("Check in - Check out");
@@ -22,7 +23,9 @@ function SelectDate() {
   return (
     <div className="calendar-button">
       <button className="date" onClick={haddleToggle}>{buttonState}</button>
-      <Calendar responsiveness={responsiveState} calendarState={calendarState} handleSelected={handleSelected}/>
+
+      <Calendar responsiveness={responsiveState} calendarState={calendarState} handleSelected={handleSelected} />
+
     </div>
   );
 }

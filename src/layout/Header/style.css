@@ -24,8 +24,12 @@ header.header {
   /* css contenedor logo  */
   header.header a {
     text-decoration: none;
+
   }
   
+  div.buttons>a:first-child{
+    margin-right: 10px;
+  }
   .home div.logo {
     align-items: flex-end;
     display: flex;
@@ -60,9 +64,9 @@ header.header {
     color: var(--primary-color);
     font-size: var(--button1);
     font-weight: var(--font-bold);
-    margin: 0 10px;
     padding: 5pt;
-    width: 15vw;
+/*     width: 100%; */
+    width: clamp(164px,22.2vw,206px);
   }
 
   .hideButton{
