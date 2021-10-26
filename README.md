@@ -1,5 +1,5 @@
 # Certified Tech Dev - Proyecto Integrador
 
-***Rama Infraestructura
+## Rama Infraestructura
 - Diagrama de Red
 
