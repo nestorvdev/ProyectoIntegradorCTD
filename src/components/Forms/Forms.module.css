@@ -76,7 +76,8 @@ form ul {
 .error {
   color: red;
   font-weight: bold;
-  text-align: center;
+  width: 34vw;
+  text-align: right;
 }
 
 .boton button,
@@ -103,6 +104,11 @@ form ul {
 
 .inputLabel p a {
   color: #4285f4;
+}
+
+.inputError input{
+  background-color: #FFE1E1;
+  border: solid 1px red;
 }
 
 /* media queries */
