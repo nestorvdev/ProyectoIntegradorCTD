@@ -51,7 +51,7 @@ form.grid-container > div {
   overflow: hidden;
   width: 100%;
   text-align: left;
-  padding-left: 14%;
+  padding-left: 11%;
 }
 
 .icon-select-box {
@@ -106,8 +106,8 @@ form.grid-container > div {
   content: "";
   position: absolute;
   background: url("img/calendar.png") no-repeat;
-  left: 4%;
-  top: 25%;
+  left: 10px;
+  top: 9px;
 }
 
 .calendar-button > div {
@@ -158,6 +158,17 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
   height: 100%;
 }
 
+.titleCity, .titleCountry{
+  font-size: var(--text2);
+  font-weight: 500;
+}
+
+.titleCountry{
+  color: var(--secondary-color);
+} 
+
+
+
 @media all and(max-width:1200px) {
   .calendar-button > div {
     right: 0;
@@ -198,14 +209,14 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
   }
 
   form.grid-container > div {
-    height: 50px;
+    height: 40px;
   }
   form.grid-container>div:nth-child(2){
     margin:10px 0;
   }
   .button-search{
     width: 100%;
-    height: 50px;
+    height: 40px;
   }
 
 }

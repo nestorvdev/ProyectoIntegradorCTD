@@ -5,10 +5,7 @@ import "./styles.css";
 import vector from './img/Vector.png'
 import localizador from './img/localizador.png'
 
-
 function SelectCity() {
-
-  const heightControl = window.innerWidth<=600? '100%': '40px';
 
   const customStyles = {
     option: () => ({
@@ -18,6 +15,7 @@ function SelectCity() {
       zIndex: '10',
       width: '100%',
       position: 'relative',
+      fontWeight: 500,
       ':after': {
         backgroundImage: `url(${vector})`,
         backgroundRepeat: 'no-repeat',
@@ -28,8 +26,8 @@ function SelectCity() {
         height: '25px',
         width: '25px',
         position: 'absolute',
-        left: '10px',
-        top: '12px',
+        left: '12px',
+        top: '16px',
       },
 
     }),
@@ -53,11 +51,12 @@ function SelectCity() {
 
     control: (styles) => ({
       ...styles,
-      height: `${heightControl}`,
+      height: '40px',
       maxWidth: '100%',
       whiteSpace: 'nowrap',
       overflow: 'hidden',
       backgroundColor: '#FFFFFF',
+      fontWeight: 500,
       boxShadow: '0px 1px 5px rgba(0, 0, 0, 0.15)',
       padding: '0.6rem 1rem 0.6rem 2.5rem',
       display: 'inline-block',
@@ -73,7 +72,7 @@ function SelectCity() {
         width: '25px',
         position: 'absolute',
         left: '10px',
-        top: '12px',
+        top: '5px',
       },
     }),
     container: () => ({
@@ -93,10 +92,10 @@ function SelectCity() {
   }
 
   const options = [
-    { value: 'buenos-aires, Argentina', label: <CityOption city='Buenos Aires' /> },
-    { value: 'mendoza, Argentina', label: <CityOption city='Mendoza' /> },
-    { value: 'cordoba, Argentina', label: <CityOption city='Córdoba' /> },
-    { value: 'bariloche, Argentina', label: <CityOption city='San Carlos de Bariloche' /> },
+    { value: 'buenos-aires, Argentina', label: <CityOption city='Buenos Aires' country='Argentina' /> },
+    { value: 'mendoza, Argentina', label: <CityOption city='Mendoza' country='Argentina'/> },
+    { value: 'cordoba, Argentina', label: <CityOption city='Córdoba' country='Argentina'/> },
+    { value: 'bariloche, Argentina', label: <CityOption city='San Carlos de Bariloche' country='Argentina'/> },
   ];
 
   return (
