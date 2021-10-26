@@ -39,7 +39,7 @@ form.grid-container > div {
 }
 
 .date {
-  background-color: #ffffff;
+  border:0;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
   color: var(--secondary-color);
@@ -92,6 +92,19 @@ form.grid-container > div {
 .calendar-button {
   position: relative;
   height: 100%;
+  background-color: #ffffff;
+}
+
+
+.calendar-button::before {
+  display: inline-block;
+  width: 24px;
+  height: 25px;
+  content: "";
+  position: absolute;
+  background: url("img/calendar.png") no-repeat;
+  left: 4%;
+  top: 25%;
 }
 
 .calendar-button > div {
@@ -135,41 +148,6 @@ div.icon-select-box > div > div:first-child {
   border: 0;
 }
 
-.iconCityBar {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  content: "";
-  position: absolute;
-  background: url("img/localizador.png") no-repeat;
-  z-index:2;
-  left: 3%;
-  top: 22%;
-}
-
-.city-icon {
-  display: inline-block;
-  width: 32px;
-  height: 32px;
-  content: "";
-  position: absolute;
-  background: url("img/Vector.png") no-repeat;
-  z-index: -2;
-  left: -8%;
-  top: 22%;
-}
-
-.calendar {
-  display: inline-block;
-  width: 24px;
-  height: 25px;
-  content: "";
-  position: absolute;
-  background: url("img/calendar.png") no-repeat;
-  z-index: 1;
-  left: 4%;
-  top: 25%;
-}
 /* pendiente reducir las dos clases anteriores */
 
 div.icon-select-box > div:nth-child(2),
