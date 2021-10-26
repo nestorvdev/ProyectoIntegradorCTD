@@ -218,6 +218,9 @@
 }
 
 @media all and (max-width: 769px) {
+  .cardsBlock h2 {
+    margin-left: 1.8%;  
+  }
   .cardBox {
   max-width: 710px; 
   width: 97vw;
@@ -234,6 +237,9 @@
 }
 
 @media all and (max-width: 610px){
+  .cardsBlock h2 {
+    margin-left: 0%;  
+  }
   .cardBox {
     height: 491px;
     min-width: 90vw;
@@ -248,7 +254,7 @@
     height: 47%;
   }
   .cardInfo{
-    width: 98%;
+    width: 92%;
     height: 47%;
     margin-left: 0%;
     margin-top: 3%;
@@ -265,6 +271,7 @@
   
   .cardImage .image {
     top: -2px;
+    z-index: 0;
   }
 
 
