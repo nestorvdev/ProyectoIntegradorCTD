@@ -72,6 +72,7 @@ function SelectCity() {
       borderRadius: '5px',
       padding: '0.6rem 1rem 0.6rem 2.5rem',
       display: 'inline-block',
+      width: '100%',
       /*       padding: '0.6rem 11rem 0.6rem 2.5rem', */    
 }),
     container: () => ({
