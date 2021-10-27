@@ -15,8 +15,7 @@ function Card(props) {
             <div className="cardImage">
 
                 <img className="iconHeart" src={iconHeart} alt="" />
-                <img className="image" src={img} alt="" />
-                {/* Coloqué la imagen svg acá en html para ver el icono del corazón de alguna forma, pero es provisorio" */}
+                <img className="image" src={img} alt="" />                
               
             </div>
 

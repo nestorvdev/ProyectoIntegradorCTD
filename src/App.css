@@ -26,38 +26,33 @@
     font-family: 'Quicksand', Arial, Helvetica, sans-serif; 
 }
 
-
 body {
-    background-color: var(--quaternary-color);
-    /* height: 100vh; */
+    background-color: var(--quaternary-color);    
 }
+
 .opacity{
     background-color: rgba(0,0,0, 0.4)
 }
 
 main {
+    min-height: calc(100vh - 58px -80px);
     padding-bottom: 58px;
     position: relative !important; 
     top: 80px !important;
-    min-height: calc(100vh - 58px -80px);
 }
 
 .delimiter{
-    width: 100%;
+    align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    width: 100%;
 }
 
 .delimiterChild{
-    width: 100%;
-    min-width: 300px;
     max-width: 1366px;
-}
-
-@media all and (max-width: 769px) {
-    
+    min-width: 300px;
+    width: 100%;
 }
 
 @media all and (max-width: 415px) {

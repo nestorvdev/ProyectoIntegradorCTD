@@ -23,9 +23,7 @@ function SelectDate() {
   return (
     <div className="calendar-button">
       <button className="date" onClick={haddleToggle}>{buttonState}</button>
-
       <Calendar responsiveness={responsiveState} calendarState={calendarState} handleSelected={handleSelected} />
-
     </div>
   );
 }
