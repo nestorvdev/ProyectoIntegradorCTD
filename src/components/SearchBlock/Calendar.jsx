@@ -40,24 +40,29 @@ function Calendar(props) {
     <div className={props.calendarState}>
       <ThemeProvider theme={theme}>
         <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <StaticDateRangePicker
-            displayStaticWrapperAs={props.responsiveness}
-            label="date range"
-            value={value}
-            onChange={(newValue) => setValue(newValue)}
-            renderInput={(startProps, endProps) => (
-              <React.Fragment>
-                <TextField {...startProps} />
-                <Box sx={{ mx: 2 }}> to </Box>
-                <TextField {...endProps} />
-              </React.Fragment>
-            )}
-          />
-          <div className="container-calendar-selected-dates">
-            <button className="selected-dates-button" onClick={handleSelection}>
-              Aplicar
-            </button>
-          </div>
+          <Box sx={{ minWidth: 380 }}>
+            <StaticDateRangePicker
+              displayStaticWrapperAs={props.responsiveness}
+              showToolbar={false}
+              value={value}
+              onChange={(newValue) => setValue(newValue)}
+              renderInput={(startProps, endProps) => (
+                <React.Fragment>
+                  <TextField {...startProps} />
+                  <Box sx={{ mx: 2 }}> to </Box>
+                  <TextField {...endProps} />
+                </React.Fragment>
+              )}
+            />
+            <div className="container-calendar-selected-dates">
+              <button
+                className="selected-dates-button"
+                onClick={handleSelection}
+              >
+                Aplicar
+              </button>
+            </div>
+          </Box>
         </LocalizationProvider>
       </ThemeProvider>
     </div>
