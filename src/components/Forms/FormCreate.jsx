@@ -33,9 +33,9 @@ export default function FormCreate(props) {
 
     const validarFullName = () => {
         let fullNameValido = true;
-        const regEx = /[0-9]/;
-        if(regEx.test(name)||regEx.test(surname)){
-            setError("El nombre y/o apellido no pueden contener numeros")
+        const regEx = /^[a-zA-Z\s]+$/;
+        if(!regEx.test(name)||!regEx.test(surname)){
+            setError("El nombre y/o apellido no pueden contener numeros ni caracteres especiales")
             fullNameValido = false;
         }
 
