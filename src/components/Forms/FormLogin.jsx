@@ -15,12 +15,12 @@ export default function FormLogin(props){
         setPassword(event.target.value)
     }
 
-    const[errores, setErrores] = useState([])
+    const[error, setError] = useState("")
 
     const validarCredenciales = () => {
         let credencialesSonValidas = true;
         if(email !== ValidCredentials.email || password !== ValidCredentials.password){
-            setErrores(["Por favor vuelva a intentarlo. Las credenciales son inválidas"])
+            setError(["Por favor vuelva a intentarlo. Las credenciales son inválidas"])
             credencialesSonValidas = false;
         }
         return credencialesSonValidas;
@@ -47,7 +47,7 @@ export default function FormLogin(props){
                     <label for="password">Contraseña</label>
                     <input type="password" name="password" id="password" value = {password} onChange = {handleChangePassword}/>
                 </div>
-                <div>{errores.map((error)=> {return <p className={styles.error}>{error}</p>})}</div>
+                <div>{(error!=="")?(<p className={styles.error}>{error}</p>):null}</div>
                 <div className={`${styles.inputLabel} ${styles.boton}`}>
                     <button type="submit">Ingresar</button>
                     <p>¿Aún no tenés cuenta?<Link to="/create"> Registrate</Link></p>

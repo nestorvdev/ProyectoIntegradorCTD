@@ -17,11 +17,10 @@ function App() {
     <Router history={browserHistory}>
       <Route path="/" component={LayoutPrincipal} isLogged = {log} >
         <IndexRoute component={Home}/>
-        <Route path="/login" component={FormLogin} setLog = {setLog} />
-        <Route path="/create" component={FormCreate} />
+        <Route path="/login" component = {!log?FormLogin:Home} setLog={setLog}/>
+        <Route path= "/create" component = {!log?FormCreate:Home} setLog={setLog} />
       </Route>
     </Router>
-    
   );
 }
 
