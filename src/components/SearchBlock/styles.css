@@ -40,7 +40,7 @@ form.grid-container > div {
 
 .date {
   background-color: white;
-  border:0;
+  border: 0;
   border-radius: 5px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
   color: var(--secondary-color);
@@ -48,7 +48,7 @@ form.grid-container > div {
   font-weight: var(--font-medium);
   height: 100%;
   overflow: hidden;
-  padding-left:42px;
+  padding-left: 42px;
   text-align: left;
   white-space: nowrap;
   width: 100%;
@@ -58,7 +58,7 @@ form.grid-container > div {
   height: 40px;
   max-width: 420px;
   position: relative;
-  width: clamp(254px,33vw,420px);
+  width: clamp(254px, 33vw, 420px);
 }
 
 .button-search,
@@ -70,22 +70,17 @@ form.grid-container > div {
   font-size: var(--button2);
   font-weight: var(--font-bold);
 }
-.button-search{
-  width: clamp(124px,18vw,206px);
-}
-
-.container-calendar-selected-dates {
-  background-color: white;
-  padding: 0 1rem 1rem 0;
-  text-align: right;
-  width: 100%;
+.button-search {
+  width: clamp(124px, 18vw, 206px);
 }
 
 .selected-dates-button {
+  bottom: 5%;
   font-size: var(--button1);
   font-weight: var(--font-bold);
   padding: 0.4rem 3.5rem;
-  position: relative;
+  position: absolute;
+  right: 3%;
   text-align: right;
 }
 
@@ -95,7 +90,6 @@ form.grid-container > div {
   height: 100%;
   position: relative;
 }
-
 
 .calendar-button::before {
   background: url("img/calendar.png") no-repeat;
@@ -110,7 +104,7 @@ form.grid-container > div {
 
 .calendar-button > div {
   position: absolute;
-  top: 120%;  
+  top: 120%;
 }
 
 .hidden {
@@ -131,7 +125,7 @@ form.grid-container > div {
 
 .city-container {
   display: flex;
-  position: relative;  
+  position: relative;
 }
 
 .city-name {
@@ -154,14 +148,15 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
   height: 100%;
 }
 
-.titleCity, .titleCountry{
+.titleCity,
+.titleCountry {
   font-size: var(--text2);
   font-weight: 500;
 }
 
-.titleCountry{
+.titleCountry {
   color: var(--secondary-color);
-} 
+}
 
 @media all and(max-width:1200px) {
   .calendar-button > div {
@@ -172,22 +167,22 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
 @media all and (max-width: 769px) {
   .container {
     padding: 25px 0;
-  } 
+  }
 
   .container h1 {
     font-size: var(--heading2);
   }
 
-  .city-icon{    
-    left: -17%;    
+  .city-icon {
+    left: -17%;
   }
 
   .iconCityBar {
-    left: 4%;    
+    left: 4%;
   }
 }
 
-@media all and (max-width: 600px) {   
+@media all and (max-width: 600px) {
   .grid-container {
     flex-direction: column;
     max-height: 100%;
@@ -202,13 +197,24 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
     height: 40px;
   }
 
-  form.grid-container>div:nth-child(2){
-    margin:10px 0;
+  form.grid-container > div:nth-child(2) {
+    margin: 10px 0;
   }
 
-  .button-search{
+  .button-search {
     height: 40px;
     width: 100%;
   }
 }
 
+@media all and (max-width: 415px) {
+  .container-calendar-selected-dates {
+    background-color: white;
+    padding: 0 1rem 1rem 0;
+    text-align: right;
+    width: 100%;
+  }
+  .selected-dates-button {
+    position: relative;
+  }
+}

@@ -38,7 +38,7 @@
   height: 283px;
   justify-content: flex-start;
   margin: 5px 0;
-  margin-right: clamp(1px,0.74%,8px);
+  margin-right: 1px;
   width: clamp(590px,50%,630px);
 }
 
