@@ -30,7 +30,7 @@ export default function FormCreate(props) {
     }
 
     const[error, setError] = useState("")
-    
+
     const validarFullName = () => {
         let fullNameValido = true;
         const regEx = /[0-9]/;
@@ -40,6 +40,16 @@ export default function FormCreate(props) {
         }
 
         return fullNameValido;
+    }
+
+    const validarEmail = () => {
+        let mailValido = true;
+        if(email.length===0){
+            setError("El campo email no puede estar vacio")
+            mailValido = false;
+        }
+
+        return mailValido;
     }
 
     const validarPassword = () => {
@@ -72,7 +82,7 @@ export default function FormCreate(props) {
         event.preventDefault();
         if(existenCredenciales()){
             setError(["El usuario ya existe."])
-        }else if(validarFullName() && validarPassword() && !existenCredenciales()){
+        }else if(validarFullName() && validarEmail() && validarPassword() && !existenCredenciales()){
             window.location.pathname = "/login"
         }
     }
