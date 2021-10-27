@@ -36,6 +36,7 @@ function Calendar(props) {
     },
   });
 
+  
   return (
     <div className={props.calendarState}>
       <ThemeProvider theme={theme}>
@@ -45,6 +46,7 @@ function Calendar(props) {
               displayStaticWrapperAs={props.responsiveness}
               showToolbar={false}
               value={value}
+              minDate={new Date()}
               onChange={(newValue) => setValue(newValue)}
               renderInput={(startProps, endProps) => (
                 <React.Fragment>
