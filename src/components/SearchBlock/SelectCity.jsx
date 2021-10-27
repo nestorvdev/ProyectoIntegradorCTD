@@ -47,6 +47,7 @@ function SelectCity() {
       padding: '0 0 0 0%',
       border: 'none',
       textAlign: 'left',
+      overflow: 'hidden',
     }),
 
     control: (styles) => ({
