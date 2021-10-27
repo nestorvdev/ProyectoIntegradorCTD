@@ -47,7 +47,7 @@ export default function FormLogin(props){
                     <label for="password">Contraseña</label>
                     <input type="password" name="password" id="password" value = {password} onChange = {handleChangePassword}/>
                 </div>
-                <div>{(error!=="")?(<p className={styles.error}>{error}</p>):null}</div>
+                <div className={styles.errorContainer}>{(error!=="")?(<p className={styles.error}>{error}</p>):null}</div>
                 <div className={`${styles.inputLabel} ${styles.boton}`}>
                     <button type="submit">Ingresar</button>
                     <p>¿Aún no tenés cuenta?<Link to="/create"> Registrate</Link></p>
