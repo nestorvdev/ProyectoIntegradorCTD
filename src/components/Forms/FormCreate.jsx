@@ -1,6 +1,7 @@
 import styles from "./Forms.module.css";
 import { Link } from "react-router-3";
 import React, { useState } from "react";
+import ValidCredentials from "../../credentials/ValidCredentials";
 
 export default function FormCreate(props) {
     const[name, setName] = useState("");
@@ -29,10 +30,16 @@ export default function FormCreate(props) {
     }
 
     const[error, setError] = useState("")
+    
+    const validarFullName = () => {
+        let fullNameValido = true;
+        const regEx = /[0-9]/;
+        if(regEx.test(name)||regEx.test(surname)){
+            setError("El nombre y/o apellido no pueden contener numeros")
+            fullNameValido = false;
+        }
 
-    const credencialesValidas = {
-        email:"grupo1@digital.com",
-        password: "1234567"
+        return fullNameValido;
     }
 
     const validarPassword = () => {
@@ -53,22 +60,19 @@ export default function FormCreate(props) {
         return passwordValida;
     }
 
-    const validarCredenciales = () => {
-        let existenCredenciales = false;
-        if(email === credencialesValidas.email){
-            existenCredenciales = true;
+    const existenCredenciales = () => {
+        let existen = false;
+        if(email === ValidCredentials.email){
+            existen = true;
         }
-        return existenCredenciales;
+        return existen;
     }
 
     const sendData = (event) => {
-        if(!validarPassword()){
-            event.preventDefault();
-        }else if(validarCredenciales()){
-            event.preventDefault();
+        event.preventDefault();
+        if(existenCredenciales()){
             setError(["El usuario ya existe."])
-        }else{
-            event.preventDefault();
+        }else if(validarFullName() && validarPassword() && !existenCredenciales()){
             window.location.pathname = "/login"
         }
     }
