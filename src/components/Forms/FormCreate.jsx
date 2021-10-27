@@ -110,7 +110,7 @@ export default function FormCreate(props) {
                     <label for="confirm-password">Confirmar contraseña</label>
                     <input type="password" name="confirm-password" id="confirm-password" value = {confirmPassword} onChange = {handleChangeConfirmPassword}/>
                 </div>
-                <div>{(error!=="")?(<p className={styles.error}>{error}</p>):null}</div>
+                <div className={styles.errorContainer}>{(error!=="")?(<p className={styles.error}>{error}</p>):null}</div>
                 <div className={`${styles.inputLabel} ${styles.boton}`}>
                     <button type="submit">Crear cuenta</button>
                     <p>¿Ya tienes una cuenta?<Link to="/login"> Iniciar sesión</Link></p>

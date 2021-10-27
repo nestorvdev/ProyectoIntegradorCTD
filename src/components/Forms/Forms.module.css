@@ -74,6 +74,10 @@ form ul {
   height: 20px;
 }
 
+.errorContainer{
+  height: 2.5rem;
+}
+
 .error {
   color: red;
   font-weight: bold;
@@ -85,10 +89,6 @@ form ul {
 .inputLabel p {
   align-self: center;
   width: 206px;
-}
-
-.boton {
-  margin-top: 20px;
 }
 
 .inputLabel button {
@@ -118,6 +118,7 @@ form ul {
 @media all and (max-width: 769px) {
   .container{
     height: calc(100vh - 99px - 58px);
+    
   }
 
   .inputLabel input,
@@ -140,14 +141,14 @@ form ul {
   }
 
   .login{
-    height:45vh;
+    height:38vh;
   } 
 }
 
 @media all and (max-width: 415px) {
   .container {
     height: 78vh;
-    height: calc(100vh - 93px - 58px);    
+    height: calc(90vh - 93px - 58px);    
     justify-content: space-evenly;
   }
 

@@ -13,15 +13,21 @@ export default function Header({ isLogged, showBurger, setShowBurger }) {
     const [activeCreate, setIsActiveCreate] = useState((window.location.pathname === "/create") ? true : false)
     const [activeLogin, setIsActiveLogin] = useState((window.location.pathname === "/login") ? true : false)
 
-    const ruta = window.location.pathname;
+    let ruta = window.location.pathname;
 
     function hide() {
         if (ruta === "/login") {
             setIsActiveCreate(false)
             setIsActiveLogin(true)
+            if(isLogged){
+                window.location.href="/"
+            }
         } else if (ruta === "/create") {
             setIsActiveLogin(false)
             setIsActiveCreate(true)
+            if(isLogged){
+                window.location.href="/"
+            }
         } else if (ruta === "/") {
             setIsActiveLogin(false)
             setIsActiveCreate(false)
