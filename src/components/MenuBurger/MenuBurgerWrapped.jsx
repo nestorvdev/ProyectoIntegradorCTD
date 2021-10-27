@@ -1,20 +1,17 @@
 import styled from "styled-components"
 
 export const MenuBurgerWrapper = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
   align-items: center;
   background: white;
-  position: fixed;
-  top: 0px;
-  
-  
-  right: ${props => (props.show ? "0" : "-100%")};
-
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  width: 73vw;
+  justify-content: flex-start;
+  position: fixed;
+  right: ${props => (props.show ? "0" : "-100%")};
+  top: 0px;    
   transition: right 0.3s linear;
+  width: 73vw;
   
   @media only screen and (min-width: 415px) {
     display:none;
@@ -22,19 +19,18 @@ export const MenuBurgerWrapper = styled.nav`
 
   .mobileHeader{
     background-color: var(--primary-color);
-    height: 23.5vh;
-    width:73vw;
     display: flex;
     flex-direction: column;
+    height: 23.5vh;
     justify-content: space-between;
+    width:73vw;
   }
-
   
   .close {
     color: white;
-    padding:5px 10px;
-    font-weight: var(--font-bold);
     font-size: 24px;
+    font-weight: var(--font-bold);
+    padding:5px 10px;
   }
 
   .close a{
@@ -42,9 +38,9 @@ export const MenuBurgerWrapper = styled.nav`
   }
 
   .avatar{
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     justify-self: flex-end;
     padding: 5px 12px;
   }
@@ -67,8 +63,7 @@ export const MenuBurgerWrapper = styled.nav`
 
   .text h3, .mobileBody p {
     font-size: var(--heading3);
-    font-weight: var(--font-bold);
-    
+    font-weight: var(--font-bold);    
   }
   
   .text h3.great {
@@ -82,29 +77,29 @@ export const MenuBurgerWrapper = styled.nav`
   }
   
   .textMenu{
-    font-weight: var(--font-bold);
     color: white;
     font-size: var(--heading2);
-    text-align: right;
+    font-weight: var(--font-bold);
     padding:5px 12px;
+    text-align: right;
   }
 
   .mobileBody{
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
     height:62.5vh;
+    justify-content: flex-start;
     padding: 31px 12px;
     width: 73vw;
   }
 
   .botones{
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
     height: 10vh;
+    justify-content: space-between;
   }
 
   .botones img{
@@ -116,38 +111,38 @@ export const MenuBurgerWrapper = styled.nav`
   }
 
   .mobileFooter{
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    height: 14vh;
     justify-content: space-evenly;
     padding-right: 20px;
-    height: 14vh;
     width:73vw;
   }
 
   .logOut{
+    align-items: flex-end;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
     height: 2.5vh;
   }
 
   .logOut div{
-    font-weight: var(--font-medium);
     font-size: 12px;
+    font-weight: var(--font-medium);
   }
 
   .logOut div a{
-    text-decoration: none;
     color: var(--primary-color);
+    text-decoration: none;
   }
   
   .iconsMobile{
-    display: flex;
     align-items: flex-end;
+    display: flex;
+    height: 6vh;
     justify-content: space-between;
     width: 33vw;
-    height: 6vh;
   }
 
   .hide{

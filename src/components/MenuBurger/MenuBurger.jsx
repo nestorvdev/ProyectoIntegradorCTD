@@ -9,7 +9,7 @@ import { MenuBurgerWrapper } from "./MenuBurgerWrapped.jsx";
 
 export default function MenuMobile({ show, handleHide, isLogged, iniciales, activeLogin, activeCreate, handleLogOut }) {
 
-    const hideObject = (isLogged) ? "hide" : null;//Para esconder los botones cuando esta logueado
+    const hideObject = (isLogged) ? "hide" : null; //Para esconder los botones cuando esta logueado
     const showObject = (isLogged) ? null : "hide"; //Para que se vea el avatar cuando se loguea
 
     return (

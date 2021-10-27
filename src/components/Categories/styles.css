@@ -1,14 +1,13 @@
 .categoryContainer {
+  background-color: white; 
   width: 100%;
-  background-color: white;
- 
 }
 
 .categoryBlock{
-    width: 100%;
-    padding-left: clamp(10px,3.9%,40px);
-    padding-right: clamp(10px,3.9%,40px);
-    padding-bottom:5px;
+  padding-bottom:5px;
+  padding-left: clamp(10px,3.9%,40px);
+  padding-right: clamp(10px,3.9%,40px);
+  width: 100%;
 }
 
 .categoryBox {
@@ -17,13 +16,12 @@
   justify-content: space-between;
 }
 
-
 .categoryCard {
-  width: 22.7vw;
-  max-width: 310px;
-  margin: 7px 0;
   border-radius: 10px;
   box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.25);
+  margin: 7px 0;
+  max-width: 310px;
+  width: 22.7vw;
 }
 
 .categoryBox>div:first-child{
@@ -33,8 +31,6 @@
   margin-right: 0px;;
 }
 
-
-
 .categoryCard:hover {
   box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.5);
 }
@@ -43,8 +39,8 @@
   background-size: cover;
   border-radius: 10px 10px 0px 0px;
   height: 183.81px;
-  width: 100%;
   max-width: 310px;
+  width: 100%;
 }
 
 .image1 {
@@ -84,8 +80,8 @@
 .categoryType h3 {
   font-size: var(--heading3);
   font-weight: var(--font-bold);
-  white-space: nowrap;
   overflow: hidden;
+  white-space: nowrap;
 }
 
 .categoryType p {
@@ -93,14 +89,13 @@
 }
 
 @media all and (max-width: 769px) {
-
   .categoryBox {
     flex-wrap: wrap;
   }
 
   .categoryCard {
-    width: 43vw;
     max-width: 347px;
+    width: 43vw;
   }
 
   .categoryImage {
@@ -119,20 +114,19 @@
 }
 
 @media all and (max-width: 415px) { 
-
   .categoryBox {
     justify-content: center;
   }
   .categoryCard {
-    width: 94.7vw;
-    max-width: 392px;
     margin: 7px 0;
+    max-width: 392px;
+    width: 94.7vw;
   }
 
   .categoryImage {
-    width: 94.7vw;
     height: 205.1px;
     max-width: 392px;
+    width: 94.7vw;
   }
 
   .categoryType {

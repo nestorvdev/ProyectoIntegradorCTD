@@ -38,7 +38,6 @@ export default function FormCreate(props) {
             setError("El nombre y/o apellido no pueden contener numeros ni caracteres especiales")
             fullNameValido = false;
         }
-
         return fullNameValido;
     }
 
@@ -48,7 +47,6 @@ export default function FormCreate(props) {
             setError("El campo email no puede estar vacio")
             mailValido = false;
         }
-
         return mailValido;
     }
 
@@ -66,7 +64,6 @@ export default function FormCreate(props) {
             setError("Las contraseñas deben ser iguales")
             passwordValida = false;
         }
-
         return passwordValida;
     }
 

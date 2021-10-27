@@ -36,8 +36,6 @@ export default function Header({ isLogged, showBurger, setShowBurger }) {
     const hideButtons = (isLogged) ? "buttons user" : "buttons";
     const iniciales = `${ValidCredentials.nombre.slice(0, 1).toUpperCase()}${ValidCredentials.apellido.slice(0, 1).toUpperCase()}`
 
-
-
     function handleLogOut() {
         sessionStorage.setItem("log", "false")
     }

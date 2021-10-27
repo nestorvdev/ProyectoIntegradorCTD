@@ -6,8 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 
 
 export default function LayoutPrincipal(props) {
-    const [showBurger, setShowBurger] = useState(false)
-   /*  console.log(showBurger); */
+    const [showBurger, setShowBurger] = useState(false)  
 
     return (
         <div className={showBurger === true ? "opacity" : null}>

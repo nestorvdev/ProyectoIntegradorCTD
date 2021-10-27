@@ -1,12 +1,12 @@
 .footer {
   background-color: var(--primary-color);
-  color: white;
-  height: 58px;
   bottom: 0px;
+  color: white;
+  flex-wrap: nowrap;
+  height: 58px;
   position: fixed;
   width: 100%;
   z-index: 200;
-  flex-wrap: nowrap;
 }
 
 footer>.delimiterChild {
@@ -26,16 +26,11 @@ footer>.delimiterChild {
   margin: 0 15px;
 }
 
-@media all and (max-width: 769px) {
-  /*Footer */
-}
-
 @media all and (max-width: 415px) {
   /*Footer */
   .footer {
     z-index: 99;
   }
-
   .icons {
     display: none;
   }

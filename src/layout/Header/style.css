@@ -3,32 +3,32 @@ header.header {
     display: flex;
     flex-wrap: nowrap;
     height: 80px;
+    justify-content: center;
     padding-top: 5px;
     position: fixed; 
     top:0;
     width: 100%;
     z-index: 100;
-    justify-content: center;
   }
 
   .headerTop{
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
     align-items: center;
+    display: flex;
+    justify-content: space-between;
     padding-left: clamp(10px,3.9%,40px);
     padding-right: clamp(10px,3.9%,40px);
+    width: 100%;
   }
   
   /* css contenedor logo  */
   header.header a {
     text-decoration: none;
-
   }
   
   div.buttons>a:first-child{
     margin-right: 10px;
   }
+
   .home div.logo {
     align-items: flex-end;
     display: flex;
@@ -64,7 +64,6 @@ header.header {
     font-size: var(--button1);
     font-weight: var(--font-bold);
     padding: 5pt;
-/*     width: 100%; */
     width: clamp(164px,22.2vw,206px);
   }
 
@@ -141,6 +140,7 @@ header.header {
     div.buttons button {
       width: 144px;
     }
+    
     header.header{
       height: 99px;
       padding: 5px 16px;

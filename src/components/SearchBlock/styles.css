@@ -1,31 +1,31 @@
 .container {
+  align-items: center;
   background-color: var(--tertiary-color);
-  text-align: center;
-  width: 100%;
-  position: relative;
-  padding: 10px 0 25px 0; /* padding: 10px 0 25px 0; */
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 10px 0 25px 0; /* padding: 10px 0 25px 0; */
+  position: relative;
+  text-align: center;
+  width: 100%;
 }
 
 .subContainer {
-  width: 100%;
+  align-items: center;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   padding-left: clamp(10px, 3.9%, 40px);
   padding-right: clamp(10px, 3.9%, 40px);
+  width: 100%;
 }
 
 .grid-container {
   background-color: var(--tertiary-color);
-  width: 100%;
-  max-height: 40px;
   display: flex;
   flex-wrap: nowrap;
   justify-content: center;
+  max-height: 40px;
+  width: 100%;
 }
 
 form.grid-container > div {
@@ -41,32 +41,32 @@ form.grid-container > div {
 .date {
   background-color: white;
   border:0;
-  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
   border-radius: 5px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.15);
   color: var(--secondary-color);
   font-size: var(--text2);
   font-weight: var(--font-medium);
   height: 100%;
-  white-space: nowrap;
   overflow: hidden;
-  width: 100%;
-  text-align: left;
   padding-left:42px;
+  text-align: left;
+  white-space: nowrap;
+  width: 100%;
 }
 
 .icon-select-box {
+  height: 40px;
+  max-width: 420px;
   position: relative;
   width: clamp(254px,33vw,420px);
-  max-width: 420px;
-  height: 40px;
 }
 
 .button-search,
 .selected-dates-button {
   color: #ffffff;
   background: var(--primary-color);
-  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
   border-radius: 5px;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
   font-size: var(--button2);
   font-weight: var(--font-bold);
 }
@@ -75,39 +75,37 @@ form.grid-container > div {
 }
 
 .container-calendar-selected-dates {
-  width: 100%;
   background-color: white;
   padding: 0 1rem 1rem 0;
   text-align: right;
+  width: 100%;
 }
 
-
-
 .selected-dates-button {
-  text-align: right;
   font-size: var(--button1);
   font-weight: var(--font-bold);
-  position: relative;
   padding: 0.4rem 3.5rem;
+  position: relative;
+  text-align: right;
 }
 
 .calendar-button {
-  position: relative;
-  height: 100%;
   background-color: #ffffff;
   border-radius: 5px;
+  height: 100%;
+  position: relative;
 }
 
 
 .calendar-button::before {
-  display: inline-block;
-  width: 24px;
-  height: 25px;
-  content: "";
-  position: absolute;
   background: url("img/calendar.png") no-repeat;
+  content: "";
+  display: inline-block;
+  height: 25px;
   left: 10px;
+  position: absolute;
   top: 9px;
+  width: 24px;
 }
 
 .calendar-button > div {
@@ -126,32 +124,30 @@ form.grid-container > div {
 
 .visible-tablet {
   position: absolute;
-  top: 120%;
   right: -50%;
+  top: 120%;
   z-index: 100;
 }
 
 .city-container {
   display: flex;
-  position: relative;
-  
+  position: relative;  
 }
+
 .city-name {
   flex-direction: column;
   position: relative;
 }
 
 .option-location-icon {
-  position: absolute;
   font-size: 20px;
-  top: 20%;
   left: -6%;
+  position: absolute;
+  top: 20%;
 }
 div.icon-select-box > div > div:first-child {
   border: 0;
 }
-
-/* pendiente reducir las dos clases anteriores */
 
 div.icon-select-box > div:nth-child(2),
 div.icon-select-box > div:nth-child(2) > div:first-child {
@@ -167,8 +163,6 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
   color: var(--secondary-color);
 } 
 
-
-
 @media all and(max-width:1200px) {
   .calendar-button > div {
     right: 0;
@@ -178,15 +172,12 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
 @media all and (max-width: 769px) {
   .container {
     padding: 25px 0;
-  }
+  } 
 
   .container h1 {
     font-size: var(--heading2);
   }
 
-  .container h1 {
-    font-size: var(--heading2);
-  }
   .city-icon{    
     left: -17%;    
   }
@@ -196,46 +187,28 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
   }
 }
 
-@media all and (max-width: 600px) {
-  
-  
+@media all and (max-width: 600px) {   
   .grid-container {
     flex-direction: column;
     max-height: 100%;
   }
+
   .icon-select-box {
-    width: 100%;
     max-width: 100%;
+    width: 100%;
   }
 
   form.grid-container > div {
     height: 40px;
   }
+
   form.grid-container>div:nth-child(2){
     margin:10px 0;
   }
+
   .button-search{
-    width: 100%;
     height: 40px;
+    width: 100%;
   }
-
 }
-/*
-@media all and (max-width: 415px) {
-  .container-calendar-selected-dates {
-    padding: 0 0 1rem 0;
-    text-align: center;
-  }
 
-  .city-icon{    
-    left: -10%;    
-  }
-
-  .iconCityBar {
-    left: 3%;    
-  }
-
-  .calendar {
-    left: 3%;
-  }
-} */
