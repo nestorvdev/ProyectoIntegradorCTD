@@ -3,7 +3,6 @@ header.header {
     display: flex;
     flex-wrap: nowrap;
     height: 80px;
-   
     padding-top: 5px;
     position: fixed; 
     top:0;

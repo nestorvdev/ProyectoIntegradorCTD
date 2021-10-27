@@ -7,7 +7,7 @@
 .container {
   display: flex;
   flex-direction: column;
-  height: 86vh;
+  height: calc(100vh - 80px - 58px);
   justify-content: center;
   align-items: center;
   top: 0;
@@ -114,6 +114,10 @@ form ul {
 /* media queries */
 
 @media all and (max-width: 769px) {
+  .container{
+    height: calc(100vh - 99px - 58px);
+  }
+
   .inputLabel input,
   .boton button,
   .inputLabel input[type="text"],
@@ -140,6 +144,8 @@ form ul {
   .container {
     height: 78vh;
     justify-content: space-evenly;
+    height: calc(100vh - 93px - 58px);
+    
   }
 
   .container h3 {
