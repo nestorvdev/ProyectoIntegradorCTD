@@ -147,8 +147,7 @@ form ul {
 
 @media all and (max-width: 415px) {
   .container {
-    height: 78vh;
-    height: calc(90vh - 93px - 58px);    
+    height: calc(95vh - 93px - 58px);    
     justify-content: space-evenly;
   }
 
