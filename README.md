@@ -12,10 +12,11 @@
 
 ## Herramientas que se van a utilizar en el proyecto
 
-- Front end
-HTML + CSS + JS
-React
-Node + NPM
+
+1. Front End
+- HTML + CSS + JS
+- React
+- Node + NPM
 
 - Back end
 Java
