@@ -1,5 +1,15 @@
 # Certified Tech Developer - Digital Booking
 
+## Integrantes
+
+- Karin Stricker
+- Laura Nieto
+- Mariel Romeo
+- Martina Terraza
+- Nestor Villalobos
+- Tatiana Rincón
+
+
 ## Requerimientos
 
 1) Java 11
