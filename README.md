@@ -66,8 +66,6 @@ Además se incluye el botón para efectuar el registro, y otra opción para real
   Del lado izquierdo se incluye el copyright y el año.
   Del lado derecho se incluyen los íconos de redes sociales; éstos se omiten en la versión mobile.
 
-- **Funcionalidades**
-
 
 ## Backend
 
