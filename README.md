@@ -42,6 +42,8 @@
 
 ## Instalación
 
+###FrontEnd
+
 Para utilizar la aplicación, clonar el repositorio
 
 `$ git clone url`
