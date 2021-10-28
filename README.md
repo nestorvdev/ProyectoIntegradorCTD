@@ -18,28 +18,28 @@
 - React
 - Node + NPM
 
-- Back end
-Java
-Spring
-Hibernate
-APIs
-Rest
-JSON
+2. Back end
+- Java
+- Spring
+- Hibernate
+- APIs
+- Rest
+- JSON
 
-- Bases de datos
-MySQL
-MySQL Workbench / DBeaver
+3. Bases de datos
+- MySQL
+- MySQL Workbench / DBeaver
 
-- Testing
-Postman
-JUnit + Mockito
+4. Testing
+- Postman
+- JUnit + Mockito
 
-- Infraestructura
-AWS
-Terraform
+5. Infraestructura
+- AWS
+- Terraform
 
-- Gestión
-Git + GiLlab
+6. Gestión
+- Git + GiLlab
 
 ## Instalación
 
