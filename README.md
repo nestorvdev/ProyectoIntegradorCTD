@@ -42,7 +42,7 @@
 
 ## Instalación
 
-###FrontEnd
+##FrontEnd
 
 Para utilizar la aplicación, clonar el repositorio
 
@@ -53,6 +53,10 @@ Se debe instalar npm
 `$ npm install`
 
 `$ npm start`
+
+##BackEnd
+
+Los pasos para la instalación de back aún se encuentran en desarrollo
 
 ## Cómo contribuir
 
