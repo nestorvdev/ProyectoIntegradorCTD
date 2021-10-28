@@ -19,7 +19,7 @@ Puedes instalarlo clonando el repositorio
 
 `$ git clone url`
 
-## Documentación
+# Documentación
 
 Esta aplicación es para un Booking de Hoteles.  La misma cuenta con la capa del Frontend, Backend, una Base de Datos, la infraestructura y los tests pertinentes.
 Se tomó como base las historias de usuario, y el prototipo diseñado en Figma.
