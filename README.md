@@ -10,3 +10,14 @@
 1) Java 11
 2) Maven
 3) MySQL
+
+## Instalación
+
+Puedes instalarlo clonando el repositorio
+
+`$ git clone url`
+
+## Cómo se usa
+
+
+
