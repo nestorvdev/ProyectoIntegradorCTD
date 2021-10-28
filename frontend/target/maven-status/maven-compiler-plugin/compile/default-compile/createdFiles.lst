@@ -1,0 +1,7 @@
+com\proyecto\integrador\DTO\CategoryDTO.class
+com\proyecto\integrador\repository\ICategoryRepository.class
+com\proyecto\integrador\service\CategoryServiceImpl.class
+com\proyecto\integrador\service\CategoryService.class
+com\proyecto\integrador\controller\CategoryController.class
+com\proyecto\integrador\IntegradorApplication.class
+com\proyecto\integrador\entity\Category.class

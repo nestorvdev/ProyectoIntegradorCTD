@@ -1,0 +1,61 @@
+[
+    {
+      "img": "https://cdn.pixabay.com/photo/2017/05/31/10/23/manor-house-2359884_960_720.jpg",
+      "category": "Hotel",
+      "title": "Hotel Galaxy",
+      "location": "Rio de Janeiro",
+      "description": "Cat ipsum dolor sit amet, munchkin. Birman. Ocicat kitten so panther so singapura american shorthair american bobtail. Bengal. Kitty. Grimalkin turkish angora. Norwegian forest norwegian forest abyssinian . Havana brown ocelot. Tiger jaguar tiger or sphynx yet lynx balinese . Manx cheetah russian blue cougar and jaguar yet singapura. Lynx. Leopard ocelot and ocelot munchkin yet jaguar. Manx bombay but puma so norwegian forest yet maine coon. Balinese bombay yet persian so siamese yet turkish angora yet ocicat for russian blue. Sphynx cougar and bombay so leopard ocelot. Jaguar. Cheetah munchkin yet burmese munchkin. Bombay siamese. Scottish fold puma leopard lion so malkin, persian donskoy. Balinese tiger siamese but bombay savannah. Egyptian mau kitty or abyssinian . Sphynx cornish rex for malkin bobcat and norwegian forest. Balinese bobcat maine coon, and russian blue tomcat."
+      
+    },
+    {
+        "img": "https://cdn.pixabay.com/photo/2019/05/28/00/15/indoors-4234071_960_720.jpg",
+        "category": "Bed & Breakfast",
+        "title": "One & Only",
+        "location": "Barreal",
+        "description": "Ocelot mouser, so ragdoll, so burmese maine coon tiger. Sphynx american shorthair maine coon puma grimalkin manx. Bobcat malkin. Cheetah norwegian forest and tabby maine coon bombay bobcat scottish fold. Kitten savannah havana brown ocicat. British shorthair. Bombay cornish rex munchkin yet leopard singapura but norwegian forest. Norwegian forest. Tomcat singapura yet sphynx."
+    },
+    {
+        "img": "https://cdn.pixabay.com/photo/2017/11/16/19/29/cottage-2955582_960_720.jpg",
+        "category": "Hostel",
+        "title": "Hostel Le Mur",
+        "location": "Sologne",
+        "description": "Manx malkin bombay. Panther thai kitty sphynx american shorthair and russian blue. Scottish fold kitty for burmese or malkin. Mouser. Maine coon manx so bombay so havana brown so munchkin or ragdoll turkish angora. Ocelot. Munchkin american bobtail for cougar, leopard. Singapura. Bengal bobcat. Abyssinian savannah."
+    },
+    {
+        "img": "https://cdn.pixabay.com/photo/2013/11/13/21/14/san-francisco-210230_960_720.jpg",
+        "category": "Departamento",
+        "title": "Departamento Stars",
+        "location": "San Francisco",
+        "description": "Ocelot leopard scottish fold or cougar. Egyptian mau lynx for turkish angora. Birman havana brown and cheetah ocelot. Cougar persian but turkish angora, malkin bengal. British shorthair. Malkin. Turkish angora american shorthair. Birman american bobtail american bobtail. Bengal norwegian forest yet mouser ocelot. Abyssinian american bobtail cougar american bobtail cheetah or balinese so devonshire rex. Bobcat mouser. Tabby ragdoll bombay persian for abyssinian mouser yet donskoy. Himalayan scottish fold grimalkin manx but munchkin, donskoy but manx."
+    },
+    {
+        "img": "https://cdn.pixabay.com/photo/2013/06/30/19/07/bed-142517_960_720.jpg",
+        "category": "Hostel",
+        "title": "Hostel Ayre",
+        "location": "Palermo",
+        "description": "Tomcat american bobtail panther. Tiger american shorthair and cougar thai. Leopard bombay siamese siberian so havana brown turkish angora for munchkin. American bobtail balinese for abyssinian and lynx. British shorthair american shorthair persian russian blue yet lynx havana brown bobcat. Grimalkin kitten and thai yet lion egyptian mau tiger. Norwegian forest donskoy for bengal. Mouser mouser. Bobcat. Abyssinian tabby lynx but singapura norwegian forest yet ocicat leopard. American shorthair norwegian forest norwegian forest or russian blue but bobcat. Ocelot kitten so ragdoll, or havana brown yet american shorthair kitten puma. Grimalkin manx abyssinian . Jaguar abyssinian tabby lynx thai for mouser, and kitty. Munchkin grimalkin or jaguar so bengal for devonshire rex manx or tabby. Scottish fold."
+    },
+    {
+        "img": "https://cdn.pixabay.com/photo/2017/02/24/12/19/apartment-2094666_960_720.jpg",
+        "category": "Departamento",
+        "title": "Departamento La Condesa",
+        "location": "Colonia",
+        "description": "Cheetah ocicat siberian jaguar himalayan cougar. Havana brown tiger tomcat lion havana brown, or ocelot. Munchkin panther yet manx and ocelot, and malkin. Persian american bobtail jaguar, for american bobtail. Turkish angora abyssinian malkin burmese. Burmese havana brown and bobcat. Ragdoll bengal tomcat siberian. Jaguar maine coon. Turkish angora bengal and maine coon lynx devonshire rex so savannah and cheetah. Bengal. Bombay kitty russian blue but bengal kitten bombay. Devonshire rex leopard. Turkish angora jaguar yet persian or norwegian forest. Birman himalayan thai savannah so persian. Maine coon puma. Leopard cougar tabby, panther yet abyssinian jaguar yet devonshire rex. Sphynx thai. Persian ocelot, tiger and savannah, yet abyssinian bengal. Donskoy lynx so thai tomcat singapura or tomcat and scottish fold. Singapura. Sphynx persian, abyssinian balinese but persian devonshire rex but bombay."
+    },
+    {
+        "img": "https://cdn.pixabay.com/photo/2018/02/24/17/17/window-3178666_960_720.jpg",
+        "category": "Hotel",
+        "title": "Hotel Spa",
+        "location": "Villa General Belgrano",
+        "description": "Panther maine coon puma tomcat. Bobcat lynx or tomcat leopard, for devonshire rex yet cougar. Sphynx russian blue persian. Panther. Tom russian blue or havana brown. Ocelot persian thai bombay, but jaguar balinese and kitty. Leopard thai cheetah but devonshire rex abyssinian panther, puma. Himalayan lion norwegian forest. Lynx tomcat. Ragdoll. Ocelot malkin so balinese . Kitten maine coon or persian yet cheetah. Russian blue. Savannah scottish fold but kitten or abyssinian cougar but tabby devonshire rex."
+    },
+    {
+        "img": "https://cdn.pixabay.com/photo/2019/09/27/07/14/coffee-4507707_960_720.jpg",
+        "category": "Bed & Breakfast",
+        "title": "Avani",
+        "location": "Ushuaia",
+        "description": "Munchkin panther, but tabby. Russian blue birman for tom and lion birman. Egyptian mau tom so munchkin yet devonshire rex tiger abyssinian . Birman puma. Scottish fold persian singapura. Thai abyssinian , but american bobtail or tom. Kitten siamese singapura or cheetah devonshire rex, munchkin and jaguar. Mouser ocelot havana brown. Cornish rex cheetah for kitten so turkish angora grimalkin but thai. Cheetah tomcat or mouser but bengal panther maine coon cougar. Mouser sphynx for malkin or lynx kitty but thai or russian blue. Kitty russian blue so tabby jaguar tabby havana brown. Tomcat munchkin so sphynx and american bobtail for panther. Munchkin bombay. Birman leopard, puma or panther siamese. Tomcat leopard british shorthair but american shorthair for persian birman havana brown. Manx himalayan. British shorthair. Balinese american shorthair thai cougar but puma or american shorthair, manx. British shorthair turkish angora or puma but singapura. Sphynx cornish rex. Tom kitty for ragdoll. American bobtail lynx and british shorthair russian blue yet tom sphynx."
+    }
+    
+  ]
+  
