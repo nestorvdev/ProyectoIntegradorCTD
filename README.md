@@ -69,7 +69,7 @@ Además se incluye el botón para efectuar el registro, y otra opción para real
 
 ## Backend
 
-Se crea la estructura del Backend en Java, utilizando el framework Spring.  El proyecto se estructuró con los paquetes model, repository, service y controller.  
+  Se crea la estructura del Backend en Java, utilizando el framework Spring.  El proyecto se estructuró con los paquetes model, repository, service y controller.  
   La estructura del Backend se conecta a la base de Datos MySQL para realizar las operaciones CRUD.  Para este fin se utiliza Spring Data JPA.
   Se creó una tabla "categorías" en la base de datos, y se mapean los atributos de la tabla con una clase del modelo (Id, Título, Descripción y Url de la imagen).
 
@@ -79,6 +79,11 @@ Se crea la estructura del Backend en Java, utilizando el framework Spring.  El p
 * Listar todas las categorías.
 * Editar una categoría en particular por su id
 * Eliminar una categoría por su id
+
+  La documentación de la API se encuentra en la siguiente página (para poder visualizarla, es necesario correr la aplicación en el puerto 8080):
+
+http://localhost:8080/swagger-ui.html
+
 
 ## Infraestructura
 
