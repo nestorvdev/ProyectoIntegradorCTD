@@ -1,6 +1,6 @@
 # Digital Booking
 
-#Herramientas
+## Herramientas
 1) IntelliJ
 2) Visual Code
 3) Postman
