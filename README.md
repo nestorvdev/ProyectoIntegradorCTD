@@ -25,7 +25,6 @@ Puedes crear un pull request al proyecto
 
 ## Test Cases
 
-Las pruebas se encuentran documentadas en la Wiki, dentro de la carpeta  
-[Testing](https://gitlab.com/proyecto-integrador-0321/camada-3/grupo-1/-/wikis/Testing)
+Las pruebas se encuentran documentadas en la Wiki, dentro de la carpeta [Testing](https://gitlab.com/proyecto-integrador-0321/camada-3/grupo-1/-/wikis/Testing)
 
 
