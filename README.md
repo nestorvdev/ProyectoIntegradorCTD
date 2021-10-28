@@ -15,8 +15,7 @@
 
 1. Front End
 - HTML + CSS + JS
-- React
-- Node + NPM
+- React: Node + NPM
 
 2. Back end
 - Java
