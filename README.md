@@ -10,16 +10,35 @@
 - Tatiana Rincón
 
 
-## Requerimientos
+## Herramientas que se van a utilizar en el proyecto
 
-1) Java 11
-2) React
-3) Postman
-4) Git
-5) Spring
-6) Maven
-7) MySQL
-8) Workbench
+- Front end
+HTML + CSS + JS
+React
+Node + NPM
+
+- Back end
+Java
+Spring
+Hibernate
+APIs
+Rest
+JSON
+
+- Bases de datos
+MySQL
+MySQL Workbench / DBeaver
+
+- Testing
+Postman
+JUnit + Mockito
+
+- Infraestructura
+AWS
+Terraform
+
+- Gestión
+Git + GiLlab
 
 ## Instalación
 
