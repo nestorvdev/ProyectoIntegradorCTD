@@ -59,7 +59,7 @@ Puedes crear un pull request al proyecto
 
 ## Documentación
 
-La documentación del proyecto se encuentra en la Wiki en la carpeta[Documentación](https://gitlab.com/proyecto-integrador-0321/camada-3/grupo-1/-/wikis/Documentaci%C3%B3n)
+La documentación del proyecto se encuentra en la Wiki en la carpeta [Documentación](https://gitlab.com/proyecto-integrador-0321/camada-3/grupo-1/-/wikis/Documentaci%C3%B3n)
 
 ## Testing
 
