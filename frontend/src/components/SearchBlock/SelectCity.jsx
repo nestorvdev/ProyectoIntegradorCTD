@@ -29,6 +29,13 @@ function SelectCity() {
         top: '16px',
         width: '25px',
       },
+      ':hover': {
+        backgroundColor: '#f0d7d1',
+        cursor: 'pointer',
+      },
+      ':last-child': {
+        borderBottom: 'none',        
+      }
     }),
 
     indicatorsContainer: () => ({
@@ -46,7 +53,7 @@ function SelectCity() {
       overflow: 'hidden',
       padding: '0 0 0 0%',
       textAlign: 'left',
-      width: '100%',
+      width: '100%',      
     }),
 
     control: (styles) => ({
