@@ -44,8 +44,7 @@
 }
 
 .cardBox:hover {
-  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.5);
-  transform: scale(1.02);
+  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.5);  
 }
 
 .cardImage {
@@ -64,12 +63,21 @@
   z-index: 1;
 }
 
-.cardImage .iconHeart {
+.cardImage .iconHeart {    
   position: absolute;
   right: 10px;
   top: 10px;
+  transition: all 0.3s;
   width: 25px;
   z-index: 99;
+}
+
+.cardImage .iconHeart:hover {
+  transform: scale(1.1);
+} 
+
+.cardImage .iconHeart:active {  
+  transform: scale(0.8);
 }
 
 .cardInfo {
@@ -157,6 +165,10 @@
   text-transform: uppercase;
 }
 
+.cardLocation span:hover {
+  cursor: pointer;
+}
+
 .cardIcons {
   display: flex;
 }
@@ -186,6 +198,10 @@
   margin-top: 8px;
 }
 
+.cardDescription span:hover {
+  cursor: pointer;
+}
+
 .cardButton2 {
   background-color: var(--primary-color);
   border: none;
@@ -197,8 +213,17 @@
   height: 40px;
   justify-content: center;
   text-align: center;
+  transition: all 0.3s;
   width: 100%;
 }
+
+.cardButton2:hover {
+  transform: scale(1.02);
+}
+
+.cardButton2:active {  
+  transform: scale(0.85);
+}  
 
 @media all and (max-width:1350px){
   .cardsBox{
