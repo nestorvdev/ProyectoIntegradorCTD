@@ -134,6 +134,8 @@ header.header {
     justify-content: center;
     margin-left: 20px;
   }
+
+
   
   /* media queries */
   
@@ -176,5 +178,12 @@ header.header {
 
     div.loggedIn{
       display: none;
+    }
+
+    div.botones>a>p:hover{
+      background-color: var(--primary-color);
+      border-radius: 5px;
+      color: white;
+  
     }
   }
