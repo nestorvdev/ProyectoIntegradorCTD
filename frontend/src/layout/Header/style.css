@@ -67,6 +67,12 @@ header.header {
     width: clamp(164px,22.2vw,206px);
   }
 
+    
+  div.buttons button:hover {
+    background-color: var(--primary-color);
+    color: white;
+  }
+
   .hideButton{
     display:none;
   }
