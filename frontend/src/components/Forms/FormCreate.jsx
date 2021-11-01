@@ -5,7 +5,7 @@ import ValidCredentials from "../../credentials/ValidCredentials";
 
 export default function FormCreate(props) {
     const[name, setName] = useState({campo:"", valido:true});
-    const [surname, setSurname] = useState({campo:"", valido:true});
+    const[surname, setSurname] = useState({campo:"", valido:true});
     const[email, setEmail] = useState({campo:"", valido:true});
     const[password, setPassword] = useState({campo:"", valido:true});
     const[confirmPassword, setConfirmPassword] = useState({campo:"", valido:true});
