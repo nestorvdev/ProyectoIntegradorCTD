@@ -60,7 +60,4 @@ main {
     top: 93px !important;
     min-height: calc(100vh - 58px -93px);
   }
-  .burger{
-    filter:brightness(0.8);
-  }
 }

@@ -76,6 +76,7 @@ form ul {
 
 .errorContainer{
   height: 2.5rem;
+  font-size: 12px;
 }
 
 .error {
