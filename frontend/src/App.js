@@ -9,12 +9,11 @@ import './App.css';
 
 function App() {
   const [log, setLog] = useState(sessionStorage.getItem("log") === "true" ? true : false)
-
     return (
       <Router history={browserHistory}>
         <Route path="/" component={LayoutPrincipal} isLogged = {log} >
           <IndexRoute component={Home}/>
-          <Route path="/login" component = {!log?FormLogin:Home} setLog={setLog}/>
+          <Route path="/login" component = {!log?FormLogin:Home} setLog={setLog} />
           <Route path= "/create" component = {!log?FormCreate:Home} setLog={setLog} />
         </Route>
       </Router>
