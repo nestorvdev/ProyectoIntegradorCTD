@@ -19,7 +19,7 @@
   width: 100%;
 }
 
-.grid-container {
+.gridContainer {
   background-color: var(--tertiary-color);
   display: flex;
   flex-wrap: nowrap;
@@ -28,7 +28,7 @@
   width: 100%;
 }
 
-form.grid-container > div {
+form.gridContainer > div {
   margin-right: 10px;
 }
 .container h1 {
@@ -54,15 +54,15 @@ form.grid-container > div {
   width: 100%;
 }
 
-.icon-select-box {
+.iconSelectBox {
   height: 40px;
   max-width: 420px;
   position: relative;
   width: clamp(254px, 33vw, 420px);
 }
 
-.button-search,
-.selected-dates-button {
+.buttonSearch,
+.selectedDatesButton {
   color: #ffffff;
   background: var(--primary-color);
   border-radius: 5px;
@@ -70,11 +70,11 @@ form.grid-container > div {
   font-size: var(--button2);
   font-weight: var(--font-bold);
 }
-.button-search {
+.buttonSearch {
   width: clamp(124px, 18vw, 206px);
 }
 
-.selected-dates-button {
+.selectedDatesButton {
   bottom: 5%;
   font-size: var(--button1);
   font-weight: var(--font-bold);
@@ -84,14 +84,14 @@ form.grid-container > div {
   text-align: right;
 }
 
-.calendar-button {
+.calendarButton {
   background-color: #ffffff;
   border-radius: 5px;
   height: 100%;
   position: relative;
 }
 
-.calendar-button::before {
+.calendarButton::before {
   background: url("img/calendar.png") no-repeat;
   content: "";
   display: inline-block;
@@ -102,7 +102,7 @@ form.grid-container > div {
   width: 24px;
 }
 
-.calendar-button > div {
+.calendarButton > div {
   position: absolute;
   top: 120%;
 }
@@ -116,35 +116,35 @@ form.grid-container > div {
   z-index: 2;
 }
 
-.visible-tablet {
+.visibleTablet {
   position: absolute;
   right: -50%;
   top: 120%;
   z-index: 100;
 }
 
-.city-container {
+.cityContainer {
   display: flex;
   position: relative;
 }
 
-.city-name {
+.cityName {
   flex-direction: column;
   position: relative;
 }
 
-.option-location-icon {
+.optionLocationIcon {
   font-size: 20px;
   left: -6%;
   position: absolute;
   top: 20%;
 }
-div.icon-select-box > div > div:first-child {
+div.iconSelectBox > div > div:first-child {
   border: 0;
 }
 
-div.icon-select-box > div:nth-child(2),
-div.icon-select-box > div:nth-child(2) > div:first-child {
+div.iconSelectBox > div:nth-child(2),
+div.iconSelectBox > div:nth-child(2) > div:first-child {
   height: 100%;
 }
 
@@ -159,7 +159,7 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
 }
 
 @media all and(max-width:1200px) {
-  .calendar-button > div {
+  .calendarButton > div {
     right: 0;
   }
 }
@@ -173,7 +173,7 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
     font-size: var(--heading2);
   }
 
-  .city-icon {
+  .cityIcon {
     left: -17%;
   }
 
@@ -183,38 +183,38 @@ div.icon-select-box > div:nth-child(2) > div:first-child {
 }
 
 @media all and (max-width: 600px) {
-  .grid-container {
+  .gridContainer {
     flex-direction: column;
     max-height: 100%;
   }
 
-  .icon-select-box {
+  .iconSelectBox {
     max-width: 100%;
     width: 100%;
   }
 
-  form.grid-container > div {
+  form.gridContainer > div {
     height: 40px;
   }
 
-  form.grid-container > div:nth-child(2) {
+  form.gridContainer > div:nth-child(2) {
     margin: 10px 0;
   }
 
-  .button-search {
+  .buttonSearch {
     height: 40px;
     width: 100%;
   }
 }
 
 @media all and (max-width: 415px) {
-  .container-calendar-selected-dates {
+  .containerCalendarSelectedDates {
     background-color: white;
     padding: 0 1rem 1rem 0;
     text-align: right;
     width: 100%;
   }
-  .selected-dates-button {
+  .selecteDatesButton {
     position: relative;
   }
 }

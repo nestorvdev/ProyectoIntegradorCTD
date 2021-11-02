@@ -1,18 +1,19 @@
 import React from 'react';
-import './styles.css';
+import Styles from './styles.module.css';
+import StylesApp from "../../App.module.css"
 import Category from './Category'
 
 function Categories() {    
     return (
         <>
-            <div className="categoryContainer delimiter">
-                <div className="categoryBlock delimiterChild">
+            <div className={`${Styles.categoryContainer} ${StylesApp.delimiter}`}>
+                <div className={`${Styles.categoryBlock} ${StylesApp.delimiterChild}`}>
                     <h2>Buscar por tipo de alojamiento</h2>
-                    <div className="categoryBox">
-                        <Category title="Hoteles" image="image1" />
-                        <Category title="Hostels" image="image2" />
-                        <Category title="Departamentos" image="image3" />
-                        <Category title="Bed and Breakfast" image="image4" />                        
+                    <div className={Styles.categoryBox}>
+                        <Category title="Hoteles" image={Styles.image1} />
+                        <Category title="Hostels" image={Styles.image2} />
+                        <Category title="Departamentos" image={Styles.image3} />
+                        <Category title="Bed and Breakfast" image={Styles.image4} />                        
                     </div>
                 </div>
             </div> 

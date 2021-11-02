@@ -1,4 +1,4 @@
-import styles from "./Forms.module.css"
+import styles from "./styles.module.css"
 import { Link } from "react-router-3"
 import { useState } from "react";
 import ValidCredentials from "../../credentials/ValidCredentials";

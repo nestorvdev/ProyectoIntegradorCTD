@@ -1,18 +1,18 @@
 import React from "react";
 import SelectCity from "./SelectCity";
 import SelectDate from "./SelectDate";
-import './styles.css';
+import Styles from "./styles.module.css"
 
 function SearchForm() {
   return (
-    <form className="grid-container" action="">
-      <div className="icon-select-box grid-item">      
+    <form className={Styles.gridContainer} action="">
+      <div className={`${Styles.iconSelectBox} grid-item`}>      
         <SelectCity />
       </div>
-      <div className="icon-select-box grid-item">       
+      <div className={`${Styles.iconSelectBox} grid-item`}>       
         <SelectDate />
       </div>
-      <button className="button-search limitation">Buscar</button>
+      <button className={`${Styles.buttonSearch} limitation`}>Buscar</button>
     </form>
   );
 }

@@ -1,7 +1,6 @@
 import React from "react";
 import Select from 'react-select';
 import CityOption from './CityOption';
-import "./styles.css";
 import vector from './img/Vector.png'
 import localizador from './img/localizador.png'
 

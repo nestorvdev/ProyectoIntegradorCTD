@@ -1,11 +1,11 @@
 import React from "react";
-import "./styles.css";
+import Styles from "./styles.module.css"
 
 function CityOption(props) {
   return (
     <React.Fragment>
-      <h3 className="titleCity"><pre>{props.city}, </pre></h3>      
-      <h3 className="titleCountry">{props.country}</h3>
+      <h3 className={Styles.titleCity}><pre>{props.city}, </pre></h3>      
+      <h3 className={Styles.titleCountry}>{props.country}</h3>
     </React.Fragment>
   );
 }
