@@ -69,7 +69,12 @@
   top: 10px;
   transition: all 0.3s;
   width: 25px;
-  z-index: 99;
+  z-index: 99;;
+}
+
+/* cambiar color del corazon */
+#heart{
+  fill:red;
 }
 
 .cardImage .iconHeart:hover {
