@@ -3,7 +3,7 @@ import SearchBlock from "../SearchBlock/SearchBlock";
 import Cards from "../Cards/index.jsx";
 
 export default function Home() {
-  return (
+  return (    
     <>
       <SearchBlock />
       <Categories />

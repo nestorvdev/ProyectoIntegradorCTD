@@ -1,5 +1,5 @@
 import styles from "./styles.module.css"
-import { Link } from "react-router-3"
+import { Link } from "react-router-dom"
 import { useState } from "react";
 import ValidCredentials from "../../credentials/ValidCredentials";
 
@@ -43,7 +43,7 @@ export default function FormLogin(props){
         validarPassword();
         if(email.valido && password.valido){
             setFormValido(true)
-            props.route.setLog(true)
+            props.setLog(true)
             sessionStorage.setItem("log", "true")
             window.location.pathname = "/"
         }else{
@@ -52,7 +52,9 @@ export default function FormLogin(props){
     }
     console.log(email);
     console.log(password);
+    console.log(props, "props");
     return(
+        
         <div className={styles.container}>
             <h3>Iniciar sesión</h3>
             <form className={`${styles.formFlex} ${styles.login}`} onSubmit={sendData}>

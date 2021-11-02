@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from "react-router-3";
+
 import ValidCredentials from '../../credentials/ValidCredentials';
 import logo from "./img/logo 1DB.png";
 import Styles from "./styles.module.css"
@@ -8,6 +8,7 @@ import StylesLayout from "../styles.module.css"
 import MenuBurger from '../../components/MenuBurger/MenuBurger';
 import { HeaderWrapper } from '../../components/MenuBurger/HeaderStyles';
 import MenuButton from '../../components/MenuBurger/MenuButton';
+import { Link } from "react-router-dom";
 
 export default function Header({ isLogged, showBurger, setShowBurger }) {
 
@@ -20,14 +21,14 @@ export default function Header({ isLogged, showBurger, setShowBurger }) {
         if (ruta === "/login") {
             setIsActiveCreate(false)
             setIsActiveLogin(true)
-            if(isLogged){
-                window.location.href="/"
+            if (isLogged) {
+                window.location.href = "/"
             }
         } else if (ruta === "/create") {
             setIsActiveLogin(false)
             setIsActiveCreate(true)
-            if(isLogged){
-                window.location.href="/"
+            if (isLogged) {
+                window.location.href = "/"
             }
         } else if (ruta === "/") {
             setIsActiveLogin(false)
@@ -57,15 +58,31 @@ export default function Header({ isLogged, showBurger, setShowBurger }) {
     return (
         <HeaderWrapper className={`${Styles.header} ${StylesApp.delimiter}`} >
             <div className={showBurger === true ? `${Styles.headerTop} ${StylesLayout.opacity} ${StylesApp.delimiterChild}` : `${Styles.headerTop} ${StylesApp.delimiterChild}`}>
-                <Link to="/" className={Styles.home} onClick={handleHide}>
-                    <div className={Styles.logo}>
-                        <img src={logo} alt="logo" />
-                        <h3>Sentite como en tu hogar</h3>
-                    </div>
-                </Link>
+                
+                    <Link to="/"  className={Styles.home} onClick={handleHide}>
+                        <div className={Styles.logo}>
+                            <img src={logo} alt="logo" />
+                            <h3>Sentite como en tu hogar</h3>
+                        </div>
+                    </Link>
+                
+
                 <div className={hideButtons}>
-                    <Link to="/create"><button className={activeCreate ? Styles.hideButton : null} >Crear Cuenta</button></Link>
-                    <Link to="/login"><button className={activeLogin ? Styles.hideButton : null} >Iniciar Sesion</button></Link>
+                    
+                        <Link to="/create" >
+                            <button className={activeCreate ? Styles.hideButton : null} >
+                                Crear Cuenta
+                            </button>
+                        </Link>                  
+
+                        <Link to="/login">
+                            <button className={activeLogin ? Styles.hideButton : null} >
+                                Iniciar Sesion
+                            </button>
+                        </Link>
+                       
+                   
+
                 </div>
                 <div className={showUserName}>
                     <div className={Styles.logoName}>
@@ -80,6 +97,6 @@ export default function Header({ isLogged, showBurger, setShowBurger }) {
                 <MenuButton show={showBurger} handleShow={handleShow} />
             </div>
             <MenuBurger show={showBurger} handleHide={handleHide} isLogged={isLogged} iniciales={iniciales} activeLogin={activeLogin} activeCreate={activeCreate} handleLogOut={handleLogOut} />
-        </HeaderWrapper>
+        </HeaderWrapper >
     )
 }

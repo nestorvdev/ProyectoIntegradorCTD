@@ -1,9 +1,10 @@
 import styles from "./styles.module.css";
-import { Link } from "react-router-3";
 import React, { useState } from "react";
 import ValidCredentials from "../../credentials/ValidCredentials";
+import { Link } from "react-router-dom";
 
-export default function FormCreate(props) {
+
+function FormCreate() {
     const[name, setName] = useState({campo:"", valido:true});
     const[surname, setSurname] = useState({campo:"", valido:true});
     const[email, setEmail] = useState({campo:"", valido:true});
@@ -152,3 +153,4 @@ export default function FormCreate(props) {
     )
 }
 
+export default FormCreate;
