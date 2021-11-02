@@ -3,6 +3,7 @@ import com.proyecto.integrador.entity.Category;
 import lombok.Getter;
 import lombok.Setter;
 
+/*@JsonIgnoreProperties(ignoreUnknown = true)*/
 @Getter
 @Setter
 public class CategoryDTO {
@@ -28,11 +29,11 @@ public class CategoryDTO {
         this.url = url;
     }
 
-    public Category toEntity(CategoryDTO categoryDTO) {
+    public Category toEntity() {
         Category category = new Category();
-        category.setTitle(categoryDTO.getTitle());
-        category.setDescription(categoryDTO.getDescription());
-        category.setUrl(categoryDTO.getUrl());
+        category.setTitle(title);
+        category.setDescription(description);
+        category.setUrl(url);
         return category;
     }
 }
