@@ -69,13 +69,24 @@ a:visited, a:link, a:active {
   right: 10px;
   top: 10px;
   transition: all 0.3s;
-  width: 25px;
-  z-index: 99;;
+  width: 25px;  
+}
+
+.cardImage {
+  z-index: 90;
+}
+
+.iconHeart {
+  z-index: 99;
 }
 
 /* cambiar color del corazon */
-#heart{
-  fill:red;
+.heartColor{
+  fill:white;
+}
+
+.heartColor2 {
+  fill: red;
 }
 
 .cardImage .iconHeart:hover {
