@@ -1,5 +1,7 @@
 package com.proyecto.integrador.entity;
 
+import com.proyecto.integrador.DTO.CategoryDTO;
+import com.proyecto.integrador.DTO.CityDTO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -13,7 +15,7 @@ import javax.persistence.*;
 @Table(name = "city")
 public class City {
     @Id
-    @Column(name = "id", nullable = false)
+    @Column(name = "idCity", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "name", nullable = false)
@@ -33,5 +35,12 @@ public class City {
     public City(String name, String country) {
         this.name = name;
         this.country = country;
+    }
+    public CityDTO toDto() {
+        CityDTO cityDTO = new CityDTO();
+        cityDTO.setId(id);
+        cityDTO.setName(name);
+        cityDTO.setCountry(country);
+        return cityDTO;
     }
 }

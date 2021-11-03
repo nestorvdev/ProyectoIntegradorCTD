@@ -25,10 +25,11 @@ public class CityDTO {
         this.country = country;
     }
 
-    public City toEntity (CityDTO cityDTO){
+    public City toEntity(CityDTO cityDTO) {
         City city = new City();
         city.setName(cityDTO.getName());
         city.setCountry(cityDTO.getCountry());
         return city;
     }
 }
+
