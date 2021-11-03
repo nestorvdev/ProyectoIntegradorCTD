@@ -39,7 +39,7 @@ public class CategoryController implements CRUDController<CategoryDTO> {
     }
 
     @Operation(summary = "Update an existing categorie's", description = "")
-    @PutMapping("/update/{id}")
+    @PutMapping("/update")
     public ResponseEntity<CategoryDTO> updateById(@RequestBody CategoryDTO category) throws FindByIdException {
         return ResponseEntity.ok(categoryService.updateCategory(category));
     }

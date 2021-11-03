@@ -5,6 +5,7 @@ import com.proyecto.integrador.entity.Category;
 import com.proyecto.integrador.exceptions.FindByIdException;
 import com.proyecto.integrador.exceptions.GlobalException;
 import com.proyecto.integrador.repository.ICategoryRepository;
+import org.apache.log4j.BasicConfigurator;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,9 @@ import java.util.List;
 import java.util.Optional;
 @Service
 public class CategoryServiceImpl implements CategoryService {
-    private final Logger logger = Logger.getLogger(GlobalException.class);
+    private final Logger logger = Logger.getLogger(CategoryServiceImpl.class);
+    // config de log
+    // Revisar test postman con update
 
     @Autowired
     ICategoryRepository categoryRepository;
