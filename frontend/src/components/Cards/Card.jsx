@@ -6,6 +6,7 @@ import iconEight from "./img/iconEight.svg";
 import iconRectangle from "./img/iconRectangle.svg";
 import iconLocation from "./img/IconLocation.svg";
 import iconSwimming from "./img/iconSwimming.svg";
+import { Link } from "react-router-dom";
 
 function Card(props) {
     const { img, category, title, location, description } = props;
@@ -13,10 +14,10 @@ function Card(props) {
         <div className={Styles.cardBox}>
             <div className={Styles.cardImage}>
 
-              {/*   <img className={Styles.iconHeart} src={iconHeart} alt="" /> */}
-                <svg className={Styles.iconHeart} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path id="heart" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg>
-                <img className={Styles.image} src={img} alt="" />                
-              
+                {/*   <img className={Styles.iconHeart} src={iconHeart} alt="" /> */}
+                <svg className={Styles.iconHeart} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path id="heart" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" /></svg>
+                <img className={Styles.image} src={img} alt="" />
+
             </div>
 
             <div className={Styles.cardInfo}>
@@ -53,7 +54,9 @@ function Card(props) {
                     <p>{description}</p>
                     <span>más...</span>
                 </div>
-                <button className={Styles.cardButton2}>Ver más</button>
+                <Link to={`/product/${props.id}`} key={props.id} className={Styles.link}>
+                    <button className={Styles.cardButton2}>Ver más</button>
+                </Link>
             </div>
         </div>
     );
