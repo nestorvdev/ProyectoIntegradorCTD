@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import TopBar from "./topBar";
+import TitleBar from "./titleBar";
 import Styles from './styles.module.css';
 
 
@@ -54,7 +54,8 @@ function Product(props) {
     console.log(props,"product");
     return (
         <section>
-           <TopBar categoria={product.categoria.title} nombre={product.nombre} goBack={props.history.goBack}/>
+           <TitleBar categoria={product.categoria.title} nombre={product.nombre} goBack={props.history.goBack}/>
+        
         </section>
     );
 }
