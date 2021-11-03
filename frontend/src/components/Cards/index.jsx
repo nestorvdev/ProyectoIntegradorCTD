@@ -11,8 +11,8 @@ function Cards() {
             <div className={`${Styles.cardsBlock} ${StylesApp.delimiterChild}`}>
                 <h2>Recomendaciones</h2>
                 <div className={Styles.cardsBox}>
-                    {data.map((e, index) =>                    
-                        <Card img={e.img} category={e.category} title={e.title} location={e.location} description={e.description} key={index}/>
+                    {data.map((e, index) =>
+                        <Card img={e.img} category={e.category} title={e.title} location={e.location} description={e.description} key={index} id={index}/>
                     )}
                 </div>
             </div>

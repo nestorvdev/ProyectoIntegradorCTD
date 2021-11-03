@@ -218,6 +218,9 @@ a:visited, a:link, a:active {
 .cardDescription span:hover {
   cursor: pointer;
 }
+.link{
+  width: 100%;
+}
 
 .cardButton2 {
   background-color: var(--primary-color);

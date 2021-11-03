@@ -60,7 +60,7 @@ function Card(props) {
                     <p>{description}</p>
                     <span>más...</span>
                 </div>
-                <Link to={`/product/${id}`} className={Styles.cardButton2}>
+                <Link to={`/product/${id}`} key={props.id} className={Styles.link}>
                     <button className={Styles.cardButton2}>Ver más</button>
                 </Link>
             </div>
