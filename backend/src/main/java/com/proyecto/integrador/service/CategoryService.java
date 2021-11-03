@@ -1,15 +1,16 @@
 package com.proyecto.integrador.service;
 
+import com.proyecto.integrador.DTO.CategoryDTO;
 import com.proyecto.integrador.entity.Category;
+import com.proyecto.integrador.exceptions.FindByIdException;
 
 import java.util.List;
 import java.util.Optional;
 
 public interface CategoryService {
-    List<Category> findAllCategories();
-    Optional<Category> saveCategory(Category category);
-    Optional<Category> findCategoryById(Integer categoryId);
-    void deleteCategoryById(Integer categoryId);
-    Optional<Category> updateCategory(Integer id, Category category);
-
+    List<CategoryDTO> findAllCategories();
+    CategoryDTO saveCategory(CategoryDTO category);
+    CategoryDTO findCategoryById(Integer categoryId) throws FindByIdException;
+    void deleteCategoryById(Integer categoryId) throws FindByIdException;
+    CategoryDTO updateCategory(CategoryDTO category) throws FindByIdException;
 }

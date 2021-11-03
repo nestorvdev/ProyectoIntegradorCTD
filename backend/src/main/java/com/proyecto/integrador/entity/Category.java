@@ -1,5 +1,6 @@
 package com.proyecto.integrador.entity;
 
+import com.proyecto.integrador.DTO.CategoryDTO;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -37,6 +38,15 @@ public class Category {
         this.title = title;
         this.description = description;
         this.url = url;
+    }
+
+    public CategoryDTO toDto() {
+        CategoryDTO categoryDTO = new CategoryDTO();
+        categoryDTO.setId(id);
+        categoryDTO.setTitle(title);
+        categoryDTO.setDescription(description);
+        categoryDTO.setUrl(url);
+        return categoryDTO;
     }
 }
 
