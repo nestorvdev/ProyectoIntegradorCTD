@@ -25,12 +25,16 @@ function Categories() {
 
   if (errorMessage && loading) {
     return (
-      <h2 className={Styles.categoryBlock}>
-        Categorías no disponibles - Falta la conexión con el Back
-      </h2>
+      <div className={`${Styles.categoryContainer} ${StylesApp.delimiter}`}>
+        <div className={`${Styles.categoryBlock} ${StylesApp.delimiterChild}`}>
+          <h2 className={Styles.categoryBlock}>
+            Categorías no disponibles - Falta la conexión con el Back
+          </h2>
+        </div>
+      </div>
     );
   }
-  
+
   return (
     <>
       <div className={`${Styles.categoryContainer} ${Styles.delimiter}`}>

@@ -9,8 +9,8 @@ function topBar(props) {
     console.log(props, "topBar");
 
     return (
-        <div className={`${Styles.topBar} ${StylesApp.delimiter}`}>
-            <div className={`${Styles.topBarChild} ${StylesApp.delimiterChild}`}>
+        <div className={`${Styles.titleBar} ${StylesApp.delimiter}`}>
+            <div className={`${Styles.titleBarChild} ${StylesApp.delimiterChild}`}>
                 <div className="barraIzq">
                     <p>{props.categoria}</p>
                     <h2>{props.nombre}</h2>

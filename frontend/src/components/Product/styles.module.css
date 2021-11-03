@@ -1,18 +1,18 @@
 /* Estilos de TOPBAR */
 
-.topBar{
+.titleBar{
     background-color: var(--tertiary-color);
     color: white;
 }
 
-.topBar .topBarChild{
+.titleBar .titleBarChild{
     height: 60px;
     padding: 0 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.topBar .barraDer{
+.titleBar .barraDer{
     pointer-events: all;
 }
 

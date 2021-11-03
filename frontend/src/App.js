@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import FormLogin from "./components/Forms/FormLogin.jsx"
 import FormCreate from "./components/Forms/FormCreate.jsx";
 import Home from "./components/Home/Home.jsx";
@@ -20,7 +19,7 @@ function App() {
           </Route>
           <Route exact path="/login"  component={() => !log? <FormLogin setLog={setLog}/> : <Redirect to="/" />} />                  
           <Route exact path="/create" component={() => !log? <FormCreate /> : <Redirect to="/" />} />
-          <Route path={"/product/:id"} > <Product /> </Route>           
+          <Route path={"/product/:id"} component={Product}/>            
           <Route path="*"> <NotFound /> </Route>
         </Switch>
       </LayoutPrincipal>

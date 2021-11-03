@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 function Cards() {
 
     return (
-        <div className={`${Styles.cardsContainer} ${StylesApp.delimiter}`}>
+        <div className={`${StylesApp.delimiter}`}>
             <div className={`${Styles.cardsBlock} ${StylesApp.delimiterChild}`}>
                 <h2>Recomendaciones</h2>
                 <div className={Styles.cardsBox}>
