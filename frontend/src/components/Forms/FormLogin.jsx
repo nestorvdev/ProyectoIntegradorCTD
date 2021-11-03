@@ -9,6 +9,9 @@ export default function FormLogin(props){
     const[error, setError] = useState("")
     const[formValido, setFormValido]=useState(false)
 
+    props.setActiveCreate(false)
+    props.setActiveLogin(true)
+
     /*CONTROL DE COMPONENTES MEDIANTE HANDLES */
     const handleChangeEmail = (event) => {
         setEmail({...email, campo:event.target.value})

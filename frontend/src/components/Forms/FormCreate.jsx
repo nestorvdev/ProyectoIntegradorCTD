@@ -4,7 +4,7 @@ import ValidCredentials from "../../credentials/ValidCredentials";
 import { Link } from "react-router-dom";
 
 
-function FormCreate() {
+function FormCreate(props) {
     const[name, setName] = useState({campo:"", valido:true});
     const[surname, setSurname] = useState({campo:"", valido:true});
     const[email, setEmail] = useState({campo:"", valido:true});
@@ -12,6 +12,9 @@ function FormCreate() {
     const[confirmPassword, setConfirmPassword] = useState({campo:"", valido:true});
     const[error, setError] = useState("")
     const[formValido, setFormValido]=useState(false)
+
+    props.setActiveLogin(false)
+    props.setActiveCreate(true)
 
     const regEx = /^[a-zA-Z\s]{1,70}$/;
 
