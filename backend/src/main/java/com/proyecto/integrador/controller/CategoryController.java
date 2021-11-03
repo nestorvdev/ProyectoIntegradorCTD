@@ -1,16 +1,12 @@
 package com.proyecto.integrador.controller;
-
 import com.proyecto.integrador.DTO.CategoryDTO;
-import com.proyecto.integrador.entity.Category;
 import com.proyecto.integrador.exceptions.FindByIdException;
 import com.proyecto.integrador.service.CategoryService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
-import java.util.Optional;
 
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController

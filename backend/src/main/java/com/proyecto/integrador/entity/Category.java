@@ -11,7 +11,7 @@ import java.util.Date;
 @Getter
 @Setter
 @ToString
-@Table(name = "categories")
+@Table(name = "category")
 public class Category {
     @Id
     @Column(name = "id", nullable = false)
