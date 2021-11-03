@@ -1,3 +1,18 @@
-.productImg {
-    width: 30%;
+/* Estilos de TOPBAR */
+
+.topBar{
+    background-color: var(--tertiary-color);
+    color: white;
 }
+
+.topBar .topBarChild{
+    height: 60px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.topBar .barraDer{
+    pointer-events: all;
+}
+
