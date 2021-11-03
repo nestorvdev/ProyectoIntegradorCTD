@@ -108,6 +108,13 @@ export const MenuBurgerWrapper = styled.nav`
 
   .botones p{
     color: var(--secondary-color);
+    padding: 1px 5px;
+  }
+
+  .botones p:hover{
+    background-color: var(--primary-color);
+    border-radius:5px;
+    color: white;
   }
 
   .mobileFooter{

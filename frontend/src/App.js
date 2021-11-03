@@ -11,15 +11,18 @@ import './App.module.css';
 
 function App() {
   const [log, setLog] = useState(sessionStorage.getItem("log") === "true" ? true : false)
+  const[activeCreate, setActiveCreate] = useState()
+  const[activeLogin, setActiveLogin] = useState()
+
   return ( 
     < BrowserRouter >      
-      <LayoutPrincipal isLogged = {log} >
+      <LayoutPrincipal isLogged = {log} activeCreate ={activeCreate} activeLogin = {activeLogin}>
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/>
           </Route>
-          <Route exact path="/login"  component={() => !log? <FormLogin setLog={setLog}/> : <Redirect to="/" />} />                  
-          <Route exact path="/create" component={() => !log? <FormCreate /> : <Redirect to="/" />} />
+          <Route exact path="/login"  component={() => !log? <FormLogin setLog={setLog} setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />                  
+          <Route exact path="/create" component={() => !log? <FormCreate setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />
           <Route path={"/product/:id"} > <Product /> </Route>           
           <Route path="*"> <NotFound /> </Route>
         </Switch>
