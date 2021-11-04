@@ -8,6 +8,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -17,8 +18,7 @@ import java.util.Set;
 public class Product {
     @Id
     @Column(name="idProduct", nullable = false)
-    @SequenceGenerator(name = "product sequence", sequenceName = "product_sequence")
-    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "product_sequence")
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "name", nullable = false)
     private String name;
@@ -30,6 +30,8 @@ public class Product {
     private double longitude;
     @Column(name = "qualification", nullable = false)
     private double qualification;
+    @Column(name = "favourite", nullable = false)
+    private boolean favourite;
     @Column(name = "reference", nullable = false)
     private String reference;
     @ManyToOne
@@ -46,27 +48,34 @@ public class Product {
     public Product() {
     }
 
-    public Product(Integer id, String name, String description, double latitude, double longitude, double qualification, String reference, Category category, City city, Set<Image> images, Set<Feature> features) {
+    public Product(Integer id) {
+        this.id = id;
+    }
+
+    public Product(Integer id, String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, Category category, City city) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
         this.qualification = qualification;
+        this.favourite = favourite;
         this.reference = reference;
         this.category = category;
         this.city = city;
-        this.images = images;
-        this.features = features;
+        this.images = new HashSet<>();
+        this.features = new HashSet<>();
     }
 
     public ProductDTO toDto(){
         ProductDTO productDTO = new ProductDTO();
+        productDTO.setId(id);
         productDTO.setName(name);
         productDTO.setDescription(description);
         productDTO.setLatitude(latitude);
         productDTO.setLongitude(longitude);
         productDTO.setQualification(qualification);
+        productDTO.setFavourite(favourite);
         productDTO.setReference(reference);
         productDTO.setCategory(new CategoryDTO(category.getId()));
         productDTO.setCity(new CityDTO(city.getId()));

@@ -7,7 +7,7 @@ import com.proyecto.integrador.exceptions.FindByIdException;
 import java.util.List;
 
 public interface IProductService extends IBookingService<ProductDTO> {
-    List<ProductDTO> findAll();
+    List<ProductDTO> findAll() throws FindByIdException;
     ProductDTO save(ProductDTO product) throws FindByIdException;
     ProductDTO findById(Integer productId) throws FindByIdException;
     void deleteById(Integer productId) throws FindByIdException;

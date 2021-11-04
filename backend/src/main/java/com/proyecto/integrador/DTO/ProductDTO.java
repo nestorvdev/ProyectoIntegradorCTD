@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 @Getter
@@ -16,16 +17,17 @@ public class ProductDTO {
     private double latitude;
     private double longitude;
     private double qualification;
+    private boolean favourite = false;
     private String reference;
     private CategoryDTO category;
     private CityDTO city;
-    private Set<Image> images;
-    private Set<Feature> features;
+    private Set<ImageDTO> images = new HashSet<>();
+    private Set<FeatureDTO> features = new HashSet<>();
 
     public ProductDTO() {
     }
 
-    public ProductDTO(Integer id, String name, String description, double latitude, double longitude, double qualification, String reference, CategoryDTO category, CityDTO city, Set<Image> images, Set<Feature> features) {
+    public ProductDTO(Integer id, String name, String description, double latitude, double longitude, double qualification, String reference, CategoryDTO category, CityDTO city) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -35,8 +37,6 @@ public class ProductDTO {
         this.reference = reference;
         this.category = category;
         this.city = city;
-        this.images = images;
-        this.features = features;
     }
 
     public Product toEntity(){
@@ -46,6 +46,7 @@ public class ProductDTO {
         product.setLatitude(latitude);
         product.setLongitude(longitude);
         product.setQualification(qualification);
+        product.setFavourite(favourite);
         product.setReference(reference);
         product.setCategory(new Category(category.getId()));
         product.setCity(new City(city.getId()));

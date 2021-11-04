@@ -12,29 +12,29 @@ public class ImageDTO {
     private Integer id;
     private String title;
     private String url;
-    private Product product;
+    private Integer productId;
 
     public ImageDTO() {
     }
 
-    public ImageDTO(Integer id, String title, String url, Product product) {
+    public ImageDTO(Integer id, String title, String url, Integer productId) {
         this.id = id;
         this.title = title;
         this.url = url;
-        this.product = product;
+        this.productId = productId;
     }
 
-    public ImageDTO(String title, String url, Product product) {
+    public ImageDTO(String title, String url, Integer productId) {
         this.title = title;
         this.url = url;
-        this.product = product;
+        this.productId = productId;
     }
 
     public Image toEntity() {
         Image image = new Image();
         image.setTitle(title);
         image.setUrl(url);
-        image.setProduct(product);
+        image.setProduct(new Product(productId));
         return image;
     }
 }

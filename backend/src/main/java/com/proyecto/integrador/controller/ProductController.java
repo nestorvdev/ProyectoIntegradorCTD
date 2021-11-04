@@ -22,7 +22,7 @@ public class ProductController implements CRUDController<ProductDTO> {
 
     @Operation(summary = "Find All Products")
     @GetMapping("/all")
-    public ResponseEntity<List<ProductDTO>> getAll(){
+    public ResponseEntity<List<ProductDTO>> getAll() throws FindByIdException {
         return ResponseEntity.ok(productService.findAll());
     }
 

@@ -15,8 +15,7 @@ import java.util.Set;
 public class Category {
     @Id
     @Column(name = "idCategory", nullable = false)
-    @SequenceGenerator(name = "category sequence", sequenceName = "category_sequence")
-    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "category_sequence")
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "title", nullable = false)
     private String title;

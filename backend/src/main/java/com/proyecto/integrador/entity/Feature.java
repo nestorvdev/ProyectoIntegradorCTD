@@ -17,8 +17,7 @@ import java.util.Set;
 public class Feature {
     @Id
     @Column(name = "idFeature", nullable = false)
-    @SequenceGenerator(name = "feature sequence", sequenceName = "feature_sequence")
-    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "feature_sequence")
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "name", nullable = false)
     private String name;

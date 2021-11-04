@@ -6,7 +6,7 @@ import com.proyecto.integrador.exceptions.FindByIdException;
 import java.util.List;
 
 public interface IBookingService<T> {
-    List<T> findAll();
+    List<T> findAll() throws FindByIdException;
     T save(T t) throws FindByIdException;
     T findById(Integer id) throws FindByIdException;
     void deleteById(Integer id) throws FindByIdException;

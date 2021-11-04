@@ -14,8 +14,7 @@ import javax.persistence.*;
 public class Image {
     @Id
     @Column(name="idImage")
-    @SequenceGenerator(name = "image sequence", sequenceName = "image_sequence")
-    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "image_sequence")
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name="title", nullable = false)
     private String title;
@@ -40,7 +39,7 @@ public class Image {
         imageDTO.setId(id);
         imageDTO.setTitle(title);
         imageDTO.setUrl(url);
-        imageDTO.setProduct(product);
+        imageDTO.setProductId(product.getId());
         return imageDTO;
     }
 }

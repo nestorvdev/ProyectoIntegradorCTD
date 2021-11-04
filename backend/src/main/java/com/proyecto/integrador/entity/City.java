@@ -17,8 +17,7 @@ import java.util.Set;
 public class City {
     @Id
     @Column(name = "idCity", nullable = false)
-    @SequenceGenerator(name = "city sequence", sequenceName = "city_sequence")
-    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "city_sequence")
+    @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name = "name", nullable = false)
     private String name;
