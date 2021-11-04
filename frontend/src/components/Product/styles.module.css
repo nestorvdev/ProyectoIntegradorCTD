@@ -1,4 +1,4 @@
-/* Estilos de TOPBAR */
+/* Estilos de titleBar */
 
 .titleBar{
     background-color: var(--tertiary-color);
@@ -7,12 +7,138 @@
 
 .titleBar .titleBarChild{
     height: 60px;
-    padding: 0 40px;
+    padding-left: clamp(20px,3.9%,40px);
+    padding-right: clamp(20px,3.9%,40px);
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.titleBar .barraDer{
-    pointer-events: all;
+.titleBarChild div p {
+    text-transform: uppercase;
 }
 
+
+/* Estilos de scoreBar */
+
+.scoreBar{
+    color:var(--secondary-color);
+}
+
+.scoreBar .scoreBarChild{
+    height: 55px;
+    padding-left: clamp(20px,3.9%,40px);
+    padding-right: clamp(20px,3.9%,40px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.scoreBar .barraIzq {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--text2);
+    font-weight: var(--font-bold);
+}
+
+.scoreBar .barraDer {
+    display: flex;
+    align-items: center;
+    font-weight: var(--font-bold);
+}
+
+.scoreBar .calificacionLetra{
+    display: flex;
+    flex-direction: column;
+    padding: 2px 10px;
+}
+
+.scoreBar .calificacionEntero{
+    height: 100%;
+    background: var(--secondary-color);
+    padding: 8px 14px;
+    color: white;
+    border-radius: 10px;
+    font-weight: var(--font-bold);
+}
+
+/* Estilos del Image card */
+
+.imageBar{
+    background-color: white;
+    padding: 10px 0;
+}
+
+.imageBarChild {
+    display: flex;
+    flex-direction: column;
+    padding-left: clamp(20px,3.9%,40px);
+    padding-right: clamp(20px,3.9%,40px);
+}
+
+.imageBar .barraSup {
+    display: flex;
+}
+
+.imageBar .barraInf {
+    display: flex;
+    justify-content: center;
+   
+}
+
+.imageBar .barraIzq, .imageBar .barraDer {
+    width: 50%;
+}
+
+.imageBar img {
+    padding: 4px;
+    border-radius: 15px;
+}
+
+.imageBar .barraIzq img{
+    width: 100%;
+ 
+}
+
+.imageBar .barraDer{
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.imageBar .barraDer img{
+    width: 50%;
+    height: 50%;
+}
+
+.imageBar .verMas{
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    text-decoration: underline;
+    font-weight: var(--font-bold);
+    font-size: var(--heading3);
+    color: white;
+}
+
+/*  estilos de descripcionBard */
+
+.descripcionBar{
+    background-color: white;
+    padding: 20px 0;
+}
+.descripcionBarChild{
+    padding-left: clamp(20px,3.9%,40px);
+    padding-right: clamp(20px,3.9%,40px);
+    color:var(--tertiary-color);
+}
+.descripcionBarChild h3{
+    color: var(--secondary-color);
+    font-size: var(--text2);
+    font-weight: var(--font-bold);
+    color:var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.descripcionBarChild p{
+    margin-bottom: 10px;
+}

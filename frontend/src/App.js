@@ -6,7 +6,9 @@ import LayoutPrincipal from "./layout/LayoutPrincipal";
 import Product from "./components/Product/product.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+
 import './App.module.css';
+
 
 function App() {
   const [log, setLog] = useState(sessionStorage.getItem("log") === "true" ? true : false)

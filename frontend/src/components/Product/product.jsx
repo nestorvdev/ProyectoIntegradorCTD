@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import TitleBar from "./titleBar";
-import Styles from './styles.module.css';
+import ScoreBar from "./scoreBar";
+import ImageBar from "./imageBar";
+import DescripcionBar from "./descripcionBar";
 
 
 function Product(props) {
     let { id } = useParams();
 
     /* se crea el objeto vacio */
-    
+
 
     let productAux = {
-        id: id,
+        id:id,
         nombre: "nombreHotel",
         descripcion: "descripcion hotel",
         categoria: {
@@ -20,11 +22,11 @@ function Product(props) {
             imageUrl: "imagenCategoria"
         },
         imagenes: [
-            { id: 1, titulo: "fotoImagen1", url: "fotoImagen1" },
-            { id: 2, titulo: "fotoImagen2", url: "fotoImagen2" },
-            { id: 3, titulo: "fotoImagen2", url: "fotoImagen2" },
-            { id: 4, titulo: "fotoImagen2", url: "fotoImagen2" },
-            { id: 5, titulo: "fotoImagen2", url: "fotoImagen2" },
+            { id: 1, titulo: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612" },
+            { id: 2, titulo: "fotoImagen2", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612" },
+            { id: 3, titulo: "fotoImagen2", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612" },
+            { id: 4, titulo: "fotoImagen2", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612" },
+            { id: 5, titulo: "fotoImagen2", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612" },
             { id: 6, titulo: "fotoImagen2", url: "fotoImagen2" },
             { id: 7, titulo: "fotoImagen2", url: "fotoImagen2" },
             { id: 8, titulo: "fotoImagen2", url: "fotoImagen2" },
@@ -35,10 +37,11 @@ function Product(props) {
         ],
         latitud: -12.1234,
         longitud: 12.1234,
-        calificacion: 9.5,
+        calificacion: 10,
         favorito: true,
         ciudad: "ciudad",
         pais: "pais",
+        referencia: "referencia",
     }
 
     const [product, setProduct] = useState(productAux);
@@ -52,11 +55,13 @@ function Product(props) {
                 <p>{data[id].description}</p> */
 
 
-    console.log(props,"product");
+    console.log(props, "product");
     return (
         <section>
-           <TitleBar categoria={product.categoria.title} nombre={product.nombre} goBack={props.history.goBack}/>
-        
+            <TitleBar categoria={product.categoria.title} nombre={product.nombre} goBack={props.history.goBack} />
+            <ScoreBar referencia={product.referencia} pais={product.pais} ciudad={product.ciudad} calificacion={product.calificacion} />
+            <ImageBar imagenes={product.imagenes} />
+            <DescripcionBar ciudad={product.ciudad} descripcion={product.descripcion}/>
         </section>
     );
 }
