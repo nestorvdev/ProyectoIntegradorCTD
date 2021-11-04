@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import TitleBar from "./titleBar";
 import ScoreBar from "./scoreBar";
+import ImageBar from "./imageBar";
 
 
 function Product(props) {
@@ -20,11 +21,11 @@ function Product(props) {
             imageUrl: "imagenCategoria"
         },
         imagenes: [
-            { id: 1, titulo: "fotoImagen1", url: "fotoImagen1" },
-            { id: 2, titulo: "fotoImagen2", url: "fotoImagen2" },
-            { id: 3, titulo: "fotoImagen2", url: "fotoImagen2" },
-            { id: 4, titulo: "fotoImagen2", url: "fotoImagen2" },
-            { id: 5, titulo: "fotoImagen2", url: "fotoImagen2" },
+            { id: 1, titulo: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612" },
+            { id: 2, titulo: "fotoImagen2", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612" },
+            { id: 3, titulo: "fotoImagen2", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612" },
+            { id: 4, titulo: "fotoImagen2", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612" },
+            { id: 5, titulo: "fotoImagen2", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612" },
             { id: 6, titulo: "fotoImagen2", url: "fotoImagen2" },
             { id: 7, titulo: "fotoImagen2", url: "fotoImagen2" },
             { id: 8, titulo: "fotoImagen2", url: "fotoImagen2" },
@@ -58,6 +59,7 @@ function Product(props) {
         <section>
             <TitleBar categoria={product.categoria.title} nombre={product.nombre} goBack={props.history.goBack} />
             <ScoreBar referencia={product.referencia} pais={product.pais} ciudad={product.ciudad} calificacion={product.calificacion} />
+            <ImageBar imagenes={product.imagenes} />
         </section>
     );
 }
