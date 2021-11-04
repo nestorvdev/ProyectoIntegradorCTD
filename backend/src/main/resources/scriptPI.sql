@@ -27,8 +27,9 @@ DROP TABLE IF EXISTS `proyecto_integrador`.`feature`;
 
 CREATE TABLE `proyecto_integrador`.`feature` (
   `idFeature` int NOT NULL AUTO_INCREMENT,
-  `featureName` varchar(50) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `icon` varchar(200) NOT NULL,
+  `state` boolean NOT NULL,
   PRIMARY KEY (`idFeature`)
   )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -36,10 +37,14 @@ DROP TABLE IF EXISTS `proyecto_integrador`.`product`;
 
  CREATE TABLE `proyecto_integrador`.`product` (
   `idProduct` int NOT NULL AUTO_INCREMENT,
-  `productName` varchar(45) NOT NULL,
+  `name` varchar(45) NOT NULL,
   `description` varchar(200) NOT NULL,
   `idCity` int NOT NULL,
   `idCategory` int NOT NULL,
+  `latitude` double NOT NULL,
+  `longitude` double NOT NULL,
+  `qualification` double NOT NULL,
+  `reference` VARCHAR(100), 
   PRIMARY KEY (`idProduct`),
   KEY `IdCity_idx` (`idCity`),
   CONSTRAINT `idCity` FOREIGN KEY (`idCity`) REFERENCES `city` (`idCity`),
@@ -48,17 +53,17 @@ DROP TABLE IF EXISTS `proyecto_integrador`.`product`;
   )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-DROP TABLE IF EXISTS `proyecto_integrador`.`feature_product`;
+DROP TABLE IF EXISTS `proyecto_integrador`.`featureperproduct`;
 
-CREATE TABLE `proyecto_integrador`.`feature_product` (
+CREATE TABLE `proyecto_integrador`.`featureperproduct` (
   `idFeatureProduct` int AUTO_INCREMENT NOT NULL,
   `idFeature` int DEFAULT NULL,
   `idProduct` int DEFAULT NULL,
   PRIMARY KEY (`idFeatureProduct`),
   KEY `Feature_idx` (`idFeature`),
   KEY `Product_idx` (`idProduct`),
-  CONSTRAINT `featureName` FOREIGN KEY (`idFeature`) REFERENCES `feature` (`idFeature`),
-  CONSTRAINT `productName` FOREIGN KEY (`idProduct`) REFERENCES `product` (`idProduct`)
+  CONSTRAINT `feature.name` FOREIGN KEY (`idFeature`) REFERENCES `feature` (`idFeature`),
+  CONSTRAINT `product.name` FOREIGN KEY (`idProduct`) REFERENCES `product` (`idProduct`)
   )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
   DROP TABLE IF EXISTS `proyecto_integrador`.`image`;
@@ -94,11 +99,11 @@ VALUES ('Departamentos','10.105 departamentos','https://media.istockphoto.com/ph
 INSERT INTO `proyecto_integrador`.`category` (title,description,url)
 VALUES ('Bed and breakfast','807.105 alojamientos','https://media.istockphoto.com/photos/french-creole-tourist-at-maison-madeleine-guesthouse-in-lousiana-picture-id1327159384?b=1&k=20&m=1327159384&s=170667a&w=0&h=iBM_z__BVTwhyvsIq5BrxyICrHxHL1vjw-AzB_lkGr0=');
 
-INSERT INTO `proyecto_integrador`.`product` (productName,description,idCity,idCategory)
-VALUES ('Hotel Savage','Para descansar cómodo',1,1);
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,reference)
+VALUES ('Hotel Savage','Para descansar cómodo',1,1,123.45,456.34,8,'En el centro');
 
-INSERT INTO `proyecto_integrador`.`product` (productName,description,idCity,idCategory)
-VALUES ('Hostel Nomade','Ideal para que tu aventura extrema incluya también el alojamiento',2,2);
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,reference)
+VALUES ('Hostel Nomade','Ideal para que tu aventura extrema incluya también el alojamiento',2,2,123.45,456.34,8,'En el centro');
 
 INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
 VALUES ('imagen habitacion','https://images.unsplash.com/photo-1445991842772-097fea258e7b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFiaXRhY2lvbiUyMGhvdGVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',1);
@@ -109,20 +114,24 @@ VALUES ('imagen banio','https://media.istockphoto.com/photos/modern-toilette-des
 INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
 VALUES ('imagen piscina','https://media.istockphoto.com/photos/tropical-empty-pool-view-with-a-steel-ladder-to-enter-the-water-of-picture-id1226554644?b=1&k=20&m=1226554644&s=170667a&w=0&h=1VQQ4KbGKH1OLKVcc2kpN_dLaSeNyTOk8d3JxFZzs10=',2);
 
-INSERT INTO `proyecto_integrador`.`feature` (featureName,icon)
-VALUES ('Piscina','fas fa-swimmer');
+INSERT INTO `proyecto_integrador`.`feature` (name,icon,state)
+VALUES ('Piscina','fas fa-swimmer',true);
 
-INSERT INTO `proyecto_integrador`.`feature` (featureName,icon)
-VALUES ('Desayuno','https://fontawesome.com/v5.15/icons/coffee?style=solid');
+INSERT INTO `proyecto_integrador`.`feature` (name,icon,state)
+VALUES ('Desayuno','https://fontawesome.com/v5.15/icons/coffee?style=solid',false);
 
-INSERT INTO `proyecto_integrador`.`feature` (featureName,icon)
-VALUES ('Wifi','https://fontawesome.com/v5.15/icons/wifi?style=solid');
+INSERT INTO `proyecto_integrador`.`feature` (name,icon,state)
+VALUES ('Wifi','https://fontawesome.com/v5.15/icons/wifi?style=solid',true);
 
-INSERT INTO `proyecto_integrador`.`feature_product` (idFeature,idProduct)
+INSERT INTO `proyecto_integrador`.`featureperproduct` (idFeature,idProduct)
 VALUES (1,2);
 
-INSERT INTO `proyecto_integrador`.`feature_product` (idFeature,idProduct)
+INSERT INTO `proyecto_integrador`.`featureperproduct` (idFeature,idProduct)
 VALUES (2,2);
 
-
+SELECT * FROM product;
+SELECT * FROM image;
+SELECT * FROM city;
+SELECT * FROM category;
+SELECT * FROM feature;
 
