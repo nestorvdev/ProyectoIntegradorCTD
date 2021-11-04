@@ -11,6 +11,7 @@ function Product(props) {
 
 
     let productAux = {
+        id:id,
         nombre: "nombreHotel",
         descripcion: "descripcion hotel",
         categoria: {
@@ -34,7 +35,7 @@ function Product(props) {
         ],
         latitud: -12.1234,
         longitud: 12.1234,
-        calificacion: 9.5,
+        calificacion: 10,
         favorito: true,
         ciudad: "ciudad",
         pais: "pais",
@@ -56,7 +57,7 @@ function Product(props) {
     return (
         <section>
             <TitleBar categoria={product.categoria.title} nombre={product.nombre} goBack={props.history.goBack} />
-            <ScoreBar referencia={product.referencia} calificacion={product.calificacion} />
+            <ScoreBar referencia={product.referencia} pais={product.pais} ciudad={product.ciudad} calificacion={product.calificacion} />
         </section>
     );
 }
