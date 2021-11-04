@@ -70,21 +70,26 @@
     flex-direction: column;
 }
 
-.barraSup {
+.imageBar .barraSup {
     display: flex;
 }
 
-.barraInf {
+.imageBar .barraInf {
     display: flex;
     justify-content: center;
+   
+}
+
+.imageBar .barraIzq {
     width: 45%;
 }
-.barraIzq img{
+
+.imageBar .barraIzq img{
     width: 100%;
  
 }
 
-.barraDer{
+.imageBar .barraDer{
     display: flex;
     flex-wrap: wrap;
     position: relative;
@@ -92,14 +97,14 @@
    
 }
 
-.barraDer img{
+.imageBar .barraDer img{
     width: 45%;
 }
 
-.verMas{
+.imageBar .verMas{
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: -4px;
     text-decoration: underline;
     font-weight: var(--font-bold);
     font-size: var(--heading3);
