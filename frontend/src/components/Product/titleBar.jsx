@@ -2,8 +2,6 @@ import React from "react";
 import StylesApp from "../../App.module.css";
 import Styles from "./styles.module.css";
 
-
-
 function titleBar(props) {
 
     console.log(props, "topBar");

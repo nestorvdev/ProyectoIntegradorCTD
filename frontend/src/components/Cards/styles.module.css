@@ -148,17 +148,8 @@ a:visited, a:link, a:active {
   max-width: 70%;
 }
 
-.cardScore {
-  align-items: flex-end;
-}
-
-.cardScoreNumber{
-    min-width: 45px;
-}
-
-.cardScore .iconEight {
-  bottom: 5.5px;
-  left: 23px;
+.cardScore {   
+  align-items: flex-end;    
   position: relative;
   z-index: 99;
 }
@@ -168,6 +159,22 @@ a:visited, a:link, a:active {
   font-weight: var(--font-bold);
   overflow: hidden;
   white-space: nowrap;
+  
+}
+
+.cardScoreNumber {  
+  align-items: center;
+  background: var(--secondary-color);
+  border-radius: 15px;
+  color: white;
+  display: flex;
+  font-size: var(--heading3);
+  font-weight: var(--font-bold);
+  height: 35px;
+  justify-content: center;
+  min-width: 45px;
+  padding: 8px 14px;
+  text-align: center;
 }
 
 .cardLocation {
