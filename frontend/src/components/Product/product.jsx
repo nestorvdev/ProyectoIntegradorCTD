@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import TitleBar from "./titleBar";
 import ScoreBar from "./scoreBar";
 import ImageBar from "./imageBar";
+import DescripcionBar from "./descripcionBar";
 
 
 function Product(props) {
@@ -60,6 +61,7 @@ function Product(props) {
             <TitleBar categoria={product.categoria.title} nombre={product.nombre} goBack={props.history.goBack} />
             <ScoreBar referencia={product.referencia} pais={product.pais} ciudad={product.ciudad} calificacion={product.calificacion} />
             <ImageBar imagenes={product.imagenes} />
+            <DescripcionBar ciudad={product.ciudad} descripcion={product.descripcion}/>
         </section>
     );
 }

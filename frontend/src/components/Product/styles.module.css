@@ -7,7 +7,8 @@
 
 .titleBar .titleBarChild{
     height: 60px;
-    padding: 0 40px;
+    padding-left: clamp(20px,3.9%,40px);
+    padding-right: clamp(20px,3.9%,40px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,7 +26,8 @@
 
 .scoreBar .scoreBarChild{
     height: 55px;
-    padding: 0 40px;
+    padding-left: clamp(20px,3.9%,40px);
+    padding-right: clamp(20px,3.9%,40px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -63,11 +65,14 @@
 
 .imageBar{
     background-color: white;
+    padding: 10px 0;
 }
 
 .imageBarChild {
     display: flex;
     flex-direction: column;
+    padding-left: clamp(20px,3.9%,40px);
+    padding-right: clamp(20px,3.9%,40px);
 }
 
 .imageBar .barraSup {
@@ -80,8 +85,13 @@
    
 }
 
-.imageBar .barraIzq {
-    width: 45%;
+.imageBar .barraIzq, .imageBar .barraDer {
+    width: 50%;
+}
+
+.imageBar img {
+    padding: 4px;
+    border-radius: 15px;
 }
 
 .imageBar .barraIzq img{
@@ -93,20 +103,42 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-    width: 45%;
-   
 }
 
 .imageBar .barraDer img{
-    width: 45%;
+    width: 50%;
+    height: 50%;
 }
 
 .imageBar .verMas{
     position: absolute;
-    bottom: 0;
-    right: -4px;
+    bottom: 10px;
+    right: 20px;
     text-decoration: underline;
     font-weight: var(--font-bold);
     font-size: var(--heading3);
     color: white;
+}
+
+/*  estilos de descripcionBard */
+
+.descripcionBar{
+    background-color: white;
+    padding: 20px 0;
+}
+.descripcionBarChild{
+    padding-left: clamp(20px,3.9%,40px);
+    padding-right: clamp(20px,3.9%,40px);
+    color:var(--tertiary-color);
+}
+.descripcionBarChild h3{
+    color: var(--secondary-color);
+    font-size: var(--text2);
+    font-weight: var(--font-bold);
+    color:var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.descripcionBarChild p{
+    margin-bottom: 10px;
 }
