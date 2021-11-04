@@ -1,7 +1,7 @@
 package com.proyecto.integrador.controller;
 import com.proyecto.integrador.DTO.CategoryDTO;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.service.CategoryService;
+import com.proyecto.integrador.service.ICategoryService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -14,36 +14,36 @@ import java.util.List;
 public class CategoryController implements CRUDController<CategoryDTO> {
 
     @Autowired
-    CategoryService categoryService;
+    ICategoryService ICategoryService;
 
-    @Operation(summary = "Find All Categories ", description = "")
+    @Operation(summary = "Find All Categories")
     @GetMapping("/all")
     public ResponseEntity<List<CategoryDTO>> getAll(){
-        return ResponseEntity.ok(categoryService.findAllCategories());
+        return ResponseEntity.ok(ICategoryService.findAll());
     }
 
     @Operation(summary = "Find category by ID", description = "Returns a single category")
     @GetMapping("/get/{id}")
     public ResponseEntity<CategoryDTO> getById(@PathVariable Integer id) throws FindByIdException {
-        return ResponseEntity.ok(categoryService.findCategoryById(id));
+        return ResponseEntity.ok(ICategoryService.findById(id));
     }
 
-    @Operation(summary = "Add a new category", description = "")
+    @Operation(summary = "Add a new category")
     @PostMapping("/create")
     public ResponseEntity<CategoryDTO> create(@RequestBody CategoryDTO category) {
-        return ResponseEntity.ok(categoryService.saveCategory(category));
+        return ResponseEntity.ok(ICategoryService.save(category));
     }
 
-    @Operation(summary = "Update an existing categorie's", description = "")
+    @Operation(summary = "Update an existing category")
     @PutMapping("/update")
     public ResponseEntity<CategoryDTO> updateById(@RequestBody CategoryDTO category) throws FindByIdException {
-        return ResponseEntity.ok(categoryService.updateCategory(category));
+        return ResponseEntity.ok(ICategoryService.update(category));
     }
 
-    @Operation(summary = "Deletes  category", description = "")
+    @Operation(summary = "Delete a category")
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> deleteById(@PathVariable Integer id) throws FindByIdException {
-        categoryService.deleteCategoryById(id);
-        return ResponseEntity.ok("Se elimino la categoria con id: "+id);
+        ICategoryService.deleteById(id);
+        return ResponseEntity.ok("Se eliminó la categoria con id: "+id);
     }
 }

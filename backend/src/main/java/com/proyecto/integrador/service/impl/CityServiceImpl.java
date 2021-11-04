@@ -1,9 +1,10 @@
-package com.proyecto.integrador.service;
+package com.proyecto.integrador.service.impl;
 
 import com.proyecto.integrador.DTO.CityDTO;
 import com.proyecto.integrador.entity.City;
 import com.proyecto.integrador.exceptions.FindByIdException;
 import com.proyecto.integrador.repository.ICityRepository;
+import com.proyecto.integrador.service.ICityService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,7 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CityServiceImpl implements CityService{
+public class CityServiceImpl implements ICityService {
     private final Logger logger = Logger.getLogger(CityServiceImpl.class);
     // config de log
     // Revisar test postman con update
@@ -22,7 +23,7 @@ public class CityServiceImpl implements CityService{
     ICityRepository cityRepository;
 
     @Override
-    public List<CityDTO> findAllCities() {
+    public List<CityDTO> findAll() {
         logger.debug("Iniciando método buscar todas las ciudades");
         List<CityDTO> cities = new ArrayList<>();
         for (City c: cityRepository.findAll()) {
@@ -33,24 +34,24 @@ public class CityServiceImpl implements CityService{
     }
 
     @Override
-    public CityDTO saveCity(CityDTO city) {
+    public CityDTO save(CityDTO city) {
         logger.debug("Iniciando método guardar ciudad");
         logger.debug("Terminó la ejecución del método guardar ciudad");
-        return Optional.of(cityRepository.save(city.toEntity(city))).get().toDto();
+        return Optional.of(cityRepository.save(city.toEntity())).get().toDto();
     }
 
     @Override
-    public CityDTO findCityById(Integer cityId) throws FindByIdException {
+    public CityDTO findById(Integer cityId) throws FindByIdException {
         logger.debug("Iniciando método buscar ciudad por ID");
         if (!cityRepository.existsById(cityId)) {
-            throw new FindByIdException("No existe una categoría con el id ingresado");
+            throw new FindByIdException("No existe una ciudad con el id ingresado");
         }
-        logger.debug("Terminó la ejecución del método buscar categoría por ID");
+        logger.debug("Terminó la ejecución del método buscar ciudad por ID");
         return cityRepository.findById(cityId).get().toDto();
     }
 
     @Override
-    public void deleteCityById(Integer cityId) throws FindByIdException {
+    public void deleteById(Integer cityId) throws FindByIdException {
         logger.debug("Iniciando método eliminar ciudad por ID");
         if (!cityRepository.existsById(cityId)) {
             throw new FindByIdException("No existe una ciudad con el id ingresado");
@@ -60,7 +61,7 @@ public class CityServiceImpl implements CityService{
     }
 
     @Override
-    public CityDTO updateCity(CityDTO cityDTO) throws FindByIdException {
+    public CityDTO update(CityDTO cityDTO) throws FindByIdException {
         logger.debug("Iniciando método actualizar ciudad por ID");
         if (!cityRepository.existsById(cityDTO.getId())) {
             throw new FindByIdException("No existe una ciudad con el id ingresado");

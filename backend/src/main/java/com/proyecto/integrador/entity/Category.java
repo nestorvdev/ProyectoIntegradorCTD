@@ -1,21 +1,22 @@
 package com.proyecto.integrador.entity;
-
 import com.proyecto.integrador.DTO.CategoryDTO;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
-
 import javax.persistence.*;
-import java.util.Date;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
+
 @Entity
 @Getter
 @Setter
-@ToString
 @Table(name = "category")
 public class Category {
     @Id
     @Column(name = "idCategory", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(name = "category sequence", sequenceName = "category_sequence")
+    @GeneratedValue( strategy = GenerationType.SEQUENCE, generator = "category_sequence")
     private Integer id;
     @Column(name = "title", nullable = false)
     private String title;
@@ -23,8 +24,14 @@ public class Category {
     private String description;
     @Column(name = "url", nullable = false)
     private String url;
+    @OneToMany(mappedBy = "category", cascade = CascadeType.ALL)
+    private Set<Product> products;
 
     public Category() {
+    }
+
+    public Category(Integer id) {
+        this.id = id;
     }
 
     public Category(Integer id, String title, String description, String url) {
@@ -32,12 +39,7 @@ public class Category {
         this.title = title;
         this.description = description;
         this.url = url;
-    }
-
-    public Category(String title, String description, String url) {
-        this.title = title;
-        this.description = description;
-        this.url = url;
+        this.products = new HashSet<>();
     }
 
     public CategoryDTO toDto() {

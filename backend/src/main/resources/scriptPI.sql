@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS `proyecto_integrador`; 
+CREATE DATABASE `proyecto_integrador`;
+USE `proyecto_integrador`;
+
 CREATE SCHEMA IF NOT EXISTS `proyecto_integrador`;
 
 DROP TABLE IF EXISTS `proyecto_integrador`.`city`;
@@ -44,9 +48,9 @@ DROP TABLE IF EXISTS `proyecto_integrador`.`product`;
   )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 
-DROP TABLE IF EXISTS `feature_product`;
+DROP TABLE IF EXISTS `proyecto_integrador`.`feature_product`;
 
-CREATE TABLE `feature_product` (
+CREATE TABLE `proyecto_integrador`.`feature_product` (
   `idFeatureProduct` int AUTO_INCREMENT NOT NULL,
   `idFeature` int DEFAULT NULL,
   `idProduct` int DEFAULT NULL,

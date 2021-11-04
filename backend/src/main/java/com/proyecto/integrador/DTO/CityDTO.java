@@ -1,8 +1,12 @@
 package com.proyecto.integrador.DTO;
 
 import com.proyecto.integrador.entity.City;
+import com.proyecto.integrador.entity.Product;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.HashSet;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -14,10 +18,8 @@ public class CityDTO {
     public CityDTO() {
     }
 
-    public CityDTO(Integer id, String name, String country) {
+    public CityDTO(Integer id) {
         this.id = id;
-        this.name = name;
-        this.country = country;
     }
 
     public CityDTO(String name, String country) {
@@ -25,10 +27,10 @@ public class CityDTO {
         this.country = country;
     }
 
-    public City toEntity(CityDTO cityDTO) {
+    public City toEntity() {
         City city = new City();
-        city.setName(cityDTO.getName());
-        city.setCountry(cityDTO.getCountry());
+        city.setName(name);
+        city.setCountry(country);
         return city;
     }
 }
