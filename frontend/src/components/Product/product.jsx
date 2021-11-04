@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import TitleBar from "./titleBar";
-import Styles from './styles.module.css';
+import ScoreBar from "./scoreBar";
 
 
 function Product(props) {
     let { id } = useParams();
 
     /* se crea el objeto vacio */
-    
+
 
     let productAux = {
         nombre: "nombreHotel",
@@ -38,6 +38,7 @@ function Product(props) {
         favorito: true,
         ciudad: "ciudad",
         pais: "pais",
+        referencia: "referencia",
     }
 
     const [product, setProduct] = useState(productAux);
@@ -51,11 +52,11 @@ function Product(props) {
                 <p>{data[id].description}</p> */
 
 
-    console.log(props,"product");
+    console.log(props, "product");
     return (
         <section>
-           <TitleBar categoria={product.categoria.title} nombre={product.nombre} goBack={props.history.goBack}/>
-        
+            <TitleBar categoria={product.categoria.title} nombre={product.nombre} goBack={props.history.goBack} />
+            <ScoreBar referencia={product.referencia} calificacion={product.calificacion} />
         </section>
     );
 }

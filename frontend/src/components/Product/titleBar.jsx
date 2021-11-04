@@ -11,7 +11,7 @@ function titleBar(props) {
     return (
         <div className={`${Styles.titleBar} ${StylesApp.delimiter}`}>
             <div className={`${Styles.titleBarChild} ${StylesApp.delimiterChild}`}>
-                <div className="barraIzq">
+                <div>
                     <p>{props.categoria}</p>
                     <h2>{props.nombre}</h2>
                 </div>

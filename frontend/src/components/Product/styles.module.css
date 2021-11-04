@@ -1,4 +1,4 @@
-/* Estilos de TOPBAR */
+/* Estilos de titleBar */
 
 .titleBar{
     background-color: var(--tertiary-color);
@@ -12,7 +12,21 @@
     justify-content: space-between;
     align-items: center;
 }
-.titleBar .barraDer{
-    pointer-events: all;
+.titleBarChild div p {
+    text-transform: uppercase;
 }
 
+
+/* Estilos de scoreBar */
+
+.scoreBar{
+    color:var(--secondary-color);
+}
+
+.scoreBar .scoreBarChild{
+    height: 55px;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
