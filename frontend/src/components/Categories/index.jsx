@@ -5,7 +5,7 @@ import Category from "./Category";
 import axios from "axios";
 import { useState, useEffect } from "react";
 
-function Categories() {
+export default function Categories({handleCategory}) {
   const baseURL = "http://localhost:8080/categories/all";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -44,12 +44,14 @@ function Categories() {
             <p>Loading Data...</p>
           ) : (
             <div className={Styles.categoryBox}>
-              {data.map((category, index) => (
+              {data.map((c, index) => (                
                 <Category
                   key={index}
-                  title={category.title}
-                  imageUrl={category.url}
-                  description={category.description}
+                  title={c.title}
+                  imageUrl={c.url}
+                  description={c.description}                                                                    
+                  category={c.title} 
+                  handleCategory={handleCategory}                
                 />
               ))}
             </div>
@@ -60,4 +62,4 @@ function Categories() {
   );
 }
 
-export default Categories;
+

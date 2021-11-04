@@ -8,12 +8,16 @@ import iconLocation from "./img/IconLocation.svg";
 import iconSwimming from "./img/iconSwimming.svg";
 import { Link } from "react-router-dom";
 
-function Card(props) {
-    const { img, category, title, location, description, id } = props;
+function Card({ img, cardCategory, title, location, description, id }) {
+    
     const[isLike, setLike] = useState("false");
 
     const handleToggle = (e) => {
         setLike(!isLike);
+    }
+
+    const handleDoubleClick = (e) => {
+        e.preventDefault();       
     }
     
     return (
@@ -21,7 +25,7 @@ function Card(props) {
             <div className={Styles.cardImage}>
 
               {/*   <img className={Styles.iconHeart} src={iconHeart} alt="" /> */}
-                <svg className={Styles.iconHeart}  onClick={handleToggle} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path className={isLike? Styles.heartColor:Styles.heartColor2} id="heart" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg>
+                <svg className={Styles.iconHeart}  onClick={handleToggle} onDblClick={handleDoubleClick} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path className={isLike? Styles.heartColor:Styles.heartColor2} id="heart" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"/></svg>
                 <img className={Styles.image} src={img} alt="" />                
               
             </div>
@@ -30,7 +34,7 @@ function Card(props) {
                 <div className={Styles.cardHeaderBox}>
                     <div className={Styles.cardHeadline}>
                         <div className={Styles.cardCategory}>
-                            <p>{category}</p>
+                            <p>{cardCategory}</p>
                             <img className={Styles.star} src={iconStar} alt="" />
                             <img className={Styles.star} src={iconStar} alt="" />
                             <img className={Styles.star} src={iconStar} alt="" />
@@ -60,7 +64,7 @@ function Card(props) {
                     <p>{description}</p>
                     <span>más...</span>
                 </div>
-                <Link to={`/product/${id}`} key={props.id} className={Styles.link}>
+                <Link to={`/product/${id}`} key={id} className={Styles.link}>
                     <button className={Styles.cardButton2}>Ver más</button>
                 </Link>
             </div>

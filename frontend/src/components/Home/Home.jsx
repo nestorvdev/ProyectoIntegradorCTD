@@ -4,13 +4,13 @@ import Cards from "../Cards/index.jsx";
 
 export default function Home(props) {
   props.setActiveCreate(false)
-  props.setActiveLogin(false)
-
+  props.setActiveLogin(false)   
+  
   return (    
     <>
       <SearchBlock />
-      <Categories />
-      <Cards />
+      <Categories category = {props.category} handleCategory = {props.handleCategory} />
+      <Cards category = {props.category} />
     </>
   );
 }

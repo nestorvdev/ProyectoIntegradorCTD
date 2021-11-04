@@ -12,13 +12,18 @@ function App() {
   const [log, setLog] = useState(sessionStorage.getItem("log") === "true" ? true : false)
   const[activeCreate, setActiveCreate] = useState()
   const[activeLogin, setActiveLogin] = useState()
+  const[category, setCategory] = useState("All")
+
+  const handleCategory = (c) => {
+    setCategory(c)
+  }
 
   return ( 
     < BrowserRouter >      
-      <LayoutPrincipal isLogged = {log} activeCreate ={activeCreate} activeLogin = {activeLogin}>
+      <LayoutPrincipal isLogged = {log} activeCreate ={activeCreate} activeLogin = {activeLogin} >
         <Switch>
           <Route exact path="/">
-            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/>
+            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin} category= {category} handleCategory={handleCategory} />
           </Route>
           <Route exact path="/login"  component={() => !log? <FormLogin setLog={setLog} setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />                  
           <Route exact path="/create" component={() => !log? <FormCreate setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />

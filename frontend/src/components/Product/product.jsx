@@ -11,6 +11,7 @@ function Product(props) {
     
 
     let productAux = {
+        id: id,
         nombre: "nombreHotel",
         descripcion: "descripcion hotel",
         categoria: {

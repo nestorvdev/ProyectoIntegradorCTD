@@ -4,7 +4,7 @@ import StylesApp from "../../App.module.css"
 import Card from './Card.jsx';
 import data from './data.json';
 
-function Cards() {
+export default function Cards({category}) {     
 
     return (
         <div className={`${StylesApp.delimiter}`}>
@@ -12,7 +12,9 @@ function Cards() {
                 <h2>Recomendaciones</h2>
                 <div className={Styles.cardsBox}>
                     {data.map((e, index) =>
-                        <Card img={e.img} category={e.category} title={e.title} location={e.location} description={e.description} key={index} id={index}/>
+                        category === "All" ? <Card img={e.img} cardCategory={e.category} title={e.title} location={e.location} description={e.description} key={index} id={index}/> :
+                        (category === e.category ? <Card img={e.img} cardCategory={e.category} title={e.title} location={e.location} description={e.description} key={index} id={index}/> : null)
+                        
                     )}
                 </div>
             </div>
@@ -20,4 +22,3 @@ function Cards() {
     );
 }
 
-export default Cards;
