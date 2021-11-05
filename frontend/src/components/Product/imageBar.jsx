@@ -11,6 +11,11 @@ function ImageBar(props) {
     console.log(props,"imageBar");
     const changeSlider= ()=> countSlider === images.length-1?setCountSlider(0):setCountSlider(countSlider+1);   
     setTimeout(changeSlider,5000);    
+
+    const openLightBox = (() => {
+        props.setViewerIsOpen(true);
+    });
+
 return (
     <div className={`${Styles.imageBar} ${StylesApp.delimiter}`}>
         <div className={`${Styles.imageBarChild} ${StylesApp.delimiterChild}`}>
@@ -27,7 +32,7 @@ return (
                     <img src={images[2].url} alt={images[2].title} />
                     <img src={images[3].url} alt={images[3].title} />
                     <img src={images[4].url} alt={images[4].title} />
-                    <Link to="" className={Styles.verMas}>Ver Mas</Link>
+                   <div className={Styles.verMas} onClick={openLightBox}>Ver Mas</div>
                 </div>
                 <div className={Styles.slider}  onClick={changeSlider} >
                     <img src={images[countSlider].url} alt={images[countSlider].title}/>
