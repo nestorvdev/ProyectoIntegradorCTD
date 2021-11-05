@@ -4,6 +4,10 @@ USE `proyecto_integrador`;
 
 CREATE SCHEMA IF NOT EXISTS `proyecto_integrador`;
 
+--
+-- Table structure for table `city`
+--
+
 DROP TABLE IF EXISTS `proyecto_integrador`.`city`;
 
 CREATE TABLE `proyecto_integrador`.`city` (
@@ -12,6 +16,10 @@ CREATE TABLE `proyecto_integrador`.`city` (
   `country` varchar(45) NOT NULL,
   PRIMARY KEY (`idCity`)
   )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `category`
+--
 
 DROP TABLE IF EXISTS `proyecto_integrador`.`category`;
 
@@ -23,6 +31,10 @@ CREATE TABLE `proyecto_integrador`.`category` (
   PRIMARY KEY (`idCategory`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Table structure for table `feature`
+--
+
 DROP TABLE IF EXISTS `proyecto_integrador`.`feature`;
 
 CREATE TABLE `proyecto_integrador`.`feature` (
@@ -32,6 +44,10 @@ CREATE TABLE `proyecto_integrador`.`feature` (
   `state` boolean NOT NULL,
   PRIMARY KEY (`idFeature`)
   )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Table structure for table `product`
+--
 
 DROP TABLE IF EXISTS `proyecto_integrador`.`product`;
 
@@ -44,6 +60,7 @@ DROP TABLE IF EXISTS `proyecto_integrador`.`product`;
   `latitude` double NOT NULL,
   `longitude` double NOT NULL,
   `qualification` double NOT NULL,
+  `favourite` boolean NOT NULL,
   `reference` VARCHAR(100), 
   PRIMARY KEY (`idProduct`),
   KEY `IdCity_idx` (`idCity`),
@@ -52,6 +69,9 @@ DROP TABLE IF EXISTS `proyecto_integrador`.`product`;
   CONSTRAINT `IdCategory` FOREIGN KEY (`IdCategory`) REFERENCES `category` (`IdCategory`)
   )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Table structure for table `featureperproduct`
+--
 
 DROP TABLE IF EXISTS `proyecto_integrador`.`featureperproduct`;
 
@@ -66,6 +86,10 @@ CREATE TABLE `proyecto_integrador`.`featureperproduct` (
   CONSTRAINT `product.name` FOREIGN KEY (`idProduct`) REFERENCES `product` (`idProduct`)
   )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--
+-- Table structure for table `image`
+--
+
   DROP TABLE IF EXISTS `proyecto_integrador`.`image`;
 
   CREATE TABLE `proyecto_integrador`.`image` (
@@ -78,6 +102,8 @@ CREATE TABLE `proyecto_integrador`.`featureperproduct` (
   CONSTRAINT `idProduct` FOREIGN KEY (`idProduct`) REFERENCES `product` (`idProduct`)
   )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+--Dumping data for table `city`
+
 INSERT INTO `proyecto_integrador`.`city` (name,country)
 VALUES ('Buenos Aires','Argentina');
 
@@ -86,6 +112,8 @@ VALUES ('Mendoza','Argentina');
 
 INSERT INTO `proyecto_integrador`.`city` (name,country)
 VALUES ('Corrientes','Argentina');
+
+--Dumping data for table `category`
 
 INSERT INTO `proyecto_integrador`.`category` (title,description,url)
 VALUES ('Hoteles','807.105 hoteles','https://media.istockphoto.com/photos/hotel-service-bell-concept-hotel-travel-roommodern-luxury-hotel-on-picture-id1268469291?b=1&k=20&m=1268469291&s=170667a&w=0&h=M4wvZWxG47WyUjjfaX2_fgUD7HcmkgVNhahnL3dgeRo=');
@@ -99,11 +127,40 @@ VALUES ('Departamentos','10.105 departamentos','https://media.istockphoto.com/ph
 INSERT INTO `proyecto_integrador`.`category` (title,description,url)
 VALUES ('Bed and breakfast','807.105 alojamientos','https://media.istockphoto.com/photos/french-creole-tourist-at-maison-madeleine-guesthouse-in-lousiana-picture-id1327159384?b=1&k=20&m=1327159384&s=170667a&w=0&h=iBM_z__BVTwhyvsIq5BrxyICrHxHL1vjw-AzB_lkGr0=');
 
-INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,reference)
-VALUES ('Hotel Savage','Para descansar cómodo',1,1,123.45,456.34,8,'En el centro');
+-- Dumping data for table `product`
+-- 1
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference)
+VALUES ('Posada Gotan Bed & Breakfast','A poca distancia de El Ateneo Grand Splendid.Te sentirás como en tu propia casa en una de las 10 habitaciones con microondas. Recorre rápida y cómodamente los principales sitios de interés de la zona gracias al servicio de traslado.',3,4,123.45,456.34,5,false,'a 3,83 km del centro');
 
-INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,reference)
-VALUES ('Hostel Nomade','Ideal para que tu aventura extrema incluya también el alojamiento',2,2,123.45,456.34,8,'En el centro');
+-- 2
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference)
+VALUES ('Gran Hotel Argentino','El Gran Hotel Argentino está situado a pocos metros de la avenida 9 de Julio y a 300 metros del Obelisco, y ofrece habitaciones cómodas y fácil acceso al transporte público de Buenos Aires.',1,1,123.45,456.34,8,false,'a 0,5 km del centro');
+
+-- 3
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference)
+VALUES ('Soho Suites','Ideal para estadías cortas. Soho Suites se sitúa en Buenos Aires. Ofrece wi-fi gratis en zonas comunes, servicio de guarda-equipaje gratis y toallas, así como sábanas.',1,4,123.45,456.34,9,false,'A 4,99 km del centro');
+
+-- 4
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference)
+VALUES ('Exclusivo departamento','Exclusivo departamento en la ciudad de Mendoza. La propiedad se encuentra a menos de 1 km de la avenidad Emilio Civit. El departamento cuenta con una habitación con salida al balcón y aire acondicionado',2,3,123.45,456.34,7,false,'a 1,6 km del centro');
+
+-- 5
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference)
+VALUES ('Don Suites','DonSuites se encuentra en el centro histórico de la ciudad, a 5 cuadras de la calle peatonal y a 20 metros de la Costanera. El DonSuites se encuentra en el centro de Corrientes, a solo 50 metros de la orilla del río Paraná. Ofrece pileta al aire libre y departamentos independientes elegantes con conexión de wifi gratis y TV de plasma. Todos los días se sirve un desayuno continental.',3,1,123.45,456.34,10,false,'En el centro');
+
+-- 6
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference)
+VALUES ('Departamento Mendoza','El Departamento Mendoza se encuentra en Guaymallen. Potrerillos está a 37 km.El departamento cuenta con aire acondicionado, 1 dormitorio, sala de estar, cocina totalmente equipada con microondas y hervidor de agua y 1 baño con bidet y bañera o ducha. Se proporcionan toallas y ropa de cama.',2,3,123.45,456.34,8,false,'a 2,2 km de Guaymallén');
+
+-- 7
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference)
+VALUES ('JAC Hostel Boutique','El JAC Hostel Boutique se encuentra en Mendoza, a 500 metros de la plaza de la Independencia, y ofrece vistas a la ciudad. La disposición y deco del hostel, super confortable y limpio. Excelente atención de todos los chicos de recepción.',2,2,123.45,456.34,6,false,'a 0.5 km del centro');
+
+-- 8
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference)
+VALUES ('Che Juan Hostel BA','El Che Juan Hostel BA ofrece habitaciones con aire acondicionado y TV de pantalla plana por cable en el centro de Buenos Aires. El precio es igual que otros pero la calidad es imbatible, no solo en la comodidad de las camas con armario propio externo e interno, luces y cortinas, sino que toda la edificación está diseñada con excelencia para ser realmente un ejemplo a seguir para todos los hostel del mundo.',1,2,123.45,456.34,10,false,'a 0.2 km del centro');
+
+--Dumping data for table `image`
 
 INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
 VALUES ('imagen habitacion','https://images.unsplash.com/photo-1445991842772-097fea258e7b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFiaXRhY2lvbiUyMGhvdGVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',1);
@@ -114,6 +171,8 @@ VALUES ('imagen banio','https://media.istockphoto.com/photos/modern-toilette-des
 INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
 VALUES ('imagen piscina','https://media.istockphoto.com/photos/tropical-empty-pool-view-with-a-steel-ladder-to-enter-the-water-of-picture-id1226554644?b=1&k=20&m=1226554644&s=170667a&w=0&h=1VQQ4KbGKH1OLKVcc2kpN_dLaSeNyTOk8d3JxFZzs10=',2);
 
+--Dumping data for table `feature`
+
 INSERT INTO `proyecto_integrador`.`feature` (name,icon,state)
 VALUES ('Piscina','fas fa-swimmer',true);
 
@@ -122,6 +181,8 @@ VALUES ('Desayuno','https://fontawesome.com/v5.15/icons/coffee?style=solid',fals
 
 INSERT INTO `proyecto_integrador`.`feature` (name,icon,state)
 VALUES ('Wifi','https://fontawesome.com/v5.15/icons/wifi?style=solid',true);
+
+--Dumping data for table `featureperproduct`
 
 INSERT INTO `proyecto_integrador`.`featureperproduct` (idFeature,idProduct)
 VALUES (1,2);
