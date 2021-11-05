@@ -179,7 +179,7 @@
 
 .featuresBarChild .icons {
   display: flex;
-  justify-content: flex-start;
+  justify-content: flex-start; /* cambiarlo en resposive a center */
   align-items: center;
   flex-wrap: wrap;
   width: 100%;
@@ -193,5 +193,83 @@
 
 .featuresBarChild p img {
   margin-right: 20px;
-  fill: var(--primary-color) !important;
+}
+
+/* Estilos del map Bar  */
+
+.mapBar {
+  background-color: white;
+  padding: 20px 0;
+}
+.mapBarChild {
+  padding-left: clamp(20px, 3.9%, 40px);
+  padding-right: clamp(20px, 3.9%, 40px);
+  color: var(--tertiary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.mapBarChild h2 {
+  color: var(--secondary-color);
+  font-size: var(--heading2);
+  font-weight: var(--font-bold);
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.mapBar .map {
+  align-self: center;
+  margin: 20px 0;
+  width: clamp(300px, 80vw, 1285px);
+  height: clamp(300px, 50vh, 700px);
+  background-color: darkslateblue;
+  border: 1px solid var(--primary-color);
+}
+
+/* Estilos infoBar */
+
+.infoBar {
+  background-color: white;
+  padding: 20px 0;
+}
+.infoBarChild {
+  padding-left: clamp(20px, 3.9%, 40px);
+  padding-right: clamp(20px, 3.9%, 40px);
+  color: var(--tertiary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.infoBarChild h2 {
+  color: var(--secondary-color);
+  font-size: var(--heading2);
+  font-weight: var(--font-bold);
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.info div h3 {
+  color: var(--secondary-color);
+  font-size: var(--heading3);
+  font-weight: var(--font-bold);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.info div h3,
+.info div p {
+  padding: 10px 0;
 }

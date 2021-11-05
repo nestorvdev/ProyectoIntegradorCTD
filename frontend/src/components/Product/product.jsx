@@ -5,6 +5,8 @@ import ScoreBar from "./scoreBar";
 import ImageBar from "./imageBar";
 import DescriptionBar from "./descriptionBar";
 import FeaturesBar from "./featuresBar";
+import MapBar from "./mapBar";
+import InfoBar from "./infoBar";
 
 
 function Product(props) {
@@ -53,6 +55,9 @@ function Product(props) {
         ciudad: "ciudad",
         pais: "pais",
         referencia: "referencia",
+        normas: "normas1,normas2,normas3",
+        salud: "salud1,salud2,salud3",
+        politicas:  "politicas1,politicas2,politicas3",
     }
 
     const [product, setProduct] = useState(productAux);
@@ -74,6 +79,8 @@ function Product(props) {
             <ImageBar imagenes={product.imagenes} />
             <DescriptionBar ciudad={product.ciudad} descripcion={product.descripcion}/>
             <FeaturesBar caracteristicas={product.caracteristicas}/>
+            <MapBar ciudad={product.ciudad} pais={product.pais} latitud={product.latitud} longitud={product.longitud}/>
+            <InfoBar salud={product.salud} normas={product.normas} politicas={product.politicas}/>
         </section>
     );
 }
