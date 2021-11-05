@@ -102,7 +102,9 @@ CREATE TABLE `proyecto_integrador`.`featureperproduct` (
   CONSTRAINT `idProduct` FOREIGN KEY (`idProduct`) REFERENCES `product` (`idProduct`)
   )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
---Dumping data for table `city`
+--
+-- Dumping data for table `city`
+--
 
 INSERT INTO `proyecto_integrador`.`city` (name,country)
 VALUES ('Buenos Aires','Argentina');
@@ -113,7 +115,9 @@ VALUES ('Mendoza','Argentina');
 INSERT INTO `proyecto_integrador`.`city` (name,country)
 VALUES ('Corrientes','Argentina');
 
---Dumping data for table `category`
+--
+-- Dumping data for table `category`
+--
 
 INSERT INTO `proyecto_integrador`.`category` (title,description,url)
 VALUES ('Hoteles','807.105 hoteles','https://media.istockphoto.com/photos/hotel-service-bell-concept-hotel-travel-roommodern-luxury-hotel-on-picture-id1268469291?b=1&k=20&m=1268469291&s=170667a&w=0&h=M4wvZWxG47WyUjjfaX2_fgUD7HcmkgVNhahnL3dgeRo=');
@@ -160,7 +164,9 @@ VALUES ('JAC Hostel Boutique','El JAC Hostel Boutique se encuentra en Mendoza, a
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference)
 VALUES ('Che Juan Hostel BA','El Che Juan Hostel BA ofrece habitaciones con aire acondicionado y TV de pantalla plana por cable en el centro de Buenos Aires. El precio es igual que otros pero la calidad es imbatible, no solo en la comodidad de las camas con armario propio externo e interno, luces y cortinas, sino que toda la edificación está diseñada con excelencia para ser realmente un ejemplo a seguir para todos los hostel del mundo.',1,2,123.45,456.34,10,false,'a 0.2 km del centro');
 
---Dumping data for table `image`
+--
+-- Dumping data for table `image`
+-- 
 
 INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
 VALUES ('imagen habitacion','https://images.unsplash.com/photo-1445991842772-097fea258e7b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFiaXRhY2lvbiUyMGhvdGVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',1);
@@ -171,7 +177,9 @@ VALUES ('imagen banio','https://media.istockphoto.com/photos/modern-toilette-des
 INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
 VALUES ('imagen piscina','https://media.istockphoto.com/photos/tropical-empty-pool-view-with-a-steel-ladder-to-enter-the-water-of-picture-id1226554644?b=1&k=20&m=1226554644&s=170667a&w=0&h=1VQQ4KbGKH1OLKVcc2kpN_dLaSeNyTOk8d3JxFZzs10=',2);
 
---Dumping data for table `feature`
+--
+-- Dumping data for table `feature`
+--
 
 INSERT INTO `proyecto_integrador`.`feature` (name,icon,state)
 VALUES ('Piscina','fas fa-swimmer',true);
@@ -182,7 +190,9 @@ VALUES ('Desayuno','https://fontawesome.com/v5.15/icons/coffee?style=solid',fals
 INSERT INTO `proyecto_integrador`.`feature` (name,icon,state)
 VALUES ('Wifi','https://fontawesome.com/v5.15/icons/wifi?style=solid',true);
 
---Dumping data for table `featureperproduct`
+--
+-- Dumping data for table `featureperproduct`
+--
 
 INSERT INTO `proyecto_integrador`.`featureperproduct` (idFeature,idProduct)
 VALUES (1,2);
@@ -195,4 +205,3 @@ SELECT * FROM image;
 SELECT * FROM city;
 SELECT * FROM category;
 SELECT * FROM feature;
-
