@@ -1,7 +1,7 @@
 import StylesApp from "../../App.module.css";
 import Styles from "./styles.module.css";
 
-function descripcionBar(props) {
+function descriptionBar(props) {
     return(
         <div className={`${Styles.descripcionBar} ${StylesApp.delimiter}`}>
             <div className={`${Styles.descripcionBarChild} ${StylesApp.delimiterChild}`}>
@@ -13,4 +13,4 @@ function descripcionBar(props) {
     )
 }
 
-export default descripcionBar;
+export default descriptionBar;
