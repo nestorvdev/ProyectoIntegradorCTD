@@ -61,6 +61,10 @@ form.gridContainer > div {
   width: clamp(254px, 33vw, 420px);
 }
 
+.optionBox {
+  width: 100%;
+}
+
 .buttonSearch,
 .selectedDatesButton {
   color: #ffffff;

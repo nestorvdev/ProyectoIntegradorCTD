@@ -6,7 +6,7 @@ import dataJSON from './data.json';
 import dataSearch from './dataSearch.json';
 import axios from "axios";
 
-export default function Cards({ titulo, category, city, search }) {
+export default function Cards({ titulo, category, city, search, clickBusqueda }) {
     const baseUrlProductosRecomendados = "http://localhost:8080/products/all";
     const baseUrlPorCategoria = `http://localhost:8080/products/get/category/${category}`;
     const baseUrlPorCiudad = `http://localhost:8080/products/get/city/${city}`;
@@ -17,31 +17,31 @@ export default function Cards({ titulo, category, city, search }) {
     const [errorMessage, setErrorMessage] = useState("");   
              
     useEffect(() => {
-        if (category === "All") {
+        if (category === "All" && search === false) {
             axios.get(baseUrlProductosRecomendados)
                 .then(response => {
                     setData(response.data);
-                    setLoading(false);
+                    setLoading(false);                   
                 })
                 .catch(error => {
                     setErrorMessage(error.message);
                     setLoading(false);
                 });
-        } else if (category != "All" && search === false) {
+        } else if (category != "All" && search === false && city === "") {
             axios.get(baseUrlPorCategoria)
                 .then(response => {
                     setData(response.data);
-                    setLoading(false);
+                    setLoading(false);                    
                 })
                 .catch(error => {
                     setErrorMessage(error.message);
                     setLoading(false);
                 });
-        } else if (search) {
+        } else if (search && city != "") {
             axios.get(baseUrlPorCiudad)
                 .then(response => {
                     setData(response.data);
-                    setLoading(false);
+                    setLoading(false);                   
                 })
                 .catch(error => {
                     setErrorMessage(error.message);
@@ -51,7 +51,7 @@ export default function Cards({ titulo, category, city, search }) {
             setErrorMessage("Error");
             setLoading(false);
         }
-    }, [category]);
+    }, [category, clickBusqueda]);
     
     
     /* const handleSearch = (e) => {

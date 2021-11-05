@@ -8,7 +8,7 @@ function SearchBlock({handleSearch, handleCity}) {
         <div className={`${Styles.container} ${StylesApp.delimiter}`}>
             <div className={`${Styles.subContainer} ${StylesApp.delimiterChild}`}>
                 <h1>Buscá ofertas en hoteles, casas y mucho más</h1>
-                <SearchForm handleSearch={handleSearch} handleCity={handleCity}/>
+                <SearchForm handleSearch={handleSearch} handleCity = {handleCity}/>
             </div>
         </div>
     )

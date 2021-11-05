@@ -5,7 +5,7 @@ import vector from './img/Vector.png'
 import localizador from './img/localizador.png'
 import axios from "axios";
 
-function SelectCity({city, handleCity}) {
+function SelectCity({handleCity}) {
   const baseURL = "http://localhost:8080/cities/all";
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -119,7 +119,7 @@ function SelectCity({city, handleCity}) {
   const options = data.map((city) => {
     return {
       value: `${city.name}, ${city.country}`,
-      label: <CityOption city={city.name} country={city.country} handleCity={handleCity}/>,
+      label: <CityOption city={city.name} id ={city.id} handleCity={handleCity} country={city.country} handleCity={handleCity}/>,
     };
   })
 
@@ -137,7 +137,7 @@ function SelectCity({city, handleCity}) {
       options={options}      
       isSearchable
       isClearable
-      getOptionValue={(option) => `${option.value}:`
+      getOptionValue={(option) => `${option.value}:`      
       }
     />
   );
