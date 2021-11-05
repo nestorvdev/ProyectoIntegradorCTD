@@ -14,18 +14,18 @@ import checkin from './icons/checkIn.svg';
 import noSmoke from './icons/noSmoke.svg';
 
 
-function featuresBar(props) {
+function FeaturesBar(props) {
     let icons = [wifi, pool, kitchen, tv, ac, pet, parking, creditCard, smoke, party, checkin, noSmoke];
     return (
         <div className={`${Styles.featuresBar} ${StylesApp.delimiter}`}>
             <div className={`${Styles.featuresBarChild} ${StylesApp.delimiterChild}`}>
                 <h2>¿Qué ofrece este lugar?</h2>
                 <div className={Styles.icons}>
-                    {props.features.map((e, index) => e.state ? <p><img src={icons[index]} alt={e.titulo} />{e.title}</p> : null)}
+                    {props.features.map((e, index) => e.state ? <p key={index}><img src={icons[index]} alt={e.titulo} />{e.title}</p> : null)}
                 </div>
             </div>
         </div>
     )
 }
 
-export default featuresBar;
+export default FeaturesBar;

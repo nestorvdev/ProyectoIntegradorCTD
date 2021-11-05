@@ -3,7 +3,7 @@ import StylesApp from "../../App.module.css";
 import Styles from "./styles.module.css";
 import iconLocation from "./icons/iconLocation.svg";
 
-function scoreBar(props) {
+function ScoreBar(props) {
 
     console.log(props, "scoreBar");
 
@@ -30,11 +30,11 @@ function scoreBar(props) {
                     <div className={Styles.calificacionLetra}>
                         <p>{scoreLetter(props.qualification)}</p>
                         <div className={Styles.calificacionEstrellas}>
+                            {cantStar >= 0 ? star : null}
                             {cantStar >= 1 ? star : null}
                             {cantStar >= 2 ? star : null}
                             {cantStar >= 3 ? star : null}
                             {cantStar >= 4 ? star : null}
-                            {cantStar >= 5 ? star : null}
                         </div>
                     </div>
                     <p className={Styles.calificacionEntero}>
@@ -46,4 +46,4 @@ function scoreBar(props) {
     );
 }
 
-export default scoreBar;
+export default ScoreBar;
