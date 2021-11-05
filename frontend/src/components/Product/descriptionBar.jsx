@@ -5,8 +5,8 @@ function descriptionBar(props) {
     return(
         <div className={`${Styles.descripcionBar} ${StylesApp.delimiter}`}>
             <div className={`${Styles.descripcionBarChild} ${StylesApp.delimiterChild}`}>
-                <h2>Alójate en el corazon de {props.ciudad}</h2>
-                <p>{props.descripcion}</p>
+                <h2>Alójate en el corazon de {props.city.name}</h2>
+                <p>{props.description}</p>
             </div>
         </div>
 

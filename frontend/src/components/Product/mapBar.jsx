@@ -6,7 +6,7 @@ function mapBar(props) {
         <div className={`${Styles.mapBar} ${StylesApp.delimiter}`}>
             <div className={`${Styles.mapBarChild} ${StylesApp.delimiterChild}`}>
                 <h2>¿Dónde vas a estar?</h2>
-                <p>{props.ciudad+" , "+props.pais }</p>
+                <p>{props.city.name+" , "+props.city.country }</p>
                 <div className={Styles.map}>
                     
                 </div>

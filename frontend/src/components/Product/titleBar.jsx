@@ -11,8 +11,8 @@ function titleBar(props) {
         <div className={`${Styles.titleBar} ${StylesApp.delimiter}`}>
             <div className={`${Styles.titleBarChild} ${StylesApp.delimiterChild}`}>
                 <div>
-                    <p>{props.categoria}</p>
-                    <h2>{props.nombre}</h2>
+                    <p>{props.category}</p>
+                    <h2>{props.name}</h2>
                 </div>
                 <div onClick={props.goBack}>
                    <img src={iconLocation} alt="IconLocation" className={Styles.iconLocation}/>
