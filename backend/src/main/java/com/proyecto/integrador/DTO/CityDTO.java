@@ -27,6 +27,12 @@ public class CityDTO {
         this.country = country;
     }
 
+    public CityDTO(Integer id, String name, String country) {
+        this.id = id;
+        this.name = name;
+        this.country = country;
+    }
+
     public City toEntity() {
         City city = new City();
         city.setName(name);

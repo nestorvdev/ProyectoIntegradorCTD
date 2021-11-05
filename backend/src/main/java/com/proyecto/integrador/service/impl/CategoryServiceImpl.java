@@ -70,4 +70,10 @@ public class CategoryServiceImpl implements ICategoryService {
         logger.debug("Terminó la ejecución del método actualizar categoría por ID");
         return categoryRepository.save(category).toDto();
     }
+
+    public boolean categoryExistsInDatabase(String categoryName) {
+        logger.debug("Iniciando método corroborando si existe categoría en la base de datos");
+        logger.debug("Terminó la ejecución del método corroborando si existe la categoría en la base de datos");
+        return categoryRepository.findByTitle(categoryName);
+    }
 }

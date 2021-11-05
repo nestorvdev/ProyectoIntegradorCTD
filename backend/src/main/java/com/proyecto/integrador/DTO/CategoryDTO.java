@@ -29,6 +29,13 @@ public class CategoryDTO {
         this.url = url;
     }
 
+    public CategoryDTO(Integer id, String title, String description, String url) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.url = url;
+    }
+
     public Category toEntity() {
         Category category = new Category();
         category.setTitle(title);

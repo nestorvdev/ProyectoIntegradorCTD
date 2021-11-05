@@ -73,4 +73,10 @@ public class CityServiceImpl implements ICityService {
         logger.debug("Terminó la ejecución del método actualizar ciudad por ID");
         return cityRepository.save(city).toDto();
     }
+
+    public boolean cityExistsInDatabase(Integer id) {
+        logger.debug("Iniciando método corroborando si existe ciudad en la base de datos");
+        logger.debug("Terminó la ejecución del método corroborando si existe la ciudad en la base de datos");
+        return cityRepository.findById(id).isPresent();
+    }
 }

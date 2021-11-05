@@ -2,6 +2,8 @@ package com.proyecto.integrador.controller;
 
 import com.proyecto.integrador.DTO.CategoryDTO;
 import com.proyecto.integrador.DTO.ProductDTO;
+import com.proyecto.integrador.entity.Product;
+import com.proyecto.integrador.exceptions.BadRequestException;
 import com.proyecto.integrador.exceptions.FindByIdException;
 import com.proyecto.integrador.service.ICategoryService;
 import com.proyecto.integrador.service.IProductService;
@@ -49,5 +51,17 @@ public class ProductController implements CRUDController<ProductDTO> {
     public ResponseEntity<String> deleteById(@PathVariable Integer id) throws FindByIdException {
         productService.deleteById(id);
         return ResponseEntity.ok("Se eliminó el producto con id: "+id);
+    }
+
+    @Operation(summary = "Find by category")
+    @GetMapping("/get/category/{categoryName}")
+    public ResponseEntity<List<ProductDTO>> getAllByCategory(@PathVariable String categoryName) throws FindByIdException, BadRequestException {
+        return ResponseEntity.ok(productService.findAllByCategory(categoryName));
+    }
+
+    @Operation(summary = "Find by city")
+    @GetMapping("/get/city/{cityId}")
+    public ResponseEntity<List<ProductDTO>> getAllByCity(@PathVariable Integer cityId) throws FindByIdException, BadRequestException {
+        return ResponseEntity.ok(productService.findAllByCity(cityId));
     }
 }

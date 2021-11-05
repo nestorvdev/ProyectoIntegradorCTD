@@ -22,8 +22,6 @@ import java.util.Optional;
 @Service
 public class ImageServiceImpl implements IImageService {
     private final Logger logger = Logger.getLogger(ImageServiceImpl.class);
-    // config de log
-    // Revisar test postman con update
 
     @Autowired
     IImageRepository imageRepository;
@@ -81,4 +79,5 @@ public class ImageServiceImpl implements IImageService {
         logger.debug("Terminó la ejecución del método actualizar imagen por ID");
         return imageRepository.save(image).toDto();
     }
+
 }

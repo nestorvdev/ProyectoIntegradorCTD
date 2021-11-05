@@ -27,13 +27,14 @@ public class ProductDTO {
     public ProductDTO() {
     }
 
-    public ProductDTO(Integer id, String name, String description, double latitude, double longitude, double qualification, String reference, CategoryDTO category, CityDTO city) {
+    public ProductDTO(Integer id, String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, CategoryDTO category, CityDTO city) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
         this.qualification = qualification;
+        this.favourite = favourite;
         this.reference = reference;
         this.category = category;
         this.city = city;
