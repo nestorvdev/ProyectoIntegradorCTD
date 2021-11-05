@@ -12,7 +12,7 @@ function SearchForm({handleSearch, handleCity}) {
       <div className={`${Styles.iconSelectBox} grid-item`}>       
         <SelectDate />
       </div>
-      <button onClick={(e) => {handleSearch(e)}}className={`${Styles.buttonSearch} limitation`}>Buscar</button>
+      <button onClick={(e) => {handleSearch(e)}} handleCity = {handleCity} className={`${Styles.buttonSearch} limitation`}>Buscar</button>
     </form>
   );
 }

@@ -15,20 +15,24 @@ function App() {
   const [activeLogin, setActiveLogin] = useState()
   const [category, setCategory] = useState("All")
   const [search, setSearch] = useState(false);
-  const [city,setCity] = useState(""); 
+  const [city,setCity] = useState("");
+  const [clickBusqueda, setClickBusqueda] = useState(false);
 
-  const handleCategory = (c) => {    
-    setCategory(c);    
-    setSearch(false);       
+  const handleCategory = (c) => {           
+    setSearch(false);
+    setCity("");
+    setCategory(c);           
   }
 
   const handleSearch = (e) => {
-    e.preventDefault();
-    setSearch(true);   
+    e.preventDefault();         
+    setSearch(true);
+    setClickBusqueda(!clickBusqueda);
   }
 
-  const handleCity = (c) => {
-    setCity(c);    
+  const handleCity = (c) => {    
+    setCity(c);     
+    
   }
 
   return ( 
@@ -36,7 +40,7 @@ function App() {
       <LayoutPrincipal isLogged = {log} activeCreate ={activeCreate} activeLogin = {activeLogin} >
         <Switch>
           <Route exact path="/">
-            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin} category= {category} handleCategory={handleCategory} search={search} handleSearch={handleSearch} city={city} handleCity={handleCity} />
+            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin} category= {category} handleCategory={handleCategory} search={search} handleSearch={handleSearch} city={city} handleCity={handleCity} clickBusqueda = {clickBusqueda}/>
           </Route>
           <Route exact path="/login"  component={() => !log? <FormLogin setLog={setLog} setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />                  
           <Route exact path="/create" component={() => !log? <FormCreate setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />

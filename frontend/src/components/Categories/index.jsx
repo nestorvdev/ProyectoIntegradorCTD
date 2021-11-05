@@ -37,8 +37,8 @@ export default function Categories({handleCategory}) {
 
   return (
     <>
-      <div className={`${Styles.categoryContainer} ${Styles.delimiter}`}>
-        <div className={`${Styles.categoryBlock} ${Styles.delimiterChild}`}>
+      <div className={`${Styles.categoryContainer} ${StylesApp.delimiter}`}>
+        <div className={`${Styles.categoryBlock} ${StylesApp.delimiterChild}`}>
           <h2>Buscar por tipo de alojamiento</h2>
           {loading ? (
             <p>Loading Data...</p>

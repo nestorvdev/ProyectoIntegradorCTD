@@ -9,9 +9,9 @@ export default function Home(props) {
   
   return (
     <>
-      <SearchBlock handleSearch={props.handleSearch} handleCity={props.handleCity} />
+      <SearchBlock handleSearch={props.handleSearch} handleCity = {props.handleCity} />
       <Categories category={props.category} handleCategory={props.handleCategory} />
-      <Cards category={props.category} search={props.search} city={props.city} />
+      <Cards category={props.category} search={props.search} city={props.city} clickBusqueda = {props.clickBusqueda}/>
     </>
   );
 }
