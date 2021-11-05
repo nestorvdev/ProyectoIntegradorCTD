@@ -1,4 +1,4 @@
-package com.proyecto.integrador;
+package com.proyecto.integrador.serviceTests;
 import com.proyecto.integrador.DTO.CityDTO;
 import com.proyecto.integrador.controller.CategoryController;
 import com.proyecto.integrador.controller.CityController;
