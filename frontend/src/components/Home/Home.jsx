@@ -8,9 +8,9 @@ export default function Home(props) {
   
   return (    
     <>
-      <SearchBlock />
+      <SearchBlock handleSearch = {props.handleSearch}/>
       <Categories category = {props.category} handleCategory = {props.handleCategory} />
-      <Cards category = {props.category} />
+      <Cards category = {props.category} search = {props.search}/>
     </>
   );
 }

@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import Styles from './styles.module.css';
 import iconWifi from "./img/iconWifi.svg";
 import iconStar from "./img/starOrange.png";
-import iconEight from "./img/iconEight.svg";
-import iconRectangle from "./img/iconRectangle.svg";
 import iconLocation from "./img/IconLocation.svg";
 import iconSwimming from "./img/iconSwimming.svg";
 import { Link } from "react-router-dom";
