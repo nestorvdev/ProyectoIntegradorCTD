@@ -71,8 +71,15 @@ form.gridContainer > div {
   font-weight: var(--font-bold);
 }
 .buttonSearch {
+  transition: all 0.3s;
   width: clamp(124px, 18vw, 206px);
 }
+.buttonSearch:hover {
+  transform:scale(1.05);
+}
+
+.buttonSearch:active{
+  transform:scale(0.95);}
 
 .selectedDatesButton {
   bottom: 5%;

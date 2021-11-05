@@ -3,8 +3,6 @@ import StylesApp from "../../App.module.css";
 import Styles from "./styles.module.css";
 import iconLocation from "./icons/iconBack.svg"
 
-
-
 function titleBar(props) {
 
     console.log(props, "topBar");

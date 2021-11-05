@@ -15,9 +15,16 @@ function App() {
   const[activeCreate, setActiveCreate] = useState()
   const[activeLogin, setActiveLogin] = useState()
   const[category, setCategory] = useState("All")
+  const[search, setSearch] = useState("");
 
   const handleCategory = (c) => {
     setCategory(c)
+    setSearch(false)
+  }
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    setSearch(true)
   }
 
   return ( 
@@ -25,7 +32,7 @@ function App() {
       <LayoutPrincipal isLogged = {log} activeCreate ={activeCreate} activeLogin = {activeLogin} >
         <Switch>
           <Route exact path="/">
-            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin} category= {category} handleCategory={handleCategory} />
+            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin} category= {category} handleCategory={handleCategory} search={search} handleSearch={handleSearch}/>
           </Route>
           <Route exact path="/login"  component={() => !log? <FormLogin setLog={setLog} setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />                  
           <Route exact path="/create" component={() => !log? <FormCreate setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />
