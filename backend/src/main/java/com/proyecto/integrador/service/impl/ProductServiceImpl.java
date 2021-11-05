@@ -111,9 +111,7 @@ public class ProductServiceImpl implements IProductService {
     @Override
     public List<ProductDTO> findAllByCategory(String categoryName) throws BadRequestException, FindByIdException {
         logger.debug("Iniciando método buscar productos por categoría");
-        if (!categoryService.categoryExistsInDatabase(categoryName)) {
-            throw new BadRequestException("La categoría ingresada no existe en la base de datos");
-        }
+        categoryService.categoryExistsInDatabase(categoryName);
         List<ProductDTO> productsByCategory = new ArrayList<>();
         for (Product product: productRepository.findByCategory_Title(categoryName)) {
             productsByCategory.add(loadDataIntoProductDTO(product));

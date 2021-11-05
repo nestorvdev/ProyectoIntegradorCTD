@@ -2,6 +2,7 @@ package com.proyecto.integrador.service.impl;
 
 import com.proyecto.integrador.DTO.CategoryDTO;
 import com.proyecto.integrador.entity.Category;
+import com.proyecto.integrador.exceptions.BadRequestException;
 import com.proyecto.integrador.exceptions.FindByIdException;
 import com.proyecto.integrador.repository.ICategoryRepository;
 import com.proyecto.integrador.service.ICategoryService;
@@ -71,9 +72,12 @@ public class CategoryServiceImpl implements ICategoryService {
         return categoryRepository.save(category).toDto();
     }
 
-    public boolean categoryExistsInDatabase(String categoryName) {
+    public CategoryDTO categoryExistsInDatabase(String categoryName) throws BadRequestException {
         logger.debug("Iniciando método corroborando si existe categoría en la base de datos");
+        if (categoryRepository.findByTitle(categoryName) == null) {
+            throw new BadRequestException("La categoría ingresada no existe en la base de datos");
+        }
         logger.debug("Terminó la ejecución del método corroborando si existe la categoría en la base de datos");
-        return categoryRepository.findByTitle(categoryName);
+        return categoryRepository.findByTitle(categoryName).toDto();
     }
 }

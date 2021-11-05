@@ -22,7 +22,7 @@ public class Product {
     private Integer id;
     @Column(name = "name", nullable = false)
     private String name;
-    @Column(name="description", nullable = false)
+    @Column(name="description", nullable = false, length = 500)
     private String description;
     @Column(name = "latitude", nullable = false)
     private double latitude;
