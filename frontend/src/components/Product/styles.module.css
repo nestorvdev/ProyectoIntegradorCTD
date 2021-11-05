@@ -249,9 +249,8 @@
   margin: 20px 0;
   width: clamp(300px, 80vw, 1285px);
   height: clamp(300px, 50vh, 700px);
-  background-color: darkslateblue;
-  border: 1px solid var(--primary-color);
 }
+
 
 /* Estilos infoBar */
 
