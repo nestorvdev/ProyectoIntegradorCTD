@@ -26,15 +26,23 @@
 
  .carousel-slider .control-next.control-arrow,
  .carousel-slider .control-prev.control-arrow{
-     height:38px;
-     width:38px;
+     height:42px;
+     width:42px;
      background-color: #F0572D !important;
-     border-radius: 50px;
+     border-radius: 21px;
      opacity: 1;
      border-top: 5px solid #fff;
      border-right: 5px solid #fff;
 
  }
+
+ .carousel-slider .control-next.control-arrow{
+     margin-right: 0.5vw;
+ }
+
+ .carousel-slider .control-prev.control-arrow{
+    margin-left: 0.5vw;
+}
 
  .carousel.carousel-slider.control-arrow{
     margin-top:100px;
@@ -69,5 +77,6 @@
 
     .carousel.carousel-slider .control-arrow{
         margin-top: 22vh !important;
+        
     }
 
