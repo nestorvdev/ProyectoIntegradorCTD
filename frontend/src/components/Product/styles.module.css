@@ -144,7 +144,13 @@
 
 }
 
+/* ESTILOS DEL SHARE*/
 
+.containerShare{
+  background-color: white;
+  border-radius: 10px;
+  padding: 50px;
+}
 
 /*  estilos de descripcionBard */
 

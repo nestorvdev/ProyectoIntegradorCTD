@@ -16,11 +16,15 @@ function ImageBar(props) {
         props.setViewerIsOpen(true);
     });
 
+    const openShareModal = (() => {
+        props.setShareIsOpen(true)
+    })
+
 return (
     <div className={`${Styles.imageBar} ${StylesApp.delimiter}`}>
         <div className={`${Styles.imageBarChild} ${StylesApp.delimiterChild}`}>
             <div className={Styles.barraSup}>
-                <img src={iconSocial} alt="iconSocial" className={Styles.iconImage} />
+                <img src={iconSocial} alt="iconSocial" className={Styles.iconImage} onClick={openShareModal}/>
                 <img src={iconHeart} alt="iconHeart" className={Styles.iconImage} />
             </div>
             <div className={Styles.barraInf}>
