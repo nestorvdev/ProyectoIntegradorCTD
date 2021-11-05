@@ -9,22 +9,26 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import './App.module.css';
 
-
 function App() {
   const [log, setLog] = useState(sessionStorage.getItem("log") === "true" ? true : false)
-  const[activeCreate, setActiveCreate] = useState()
-  const[activeLogin, setActiveLogin] = useState()
-  const[category, setCategory] = useState("All")
-  const[search, setSearch] = useState("");
+  const [activeCreate, setActiveCreate] = useState()
+  const [activeLogin, setActiveLogin] = useState()
+  const [category, setCategory] = useState("All")
+  const [search, setSearch] = useState(false);
+  const [city,setCity] = useState(""); 
 
-  const handleCategory = (c) => {
-    setCategory(c)
-    setSearch(false)
+  const handleCategory = (c) => {    
+    setCategory(c);    
+    setSearch(false);       
   }
 
   const handleSearch = (e) => {
     e.preventDefault();
-    setSearch(true)
+    setSearch(true);   
+  }
+
+  const handleCity = (c) => {
+    setCity(c);    
   }
 
   return ( 
@@ -32,7 +36,7 @@ function App() {
       <LayoutPrincipal isLogged = {log} activeCreate ={activeCreate} activeLogin = {activeLogin} >
         <Switch>
           <Route exact path="/">
-            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin} category= {category} handleCategory={handleCategory} search={search} handleSearch={handleSearch}/>
+            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin} category= {category} handleCategory={handleCategory} search={search} handleSearch={handleSearch} city={city} handleCity={handleCity} />
           </Route>
           <Route exact path="/login"  component={() => !log? <FormLogin setLog={setLog} setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />                  
           <Route exact path="/create" component={() => !log? <FormCreate setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />
