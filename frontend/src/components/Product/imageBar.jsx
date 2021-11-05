@@ -10,7 +10,7 @@ function ImageBar(props) {
     const { images } = props;
     console.log(props,"imageBar");
     const changeSlider= ()=> countSlider === images.length-1?setCountSlider(0):setCountSlider(countSlider+1);   
-    setInterval(changeSlider, 10000);
+    setTimeout(changeSlider,5000);    
 return (
     <div className={`${Styles.imageBar} ${StylesApp.delimiter}`}>
         <div className={`${Styles.imageBarChild} ${StylesApp.delimiterChild}`}>
