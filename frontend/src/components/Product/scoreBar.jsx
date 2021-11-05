@@ -30,11 +30,11 @@ function ScoreBar(props) {
                     <div className={Styles.calificacionLetra}>
                         <p>{scoreLetter(props.qualification)}</p>
                         <div className={Styles.calificacionEstrellas}>
+                            {cantStar >= 0 ? star : null}
                             {cantStar >= 1 ? star : null}
                             {cantStar >= 2 ? star : null}
                             {cantStar >= 3 ? star : null}
                             {cantStar >= 4 ? star : null}
-                            {cantStar >= 5 ? star : null}
                         </div>
                     </div>
                     <p className={Styles.calificacionEntero}>
