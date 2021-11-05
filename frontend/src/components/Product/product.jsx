@@ -1,19 +1,16 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import TitleBar from "./titleBar";
-import ScoreBar from "./scoreBar";
-import ImageBar from "./imageBar";
-import DescriptionBar from "./descriptionBar";
-import FeaturesBar from "./featuresBar";
-import MapBar from "./mapBar";
-import InfoBar from "./infoBar";
+import TitleBar from "./TitleBar";
+import ScoreBar from "./ScoreBar";
+import ImageBar from "./ImageBar";
+import DescriptionBar from "./DescriptionBar";
+import FeaturesBar from "./FeaturesBar";
+import MapBar from "./MapBar";
+import InfoBar from "./InfoBar";
 
 
 function Product(props) {
     let { id } = useParams();
-
-    /* se crea el objeto vacio */
-
 
     let productAux = {
         id: id,
@@ -21,7 +18,8 @@ function Product(props) {
         description: "descripcion hotel",
         latitude: -12.1234,
         longitude: 12.1234,
-        qualification: 10,
+        qualification: 9.1,
+        favorite: true,
         reference: "referencia",
         category: {
             id: 1,
@@ -36,13 +34,16 @@ function Product(props) {
         },
         images: [
             { id: 1, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
-            { id: 2, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
+            { id: 2, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/hotel-reception-lobby-picture-id1292355630", productId: 1 },
             { id: 3, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
-            { id: 4, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
+            { id: 4, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/hotel-reception-lobby-picture-id1292355630", productId: 1 },
             { id: 5, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
-            { id: 6, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
+            { id: 6, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/hotel-reception-lobby-picture-id1292355630", productId: 1 },
             { id: 7, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
-            { id: 8, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
+            { id: 8, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/hotel-reception-lobby-picture-id1292355630", productId: 1 },
+            { id: 9, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
+            { id: 10, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/hotel-reception-lobby-picture-id1292355630", productId: 1 },
+
 
         ],
         features: [
@@ -59,7 +60,6 @@ function Product(props) {
             { id: 11, title: "checkIn", state: true },
             { id: 12, title: "noSmoke", state: true },
         ],
-        favorite: true,
         rules: "normas1,normas2,normas3",
         health: "salud1,salud2,salud3",
         politics: "politicas1,politicas2,politicas3",
@@ -76,7 +76,7 @@ function Product(props) {
             <DescriptionBar city={prod.city} description={prod.description} />
             <FeaturesBar features={prod.features} />
             <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude}/>
-            <InfoBar health={prod.health} rules={prod.rules} politics={prod.politics}/> */
+            <InfoBar health={prod.health} rules={prod.rules} politics={prod.politics}/> 
         </section>
     );
 }

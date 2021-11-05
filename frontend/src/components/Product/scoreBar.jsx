@@ -3,7 +3,7 @@ import StylesApp from "../../App.module.css";
 import Styles from "./styles.module.css";
 import iconLocation from "./icons/iconLocation.svg";
 
-function scoreBar(props) {
+function ScoreBar(props) {
 
     console.log(props, "scoreBar");
 
@@ -46,4 +46,4 @@ function scoreBar(props) {
     );
 }
 
-export default scoreBar;
+export default ScoreBar;

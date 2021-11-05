@@ -3,7 +3,7 @@ import FormLogin from "./components/Forms/FormLogin.jsx"
 import FormCreate from "./components/Forms/FormCreate.jsx";
 import Home from "./components/Home/Home.jsx";
 import LayoutPrincipal from "./layout/LayoutPrincipal";
-import Product from "./components/Product/product.jsx";
+import Product from "./components/Product/Product.jsx";
 import NotFound from "./components/NotFound/NotFound.jsx";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 

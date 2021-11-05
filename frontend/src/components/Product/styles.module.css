@@ -129,6 +129,23 @@
   color: white;
 }
 
+.imageBar .slider {
+  display: none;
+  position: relative;
+}
+
+.imageBar .slider p{  
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-weight: var(--font-bold);
+  font-size: var(--text3);
+
+}
+
+
+
 /*  estilos de descripcionBard */
 
 .descripcionBar {
@@ -261,8 +278,8 @@
   flex-wrap: wrap;
 }
 
-.info div{
-    width: clamp(229px, 30vw, 420px);
+.info div {
+  width: clamp(229px, 30vw, 420px);
 }
 
 .info div h3 {
@@ -282,16 +299,36 @@
 /*  media queries responsive */
 
 @media all and (max-width: 769px) {
-  .imageBar .barraDer {
+  .imageBar .barraDer,
+  .imageBar .barraIzq {
     display: none;
+  }
+  .imageBar .barraSup {
+    padding-left: clamp(20px, 3.9%, 40px);
+    padding-right: clamp(20px, 3.9%, 40px);
+  }
+
+  .imageBar .slider {
+    width: 100%;
+    display: block;
+  }
+  .imageBar .slider img {
+    width: 100%;
+    height: 70vw;
   }
 
   .featuresBarChild p {
     min-width: clamp(180px, 50%, 354px); /* ojo revisar ahorita */
     margin-bottom: 10px;
   }
+
+  .imageBarChild {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 @media all and (max-width: 415px) {
-    
 }

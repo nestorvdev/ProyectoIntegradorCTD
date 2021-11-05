@@ -3,10 +3,10 @@ import StylesApp from "../../App.module.css";
 import Styles from "./styles.module.css";
 import iconLocation from "./icons/iconBack.svg"
 
-function titleBar(props) {
+function TitleBar(props) {
 
     console.log(props, "topBar");
-
+           
     return (
         <div className={`${Styles.titleBar} ${StylesApp.delimiter}`}>
             <div className={`${Styles.titleBarChild} ${StylesApp.delimiterChild}`}>
@@ -24,4 +24,4 @@ function titleBar(props) {
     );
 }
 
-export default titleBar;
+export default TitleBar;
