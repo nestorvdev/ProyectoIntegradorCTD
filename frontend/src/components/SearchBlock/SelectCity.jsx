@@ -1,10 +1,27 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Select from 'react-select';
 import CityOption from './CityOption';
 import vector from './img/Vector.png'
 import localizador from './img/localizador.png'
+import axios from "axios";
 
-function SelectCity() {
+function SelectCity({city, handleCity}) {
+  const baseURL = "http://localhost:8080/cities/all";
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    axios
+      .get(baseURL)
+      .then((response) => {
+        setData(response.data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        setErrorMessage(error);
+      });
+  }, []);
 
   const customStyles = {
     option: () => ({
@@ -99,12 +116,19 @@ function SelectCity() {
 
   }
 
-  const options = [
-    { value: 'buenos-aires, Argentina', label: <CityOption city='Buenos Aires' country='Argentina' /> },
+  const options = data.map((city) => {
+    return {
+      value: `${city.name}, ${city.country}`,
+      label: <CityOption city={city.name} country={city.country} handleCity={handleCity}/>,
+    };
+  })
+
+  /* const options = [
+    { value: `Buenos-Aires, Argentina`, label: <CityOption city={data[0].name} country={data[0].country} /> },
     { value: 'mendoza, Argentina', label: <CityOption city='Mendoza' country='Argentina'/> },
     { value: 'cordoba, Argentina', label: <CityOption city='Córdoba' country='Argentina'/> },
     { value: 'bariloche, Argentina', label: <CityOption city='San Carlos de Bariloche' country='Argentina'/> },
-  ];
+  ]; */
 
   return (
     <Select

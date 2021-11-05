@@ -1,36 +1,104 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Styles from './styles.module.css';
 import StylesApp from "../../App.module.css"
 import Card from './Card.jsx';
-import data from './data.json';
+import dataJSON from './data.json';
 import dataSearch from './dataSearch.json';
+import axios from "axios";
 
-export default function Cards({ category, search }) {
+export default function Cards({ titulo, category, city, search }) {
+    const baseUrlProductosRecomendados = "http://localhost:8080/products/all";
+    const baseUrlPorCategoria = `http://localhost:8080/products/get/category/${category}`;
+    const baseUrlPorCiudad = `http://localhost:8080/products/get/city/${city}`;
+    //const baseUrlPorFecha = `http://localhost:8080/products/date`;
+    //const baseUrlPorCiudadYFecha = `http://localhost:8080/products/search/date/${search}`;
+    const [data, setData] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [errorMessage, setErrorMessage] = useState("");   
+             
+    useEffect(() => {
+        if (category === "All") {
+            axios.get(baseUrlProductosRecomendados)
+                .then(response => {
+                    setData(response.data);
+                    setLoading(false);
+                })
+                .catch(error => {
+                    setErrorMessage(error.message);
+                    setLoading(false);
+                });
+        } else if (category != "All" && search === false) {
+            axios.get(baseUrlPorCategoria)
+                .then(response => {
+                    setData(response.data);
+                    setLoading(false);
+                })
+                .catch(error => {
+                    setErrorMessage(error.message);
+                    setLoading(false);
+                });
+        } else if (search) {
+            axios.get(baseUrlPorCiudad)
+                .then(response => {
+                    setData(response.data);
+                    setLoading(false);
+                })
+                .catch(error => {
+                    setErrorMessage(error.message);
+                    setLoading(false);
+                });
+        } else {
+            setErrorMessage("Error");
+            setLoading(false);
+        }
+    }, [category]);
+    
+    
+    /* const handleSearch = (e) => {
+        e.preventDefault();
+        const search = e.target.value;
+        const dataSearch = data.filter((item) => {
+            return item.name.toLowerCase().includes(search.toLowerCase());
+        });
+        setData(dataSearch);
+    }; */
 
-    return (
-        <div className={`${StylesApp.delimiter}`}>
-            {search ?
+    if (errorMessage && loading) {
+        return (
+            <div className={`${StylesApp.delimiter}`}>
                 <div className={`${Styles.cardsBlock} ${StylesApp.delimiterChild}`}>
                     <h2>Resultados</h2>
-                    <div className={Styles.cardsBox}>
-                        {dataSearch.map((e, index) =>
-                            <Card image={e.images.url} cardCategory={e.category.title} name={e.name} city={e.city.name} country={e.city.country} description={e.description} key={index} id={e.id} reference={e.reference} qualification={e.qualification} />
-                        )}
-                    </div>
+                    Resultados no disponibles - Falta la conexión con el Back
                 </div>
-                :
+            </div>
+        );
+    }
+    else {
+        return (
+            <div className={`${StylesApp.delimiter}`}>
                 <div className={`${Styles.cardsBlock} ${StylesApp.delimiterChild}`}>
-                    <h2>{category === "All" ? "Recomendaciones" : "Resultados"}</h2>
+                    <h2>{titulo}</h2>
                     <div className={Styles.cardsBox}>
-                        {data.map((e, index) =>
-                            category === "All" ? <Card image={e.images.url} cardCategory={e.category.title} name={e.name} city={e.city.name} country={e.city.country} description={e.description} key={index} id={e.id} reference={e.reference} qualification={e.qualification} /> :
-                                (category === e.category.title ? <Card image={e.images.url} cardCategory={e.category.title} name={e.name} city={e.city.name} country={e.city.country} description={e.description} key={index} id={e.id} reference={e.reference} qualification={e.qualification} /> : null)
-
+                        {data.map((e, index) => 
+                            <Card image={e.images.length > 0? e.images[0].url : ""}
+                                cardCategory={e.category.title}
+                                name={e.name}
+                                city={e.city.name}
+                                country={e.city.country}
+                                description={e.description}
+                                key={index}
+                                id={e.id}
+                                reference={e.reference}
+                                qualification={e.qualification} />                               
+                        
+                            
                         )}
+                        
                     </div>
                 </div>
-            }
-        </div>
-    );
+            </div>
+        );
+    }
+
 }
 

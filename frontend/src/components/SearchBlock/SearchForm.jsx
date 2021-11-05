@@ -3,11 +3,11 @@ import SelectCity from "./SelectCity";
 import SelectDate from "./SelectDate";
 import Styles from "./styles.module.css"
 
-function SearchForm({handleSearch}) {
+function SearchForm({handleSearch, handleCity}) {
   return (
     <form className={Styles.gridContainer} action="">
       <div className={`${Styles.iconSelectBox} grid-item`}>      
-        <SelectCity />
+        <SelectCity handleCity={handleCity}/>
       </div>
       <div className={`${Styles.iconSelectBox} grid-item`}>       
         <SelectDate />
