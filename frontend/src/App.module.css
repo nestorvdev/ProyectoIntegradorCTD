@@ -55,6 +55,13 @@ main {
     width: 100%;
 }
 
+@media all and (max-width: 769px) {
+    main{
+    top: 99px !important;
+    min-height: calc(100vh - 58px -93px);
+  }
+}
+
 @media all and (max-width: 415px) {
     main{
     top: 93px !important;

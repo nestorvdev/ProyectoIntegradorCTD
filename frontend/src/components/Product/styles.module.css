@@ -258,6 +258,11 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
+  flex-wrap: wrap;
+}
+
+.info div{
+    width: clamp(229px, 30vw, 420px);
 }
 
 .info div h3 {
@@ -272,4 +277,21 @@
 .info div h3,
 .info div p {
   padding: 10px 0;
+}
+
+/*  media queries responsive */
+
+@media all and (max-width: 769px) {
+  .imageBar .barraDer {
+    display: none;
+  }
+
+  .featuresBarChild p {
+    min-width: clamp(180px, 50%, 354px); /* ojo revisar ahorita */
+    margin-bottom: 10px;
+  }
+}
+
+@media all and (max-width: 415px) {
+    
 }
