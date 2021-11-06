@@ -14,10 +14,8 @@ import java.util.Set;
 public class FeatureDTO {
     private Integer id;
     private String title;
-    /*private boolean state;*/
     private FeatureTypes type;
     private Set<Product> products = new HashSet<>();
-    /*private Set<Integer> productIds = new HashSet<>();*/
 
     public FeatureDTO() {
     }
@@ -25,24 +23,20 @@ public class FeatureDTO {
     public FeatureDTO(Integer id, String title, boolean state, FeatureTypes type) {
         this.id = id;
         this.title = title;
-        /*this.state = state;*/
         this.type = type;
     }
 
     public FeatureDTO(String title, boolean state, FeatureTypes type) {
         this.title = title;
-       /* this.state = state;*/
         this.type = type;
     }
 
     public Feature toEntity (){
         Feature feature = new Feature();
         feature.setTitle(title);
-        /*feature.setState(state);*/
         feature.setType(type);
         feature.setProducts(products);
         return feature;
     }
-
 }
 

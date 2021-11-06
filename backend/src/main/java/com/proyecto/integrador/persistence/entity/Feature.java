@@ -27,8 +27,6 @@ public class Feature {
     private Integer id;
     @Column(name = "title", nullable = false)
     private String title;
-/*    @Column(name = "state", nullable = false)
-    private boolean state;*/
     @Column(name = "type", nullable = false)
     private FeatureTypes type;
     @ManyToMany(targetEntity = Product.class, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
@@ -45,7 +43,6 @@ public class Feature {
     public Feature(Integer id, String title, boolean state, FeatureTypes type) {
         this.id = id;
         this.title = title;
-        /*this.state = state;*/
         this.type = type;
     }
 
@@ -54,8 +51,6 @@ public class Feature {
         featureDTO.setId(id);
         featureDTO.setTitle(title);
         featureDTO.setType(type);
-        /*featureDTO.setState(state);*/
-        /*featureDTO.setProductIds(products.stream().map(Product::getId).collect(Collectors.toSet()));*/
         return featureDTO;
     }
 }

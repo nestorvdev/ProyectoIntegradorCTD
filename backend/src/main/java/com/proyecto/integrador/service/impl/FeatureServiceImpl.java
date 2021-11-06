@@ -72,7 +72,6 @@ public class FeatureServiceImpl implements IFeatureService {
         }
         Feature feature = featureRepository.findById(featureDTO.getId()).get();
         feature.setTitle(featureDTO.getTitle());
-        /*feature.setState(featureDTO.isState());*/
         feature.setType(featureDTO.getType());
         logger.debug("Terminó la ejecución del método actualizar característica por ID");
         return featureRepository.save(feature).toDto();
