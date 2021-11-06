@@ -247,9 +247,10 @@
 .mapBar .map {
   align-self: center;
   margin: 20px 0;
-  width: clamp(300px, 80vw, 1285px);
+  width: clamp(300px, 100%, 1285px);
   height: clamp(300px, 50vh, 700px);
 }
+
 
 
 /* Estilos infoBar */
