@@ -1,15 +1,19 @@
-import StylesApp from "../../App.module.css";
-import Styles from "./styles.module.css";
-import  {GoogleMap, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
+import React from 'react'
+import { GoogleMap, LoadScript } from '@react-google-maps/api';
 
 function Map(props) {
+    const {latitude, longitude, zoom } = props;
+    const center = {lat:latitude, lng:longitude};
+    const containerStyle = {width: '100%',height: '400px'};
+    console.log(props,"map");
     return (
-        <>
-            <GoogleMap defaultZoom={17} defaultCenter={{lat:props.latitude,lng:props.longitude}}>
-                <Marker position={{lat:props.latitude,lng:props.longitude}}/>
-            </GoogleMap>
-        </>
-    )
+    <LoadScript googleMapsApiKey="AIzaSyDoTLld8oN8wZm0avj07nwEv0FXqdfiaOE">
+      <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={zoom} >
+        { /* Child components, such as markers, info windows, etc. */ }
+        <></>
+      </GoogleMap>
+    </LoadScript>
+  )
 }
 
-export default withScriptjs(withGoogleMap(Map));
+export default React.memo(Map)

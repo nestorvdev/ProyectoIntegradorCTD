@@ -9,15 +9,9 @@ function ImageBar(props) {
     const { images } = props;
     console.log(props,"imageBar");
     const changeSlider= ()=> countSlider === images.length-1?setCountSlider(0):setCountSlider(countSlider+1);   
-    setTimeout(changeSlider,5000);    
-
-    const openLightBox = (() => {
-        props.setViewerIsOpen(true);
-    });
-
-    const openShareModal = (() => {
-        props.setShareIsOpen(true)
-    })
+    /*setTimeout(changeSlider,5000);*/
+    const openLightBox = (() => {props.setViewerIsOpen(true);});
+    const openShareModal = (() => {props.setShareIsOpen(true)})
 
 return (
     <div className={`${Styles.imageBar} ${StylesApp.delimiter}`}>
