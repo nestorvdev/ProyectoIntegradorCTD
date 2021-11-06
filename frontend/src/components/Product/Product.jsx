@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import TitleBar from "./TitleBar";
 import ScoreBar from "./ScoreBar";
@@ -9,6 +9,7 @@ import DescriptionBar from "./DescriptionBar";
 import FeaturesBar from "./FeaturesBar";
 import MapBar from "./MapBar";
 import InfoBar from "./InfoBar";
+import axios from "axios";
 
 
 function Product(props) {
@@ -16,9 +17,25 @@ function Product(props) {
     const [currentImage, setCurrentImage] = useState(0);
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
-    const[shareIsOpen, setShareIsOpen] = useState(false);
-
+    const [shareIsOpen, setShareIsOpen] = useState(false);
+    
+    const [loading, setLoading] = useState(true);
+    const [errorMessage, setErrorMessage] = useState("");
     let { id } = useParams();
+   
+
+    useEffect(() => {
+        axios
+          .get(`http://localhost:8080/products/get/${id}`)
+          .then((response) => {
+            setProd(response.data);
+            setLoading(false);
+            console.log(response.data);
+          })
+          .catch((error) => {
+            setErrorMessage(error);
+          });
+      }, []);   
 
     let productAux = {
         id: id,
@@ -75,7 +92,6 @@ function Product(props) {
 
     const [prod, setProd] = useState(productAux);
 
-    console.log(props, "product");
     return (
         <section>
             <TitleBar category={prod.category.title} name={prod.name} goBack={props.history.goBack} />

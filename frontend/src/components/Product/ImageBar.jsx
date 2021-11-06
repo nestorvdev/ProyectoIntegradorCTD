@@ -1,6 +1,5 @@
 import StylesApp from "../../App.module.css";
 import Styles from "./styles.module.css";
-import { Link } from "react-router-dom";
 import iconSocial from "./icons/iconSocial.svg";
 import iconHeart from "./icons/iconHeart.svg"
 import React, { useState } from "react";
@@ -32,15 +31,15 @@ return (
                     <img src={images[0].url} alt={images[0].title} />
                 </div>
                 <div className={Styles.barraDer}>
-                    <img src={images[1].url} alt={images[1].title} />
-                    <img src={images[2].url} alt={images[2].title} />
-                    <img src={images[3].url} alt={images[3].title} />
-                    <img src={images[4].url} alt={images[4].title} />
+                    <img src={images[0].url} alt={images[0].title} />
+                    <img src={images[0].url} alt={images[0].title} />
+                    <img src={images[0].url} alt={images[0].title} />
+                    <img src={images[0].url} alt={images[0].title} />
                    <div className={Styles.verMas} onClick={openLightBox}>Ver Mas</div>
                 </div>
                 <div className={Styles.slider}  onClick={changeSlider} >
-                    <img src={images[countSlider].url} alt={images[countSlider].title}/>
-                    <p>{(countSlider+1) +"/" +(images.length)}</p>
+                    {/* <img src={images[countSlider].url} alt={images[countSlider].title}/>
+                    <p>{(countSlider+1) +"/" +(images.length)}</p> */}
                 </div>
             </div>
         </div>

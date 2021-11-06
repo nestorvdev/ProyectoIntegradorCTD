@@ -14,14 +14,14 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
     //const baseUrlPorCiudadYFecha = `http://localhost:8080/products/search/date/${search}`;
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [errorMessage, setErrorMessage] = useState("");   
-             
+    const [errorMessage, setErrorMessage] = useState("");
+
     useEffect(() => {
         if (category === "All" && search === false) {
             axios.get(baseUrlProductosRecomendados)
                 .then(response => {
                     setData(response.data);
-                    setLoading(false);                   
+                    setLoading(false);
                 })
                 .catch(error => {
                     setErrorMessage(error.message);
@@ -31,7 +31,7 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
             axios.get(baseUrlPorCategoria)
                 .then(response => {
                     setData(response.data);
-                    setLoading(false);                    
+                    setLoading(false);
                 })
                 .catch(error => {
                     setErrorMessage(error.message);
@@ -41,7 +41,7 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
             axios.get(baseUrlPorCiudad)
                 .then(response => {
                     setData(response.data);
-                    setLoading(false);                   
+                    setLoading(false);
                 })
                 .catch(error => {
                     setErrorMessage(error.message);
@@ -52,8 +52,8 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
             setLoading(false);
         }
     }, [category, clickBusqueda]);
-    
-    
+
+
     /* const handleSearch = (e) => {
         e.preventDefault();
         const search = e.target.value;
@@ -79,8 +79,8 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
                 <div className={`${Styles.cardsBlock} ${StylesApp.delimiterChild}`}>
                     <h2>{titulo}</h2>
                     <div className={Styles.cardsBox}>
-                        {data.map((e, index) => 
-                            <Card image={e.images.length > 0? e.images[0].url : ""}
+                        {data.map((e, index) =>
+                            <Card image={e.images.length > 0 ? e.images[0].url : ""}
                                 cardCategory={e.category.title}
                                 name={e.name}
                                 city={e.city.name}
@@ -89,11 +89,9 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
                                 key={index}
                                 id={e.id}
                                 reference={e.reference}
-                                qualification={e.qualification} />                               
-                        
-                            
+                                qualification={e.qualification}
+                                features={e.features} />
                         )}
-                        
                     </div>
                 </div>
             </div>

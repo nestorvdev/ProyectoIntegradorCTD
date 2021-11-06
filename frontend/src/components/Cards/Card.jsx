@@ -5,10 +5,22 @@ import iconStar from "./img/starOrange.png";
 import iconLocation from "./img/IconLocation.svg";
 import iconSwimming from "./img/iconSwimming.svg";
 import { Link } from "react-router-dom";
+import wifi from '../Product/icons/wifi.svg';
+import pool from '../Product/icons/pool.svg';
+import kitchen from '../Product/icons/kitchen.svg';
+import tv from '../Product/icons/tv.svg';
+import ac from '../Product/icons/ac.svg';
+import pet from '../Product/icons/pet.svg';
+import parking from '../Product/icons/parking.svg';
+import creditCard from '../Product/icons/creditCard.svg';
+import smoke from '../Product/icons/smoke.svg';
+import party from '../Product/icons/party.svg';
+import checkin from '../Product/icons/checkIn.svg';
+import noSmoke from '../Product/icons/noSmoke.svg';
 
-function Card({ image, cardCategory, name, city, country, description, id, reference, qualification }) {
-
+function Card({ image, cardCategory, name, city, country, description, id, reference, qualification, features }) {
     const [isLike, setLike] = useState("false");
+    let icons = [wifi, pool, kitchen, tv, ac, pet, parking, creditCard, smoke, party, checkin, noSmoke];
 
     const handleToggle = (e) => {
         setLike(!isLike);
@@ -64,6 +76,10 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
                 <div className={Styles.cardIcons}>
                     <img src={iconWifi} alt="" />
                     <img className={Styles.iconSwimming} src={iconSwimming} alt="" />
+                    {features.map((e, index) => 
+                    e.state ? 
+                    <p key={index}> <img src={icons[index]} alt={e.titulo} />{e.title} </p> 
+                    : null)}
                 </div>
                 <div className={Styles.cardDescription}>
                     <p>{description}</p>
