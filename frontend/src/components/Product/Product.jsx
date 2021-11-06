@@ -21,8 +21,24 @@ function Product(props) {
     
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
-    let { id } = useParams();
-   
+    let { id } = useParams();    
+    const [prod, setProd] = useState({
+        id: id,
+        name: "",
+        description: "",
+        latitude: null,
+        longitude: null,
+        qualification: null,
+        favorite: null,
+        reference: "",
+        category: {id: null, title: "", description: "",url: ""},
+        city: { id: null, name: "", country: ""},
+        images: [{ id: null, title: "", url: "", productId: null }],
+        features: [{ id: null, title: "", state: null }],
+        rules: "",
+        health: "",
+        politics: ""
+    });    
 
     useEffect(() => {
         axios
@@ -35,9 +51,9 @@ function Product(props) {
           .catch((error) => {
             setErrorMessage(error);
           });
-      }, []);   
+      }, [prod]);   
 
-    let productAux = {
+    /* let productAux = {
         id: id,
         name: "nombreHotel",
         description: "descripcion hotel",
@@ -69,7 +85,6 @@ function Product(props) {
             { id: 9, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
             { id: 10, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/hotel-reception-lobby-picture-id1292355630", productId: 1 },
 
-
         ],
         features: [
             { id: 1, title: "wifi", state: true },
@@ -88,21 +103,22 @@ function Product(props) {
         rules: "normas1,normas2,normas3",
         health: "salud1,salud2,salud3",
         politics: "politicas1,politicas2,politicas3",
-    }
+    } */
 
-    const [prod, setProd] = useState(productAux);
-
+    
     return (
         <section>
             <TitleBar category={prod.category.title} name={prod.name} goBack={props.history.goBack} />
             <ScoreBar reference={prod.reference} city={prod.city} qualification={prod.qualification} />
             <ImageBar images={prod.images} setViewerIsOpen={setViewerIsOpen}  setShareIsOpen={setShareIsOpen}/>
-            <Share id={productAux.id} shareIsOpen={shareIsOpen} setShareIsOpen={setShareIsOpen}/>
+            <Share id={prod.id} shareIsOpen={shareIsOpen} setShareIsOpen={setShareIsOpen}/>
             <CarouselModal images={prod.images} viewerIsOpen={viewerIsOpen} setViewerIsOpen={setViewerIsOpen} setCurrentImage={setCurrentImage}/>
             <DescriptionBar city={prod.city} description={prod.description} />
             <FeaturesBar features={prod.features} />
             <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude}/>
             <InfoBar health={prod.health} rules={prod.rules} politics={prod.politics}/> 
+            {console.log(prod.latitude, "latitude")};
+            {console.log(prod.longitude, "longitude")};
         </section>
     );
 }
