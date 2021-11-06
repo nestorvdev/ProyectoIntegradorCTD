@@ -51,7 +51,7 @@ function Product(props) {
           .catch((error) => {
             setErrorMessage(error);
           });
-      }, [prod]);   
+      }, []);   
 
     /* let productAux = {
         id: id,
