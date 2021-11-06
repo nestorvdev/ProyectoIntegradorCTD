@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.proyecto.integrador.DTO.FeatureDTO;
+import com.proyecto.integrador.persistence.entity.enums.FeatureTypes;
 import io.swagger.v3.oas.models.tags.Tag;
 import lombok.Getter;
 import lombok.Setter;
@@ -26,8 +27,10 @@ public class Feature {
     private Integer id;
     @Column(name = "title", nullable = false)
     private String title;
-    @Column(name = "state", nullable = false)
-    private boolean state;
+/*    @Column(name = "state", nullable = false)
+    private boolean state;*/
+    @Column(name = "type", nullable = false)
+    private FeatureTypes type;
     @ManyToMany(targetEntity = Product.class, cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinTable(
             name = "featurePerProduct",
@@ -39,17 +42,19 @@ public class Feature {
     public Feature() {
     }
 
-    public Feature(Integer id, String title, boolean state) {
+    public Feature(Integer id, String title, boolean state, FeatureTypes type) {
         this.id = id;
         this.title = title;
-        this.state = state;
+        /*this.state = state;*/
+        this.type = type;
     }
 
     public FeatureDTO toDto() {
         FeatureDTO featureDTO = new FeatureDTO();
         featureDTO.setId(id);
         featureDTO.setTitle(title);
-        featureDTO.setState(state);
+        featureDTO.setType(type);
+        /*featureDTO.setState(state);*/
         /*featureDTO.setProductIds(products.stream().map(Product::getId).collect(Collectors.toSet()));*/
         return featureDTO;
     }
