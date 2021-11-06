@@ -1,8 +1,6 @@
 package com.proyecto.integrador.DTO;
-
-import com.proyecto.integrador.entity.City;
-import com.proyecto.integrador.entity.Feature;
-import com.proyecto.integrador.entity.Product;
+import com.proyecto.integrador.persistence.entity.Feature;
+import com.proyecto.integrador.persistence.entity.Product;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -14,36 +12,32 @@ import java.util.Set;
 @Setter
 public class FeatureDTO {
     private Integer id;
-    private String name;
-    private String icon;
+    private String title;
     private boolean state;
-    private Set<Product> products;
+    private Set<Product> products = new HashSet<>();
+    /*private Set<Integer> productIds = new HashSet<>();*/
 
     public FeatureDTO() {
     }
 
-    public FeatureDTO(Integer id, String name, String icon, boolean state) {
+    public FeatureDTO(Integer id, String title, boolean state) {
         this.id = id;
-        this.name = name;
-        this.icon = icon;
+        this.title = title;
         this.state = state;
-        this.products = new HashSet<>();
     }
 
-    public FeatureDTO(String name, String icon, boolean state) {
-        this.name = name;
-        this.icon = icon;
+    public FeatureDTO(String title, boolean state) {
+        this.title = title;
         this.state = state;
-        this.products = new HashSet<>();
     }
 
     public Feature toEntity (){
         Feature feature = new Feature();
-        feature.setName(name);
-        feature.setIcon(icon);
+        feature.setTitle(title);
         feature.setState(state);
         feature.setProducts(products);
         return feature;
     }
+
 }
 

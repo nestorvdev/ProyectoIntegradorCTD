@@ -1,12 +1,8 @@
 package com.proyecto.integrador.controller;
 
-import com.proyecto.integrador.DTO.CityDTO;
 import com.proyecto.integrador.DTO.ImageDTO;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.repository.IImageRepository;
-import com.proyecto.integrador.service.ICityService;
 import com.proyecto.integrador.service.IImageService;
-import com.proyecto.integrador.service.impl.ImageServiceImpl;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

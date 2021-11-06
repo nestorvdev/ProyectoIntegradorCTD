@@ -1,9 +1,8 @@
-package com.proyecto.integrador.entity;
+package com.proyecto.integrador.persistence.entity;
 
 import com.proyecto.integrador.DTO.ImageDTO;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
 

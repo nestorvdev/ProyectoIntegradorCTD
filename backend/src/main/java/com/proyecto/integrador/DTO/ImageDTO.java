@@ -1,8 +1,7 @@
 package com.proyecto.integrador.DTO;
 
-import com.proyecto.integrador.entity.City;
-import com.proyecto.integrador.entity.Image;
-import com.proyecto.integrador.entity.Product;
+import com.proyecto.integrador.persistence.entity.Image;
+import com.proyecto.integrador.persistence.entity.Product;
 import lombok.Getter;
 import lombok.Setter;
 

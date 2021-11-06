@@ -1,12 +1,8 @@
 package com.proyecto.integrador.DTO;
 
-import com.proyecto.integrador.entity.City;
-import com.proyecto.integrador.entity.Product;
+import com.proyecto.integrador.persistence.entity.City;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.HashSet;
-import java.util.Set;
 
 @Getter
 @Setter

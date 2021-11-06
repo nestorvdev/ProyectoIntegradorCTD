@@ -1,14 +1,16 @@
-package com.proyecto.integrador.entity;
+package com.proyecto.integrador.persistence.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.proyecto.integrador.DTO.CategoryDTO;
 import com.proyecto.integrador.DTO.CityDTO;
 import com.proyecto.integrador.DTO.ProductDTO;
 import lombok.Getter;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
@@ -34,6 +36,12 @@ public class Product {
     private boolean favourite;
     @Column(name = "reference", nullable = false)
     private String reference;
+    @Column(name = "rules", nullable = false)
+    private String rules;
+    @Column(name = "health", nullable = false)
+    private String health;
+    @Column(name = "politics", nullable = false)
+    private String politics;
     @ManyToOne
     @JoinColumn(name = "idCategory", nullable = false)
     private Category category;
@@ -41,9 +49,9 @@ public class Product {
     @JoinColumn(name = "idCity", nullable = false)
     private City city;
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private Set<Image> images;
-    @ManyToMany(mappedBy = "products")
-    private Set<Feature> features;
+    private Set<Image> images = new HashSet<>();
+    @ManyToMany(targetEntity = Feature.class, mappedBy = "products", cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
+    private Set<Feature> features = new HashSet<>();
 
     public Product() {
     }
@@ -52,7 +60,7 @@ public class Product {
         this.id = id;
     }
 
-    public Product(Integer id, String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, Category category, City city) {
+    public Product(Integer id, String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, Category category, City city, String rules, String health, String politics) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -63,8 +71,22 @@ public class Product {
         this.reference = reference;
         this.category = category;
         this.city = city;
-        this.images = new HashSet<>();
-        this.features = new HashSet<>();
+        this.rules = rules;
+        this.health = health;
+        this.politics = politics;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Product)) return false;
+        Product product = (Product) o;
+        return getId().equals(product.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getId());
     }
 
     public ProductDTO toDto(){
@@ -79,6 +101,9 @@ public class Product {
         productDTO.setReference(reference);
         productDTO.setCategory(new CategoryDTO(category.getId()));
         productDTO.setCity(new CityDTO(city.getId()));
+        productDTO.setRules(rules);
+        productDTO.setHealth(health);
+        productDTO.setPolitics(politics);
         return productDTO;
     }
 }

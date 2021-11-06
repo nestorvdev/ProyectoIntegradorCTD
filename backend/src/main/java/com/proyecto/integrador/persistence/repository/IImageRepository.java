@@ -1,6 +1,6 @@
-package com.proyecto.integrador.repository;
+package com.proyecto.integrador.persistence.repository;
 
-import com.proyecto.integrador.entity.Image;
+import com.proyecto.integrador.persistence.entity.Image;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

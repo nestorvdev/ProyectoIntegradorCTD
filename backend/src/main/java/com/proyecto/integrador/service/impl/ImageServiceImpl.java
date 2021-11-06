@@ -1,15 +1,9 @@
 package com.proyecto.integrador.service.impl;
 
-import com.proyecto.integrador.DTO.CityDTO;
 import com.proyecto.integrador.DTO.ImageDTO;
-import com.proyecto.integrador.DTO.ProductDTO;
-import com.proyecto.integrador.entity.City;
-import com.proyecto.integrador.entity.Image;
-import com.proyecto.integrador.entity.Product;
+import com.proyecto.integrador.persistence.entity.Image;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.repository.ICityRepository;
-import com.proyecto.integrador.repository.IImageRepository;
-import com.proyecto.integrador.service.ICityService;
+import com.proyecto.integrador.persistence.repository.IImageRepository;
 import com.proyecto.integrador.service.IImageService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

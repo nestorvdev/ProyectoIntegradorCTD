@@ -1,8 +1,6 @@
 package com.proyecto.integrador.service;
 
-import com.proyecto.integrador.DTO.CategoryDTO;
 import com.proyecto.integrador.DTO.ProductDTO;
-import com.proyecto.integrador.entity.Product;
 import com.proyecto.integrador.exceptions.BadRequestException;
 import com.proyecto.integrador.exceptions.FindByIdException;
 

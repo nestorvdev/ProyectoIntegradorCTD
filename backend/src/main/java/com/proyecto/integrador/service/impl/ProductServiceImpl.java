@@ -1,20 +1,17 @@
 package com.proyecto.integrador.service.impl;
 
-import com.proyecto.integrador.DTO.CategoryDTO;
+import com.proyecto.integrador.DTO.FeatureDTO;
 import com.proyecto.integrador.DTO.ImageDTO;
 import com.proyecto.integrador.DTO.ProductDTO;
-import com.proyecto.integrador.entity.Category;
-import com.proyecto.integrador.entity.City;
-import com.proyecto.integrador.entity.Image;
-import com.proyecto.integrador.entity.Product;
+import com.proyecto.integrador.persistence.entity.Category;
+import com.proyecto.integrador.persistence.entity.City;
+import com.proyecto.integrador.persistence.entity.Product;
 import com.proyecto.integrador.exceptions.BadRequestException;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.repository.ICategoryRepository;
-import com.proyecto.integrador.repository.IProductRepository;
+import com.proyecto.integrador.persistence.repository.IProductRepository;
 import com.proyecto.integrador.service.IProductService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
@@ -33,11 +30,16 @@ public class ProductServiceImpl implements IProductService {
     CityServiceImpl cityService;
     @Autowired
     ImageServiceImpl imageService;
+    @Autowired
+    FeatureServiceImpl featureService;
 
 
     private Set<ImageDTO> findAssociatedImages(Integer productId) {
         Stream<ImageDTO> filterImages = imageService.findAll().stream().filter(image -> Objects.equals(image.getProductId(),productId));
         return filterImages.collect(Collectors.toSet());
+    }
+    private Set<FeatureDTO> findAssociatedFeatures(Product product) {
+        return featureService.findByProduct(product);
     }
 
     private ProductDTO loadDataIntoProductDTO(Product product) throws FindByIdException {
@@ -45,6 +47,7 @@ public class ProductServiceImpl implements IProductService {
         productDto.setCategory(categoryService.findById(product.getCategory().getId()));
         productDto.setCity(cityService.findById(product.getCity().getId()));
         productDto.setImages(findAssociatedImages(product.getId()));
+        productDto.setFeatures(findAssociatedFeatures(product));
         return productDto;
     }
 

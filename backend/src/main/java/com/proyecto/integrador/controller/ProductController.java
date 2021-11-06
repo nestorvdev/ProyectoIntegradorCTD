@@ -1,11 +1,8 @@
 package com.proyecto.integrador.controller;
 
-import com.proyecto.integrador.DTO.CategoryDTO;
 import com.proyecto.integrador.DTO.ProductDTO;
-import com.proyecto.integrador.entity.Product;
 import com.proyecto.integrador.exceptions.BadRequestException;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.service.ICategoryService;
 import com.proyecto.integrador.service.IProductService;
 import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;

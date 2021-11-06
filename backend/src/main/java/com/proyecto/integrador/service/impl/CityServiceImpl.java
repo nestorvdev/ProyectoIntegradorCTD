@@ -1,9 +1,9 @@
 package com.proyecto.integrador.service.impl;
 
 import com.proyecto.integrador.DTO.CityDTO;
-import com.proyecto.integrador.entity.City;
+import com.proyecto.integrador.persistence.entity.City;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.repository.ICityRepository;
+import com.proyecto.integrador.persistence.repository.ICityRepository;
 import com.proyecto.integrador.service.ICityService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;

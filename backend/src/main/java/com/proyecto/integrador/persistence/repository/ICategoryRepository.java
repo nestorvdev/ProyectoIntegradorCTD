@@ -1,10 +1,7 @@
-package com.proyecto.integrador.repository;
-import com.proyecto.integrador.entity.Category;
-import com.proyecto.integrador.entity.Product;
+package com.proyecto.integrador.persistence.repository;
+import com.proyecto.integrador.persistence.entity.Category;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 
 @Repository

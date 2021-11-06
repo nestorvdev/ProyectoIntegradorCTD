@@ -1,10 +1,10 @@
 package com.proyecto.integrador.DTO;
-
-import com.proyecto.integrador.entity.*;
+import com.proyecto.integrador.persistence.entity.Category;
+import com.proyecto.integrador.persistence.entity.City;
+import com.proyecto.integrador.persistence.entity.Product;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,13 +21,16 @@ public class ProductDTO {
     private String reference;
     private CategoryDTO category;
     private CityDTO city;
+    private String rules;
+    private String health;
+    private String politics;
     private Set<ImageDTO> images = new HashSet<>();
     private Set<FeatureDTO> features = new HashSet<>();
 
     public ProductDTO() {
     }
 
-    public ProductDTO(String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, CategoryDTO category, CityDTO city) {
+    public ProductDTO(String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, CategoryDTO category, CityDTO city, String rules, String health, String politics) {
         this.name = name;
         this.description = description;
         this.latitude = latitude;
@@ -37,9 +40,12 @@ public class ProductDTO {
         this.reference = reference;
         this.category = category;
         this.city = city;
+        this.rules = rules;
+        this.health = health;
+        this.politics = politics;
     }
 
-    public ProductDTO(Integer id, String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, CategoryDTO category, CityDTO city) {
+    public ProductDTO(Integer id, String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, CategoryDTO category, CityDTO city, String rules, String health, String politics) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -50,6 +56,9 @@ public class ProductDTO {
         this.reference = reference;
         this.category = category;
         this.city = city;
+        this.rules = rules;
+        this.health = health;
+        this.politics = politics;
     }
 
     public Product toEntity(){
@@ -63,6 +72,9 @@ public class ProductDTO {
         product.setReference(reference);
         product.setCategory(new Category(category.getId()));
         product.setCity(new City(city.getId()));
+        product.setRules(rules);
+        product.setHealth(health);
+        product.setPolitics(politics);
         return product;
     }
 }

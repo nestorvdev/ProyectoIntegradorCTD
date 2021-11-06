@@ -1,11 +1,7 @@
 package com.proyecto.integrador.DTO;
-import com.proyecto.integrador.entity.Category;
-import com.proyecto.integrador.entity.Product;
+import com.proyecto.integrador.persistence.entity.Category;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.util.HashSet;
-import java.util.Set;
 
 /*@JsonIgnoreProperties(ignoreUnknown = true)*/
 @Getter

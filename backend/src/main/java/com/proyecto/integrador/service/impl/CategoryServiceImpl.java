@@ -1,10 +1,10 @@
 package com.proyecto.integrador.service.impl;
 
 import com.proyecto.integrador.DTO.CategoryDTO;
-import com.proyecto.integrador.entity.Category;
+import com.proyecto.integrador.persistence.entity.Category;
 import com.proyecto.integrador.exceptions.BadRequestException;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.repository.ICategoryRepository;
+import com.proyecto.integrador.persistence.repository.ICategoryRepository;
 import com.proyecto.integrador.service.ICategoryService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
