@@ -212,29 +212,29 @@ VALUES ('imagen alojamiento 8-5','https://images.unsplash.com/photo-159541117924
 --
 
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('wifi',1);
+VALUES ('wifi',0);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('pool',2);
+VALUES ('pool',1);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('kitchen',3);
+VALUES ('kitchen',2);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('tv',4);
+VALUES ('tv',3);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('ac',5);
+VALUES ('ac',4);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('pet',6);
+VALUES ('pet',5);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('parking',7);
+VALUES ('parking',6);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('creditCard',8);
+VALUES ('creditCard',7);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('smoke',9);
+VALUES ('smoke',8);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('noParty',10);
+VALUES ('noParty',9);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('checkIn',11);
+VALUES ('checkIn',10);
 INSERT INTO `proyecto_integrador`.`feature` (title,type)
-VALUES ('noSmoke',12);
+VALUES ('noSmoke',11);
 
 
 --
