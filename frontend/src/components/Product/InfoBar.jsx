@@ -16,7 +16,7 @@ function InfoBar(props) {
                         {/* {props.health.split(',').map((e,index)=><p key={index}>{e}</p>)} */}
                     </div>
                     <div >
-                        <h3>Politica de Cancelacion</h3>
+                        <h3>Política de Cancelación</h3>
                         {/* {props.politics.split(',').map((e,index)=><p key={index}>{e}</p>)} */}
                     </div>
                 </div>

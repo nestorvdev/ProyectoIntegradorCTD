@@ -145,12 +145,35 @@
 }
 
 /* ESTILOS DEL SHARE*/
-
-.containerShare{
-  background-color: white;
+.containerSharePrincipal{
+  background-color:rgb(218, 214, 214);
   border-radius: 10px;
-  padding: 50px;
+  border:4px solid var(--primary-color); 
+
 }
+
+.containerSharePrincipal h3{
+  text-align: center;
+}
+.containerShare{
+  
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  
+}
+
+.shareBlock{
+  display:flex;
+}
+
+.shareItem{
+  display:flex;
+  flex-direction: column;
+  padding: 17px;
+  align-items: center;
+}
+
 
 
 /*  estilos de descripcionBard */
@@ -338,4 +361,8 @@
 }
 
 @media all and (max-width: 415px) {
+.shareBlock{
+  flex-direction: column;
 }
+}
+
