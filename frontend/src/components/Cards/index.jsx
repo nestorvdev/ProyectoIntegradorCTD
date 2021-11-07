@@ -80,21 +80,18 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
                     <h2>{titulo}</h2>
                     <div className={Styles.cardsBox}>
                         {data.map((e, index) =>
-                            <>
-                                {console.log(e.features)}
-                                <Card image={e.images.length > 0 ? e.images[0].url : ""}
-                                    cardCategory={e.category.title}
-                                    name={e.name}
-                                    city={e.city.name}
-                                    country={e.city.country}
-                                    description={e.description}
-                                    key={index}
-                                    id={e.id}
-                                    reference={e.reference}
-                                    qualification={e.qualification}
-                                    features={e.features}
-                                />
-                            </>
+                            <Card image={e.images.length > 0 ? e.images[0].url : ""}
+                                cardCategory={e.category.title}
+                                name={e.name}
+                                city={e.city.name}
+                                country={e.city.country}
+                                description={e.description}
+                                key={index}
+                                id={e.id}
+                                reference={e.reference}
+                                qualification={e.qualification}
+                                features={e.features}
+                            />
                         )}
                     </div>
                 </div>
