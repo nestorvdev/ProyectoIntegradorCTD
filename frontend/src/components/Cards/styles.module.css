@@ -194,11 +194,11 @@ a:visited, a:link, a:active {
 }
 
 .cardIcons {
-  display: flex;
+  display: flex;  
 }
 
-.cardIcons .iconSwimming {
-  margin-left: 7px;
+.cardFeatures {
+  margin-right: 7px
 }
 
 .cardDescription {

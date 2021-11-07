@@ -74,12 +74,11 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
                     <span>mostrar en el mapa</span>
                 </div>
                 <div className={Styles.cardIcons}>
-                    <img src={iconWifi} alt="" />
-                    <img className={Styles.iconSwimming} src={iconSwimming} alt="" />
-                    {features.map((e, index) => 
-                    e.state ? 
-                    <p key={index}> <img src={icons[index]} alt={e.titulo} />{e.title} </p> 
-                    : null)}
+                    {features.map((feature, index) => {
+                        return (
+                            <img className={Styles.cardFeatures} key={index} src={icons[index]} alt={feature.title} />
+                        )
+                    })}
                 </div>
                 <div className={Styles.cardDescription}>
                     <p>{description}</p>
