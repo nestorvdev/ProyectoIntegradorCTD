@@ -53,7 +53,7 @@ VALUES ('Bed and breakfast','7.678 alojamientos','https://media.istockphoto.com/
 
 -- Dumping data for table `product`
 -- 1
-INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politic)
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
 VALUES ('Posada Gotan Bed & Breakfast','A poca distancia de El Ateneo Grand Splendid.Te sentirás como en tu propia casa en una de las 10 habitaciones con microondas. Recorre rápida y cómodamente los principales sitios de interés de la zona gracias al servicio de traslado.',3,4,123.45,456.34,5,false,'a 3,83 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
 
 -- 2
