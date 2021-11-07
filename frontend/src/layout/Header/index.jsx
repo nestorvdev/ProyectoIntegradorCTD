@@ -77,7 +77,7 @@ export default function Header({ isLogged, showBurger, setShowBurger }) {
 
                         <Link to="/login">
                             <button className={activeLogin ? Styles.hideButton : null} >
-                                Iniciar Sesion
+                                Iniciar Sesión
                             </button>
                         </Link>
                        

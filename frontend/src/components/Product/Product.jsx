@@ -117,8 +117,8 @@ function Product(props) {
             <FeaturesBar features={prod.features} />
             <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude}/>
             <InfoBar health={prod.health} rules={prod.rules} politics={prod.politics}/> 
-            {console.log(prod.latitude, "latitude")};
-            {console.log(prod.longitude, "longitude")};
+            {console.log(prod.latitude, "latitude")}
+            {console.log(prod.longitude, "longitude")}
         </section>
     );
 }

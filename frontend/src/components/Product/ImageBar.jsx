@@ -29,7 +29,7 @@ return (
                     <img src={images[0].url} alt={images[0].title} />
                     <img src={images[0].url} alt={images[0].title} />
                     <img src={images[0].url} alt={images[0].title} />
-                   <div className={Styles.verMas} onClick={openLightBox}>Ver Mas</div>
+                   <div className={Styles.verMas} onClick={openLightBox}>Ver Más</div>
                 </div>
                 <div className={Styles.slider}  onClick={changeSlider} >
                     {/* <img src={images[countSlider].url} alt={images[countSlider].title}/>

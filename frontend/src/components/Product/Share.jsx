@@ -16,6 +16,7 @@ export default function Share(props) {
                 {props.shareIsOpen ? (
                     <Modal onClose={closeShare}>
                         <div className={Styles.containerSharePrincipal}>
+                            
                             <h3>Compartir</h3>
                             <div className={Styles.containerShare}>
                                 <div className={Styles.shareBlock}>
