@@ -19,6 +19,7 @@
 
 .titleBarChild .iconLocation {
   width: 25px;
+  cursor:pointer;
 }
 
 /* Estilos de scoreBar */
@@ -86,6 +87,7 @@
 }
 .imageBar .iconImage {
   width: 35px;
+  cursor:pointer;
 }
 
 .imageBar .barraInf {
@@ -127,6 +129,7 @@
   font-weight: var(--font-bold);
   font-size: var(--heading3);
   color: white;
+  cursor:pointer;
 }
 
 .imageBar .slider {
@@ -149,6 +152,11 @@
   background-color:rgb(218, 214, 214);
   border-radius: 10px;
   border:4px solid var(--primary-color); 
+  width: 35vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  
 
 }
 
@@ -159,6 +167,7 @@
   
   display:flex;
   flex-direction: row;
+  justify-content: center;
   flex-wrap: wrap;
   
 }
@@ -174,7 +183,21 @@
   align-items: center;
 }
 
+.shareItem a:focus{
+  outline: none;
+}
 
+.closeButton{
+  position: absolute;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  right:35.5vw;
+  cursor:pointer;
+}
 
 /*  estilos de descripcionBard */
 
@@ -358,11 +381,17 @@
     padding-left: 0;
     padding-right: 0;
   }
+  .containerSharePrincipal{
+    width: 50vw;
+  }
 }
 
 @media all and (max-width: 415px) {
 .shareBlock{
   flex-direction: column;
+}
+.containerSharePrincipal{
+  min-width: 55vw;
 }
 }
 
