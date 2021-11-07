@@ -2,23 +2,8 @@ DROP DATABASE IF EXISTS `proyecto_integrador`;
 CREATE DATABASE `proyecto_integrador`;
 USE `proyecto_integrador`;
 
-CREATE SCHEMA IF NOT EXISTS `proyecto_integrador`;
-
 --
--- Table structure for table `city`
---
-
-DROP TABLE IF EXISTS `proyecto_integrador`.`city`;
-
-CREATE TABLE `proyecto_integrador`.`city` (
-  `idCity` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(45) NOT NULL,
-  `country` varchar(45) NOT NULL,
-  PRIMARY KEY (`idCity`)
-  )ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-
---
--- For table structure run the app
+-- For table structure run the appication
 --
 
 
@@ -54,35 +39,57 @@ VALUES ('Bed and breakfast','7.678 alojamientos','https://media.istockphoto.com/
 -- Dumping data for table `product`
 -- 1
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
-VALUES ('Posada Gotan Bed & Breakfast','A poca distancia de El Ateneo Grand Splendid.Te sentirás como en tu propia casa en una de las 10 habitaciones con microondas. Recorre rápida y cómodamente los principales sitios de interés de la zona gracias al servicio de traslado.',3,4,123.45,456.34,5,false,'a 3,83 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
+VALUES ('Posada Gotan Bed & Breakfast','A poca distancia de El Ateneo Grand Splendid.Te sentirás como en tu propia casa en una de las 10 habitaciones con microondas. Recorre rápida y cómodamente los principales sitios de interés de la zona gracias al servicio de traslado.',3,4,-34.62,-58.41,5,false,'a 3,83 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
 
 -- 2
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
-VALUES ('Gran Hotel Argentino','El Gran Hotel Argentino está situado a pocos metros de la avenida 9 de Julio y a 300 metros del Obelisco, y ofrece habitaciones cómodas y fácil acceso al transporte público de Buenos Aires.',1,1,123.45,456.34,8,false,'a 0,5 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','No reembolsable');
+VALUES ('Gran Hotel Argentino','El Gran Hotel Argentino está situado a pocos metros de la avenida 9 de Julio y a 300 metros del Obelisco, y ofrece habitaciones cómodas y fácil acceso al transporte público de Buenos Aires.',1,1,-34.60,-58.38,8,false,'a 0,5 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','No reembolsable');
 
 -- 3
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
-VALUES ('Soho Suites','Ideal para estadías cortas. Soho Suites se sitúa en Buenos Aires. Ofrece wi-fi gratis en zonas comunes, servicio de guarda-equipaje gratis y toallas, así como sábanas.',1,4,123.45,456.34,9,false,'A 4,99 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Cancelación gratuita con 24 hs de antelación');
+VALUES ('Soho Suites','Ideal para estadías cortas. Soho Suites se sitúa en Buenos Aires. Ofrece wi-fi gratis en zonas comunes, servicio de guarda-equipaje gratis y toallas, así como sábanas.',1,4,-34.58,-58.44,9,false,'A 4,99 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Cancelación gratuita con 24 hs de antelación');
 
 -- 4
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
-VALUES ('Exclusivo departamento','Exclusivo departamento en la ciudad de Mendoza. La propiedad se encuentra a menos de 1 km de la avenidad Emilio Civit. El departamento cuenta con una habitación con salida al balcón y aire acondicionado',2,3,123.45,456.34,7,false,'a 1,6 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
+VALUES ('Exclusivo departamento','Exclusivo departamento en la ciudad de Mendoza. La propiedad se encuentra a menos de 1 km de la avenidad Emilio Civit. El departamento cuenta con una habitación con salida al balcón y aire acondicionado',2,3,-32.89,-68.83,7,false,'a 1,6 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
 
 -- 5
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
-VALUES ('Don Suites','DonSuites se encuentra en el centro histórico de la ciudad, a 5 cuadras de la calle peatonal y a 20 metros de la Costanera. El DonSuites se encuentra en el centro de Corrientes, a solo 50 metros de la orilla del río Paraná. Ofrece pileta al aire libre y departamentos independientes elegantes con conexión de wifi gratis y TV de plasma. Todos los días se sirve un desayuno continental.',3,1,123.45,456.34,10,false,'En el centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
+VALUES ('Don Suites','DonSuites se encuentra en el centro histórico de la ciudad, a 5 cuadras de la calle peatonal y a 20 metros de la Costanera. El DonSuites se encuentra en el centro de Corrientes, a solo 50 metros de la orilla del río Paraná. Ofrece pileta al aire libre y departamentos independientes elegantes con conexión de wifi gratis y TV de plasma. Todos los días se sirve un desayuno continental.',3,1,-34.69,-58.38,10,false,'En el centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
 
 -- 6
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
-VALUES ('Departamento Mendoza','El Departamento Mendoza se encuentra en Guaymallen. Potrerillos está a 37 km.El departamento cuenta con aire acondicionado, 1 dormitorio, sala de estar, cocina totalmente equipada con microondas y hervidor de agua y 1 baño con bidet y bañera o ducha. Se proporcionan toallas y ropa de cama.',2,3,123.45,456.34,8,false,'a 2,2 km de Guaymallén','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','No reembolsable');
+VALUES ('Departamento Mendoza','El Departamento Mendoza se encuentra en Guaymallen. Potrerillos está a 37 km.El departamento cuenta con aire acondicionado, 1 dormitorio, sala de estar, cocina totalmente equipada con microondas y hervidor de agua y 1 baño con bidet y bañera o ducha. Se proporcionan toallas y ropa de cama.',2,3,-32.88,-68.84,8,false,'a 2,2 km de Guaymallén','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','No reembolsable');
 
 -- 7
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
-VALUES ('JAC Hostel Boutique','El JAC Hostel Boutique se encuentra en Mendoza, a 500 metros de la plaza de la Independencia, y ofrece vistas a la ciudad. La disposición y deco del hostel, super confortable y limpio. Excelente atención de todos los chicos de recepción.',2,2,123.45,456.34,6,false,'a 0.5 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
+VALUES ('JAC Hostel Boutique','El JAC Hostel Boutique se encuentra en Mendoza, a 500 metros de la plaza de la Independencia, y ofrece vistas a la ciudad. La disposición y deco del hostel, super confortable y limpio. Excelente atención de todos los chicos de recepción.',2,2,-32.88,-68.83,6,false,'a 0.5 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
 
 -- 8
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
-VALUES ('Che Juan Hostel BA','El Che Juan Hostel BA ofrece habitaciones con aire acondicionado y TV de pantalla plana por cable en el centro de Buenos Aires. El precio es igual que otros pero la calidad es imbatible, no solo en la comodidad de las camas con armario propio externo e interno, luces y cortinas, sino que toda la edificación está diseñada con excelencia para ser realmente un ejemplo a seguir para todos los hostel del mundo.',1,2,123.45,456.34,10,false,'a 0.2 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
+VALUES ('Che Juan Hostel BA','El Che Juan Hostel BA ofrece habitaciones con aire acondicionado y TV de pantalla plana por cable en el centro de Buenos Aires. El precio es igual que otros pero la calidad es imbatible, no solo en la comodidad de las camas con armario propio externo e interno, luces y cortinas, sino que toda la edificación está diseñada con excelencia para ser realmente un ejemplo a seguir para todos los hostel del mundo.',1,2,-34.60189,-58.37360,10,false,'a 0.2 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
+
+-- 9
+
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
+VALUES ('Art Factory Soho','Art Factory Soho está localizado en Buenos Aires. Dispone de wi-fi gratis en zonas comunes, campo de golf y recepción 24 hrs, además de servicio de guarda-equipaje gratis.El alojamiento ofrece todos los días el desayuno con costo adicional. Los huéspedes podrán cocinar en la comodidad de su alojamiento,en su cocina compartida.',1,2,-34.58240,-58.42463,10,false,'a 4,68 km del centro','Check in: de 15:00 a 00:00','Detector de Humo, Alcohol en gel en áreas comunes','A partir del 01/03/2020, se cobrara una tasa por noche por persona, en el momento del check-in, a todos los turistas no residentes en la Republica Argentina mayores de 12 anos.');
+
+-- 10
+
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
+VALUES ('Ker Recoleta','Ubicado entre el barrio de la Recoleta y el centro de Buenos Aires, el Ker Recoleta Hotel cuenta con spa con hidromasaje, ducha escocesa y sauna seco a los huéspedes.Se encuentra a 5 cuadras del Teatro Colón y a 5 min del cementerio de Recoleta',1,1,-34.59694,-58.38654,10,false,'a 1,02 km del centro','Check in: de 15:00 a 00:00','Mampara de protección en recepción, Servicio de comida a la habitación','COVID-19 - Debido a la situación actual los siguientes servicios se verán parcialmente afectados: Restaurante, Desayuno, Bar');
+
+-- 11
+
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
+VALUES ('Torre Costanera Norte','El Torre Costanera Norte se encuentra en Corrientes y ofrece alojamiento con aire acondicionado, conexión WiFi gratuita y acceso a una terraza. Hay microondas, nevera, horno y hervidor de agua.',3,4,-27.45765,-58.82425,8,false,'a 2,04 km del centro','No se puede fumar','Mampara de protección en recepción, Servicio de comida a la habitación','Las condiciones de pago y de cancelación varían según el tipo de apartamento');
+
+
+-- 12
+INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
+VALUES ('La Alondra','La Alondra ofrece un jardín con piscina, un gimnasio, un restaurante y alojamientos con conexión Wi-Fi gratuita en Corrientes. La calle peatonal Junín se encuentra a 5 minutos en coche.',3,3,-27.47492,-58.84080,9,false,'a 5,03 km del centro','No se puede fumar, No se admiten mascotas','Servicio de comida a la habitación','Las condiciones de pago y de cancelación varían según el tipo de apartamento');
+
+
 --
 -- Dumping data for table `image`
 --
@@ -207,6 +214,67 @@ VALUES ('imagen alojamiento 8-4','https://media.istockphoto.com/photos/building-
 INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
 VALUES ('imagen alojamiento 8-5','https://images.unsplash.com/photo-1595411179241-e94b2554e4c6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aG9zdGVsJTIwcmVjZXB0aW9ufGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',8);
 
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 9-1','https://media.istockphoto.com/photos/young-backpackers-in-hostel-picture-id1045047954?b=1&k=20&m=1045047954&s=170667a&w=0&h=TboLCg1PJ5pqPk2hHlBhgPc-c2a4S_0iCZEdMLRvKG8=',9);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 9-2','https://images.unsplash.com/photo-1596276020587-8044fe049813?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8aG9zdGVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',9);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 9-3','https://images.unsplash.com/photo-1629794226066-349748040fb7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8aG9zdGVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',9);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 9-4','https://images.unsplash.com/photo-1626265774643-f1943311a86b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fGhvc3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',9);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 9-5','https://images.unsplash.com/photo-1565629196891-2ddb37c9e9fc?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjB8fGhvc3RlbHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',9);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 10-1','https://media.istockphoto.com/photos/luxury-hotel-lobby-with-smart-robots-working-as-a-receptionist-and-picture-id1298838328?b=1&k=20&m=1298838328&s=170667a&w=0&h=AkVWfkqsvZfQAfQZkNdPfO69rMHFqh78ZrSEujr20Yg=',10);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 10-2','https://media.istockphoto.com/photos/full-furnished-living-room-of-an-apartment-picture-id1288806002?b=1&k=20&m=1288806002&s=170667a&w=0&h=k5aI4TTJIImNZ0T2eCOd0ZVx-mJjaRgvvcz4DaZMlkw=',10);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 10-3','https://media.istockphoto.com/photos/interior-of-a-modern-luxury-hotel-double-bed-bedroom-picture-id1163498940?b=1&k=20&m=1163498940&s=170667a&w=0&h=5TRSRlxZVnU_hVpPTjcbok7xg8Zrl4gmntmkyuAKVSM=',10);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 10-4','https://images.unsplash.com/photo-1563493653502-9e270be23596?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjBwb29sfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',10);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 10-5','https://images.unsplash.com/photo-1633767319640-d8f5b923aa42?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fGhvdGVsJTIwcGFya2luZ3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',10);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 11-1','https://media.istockphoto.com/photos/apartment-building-picture-id486644087?b=1&k=20&m=486644087&s=170667a&w=0&h=bEr9eZSg5gA0SmIkfECwqw1UjclNkk03PmJBAPkdamo=',11);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 11-2','https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',11);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 11-3','https://images.unsplash.com/photo-1484154218962-a197022b5858?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8YXBhcnRtZW50fGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',11);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 11-4','https://images.unsplash.com/photo-1600776216872-b39b2a3dd995?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFwYXJ0bWVudCUyMGJhbGNvbnl8ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',11);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 11-5','https://images.unsplash.com/photo-1507149833265-60c372daea22?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTh8fGFwYXJ0bWVudHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',11);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 12-1','https://media.istockphoto.com/photos/3d-rendering-of-kitchen-island-with-stools-in-cottage-picture-id1270113395?b=1&k=20&m=1270113395&s=170667a&w=0&h=1TFDpGEdSFfXJ-oqHZOcZWhr0gkv1SqcmI7rgenGh3c=',12);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 12-2','https://media.istockphoto.com/photos/cute-cottage-home-picture-id175388045?b=1&k=20&m=175388045&s=170667a&w=0&h=JGr_pTsa_X74SxEvye72r40JlGHt4zEp_l4hedrcQjI=',12);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 12-3','https://images.unsplash.com/photo-1593184091721-409ccc1753d9?ixid=MnwxMjA3fDB8MHxzZWFyY2h8N3x8Y290dGFnZSUyMGludGVyaW9yfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',12);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 12-4','https://media.istockphoto.com/photos/weekend-away-with-friends-picture-id538776816?b=1&k=20&m=538776816&s=170667a&w=0&h=gEsmoXvBlVxPPY_yuz_zJ9OCfcK971WpS3xzSj_dtSM=',12);
+
+INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
+VALUES ('imagen alojamiento 12-5','https://media.istockphoto.com/photos/breakfast-with-fresh-tea-fruits-and-cookies-outdoors-on-a-cozy-of-picture-id1268301562?b=1&k=20&m=1268301562&s=170667a&w=0&h=RHkcmKUBqBqF7v3RDkou8B_ZYJhNhOr9EaYZlRU-daM=',12);
+
+
 --
 -- Dumping data for table `feature`
 --
@@ -238,7 +306,7 @@ VALUES ('noSmoke',11);
 
 
 --
--- Dumping data for table `featurePerProduct` -- me queda verlo con Tati
+-- Dumping data for table `featurePerProduct` --
 --
 
 
@@ -270,7 +338,91 @@ INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
 VALUES (11,2);
 
 INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
-VALUES (12,2);
+VALUES (1,10);
 
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (1,11);
 
-select * from featurePerProduct;
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (1,12);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (3,3);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (4,8);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (4,11);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (2,12);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (1,3);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (1,4);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (1,5);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (8,6);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (1,7);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (1,8);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (1,9);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (2,5);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (3,5);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (4,5);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (5,5);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (6,5);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (5,6);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (8,11);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (6,9);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (3,10);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (11,7);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (11,8);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (7,10);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (7,1);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (8,1);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (8,4);
+
+INSERT INTO `proyecto_integrador`.`featurePerProduct` (idFeature,idProduct)
+VALUES (11,11);
