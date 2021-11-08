@@ -6,7 +6,6 @@ USE `proyecto_integrador`;
 -- For table structure run the appication
 --
 
-
 --
 -- Dumping data for table `city`
 --
@@ -19,6 +18,10 @@ VALUES ('Mendoza','Argentina');
 
 INSERT INTO `proyecto_integrador`.`city` (name,country)
 VALUES ('Corrientes','Argentina');
+
+INSERT INTO `proyecto_integrador`.`city` (name,country)
+VALUES ('Bariloche','Argentina');
+
 
 --
 -- Dumping data for table `category`
@@ -39,7 +42,7 @@ VALUES ('Bed and breakfast','7.678 alojamientos','https://media.istockphoto.com/
 -- Dumping data for table `product`
 -- 1
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
-VALUES ('Posada Gotan Bed & Breakfast','A poca distancia de El Ateneo Grand Splendid.Te sentirás como en tu propia casa en una de las 10 habitaciones con microondas. Recorre rápida y cómodamente los principales sitios de interés de la zona gracias al servicio de traslado.',3,4,-34.62,-58.41,5,false,'a 3,83 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
+VALUES ('Posada Gotan Bed & Breakfast','Te sentirás como en tu propia casa en una de las 10 habitaciones con microondas. Recorre rápida y cómodamente los principales sitios de interés de la zona gracias al servicio de traslado.',3,4,-27.46837,-58.83922,5,false,'a 3,83 km del centro','Check-out: 10:00, No se permiten fiestas, No fumar','Se aplican pautas de distanciamiento social, Detector de Humo, Depósito de seguridad','Agregá las fechas de tu viaje para obtener los detalles de cancelación de esta estadía');
 
 -- 2
 INSERT INTO `proyecto_integrador`.`product` (name,description,idCity,idCategory,latitude,longitude,qualification,favourite,reference,rules,health,politics)
@@ -95,10 +98,10 @@ VALUES ('La Alondra','La Alondra ofrece un jardín con piscina, un gimnasio, un 
 --
 
 INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
-VALUES ('imagen habitacion','https://media.istockphoto.com/photos/modern-toilette-design-picture-id1324940457?b=1&k=20&m=1324940457&s=170667a&w=0&h=ktk09I47eOgBpeNVAi_37BKWyg-OY0a2uY_Yv9DdvmI=',1);
+VALUES ('imagen habitacion','https://images.unsplash.com/photo-1568495248636-6432b97bd949?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8aG90ZWwlMjByb29tfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',1);
 
 INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
-VALUES ('imagen banio','https://images.unsplash.com/photo-1445991842772-097fea258e7b?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aGFiaXRhY2lvbiUyMGhvdGVsfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',1);
+VALUES ('imagen banio','https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG90ZWwlMjBiYXRocm9vbXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',1);
 
 INSERT INTO `proyecto_integrador`.`image` (title,url,idProduct)
 VALUES ('imagen cocina ','https://images.unsplash.com/photo-1629025761671-77f9131c91ed?ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8Y29jaW5hfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60',1);
@@ -306,7 +309,7 @@ VALUES ('noSmoke',11);
 
 
 --
--- Dumping data for table `featurePerProduct` --
+-- Dumping data for table `featurePerProduct` -- me queda verlo con Tati
 --
 
 
