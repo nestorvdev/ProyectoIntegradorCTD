@@ -12,7 +12,7 @@ function Footer({ showBurger }) {
         <footer className={`${Styles.footer} ${showBurger === true ? StylesLayout.opacity:null} ${StylesApp.delimiter}`} >
             <div className={`${Styles.delimiterChild} ${StylesApp.delimiterChild} `}>
                 <div>
-                    <h3 className={Styles.footerTittle} >2021 @ Digital Booking</h3>
+                    <h3 className={Styles.footerTittle} >2021 @ World Guest Booking</h3>
                 </div>
                 <div className={Styles.icons}>
                     <img className={Styles.iconsImg} src={logoFacebook} alt="" />
