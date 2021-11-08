@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Category /> Renderiza el componente correctamente 1`] = `
+<div
+  className="categoryCard"
+  onClick={[Function]}
+>
+  <img
+    alt="imagen 1"
+    className="categoryImage"
+    src={
+      Object {
+        "url": "test",
+      }
+    }
+  />
+  <div
+    className="categoryType"
+  >
+    <h3>
+      Hoteles
+    </h3>
+    <p>
+      test
+    </p>
+  </div>
+</div>
+`;
