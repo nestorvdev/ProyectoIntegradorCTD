@@ -1,28 +1,28 @@
 import React, { useState } from "react";
 import Calendar from "./Calendar";
-import "./styles.css";
+import Styles from "./styles.module.css"
 
 function SelectDate() {
-  const [calendarState, calendarSetState] = useState("hidden");
+  const [calendarState, calendarSetState] = useState(Styles.hidden);
   const [responsiveState, responsiveSetState] = useState("desktop");
 
   const haddleToggle = (event) => {
     /* const windowSize = window.innerWidth <= 1080 ? "visible-tablet" : "visible"; */
-    const windowSize = window.innerWidth >=680 ? (window.innerWidth<=1080?"visible-tablet" :"visible") : "visible";
+    const windowSize = window.innerWidth >=680 ? (window.innerWidth<=1080?Styles.visibleTablet :Styles.visible) : Styles.visible;
     event.preventDefault();
-    calendarSetState(calendarState === "hidden" ? windowSize : "hidden");
+    calendarSetState(calendarState === Styles.hidden ? windowSize : Styles.hidden);
     responsiveSetState(window.innerWidth < 680 ? "mobile" : "desktop");
   };
 
   const [buttonState, buttonSetState] = useState("Check in - Check out");
   const handleSelected = (value) => {
     buttonSetState(value);
-    calendarSetState("hidden");
+    calendarSetState(Styles.hidden);
   }
 
   return (
-    <div className="calendar-button">
-      <button className="date" onClick={haddleToggle}>{buttonState}</button>
+    <div className={Styles.calendarButton}>
+      <button className={Styles.date} onClick={haddleToggle}>{buttonState}</button>
       <Calendar responsiveness={responsiveState} calendarState={calendarState} handleSelected={handleSelected} />
     </div>
   );

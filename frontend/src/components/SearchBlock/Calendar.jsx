@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import StaticDateRangePicker from "@mui/lab/StaticDateRangePicker";
 import Box from "@mui/material/Box";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import "./styles.css";
+import Styles from "./styles.module.css"
 const { format } = require("date-fns");
 
 function Calendar(props) {
@@ -56,9 +56,9 @@ function Calendar(props) {
                 </React.Fragment>
               )}
             />
-            <div className="container-calendar-selected-dates">
+            <div className={Styles.containerCalendarSelectedDates}>
               <button
-                className="selected-dates-button"
+                className={Styles.selectedDatesButton}
                 onClick={handleSelection}
               >
                 Aplicar

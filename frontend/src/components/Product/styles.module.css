@@ -1,0 +1,435 @@
+/* Estilos de titleBar */
+
+.titleBar {
+  background-color: var(--tertiary-color);
+  color: white;
+}
+
+.titleBar .titleBarChild {
+  height: 60px;
+  padding-left: clamp(20px, 3.9%, 40px);
+  padding-right: clamp(20px, 3.9%, 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.titleBarChild div p {
+  text-transform: uppercase;
+}
+
+.titleBarChild .iconLocation {
+  width: 25px;
+  cursor:pointer;
+}
+
+/* Estilos de scoreBar */
+
+.scoreBar {
+  color: var(--secondary-color);
+}
+
+.scoreBar .scoreBarChild {
+  height: 55px;
+  padding-left: clamp(20px, 3.9%, 40px);
+  padding-right: clamp(20px, 3.9%, 40px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scoreBar .barraIzq {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text2);
+  font-weight: var(--font-bold);
+}
+.scoreBar .iconLocation {
+  width: 17px;
+}
+
+.scoreBar .barraDer {
+  display: flex;
+  align-items: center;
+  font-weight: var(--font-bold);
+}
+
+.scoreBar .calificacionLetra {
+  display: flex;
+  flex-direction: column;
+  padding: 2px 10px;
+}
+
+.scoreBar .calificacionEntero {
+  height: 100%;
+  background: var(--secondary-color);
+  padding: 8px 14px;
+  color: white;
+  border-radius: 10px;
+  font-weight: var(--font-bold);
+}
+
+/* Estilos del Image card */
+
+.imageBar {
+  background-color: white;
+  padding: 10px 0;
+}
+
+.imageBarChild {
+  display: flex;
+  flex-direction: column;
+  padding-left: clamp(20px, 3.9%, 40px);
+  padding-right: clamp(20px, 3.9%, 40px);
+}
+
+.imageBar .barraSup {
+  display: flex;
+}
+.imageBar .iconImage {
+  width: 35px;
+  cursor:pointer;
+}
+
+.imageBar .barraInf {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
+.imageBar .barraIzq,
+.imageBar .barraDer {
+  min-width: 50%;
+}
+
+.imageBar img {
+  padding: 4px;
+  border-radius: 15px;
+}
+
+.imageBar .barraIzq img {
+  width: 100%;
+}
+
+.imageBar .barraDer {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.imageBar .barraDer img {
+  width: 50%;
+  height: 50%;
+}
+
+.imageBar .verMas {
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+  text-decoration: underline;
+  font-weight: var(--font-bold);
+  font-size: var(--heading3);
+  color: white;
+  cursor:pointer;
+}
+
+.imageBar .slider {
+  display: none;
+  position: relative;
+}
+
+.imageBar .slider p{  
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-weight: var(--font-bold);
+  font-size: var(--text3);
+
+}
+
+/* ESTILOS DEL SHARE*/
+.containerSharePrincipal{
+  background-color:rgb(218, 214, 214);
+  border-radius: 10px;
+  border:4px solid var(--primary-color); 
+  width: 35vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  
+
+}
+
+.containerSharePrincipal h3{
+  text-align: center;
+}
+.containerShare{
+  
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
+
+.shareBlock{
+  display:flex;
+}
+
+.shareItem{
+  display:flex;
+  flex-direction: column;
+  padding: 17px;
+  align-items: center;
+}
+
+.shareItem a:focus{
+  outline: none;
+}
+
+.closeButton{
+  position: absolute;
+  z-index: 10;
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 500;
+  right:35.5vw;
+  cursor:pointer;
+}
+
+/*  estilos de descripcionBard */
+
+.descripcionBar {
+  background-color: white;
+  padding: 20px 0;
+}
+.descripcionBarChild {
+  padding-left: clamp(20px, 3.9%, 40px);
+  padding-right: clamp(20px, 3.9%, 40px);
+  color: var(--tertiary-color);
+}
+.descripcionBarChild h2 {
+  color: var(--secondary-color);
+  font-size: var(--heading2);
+  font-weight: var(--font-bold);
+  margin-bottom: 20px;
+}
+
+.descripcionBarChild p {
+  margin-bottom: 10px;
+}
+
+/* Estilos featureBar */
+
+.featuresBar {
+  background-color: white;
+  padding: 20px 0;
+}
+
+.featuresBarChild {
+  padding-left: clamp(20px, 3.9%, 40px);
+  padding-right: clamp(20px, 3.9%, 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.featuresBarChild h2 {
+  color: var(--secondary-color);
+  font-size: var(--heading2);
+  font-weight: var(--font-bold);
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.featuresBarChild .icons {
+  display: flex;
+  justify-content: flex-start; /* cambiarlo en resposive a center */
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+.featuresBarChild p {
+  min-width: clamp(200px, 25%, 320px); /* ojo revisar ahorita */
+  margin-bottom: 10px;
+}
+
+.featuresBarChild p img {
+  margin-right: 20px;
+}
+
+/* Estilos del map Bar  */
+
+.mapBar {
+  background-color: white;
+  padding: 20px 0;
+}
+.mapBarChild {
+  padding-left: clamp(20px, 3.9%, 40px);
+  padding-right: clamp(20px, 3.9%, 40px);
+  color: var(--tertiary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.mapBarChild h2 {
+  color: var(--secondary-color);
+  font-size: var(--heading2);
+  font-weight: var(--font-bold);
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.mapBar .map {
+  align-self: center;
+  margin: 20px 0;
+  width: clamp(300px, 100%, 1285px);
+  height: clamp(300px, 50vh, 700px);
+}
+
+
+
+/* Estilos infoBar */
+
+.infoBar {
+  background-color: white;
+  padding: 20px 0;
+}
+.infoBarChild {
+  padding-left: clamp(20px, 3.9%, 40px);
+  padding-right: clamp(20px, 3.9%, 40px);
+  color: var(--tertiary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.infoBarChild h2 {
+  color: var(--secondary-color);
+  font-size: var(--heading2);
+  font-weight: var(--font-bold);
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 30px;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.info div {
+  width: clamp(229px, 30vw, 420px);
+}
+
+.info div h3 {
+  color: var(--secondary-color);
+  font-size: var(--heading3);
+  font-weight: var(--font-bold);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  width: 100%;
+}
+
+.info div h3,
+.info div p {
+  padding: 10px 0;
+}
+
+/*  media queries responsive */
+
+@media all and (max-width: 769px) {
+  .imageBar .barraDer,
+  .imageBar .barraIzq {
+    display: none;
+  }
+  .imageBar .barraSup {
+    padding-left: clamp(20px, 3.9%, 40px);
+    padding-right: clamp(20px, 3.9%, 40px);
+  }
+
+  .imageBar .slider {
+    width: 100%;
+    display: block;
+  }
+  .imageBar .slider img {
+    width: 100%;
+    height: 70vw;
+  }
+
+  .featuresBarChild p {
+    min-width: clamp(180px, 50%, 354px); /* ojo revisar ahorita */
+    margin-bottom: 10px;
+  }
+
+  .imageBarChild {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .containerSharePrincipal{
+    width: 50vw;
+  }
+}
+
+@media all and (max-width: 415px) {
+.shareBlock{
+  flex-direction: column;
+}
+.containerSharePrincipal{
+  min-width: 55vw;
+}
+}
+/*Estilos DateBlock*/
+.calendario{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+
+.contenedor{
+  color: white;
+  background: gray;
+  width:400px;
+  height:200px;
+  margin: 2%;
+  
+  }
+/*Estilos Calendar2*/
+.visible{
+  display: block;
+}
+
+.negrita{
+  font-weight: bold;
+  font: size 10px;
+  padding: 10px;
+  margin: 5%;
+}
+.selectedDatesButton {
+  bottom: 5%;
+  font-size: var(--button1);
+  font-weight: var(--font-bold);
+  padding: 0.4rem 3.5rem;
+  display: absolute;
+  right: 5%;
+  text-align: right;
+  color: white;
+  background: #F0572D;
+  margin: 5%;
+  }
+

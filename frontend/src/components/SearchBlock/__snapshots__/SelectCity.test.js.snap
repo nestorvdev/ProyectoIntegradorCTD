@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <SelectCity /> <SelectCity /> se renderiza bien 1`] = `
+<ForwardRef
+  getOptionValue={[Function]}
+  isClearable={true}
+  isSearchable={true}
+  options={Array []}
+  placeholder="¿A dónde vamos?"
+  styles={
+    Object {
+      "container": [Function],
+      "control": [Function],
+      "indicatorsContainer": [Function],
+      "option": [Function],
+      "placeholder": [Function],
+      "singleValue": [Function],
+      "valueContainer": [Function],
+    }
+  }
+/>
+`;
+
+exports[`Pruebas en <SelectCity /> Deberia mostrar <SelectCity/> correctamente 1`] = `
+<ForwardRef
+  getOptionValue={[Function]}
+  isClearable={true}
+  isSearchable={true}
+  options={Array []}
+  placeholder="¿A dónde vamos?"
+  styles={
+    Object {
+      "container": [Function],
+      "control": [Function],
+      "indicatorsContainer": [Function],
+      "option": [Function],
+      "placeholder": [Function],
+      "singleValue": [Function],
+      "valueContainer": [Function],
+    }
+  }
+/>
+`;
