@@ -30,7 +30,7 @@ header.header {
   }
 
   .home div.logo {
-    align-items: flex-end;
+    align-items: flex-start;
     display: flex;
     flex-direction: column;
   }
@@ -44,8 +44,7 @@ header.header {
     color: var(--tertiary-color);
     display: flex;
     font-size: var(--heading4);
-    font-weight: var(--font-regular);
-    padding-left: 59px;
+    font-weight: var(--font-regular);    
     width: 270px;
   }
   
