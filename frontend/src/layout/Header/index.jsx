@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import ValidCredentials from '../../credentials/ValidCredentials';
-import logo from "./img/logo 1DB.png";
+import logo from "./img/logoWguest.jpg";
 import Styles from "./styles.module.css"
 import StylesApp from "../../App.module.css"
 import StylesLayout from "../styles.module.css"
@@ -62,7 +62,7 @@ export default function Header({ isLogged, showBurger, setShowBurger }) {
                     <Link to="/"  className={Styles.home} onClick={handleHide}>
                         <div className={Styles.logo}>
                             <img src={logo} alt="logo" />
-                            <h3>Sentite como en tu hogar</h3>
+                            <h3>Un mundo por descubrir</h3>
                         </div>
                     </Link>
                 

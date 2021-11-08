@@ -30,22 +30,21 @@ header.header {
   }
 
   .home div.logo {
-    align-items: flex-end;
+    align-items: flex-start;
     display: flex;
+    flex-direction: column;
   }
   
   .home div.logo img {
-    height: 52px;
-    width: 71px;
+    height: 35px;
+    width: 210px;
   }
   
   .home div.logo h3 {
     color: var(--tertiary-color);
     display: flex;
-    font-size: var(--heading3);
-    font-style: italic;
-    font-weight: var(--font-regular);
-    padding-left: 12px;
+    font-size: var(--heading4);
+    font-weight: var(--font-regular);    
     width: 270px;
   }
   
