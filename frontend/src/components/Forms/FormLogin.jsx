@@ -3,14 +3,14 @@ import { Link } from "react-router-dom"
 import { useState } from "react";
 import ValidCredentials from "../../credentials/ValidCredentials";
 
-export default function FormLogin(props){
+export default function FormLogin( { setActiveLogin, setActiveCreate, setLog } ){
     const[email, setEmail] = useState({campo:"", valido:true});
     const[password, setPassword] = useState({campo:"", valido:true});
     const[error, setError] = useState("")
     const[formValido, setFormValido]=useState(false)
 
-    props.setActiveCreate(false)
-    props.setActiveLogin(true)
+    setActiveCreate(false)
+    setActiveLogin(true)
 
     /*CONTROL DE COMPONENTES MEDIANTE HANDLES */
     const handleChangeEmail = (event) => {
@@ -46,7 +46,7 @@ export default function FormLogin(props){
         validarPassword();
         if(email.valido && password.valido){
             setFormValido(true)
-            props.setLog(true)
+            setLog(true)
             sessionStorage.setItem("log", "true")
             window.location.pathname = "/"
         }else{
@@ -55,7 +55,7 @@ export default function FormLogin(props){
     }
     console.log(email);
     console.log(password);
-    console.log(props, "props");
+    
     return(
         
         <div className={styles.container}>

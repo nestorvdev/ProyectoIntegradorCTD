@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Probando el componente <CarouselModal/> Deberia mostrar <CarouselModal/> correctamente 1`] = `
+<div>
+  <ModalGateway
+    target={<body />}
+  />
+</div>
+`;
+
+exports[`Probando el componente <CarouselModal/> Deberia mostrar <Share/> correctamente 1`] = `
+<div>
+  <ModalGateway
+    target={<body />}
+  />
+</div>
+`;

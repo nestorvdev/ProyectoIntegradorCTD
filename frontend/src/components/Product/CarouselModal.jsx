@@ -5,19 +5,17 @@ import { Carousel } from "react-responsive-carousel"
 import { Modal, ModalGateway } from "react-images"
 
 
-export default function CarouselModal(props) {
+export default function CarouselModal( { images, viewerIsOpen, setCurrentImage, setViewerIsOpen } ) {
 
     const closeLightbox = () => {
-        props.setCurrentImage(0);
-        props.setViewerIsOpen(false);
+        setCurrentImage(0);
+        setViewerIsOpen(false);
     };
-
-
 
     return (
         <div>
             <ModalGateway>
-                {props.viewerIsOpen ? (
+                {viewerIsOpen ? (
                     <Modal onClose={closeLightbox}>
                         <div>
                             <div className={`closeButton`} onClick={closeLightbox}>X</div>
@@ -33,7 +31,7 @@ export default function CarouselModal(props) {
                                 infiniteLoop={true}
                                 useKeyboardArrows={true}
                             >
-                                {props.images.map((image) => {
+                                {images.map((image) => {
                                     return (<div>
                                         <img src={image.url} />
                                     </div>)
