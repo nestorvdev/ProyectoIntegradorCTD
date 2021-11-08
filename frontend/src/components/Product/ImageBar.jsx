@@ -9,7 +9,7 @@ function ImageBar(props) {
     const { images } = props;
     console.log(props,"imageBar");
     const changeSlider= ()=> countSlider === images.length-1?setCountSlider(0):setCountSlider(countSlider+1);   
-    /*setTimeout(changeSlider,5000);*/
+    /*setTimeout(changeSlider,3000);*/
     const openLightBox = (() => {props.setViewerIsOpen(true);});
     const openShareModal = (() => {props.setShareIsOpen(true)})
 
@@ -32,8 +32,8 @@ return (
                    <div className={Styles.verMas} onClick={openLightBox}>Ver Más</div>
                 </div>
                 <div className={Styles.slider}  onClick={changeSlider} >
-                    {/* <img src={images[countSlider].url} alt={images[countSlider].title}/>
-                    <p>{(countSlider+1) +"/" +(images.length)}</p> */}
+                    <img src={images[countSlider].url} alt={images[countSlider].title}/>
+                    <p>{(countSlider+1) +"/" +(images.length)}</p> 
                 </div>
             </div>
         </div>

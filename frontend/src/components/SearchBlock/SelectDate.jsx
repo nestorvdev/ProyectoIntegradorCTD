@@ -6,7 +6,7 @@ function SelectDate() {
   const [calendarState, calendarSetState] = useState(Styles.hidden);
   const [responsiveState, responsiveSetState] = useState("desktop");
 
-  const haddleToggle = (event) => {
+  const handleToggle = (event) => {
     /* const windowSize = window.innerWidth <= 1080 ? "visible-tablet" : "visible"; */
     const windowSize = window.innerWidth >=680 ? (window.innerWidth<=1080?Styles.visibleTablet :Styles.visible) : Styles.visible;
     event.preventDefault();
@@ -22,7 +22,7 @@ function SelectDate() {
 
   return (
     <div className={Styles.calendarButton}>
-      <button className={Styles.date} onClick={haddleToggle}>{buttonState}</button>
+      <button className={Styles.date} onClick={handleToggle}>{buttonState}</button>
       <Calendar responsiveness={responsiveState} calendarState={calendarState} handleSelected={handleSelected} />
     </div>
   );
