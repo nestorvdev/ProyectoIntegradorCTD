@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <CityOption /> <CityOption /> should render the city in props 1`] = `
+<Fragment>
+  <h3
+    className="titleCity"
+    onClick={[Function]}
+  >
+    Buenos Aires
+    , 
+  </h3>
+  <h3
+    className="titleCountry"
+    onClick={[Function]}
+  />
+</Fragment>
+`;
+
+exports[`Pruebas en <CityOption /> <CityOption /> should render the country in props 1`] = `
+<Fragment>
+  <h3
+    className="titleCity"
+    onClick={[Function]}
+  >
+    , 
+  </h3>
+  <h3
+    className="titleCountry"
+    onClick={[Function]}
+  >
+    Argentina
+  </h3>
+</Fragment>
+`;
+
+exports[`Pruebas en <CityOption /> Deberia mostrar <CityOption/> correctamente 1`] = `
+<Fragment>
+  <h3
+    className="titleCity"
+    onClick={[Function]}
+  >
+    , 
+  </h3>
+  <h3
+    className="titleCountry"
+    onClick={[Function]}
+  />
+</Fragment>
+`;
