@@ -128,7 +128,9 @@ function Product(props) {
                         <DescriptionBar city={prod.city} description={prod.description} />
                         <FeaturesBar features={prod.features} />
                         <DateBlock />
-                        <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude} />
+                        {props.latitude !== null && props.longitude !== null ?
+                            <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude} />
+                            : null}
                         <InfoBar health={prod.health} rules={prod.rules} politics={prod.politics} />
                     </>
                 )}
