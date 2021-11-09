@@ -59,7 +59,8 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
         features: [{ id: null, title: "", state: null }],
         rules: "",
         health: "",
-        politics: ""
+        politics: "",
+        address:"",
     });
     useEffect(() => {
         axios
@@ -122,7 +123,7 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
                             <img className={Styles.iconLocation} src={iconLocation} alt="" />
                             {city},&#160;{country},&#160;{reference}
                             <span onClick={openMapModal} >mostrar en el mapa</span>
-                            <MapModal mapIsOpen={mapIsOpen} latitude={prod.latitude} longitude={prod.longitude} closeMapModal={closeMapModal} />
+                            <MapModal mapIsOpen={mapIsOpen} latitude={prod.latitude} longitude={prod.longitude} closeMapModal={closeMapModal} name={prod.name} address={prod.address}/>
 
 
                         </div>
