@@ -23,7 +23,7 @@ function ScoreBar(props) {
         <div className={`${Styles.scoreBar} ${StylesApp.delimiter}`}>
             <div className={`${Styles.scoreBarChild} ${StylesApp.delimiterChild}`}>
                 <div className={Styles.barraIzq}>
-                    <p> <img src={iconLocation} alt="iconLocation" className={Styles.iconLocation}/>  {" " + props.city.name + " , " + props.city.country}</p>
+                    <p> <img src={iconLocation} alt="iconLocation" className={Styles.iconLocation}/>  {" " + props.city.name + ", " + props.city.country}</p>
                     <p className={Styles.scoreBarReference}>{props.reference}</p>
                 </div>
                 <div className={Styles.barraDer}>
