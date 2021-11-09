@@ -7,6 +7,7 @@ import Share from "./Share";
 import CarouselModal from "./CarouselModal"
 import DescriptionBar from "./DescriptionBar";
 import FeaturesBar from "./FeaturesBar";
+import DateBlock from "./DateBlock";
 import MapBar from "./MapBar";
 import InfoBar from "./InfoBar";
 import axios from "axios";
@@ -115,6 +116,7 @@ function Product(props) {
             <CarouselModal images={prod.images} viewerIsOpen={viewerIsOpen} setViewerIsOpen={setViewerIsOpen} setCurrentImage={setCurrentImage}/>
             <DescriptionBar city={prod.city} description={prod.description} />
             <FeaturesBar features={prod.features} />
+            <DateBlock/>
             <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude}/>
             <InfoBar health={prod.health} rules={prod.rules} politics={prod.politics}/> 
             {console.log(prod.latitude, "latitude")}

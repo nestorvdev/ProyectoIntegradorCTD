@@ -394,4 +394,42 @@
   min-width: 55vw;
 }
 }
+/*Estilos DateBlock*/
+.calendario{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+
+.contenedor{
+  color: white;
+  background: gray;
+  width:400px;
+  height:200px;
+  margin: 2%;
+  
+  }
+/*Estilos Calendar2*/
+.visible{
+  display: block;
+}
+
+.negrita{
+  font-weight: bold;
+  font: size 10px;
+  padding: 10px;
+  margin: 5%;
+}
+.selectedDatesButton {
+  bottom: 5%;
+  font-size: var(--button1);
+  font-weight: var(--font-bold);
+  padding: 0.4rem 3.5rem;
+  display: absolute;
+  right: 5%;
+  text-align: right;
+  color: white;
+  background: #F0572D;
+  margin: 5%;
+  }
 
