@@ -68,6 +68,14 @@
   font-weight: var(--font-bold);
 }
 
+.scoreBarReference {
+  padding-left: 20px;  
+}
+
+.scoreBarReference::first-letter {
+  text-transform: uppercase;
+}
+
 /* Estilos del Image card */
 
 .imageBar {

@@ -24,7 +24,7 @@ function ScoreBar(props) {
             <div className={`${Styles.scoreBarChild} ${StylesApp.delimiterChild}`}>
                 <div className={Styles.barraIzq}>
                     <p> <img src={iconLocation} alt="iconLocation" className={Styles.iconLocation}/>  {" " + props.city.name + " , " + props.city.country}</p>
-                    <p>{props.reference}</p>
+                    <p className={Styles.scoreBarReference}>{props.reference}</p>
                 </div>
                 <div className={Styles.barraDer}>
                     <div className={Styles.calificacionLetra}>
