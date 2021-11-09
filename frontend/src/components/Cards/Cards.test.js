@@ -14,7 +14,7 @@ let wrapper;
 
 describe('Pruebas en Card', () => {    
 let props = { image: "test", cardCategory: "test", name: "test", city: "test", country: "test", description: "test", id: 1, reference: "test", qualification: 10, features: [] }
-    it('Debe de mostrarse correctamente', () => {
+    it('Debe de mostrarse correctamente con una puntuacion de 10', () => {
         wrapper = shallow(<Card {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
@@ -26,6 +26,29 @@ let props = { image: "test", cardCategory: "test", name: "test", city: "test", c
         expect(handleToggle).toBeCalled()
     }) */ 
 
+    let props2 = { image: "test", cardCategory: "test", name: "test", city: "test", country: "test", description: "test", id: 1, reference: "test", qualification: 7, features: [] }
+    it('Debe de mostrarse correctamente con una puntuacion de 7', () => {
+        wrapper = shallow(<Card {...props2} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    let props3 = { image: "test", cardCategory: "test", name: "test", city: "test", country: "test", description: "test", id: 1, reference: "test", qualification: 5, features: [] }
+    it('Debe de mostrarse correctamente con una puntuacion de 5', () => {
+        wrapper = shallow(<Card {...props3} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    let props4 = { image: "test", cardCategory: "test", name: "test", city: "test", country: "test", description: "test", id: 1, reference: "test", qualification: 3, features: [] }
+    it('Debe de mostrarse correctamente con una puntuacion de 3', () => {
+        wrapper = shallow(<Card {...props4} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    let props5 = { image: "test", cardCategory: "test", name: "test", city: "test", country: "test", description: "test", id: 1, reference: "test", qualification: 1, features: [] }
+    it('Debe de mostrarse correctamente con una puntuacion de 1', () => {
+        wrapper = shallow(<Card {...props5} />);
+        expect(wrapper).toMatchSnapshot();
+    });
 });
 
 describe('Pruebas en Cards', () => {   
@@ -34,4 +57,11 @@ describe('Pruebas en Cards', () => {
         wrapper = shallow(<Cards {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    let props2 = {  }
+    it('Debe de mostrarse correctamente', () => {
+        wrapper = shallow(<Cards {...props2} />);
+        expect(wrapper).toMatchSnapshot()
+    });
+
 });
