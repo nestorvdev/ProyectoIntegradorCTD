@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Styles from './styles.module.css';
 import StylesApp from "../../App.module.css"
 import Card from './Card.jsx';
-import dataJSON from './data.json';
-import dataSearch from './dataSearch.json';
 import axios from "axios";
 
 export default function Cards({ titulo, category, city, search, clickBusqueda }) {
@@ -27,7 +25,7 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
                     setErrorMessage(error.message);
                     setLoading(false);
                 });
-        } else if (category != "All" && search === false && city === "") {
+        } else if (category !== "All" && search === false && city === "") {
             axios.get(baseUrlPorCategoria)
                 .then(response => {
                     setData(response.data);
@@ -37,7 +35,7 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
                     setErrorMessage(error.message);
                     setLoading(false);
                 });
-        } else if (search && city != "") {
+        } else if (search && city !== "") {
             axios.get(baseUrlPorCiudad)
                 .then(response => {
                     setData(response.data);

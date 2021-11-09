@@ -21,21 +21,21 @@ export default function Share(props) {
                             <div className={Styles.containerShare}>
                                 <div className={Styles.shareBlock}>
                                     <div className={Styles.shareItem}>
-                                        <a href={`mailto:?Subject=Mira este alojamiento localhost:3000/product/${props.id}`} target="_blank" ><img src={email} alt="logo email" /></a>
+                                        <a href={`mailto:?Subject=Mira este alojamiento localhost:3000/product/${props.id}`} target="_blank" rel="noreferrer"><img src={email} alt="logo email" /></a>
                                         <p>Correo</p>
                                     </div>
                                     <div className={Styles.shareItem}>
-                                        <a href={`https://www.facebook.com/sharer/sharer.php?u=[localhost:3000/product/${props.id}]`} target="_blank"><img src={facebook} alt="logo facebook" /></a>
+                                        <a href={`https://www.facebook.com/sharer/sharer.php?u=[localhost:3000/product/${props.id}]`} target="_blank" rel="noreferrer"><img src={facebook} alt="logo facebook" /></a>
                                         <p>Facebook</p>
                                     </div>
                                 </div>
                                 <div className={Styles.shareBlock}>
                                     <div className={Styles.shareItem}>
-                                        <a href={`https://twitter.com/intent/tweet?text=[Mira este producto ]&url=[localhost:3000/product/${props.id}]&hashtags=[GranAlojamiento]`} target="_blank"><img src={twitter} alt="logo twitter" /></a>
+                                        <a href={`https://twitter.com/intent/tweet?text=[Mira este producto ]&url=[localhost:3000/product/${props.id}]&hashtags=[GranAlojamiento]`} target="_blank" rel="noreferrer"><img src={twitter} alt="logo twitter" /></a>
                                         <p>Twitter</p>
                                     </div>
                                     <div className={Styles.shareItem}>
-                                        <a href={`https://api.whatsapp.com/send?text=[Mira este alojamiento: localhost:3000/product/${props.id}]`} target="_blank"><img src={whatsapp} alt="logo whatsapp" /></a>
+                                        <a href={`https://api.whatsapp.com/send?text=[Mira este alojamiento: localhost:3000/product/${props.id}]`} target="_blank" rel="noreferrer"><img src={whatsapp} alt="logo whatsapp" /></a>
                                         <p>Whatsapp</p>
                                     </div>
                                 </div>

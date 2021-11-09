@@ -119,16 +119,9 @@ function SelectCity({handleCity}) {
   const options = data.map((city) => {
     return {
       value: `${city.name}, ${city.country}`,
-      label: <CityOption city={city.name} id ={city.id} handleCity={handleCity} country={city.country} handleCity={handleCity}/>,
+      label: <CityOption city={city.name} id ={city.id} handleCity={handleCity} country={city.country} />,
     };
   })
-
-  /* const options = [
-    { value: `Buenos-Aires, Argentina`, label: <CityOption city={data[0].name} country={data[0].country} /> },
-    { value: 'mendoza, Argentina', label: <CityOption city='Mendoza' country='Argentina'/> },
-    { value: 'cordoba, Argentina', label: <CityOption city='Córdoba' country='Argentina'/> },
-    { value: 'bariloche, Argentina', label: <CityOption city='San Carlos de Bariloche' country='Argentina'/> },
-  ]; */
 
   return (
     <Select
