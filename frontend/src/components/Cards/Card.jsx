@@ -27,9 +27,7 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
     let icons = [wifi, pool, kitchen, tv, ac, pet, parking, creditCard, smoke, party, checkin, noSmoke];
 
 
-    const handleToggle = (e) => {
-        setLike(!isLike);
-    }
+    const handleToggle = (e) => {setLike(!isLike);}
 
     const scoreLetter = (valor) => {
         if (valor >= 8 && valor <= 10) return "Excelente";
@@ -128,11 +126,7 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
 
                         </div>
                         <div className={Styles.cardIcons}>
-                            {features.map((feature, index) => {
-                                return (
-                                    <img className={Styles.cardFeatures} key={index} src={icons[index]} alt={feature.title} />
-                                )
-                            })}
+                            {features.map((feature, index) => <img className={Styles.cardFeatures} key={index} src={icons[index]} alt={feature.title} />)}
                         </div>
                         <div className={Styles.cardDescription}>
                             <p>{description}</p>
