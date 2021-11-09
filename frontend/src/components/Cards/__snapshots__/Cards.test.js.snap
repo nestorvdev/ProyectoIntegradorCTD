@@ -84,9 +84,17 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
       test
       , 
       test
-      <span>
+      <span
+        onClick={[Function]}
+      >
         mostrar en el mapa
       </span>
+      <MapModal
+        closeMapModal={[Function]}
+        latitude={null}
+        longitude={null}
+        mapIsOpen={false}
+      />
     </div>
     <div
       className="cardIcons"
@@ -200,9 +208,17 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 3
       test
       , 
       test
-      <span>
+      <span
+        onClick={[Function]}
+      >
         mostrar en el mapa
       </span>
+      <MapModal
+        closeMapModal={[Function]}
+        latitude={null}
+        longitude={null}
+        mapIsOpen={false}
+      />
     </div>
     <div
       className="cardIcons"
@@ -321,9 +337,17 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 5
       test
       , 
       test
-      <span>
+      <span
+        onClick={[Function]}
+      >
         mostrar en el mapa
       </span>
+      <MapModal
+        closeMapModal={[Function]}
+        latitude={null}
+        longitude={null}
+        mapIsOpen={false}
+      />
     </div>
     <div
       className="cardIcons"
@@ -447,9 +471,17 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 7
       test
       , 
       test
-      <span>
+      <span
+        onClick={[Function]}
+      >
         mostrar en el mapa
       </span>
+      <MapModal
+        closeMapModal={[Function]}
+        latitude={null}
+        longitude={null}
+        mapIsOpen={false}
+      />
     </div>
     <div
       className="cardIcons"
@@ -583,9 +615,17 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
       test
       , 
       test
-      <span>
+      <span
+        onClick={[Function]}
+      >
         mostrar en el mapa
       </span>
+      <MapModal
+        closeMapModal={[Function]}
+        latitude={null}
+        longitude={null}
+        mapIsOpen={false}
+      />
     </div>
     <div
       className="cardIcons"
