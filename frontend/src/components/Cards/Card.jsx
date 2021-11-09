@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Styles from './styles.module.css';
-import iconWifi from "./img/iconWifi.svg";
 import iconStar from "./img/starOrange.png";
 import iconLocation from "./img/IconLocation.svg";
-import iconSwimming from "./img/iconSwimming.svg";
 import { Link } from "react-router-dom";
 import wifi from '../Product/icons/wifi.svg';
 import pool from '../Product/icons/pool.svg';
@@ -74,7 +72,7 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
             .catch((error) => {
                 setErrorMessage("No es posible mostrar la página");
             });
-    }, []);
+    }, []); // agregar id
     
     const openMapModal = (() => {
         console.log("Entro en el modal", mapIsOpen);

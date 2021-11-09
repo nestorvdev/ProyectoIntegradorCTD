@@ -3,7 +3,7 @@ import Calendar from "./Calendar";
 import Styles from "./styles.module.css"
 
 function SelectDate() {
-  const [calendarState, calendarSetState] = useState("");
+  const [calendarState, calendarSetState] = useState(Styles.hidden);
   const [responsiveState, responsiveSetState] = useState("desktop");
 
   const handleToggle = (event) => {

@@ -1,7 +1,6 @@
 import StylesApp from "../../App.module.css";
 import Styles from "./styles.module.css";
 import iconSocial from "./icons/iconSocial.svg";
-import iconHeart from "./icons/iconHeart.svg"
 import React, { useState } from "react";
 
 function ImageBar(props) {

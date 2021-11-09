@@ -31,9 +31,9 @@ export default function CarouselModal( { images, viewerIsOpen, setCurrentImage, 
                                 infiniteLoop={true}
                                 useKeyboardArrows={true}
                             >
-                                {images.map((image) => {
-                                    return (<div>
-                                        <img src={image.url} />
+                                {images.map((image, index) => {
+                                    return (<div key={`image-${index}`}>
+                                        <img src={image.url} alt={`img-alojamiento-${index}`}/>
                                     </div>)
                                 })}
 

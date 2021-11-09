@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import Calendar2 from "./Calendar2";
 import Styles from "./styles.module.css"
 
 function DateBlock() {
-    const [value, setValue] = useState([null, null]);
+    /* const [value, setValue] = useState([null, null]); */
 
     return (
         <div className={`${Styles.container} ${Styles.delimiter}`}>
