@@ -31,9 +31,9 @@ function ImageBar(props) {
                     </div>
                     <div className={Styles.barraDer}>
                         {images[1].url !== null ? <img src={images[1].url} alt={images[1].title} /> : <img src={white} alt="white" />}
-                        {images[2].url !== null ? <img src={images[1].url} alt={images[2].title} /> : <img src={white} alt="white" />}
-                        {images[3].url !== null ? <img src={images[1].url} alt={images[3].title} /> : <img src={white} alt="white" />}
-                        {images[4].url !== null ? <img src={images[1].url} alt={images[4].title} /> : <img src={white} alt="white" />}
+                        {images[2].url !== null ? <img src={images[2].url} alt={images[2].title} /> : <img src={white} alt="white" />}
+                        {images[3].url !== null ? <img src={images[3].url} alt={images[3].title} /> : <img src={white} alt="white" />}
+                        {images[4].url !== null ? <img src={images[4].url} alt={images[4].title} /> : <img src={white} alt="white" />}
                         <div className={Styles.verMas} onClick={openLightBox}>Ver Más</div>
                     </div>
                     <div className={Styles.slider} onClick={changeSlider} >

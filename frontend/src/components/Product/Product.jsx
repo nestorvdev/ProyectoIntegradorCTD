@@ -53,7 +53,7 @@ function Product(props) {
             .catch((error) => {
                 setErrorMessage("No es posible mostrar la página");
             });
-    }, []);
+    }, [id]);
 
     if (errorMessage && loading) {
         return (

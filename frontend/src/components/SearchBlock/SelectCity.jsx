@@ -7,19 +7,18 @@ import axios from "axios";
 
 function SelectCity({handleCity}) {
   const baseURL = "http://localhost:8080/cities/all";
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);  
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
     axios
       .get(baseURL)
       .then((response) => {
-        setData(response.data);
-        setLoading(false);
+        setData(response.data);        
       })
       .catch((error) => {
         setErrorMessage(error);
+        console.log(errorMessage);
       });
   }, []);
 
