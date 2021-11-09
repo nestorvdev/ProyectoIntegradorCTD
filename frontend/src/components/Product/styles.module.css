@@ -186,21 +186,18 @@
   width: 35vw;
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  
+  flex-direction: column;  
 
 }
 
 .containerSharePrincipal h3{
   text-align: center;
 }
-.containerShare{
-  
+.containerShare{  
   display:flex;
   flex-direction: row;
   justify-content: center;
-  flex-wrap: wrap;
-  
+  flex-wrap: wrap;  
 }
 
 .shareBlock{
@@ -230,7 +227,7 @@
   cursor:pointer;
 }
 
-/*  estilos de descripcionBard */
+/*  estilos de descripcionBar */
 
 .descripcionBar {
   background-color: white;
@@ -334,6 +331,59 @@
   width:70vw
 }
 
+/* Estilos BlockDate */
+
+.containerDateBlock {  
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: clamp(20px, 3.9%, 40px);
+  padding-right: clamp(20px, 3.9%, 40px);
+}
+
+.containerDateBlock h2 {
+  padding-bottom: 20px;
+}
+
+/*Estilos DateBlock*/
+.calendario {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+}
+
+.contenedorReserva{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  color: white;  
+  width:50%; 
+  
+  }
+/*Estilos Calendar2*/
+.visible {
+  display: block;
+}
+
+.negrita{
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;  
+  color: black;
+}
+
+.selectedDatesButton {  
+  border: none;
+  border-radius: 4px; 
+  font-size: var(--button1);
+  font-weight: var(--font-bold);
+  padding: 0.4rem 3.5rem; 
+  color: white;
+  background: #F0572D;
+ 
+}
+
 
 /* Estilos infoBar */
 
@@ -430,42 +480,4 @@
   min-width: 55vw;
 }
 }
-/*Estilos DateBlock*/
-.calendario{
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: nowrap;
-}
-
-.contenedor{
-  color: white;
-  background: gray;
-  width:400px;
-  height:200px;
-  margin: 2%;
-  
-  }
-/*Estilos Calendar2*/
-.visible{
-  display: block;
-}
-
-.negrita{
-  font-weight: bold;
-  font: size 10px;
-  padding: 10px;
-  margin: 5%;
-}
-.selectedDatesButton {
-  bottom: 5%;
-  font-size: var(--button1);
-  font-weight: var(--font-bold);
-  padding: 0.4rem 3.5rem;
-  display: absolute;
-  right: 5%;
-  text-align: right;
-  color: white;
-  background: #F0572D;
-  margin: 5%;
-  }
 

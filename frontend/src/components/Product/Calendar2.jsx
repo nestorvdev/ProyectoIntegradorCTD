@@ -9,19 +9,16 @@ import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-
-
 const useStyles = makeStyles({
   root: {
     borderRadius: 5,
     color: "white",
-    boxShadow: '10px 5px 5px red',
+    boxShadow: '10px 5px 5px grey',
     fontSize: 20,
-    background: "gray",
+    background: "white",
     height: "300px",
-    width:"640px",
-    
-      }
+    width: "640px",
+  }
 });
 
 function getDaysAfter(date, amount) {
@@ -34,35 +31,35 @@ export default function Calendar2() {
   const theme = createTheme({
     palette: {
       primary: {
-       main: '#ff00d4',
+        main: '#ff00d4',
       },
 
     },
   });
-   return (
+  return (
     <div className={classes.root}>
-    <ThemeProvider theme={theme} >
-      <LocalizationProvider dateAdapter={AdapterDateFns} >
-        <StaticDateRangePicker 
-          className={classes.root}
-          calendars={window.innerWidth > 414 ? 2 : 1}
-          displayStaticWrapperAs="desktop"
-          maxDate={getDaysAfter(value[0], 5)}
-          value={value}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
-        renderInput={(startProps, endProps) => (
-            <React.Fragment>
-              <TextField {...startProps} />
-              <Box sx={{ mx: 2 }}> to </Box>
-              <TextField {...endProps} />
-            </React.Fragment>
-          )}
-        />
-               </LocalizationProvider>
-    </ThemeProvider>
-    
+      <ThemeProvider theme={theme} >
+        <LocalizationProvider dateAdapter={AdapterDateFns} >
+          <StaticDateRangePicker
+            className={classes.root}
+            calendars={window.innerWidth > 414 ? 2 : 1}
+            displayStaticWrapperAs="desktop"
+            maxDate={getDaysAfter(value[0], 5)}
+            value={value}
+            onChange={(newValue) => {
+              setValue(newValue);
+            }}
+            renderInput={(startProps, endProps) => (
+              <React.Fragment>
+                <TextField {...startProps} />
+                <Box sx={{ mx: 2 }}> to </Box>
+                <TextField {...endProps} />
+              </React.Fragment>
+            )}
+          />
+        </LocalizationProvider>
+      </ThemeProvider>
+
     </div>
   );
 }
