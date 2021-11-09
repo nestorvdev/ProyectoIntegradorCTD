@@ -354,23 +354,27 @@
 }
 
 .contenedorReserva{
+  border-radius: 4px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;  
   color: white;  
-  width:50%; 
+  width:30%; 
+  box-shadow: 10px 5px 5px grey;
+  background-color: white;
+  height: 100%;
   
-  }
-/*Estilos Calendar2*/
-.visible {
-  display: block;
 }
 
 .negrita{
   font-weight: bold;
-  font-size: 20px;
-  padding: 10px;  
+  font-size: 20px;  
   color: black;
+}
+
+/*Estilos Calendar2*/
+.visible {
+  display: block;
 }
 
 .selectedDatesButton {  
