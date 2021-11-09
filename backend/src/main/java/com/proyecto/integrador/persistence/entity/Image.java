@@ -17,7 +17,7 @@ public class Image {
     private Integer id;
     @Column(name="title", nullable = false)
     private String title;
-    @Column(name="url", nullable = false)
+    @Column(name="url", nullable = false, length = 2000)
     private String url;
     @ManyToOne
     @JoinColumn(name = "idProduct", nullable = false)
