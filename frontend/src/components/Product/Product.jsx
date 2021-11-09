@@ -39,7 +39,8 @@ function Product(props) {
         features: [{ id: null, title: "", state: null }],
         rules: "",
         health: "",
-        politics: ""
+        politics: "",
+        address:"",
     });
 
     useEffect(() => {
@@ -76,8 +77,8 @@ function Product(props) {
                         <DescriptionBar city={prod.city} description={prod.description} />
                         <FeaturesBar features={prod.features} />
                         <DateBlock />
-                        {props.latitude !== null && props.longitude !== null ?
-                            <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude} />
+                        {props.latitude !== null || props.longitude !== null ?
+                            <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude} name={prod.name} address={prod.address} />
                             : null}
                         <InfoBar health={prod.health} rules={prod.rules} politics={prod.politics} />
                     </>
