@@ -12,7 +12,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 const useStyles = makeStyles({
   root: {
     borderRadius: 5,
-    color: "white",
+    color: "black",
     boxShadow: '10px 5px 5px grey',
     fontSize: 20,
     background: "white",

@@ -10,12 +10,15 @@ function DateBlock() {
         <div className={` ${StylesApp.delimiter}`}>
             <div className={`${Styles.containerDateBlock} ${StylesApp.delimiterChild}`}>
                 <h2>Fechas Disponibles</h2>
-                <div className={Styles.calendario}>                    
+                <div className={Styles.calendario}>
                     <Calendar2 responsiveness="desktop" calendarState={Styles.visible} />
-                    <div className={Styles.contenedorReserva}>
-                        <p className={Styles.negrita}>Agregá tus fechas de viaje para tener precios exactos</p>
-                        <button className={Styles.selectedDatesButton}>Iniciar reserva</button>
+                    <div className={Styles.contenedorReservaBox}>
+                        <div className={Styles.contenedorReserva}>
+                            <p className={Styles.negrita}>Agregá tus fechas de viaje para tener precios exactos</p>
+                            <button className={Styles.selectedDatesButton}>Iniciar reserva</button>
+                        </div>
                     </div>
+
                 </div>
             </div>
         </div>
