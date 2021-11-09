@@ -2,6 +2,7 @@ import StylesApp from "../../App.module.css";
 import Styles from "./styles.module.css";
 import iconSocial from "./icons/iconSocial.svg";
 import React, { useState } from "react";
+import white from "./icons/NoImage.png";
 
 function ImageBar(props) {
     const [countSlider, setCountSlider] = useState(0); // se separa las imagenes a mostrar para la galeria de vista tablet y mobile
@@ -29,10 +30,10 @@ function ImageBar(props) {
                         <img src={images[0].url} alt={images[0].title} />
                     </div>
                     <div className={Styles.barraDer}>
-                        <img src={images[0].url} alt={images[0].title} />
-                        <img src={images[0].url} alt={images[0].title} />
-                        <img src={images[0].url} alt={images[0].title} />
-                        <img src={images[0].url} alt={images[0].title} />
+                        {images[1].url !== null ? <img src={images[1].url} alt={images[1].title} /> : <img src={white} alt="white" />}
+                        {images[2].url !== null ? <img src={images[1].url} alt={images[2].title} /> : <img src={white} alt="white" />}
+                        {images[3].url !== null ? <img src={images[1].url} alt={images[3].title} /> : <img src={white} alt="white" />}
+                        {images[4].url !== null ? <img src={images[1].url} alt={images[4].title} /> : <img src={white} alt="white" />}
                         <div className={Styles.verMas} onClick={openLightBox}>Ver Más</div>
                     </div>
                     <div className={Styles.slider} onClick={changeSlider} >
