@@ -16,6 +16,7 @@ public class ProductDTO {
     private String description;
     private double latitude;
     private double longitude;
+    private String address;
     private double qualification;
     private boolean favourite = false;
     private String reference;
@@ -30,11 +31,12 @@ public class ProductDTO {
     public ProductDTO() {
     }
 
-    public ProductDTO(String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, CategoryDTO category, CityDTO city, String rules, String health, String politics) {
+    public ProductDTO(String name, String description, double latitude, double longitude, String address, double qualification, boolean favourite, String reference, CategoryDTO category, CityDTO city, String rules, String health, String politics) {
         this.name = name;
         this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.address = address;
         this.qualification = qualification;
         this.favourite = favourite;
         this.reference = reference;
@@ -45,12 +47,13 @@ public class ProductDTO {
         this.politics = politics;
     }
 
-    public ProductDTO(Integer id, String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, CategoryDTO category, CityDTO city, String rules, String health, String politics) {
+    public ProductDTO(Integer id, String name, String description, double latitude, double longitude, String address, double qualification, boolean favourite, String reference, CategoryDTO category, CityDTO city, String rules, String health, String politics) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.address = address;
         this.qualification = qualification;
         this.favourite = favourite;
         this.reference = reference;
@@ -67,6 +70,7 @@ public class ProductDTO {
         product.setDescription(description);
         product.setLatitude(latitude);
         product.setLongitude(longitude);
+        product.setAddress(address);
         product.setQualification(qualification);
         product.setFavourite(favourite);
         product.setReference(reference);

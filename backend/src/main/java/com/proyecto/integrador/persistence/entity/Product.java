@@ -30,6 +30,8 @@ public class Product {
     private double latitude;
     @Column(name = "longitude", nullable = false)
     private double longitude;
+    @Column(name = "address", nullable = false)
+    private String address;
     @Column(name = "qualification", nullable = false)
     private double qualification;
     @Column(name = "favourite", nullable = false)
@@ -60,12 +62,13 @@ public class Product {
         this.id = id;
     }
 
-    public Product(Integer id, String name, String description, double latitude, double longitude, double qualification, boolean favourite, String reference, Category category, City city, String rules, String health, String politics) {
+    public Product(Integer id, String name, String description, double latitude, double longitude, String address, double qualification, boolean favourite, String reference, Category category, City city, String rules, String health, String politics) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.latitude = latitude;
         this.longitude = longitude;
+        this.address = address;
         this.qualification = qualification;
         this.favourite = favourite;
         this.reference = reference;
@@ -96,6 +99,7 @@ public class Product {
         productDTO.setDescription(description);
         productDTO.setLatitude(latitude);
         productDTO.setLongitude(longitude);
+        productDTO.setAddress(address);
         productDTO.setQualification(qualification);
         productDTO.setFavourite(favourite);
         productDTO.setReference(reference);
