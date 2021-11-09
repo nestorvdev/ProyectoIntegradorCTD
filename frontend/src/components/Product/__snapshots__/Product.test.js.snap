@@ -704,10 +704,10 @@ exports[`Probando el componente <MapBar/> Deberia mostrar <MapBar> correctamente
 </div>
 `;
 
-exports[`Probando el componente <Product/> Deberia mostrar <Product/> correctamente 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+exports[`Probando el componente <MapModal/> Deberia mostrar <MapModal> correctamente 1`] = `
+<ModalGateway
+  target={<body />}
+/>
 `;
 
 exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correctamente con calificacion de 1.1 1`] = `
@@ -730,7 +730,9 @@ exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correcta
           
          ciudad , pais
       </p>
-      <p>
+      <p
+        className="scoreBarReference"
+      >
         referencia
       </p>
     </div>
@@ -790,7 +792,9 @@ exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correcta
           
          ciudad , pais
       </p>
-      <p>
+      <p
+        className="scoreBarReference"
+      >
         referencia
       </p>
     </div>
@@ -862,7 +866,9 @@ exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correcta
           
          ciudad , pais
       </p>
-      <p>
+      <p
+        className="scoreBarReference"
+      >
         referencia
       </p>
     </div>
@@ -946,7 +952,9 @@ exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correcta
           
          ciudad , pais
       </p>
-      <p>
+      <p
+        className="scoreBarReference"
+      >
         referencia
       </p>
     </div>
@@ -1042,7 +1050,9 @@ exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correcta
           
          ciudad , pais
       </p>
-      <p>
+      <p
+        className="scoreBarReference"
+      >
         referencia
       </p>
     </div>

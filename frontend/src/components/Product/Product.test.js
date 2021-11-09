@@ -11,6 +11,7 @@ import ImageBar from "./ImageBar";
 import InfoBar from "./InfoBar";
 import Map from "./Map";
 import MapBar from "./MapBar";
+import MapModal from "./MapModal";
 import Product from "./Product";
 import ScoreBar from "./ScoreBar";
 import Share from "./Share";
@@ -208,6 +209,25 @@ describe("Probando el componente <MapBar/>", () => {
     });
 
     it("Deberia mostrar <MapBar> correctamente", () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
+})
+
+describe("Probando el componente <MapModal/>", () => {
+    let wrapper;
+    let props ={
+        mapIsOpen:false,
+        latitude:-12, 
+        longitude:9, 
+        closeMapModal: jest.fn()
+    }
+    
+    beforeEach(() => {
+        wrapper = shallow(<MapModal {...props}/>)
+    });
+
+    it("Deberia mostrar <MapModal> correctamente", () => {
         expect(wrapper).toMatchSnapshot();
     });
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Styles from './styles.module.css';
 import iconWifi from "./img/iconWifi.svg";
 import iconStar from "./img/starOrange.png";
@@ -17,14 +17,21 @@ import smoke from '../Product/icons/smoke.svg';
 import party from '../Product/icons/party.svg';
 import checkin from '../Product/icons/checkIn.svg';
 import noSmoke from '../Product/icons/noSmoke.svg';
+import axios from 'axios';
+import MapModal from '../Product/MapModal';
+
 
 function Card({ image, cardCategory, name, city, country, description, id, reference, qualification, features }) {
     const [isLike, setLike] = useState("false");
+    const [mapIsOpen, setMapIsOpen] = useState(false)
+    const [loading, setLoading] = useState(true);
+    const [errorMessage, setErrorMessage] = useState("");
     let icons = [wifi, pool, kitchen, tv, ac, pet, parking, creditCard, smoke, party, checkin, noSmoke];
+
 
     const handleToggle = (e) => {
         setLike(!isLike);
-    }    
+    }
 
     const scoreLetter = (valor) => {
         if (valor >= 8 && valor <= 10) return "Excelente";
@@ -36,6 +43,47 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
     }
 
     let cantStar = Math.floor(qualification / 2);
+
+    /*LOGICA DE MOSTRAR EN EL MAPA */
+
+    const [prod, setProd] = useState({
+        id: id,
+        name: "",
+        description: "",
+        latitude: null,
+        longitude: null,
+        qualification: null,
+        favorite: null,
+        reference: "",
+        category: { id: null, title: "", description: "", url: "" },
+        city: { id: null, name: "", country: "" },
+        images: [{ id: null, title: "", url: "", productId: null }],
+        features: [{ id: null, title: "", state: null }],
+        rules: "",
+        health: "",
+        politics: ""
+    });
+    useEffect(() => {
+        axios
+            .get(`http://localhost:8080/products/get/${id}`)
+            .then((response) => {
+                setProd(response.data);
+                setLoading(false);
+                console.log(response.data);
+            })
+            .catch((error) => {
+                setErrorMessage("No es posible mostrar la página");
+            });
+    }, []);
+    
+    const openMapModal = (() => {
+        console.log("Entro en el modal", mapIsOpen);
+        setMapIsOpen(true)
+    })
+
+    const closeMapModal = () => {
+        setMapIsOpen(false);
+    };
 
     return (
         <div className={Styles.cardBox}>
@@ -67,25 +115,28 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
                 <div className={Styles.cardLocation}>
                     <img className={Styles.iconLocation} src={iconLocation} alt="" />
                     {city},&#160;{country},&#160;{reference}
-                    <span>mostrar en el mapa</span>
+                    <span onClick={openMapModal} >mostrar en el mapa</span>
+                    <MapModal mapIsOpen={mapIsOpen} latitude={prod.latitude} longitude = {prod.longitude} closeMapModal={closeMapModal}/>
+                       
+                    
                 </div>
-                <div className={Styles.cardIcons}>
-                    {features.map((feature, index) => {
-                        return (
-                            <img className={Styles.cardFeatures} key={index} src={icons[index]} alt={feature.title} />
-                        )
-                    })}
+                    <div className={Styles.cardIcons}>
+                        {features.map((feature, index) => {
+                            return (
+                                <img className={Styles.cardFeatures} key={index} src={icons[index]} alt={feature.title} />
+                            )
+                        })}
+                    </div>
+                    <div className={Styles.cardDescription}>
+                        <p>{description}</p>
+                        <span>más...</span>
+                    </div>
+                    <Link to={`/product/${id}`} key={id} className={Styles.link}>
+                        <button className={Styles.cardButton2}>Ver más</button>
+                    </Link>
                 </div>
-                <div className={Styles.cardDescription}>
-                    <p>{description}</p>
-                    <span>más...</span>
-                </div>
-                <Link to={`/product/${id}`} key={id} className={Styles.link}>
-                    <button className={Styles.cardButton2}>Ver más</button>
-                </Link>
             </div>
-        </div>
-    );
+            );
 }
 
-export default Card;
+            export default Card;
