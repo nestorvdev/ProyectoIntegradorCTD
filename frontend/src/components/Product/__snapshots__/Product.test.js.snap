@@ -8,10 +8,756 @@ exports[`Probando el componente <CarouselModal/> Deberia mostrar <CarouselModal/
 </div>
 `;
 
-exports[`Probando el componente <CarouselModal/> Deberia mostrar <Share/> correctamente 1`] = `
+exports[`Probando el componente <DescriptionBar/> Deberia mostrar <DescriptionBar/> correctamente 1`] = `
+<div
+  className="descripcionBar delimiter"
+>
+  <div
+    className="descripcionBarChild delimiterChild"
+  >
+    <h2>
+      Alójate en el corazón de 
+      ciudad
+    </h2>
+    <p>
+      descripcion hotel
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <FeaturesBar/> Deberia mostrar <FeaturesBar/> correctamente 1`] = `
+<div
+  className="featuresBar delimiter"
+>
+  <div
+    className="featuresBarChild delimiterChild"
+  >
+    <h2>
+      ¿Qué ofrece este lugar?
+    </h2>
+    <div
+      className="icons"
+    >
+      <p
+        key="0"
+      >
+        <img
+          src="wifi.svg"
+        />
+        wifi
+      </p>
+      <p
+        key="1"
+      >
+        <img
+          src="pool.svg"
+        />
+        pool
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correctamente con una imagen 1`] = `
+<div
+  className="imageBar delimiter"
+>
+  <div
+    className="imageBarChild delimiterChild"
+  >
+    <div
+      className="barraSup"
+    >
+      <img
+        alt="iconSocial"
+        className="iconImage"
+        onClick={[Function]}
+        src="iconSocial.svg"
+      />
+      <img
+        alt="iconHeart"
+        className="iconImage"
+        src="iconHeart.svg"
+      />
+    </div>
+    <div
+      className="barraInf"
+    >
+      <div
+        className="barraIzq"
+      >
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+      </div>
+      <div
+        className="barraDer"
+      >
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+        <div
+          className="verMas"
+          onClick={[Function]}
+        >
+          Ver Más
+        </div>
+      </div>
+      <div
+        className="slider"
+        onClick={[Function]}
+      >
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+        <p>
+          1/1
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correctamente con varias imagenes 1`] = `
+<div
+  className="imageBar delimiter"
+>
+  <div
+    className="imageBarChild delimiterChild"
+  >
+    <div
+      className="barraSup"
+    >
+      <img
+        alt="iconSocial"
+        className="iconImage"
+        onClick={[Function]}
+        src="iconSocial.svg"
+      />
+      <img
+        alt="iconHeart"
+        className="iconImage"
+        src="iconHeart.svg"
+      />
+    </div>
+    <div
+      className="barraInf"
+    >
+      <div
+        className="barraIzq"
+      >
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+      </div>
+      <div
+        className="barraDer"
+      >
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+        />
+        <div
+          className="verMas"
+          onClick={[Function]}
+        >
+          Ver Más
+        </div>
+      </div>
+      <div
+        className="slider"
+        onClick={[Function]}
+      >
+        <img
+          alt="fotoImagen1"
+          src="https://media.istockphoto.com/photos/hotel-reception-lobby-picture-id1292355630"
+        />
+        <p>
+          2/3
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <InfoBar/> Deberia mostrar <InfoBar/> correctamente 1`] = `
+<div
+  className="infoBar delimiter"
+>
+  <div
+    className="infoBarChild delimiterChild"
+  >
+    <h2>
+      ¿Qué tenés que saber?
+    </h2>
+    <div
+      className="info"
+    >
+      <div>
+        <h3>
+          Normas de la casa
+        </h3>
+      </div>
+      <div>
+        <h3>
+          Salud y Seguridad
+        </h3>
+      </div>
+      <div>
+        <h3>
+          Política de Cancelación
+        </h3>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <Map/> Deberia mostrar <Map> correctamente 1`] = `
+<LoadScript
+  googleMapsApiKey="AIzaSyDoTLld8oN8wZm0avj07nwEv0FXqdfiaOE"
+  id="script-loader"
+  loadingElement={
+    <p>
+      Cargando
+    </p>
+  }
+  version="weekly"
+>
+  <GoogleMap
+    center={
+      Object {
+        "lat": undefined,
+        "lng": undefined,
+      }
+    }
+    mapContainerStyle={
+      Object {
+        "height": "400px",
+        "width": "100%",
+      }
+    }
+  >
+    <Marker
+      position={
+        Object {
+          "lat": undefined,
+          "lng": undefined,
+        }
+      }
+    />
+  </GoogleMap>
+</LoadScript>
+`;
+
+exports[`Probando el componente <MapBar/> Deberia mostrar <MapBar> correctamente 1`] = `
+<div
+  className="mapBar delimiter"
+>
+  <div
+    className="mapBarChild delimiterChild"
+  >
+    <h2>
+      ¿Dónde vas a estar?
+    </h2>
+    <p>
+      ciudad , pais
+    </p>
+    <div
+      className="map"
+    >
+      <Memo(Map)
+        latitude={4.111784}
+        longitude={-73.6396047}
+        zoom={15}
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correctamente con calificacion de 1.1 1`] = `
+<div
+  className="scoreBar delimiter"
+>
+  <div
+    className="scoreBarChild delimiterChild"
+  >
+    <div
+      className="barraIzq"
+    >
+      <p>
+         
+        <img
+          alt="iconLocation"
+          className="iconLocation"
+          src="iconLocation.svg"
+        />
+          
+         ciudad , pais
+      </p>
+      <p>
+        referencia
+      </p>
+    </div>
+    <div
+      className="barraDer"
+    >
+      <div
+        className="calificacionLetra"
+      >
+        <p>
+          Malo
+        </p>
+        <div
+          className="calificacionEstrellas"
+        >
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+        </div>
+      </div>
+      <p
+        className="calificacionEntero"
+      >
+        1
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correctamente con calificacion de 3.1 1`] = `
+<div
+  className="scoreBar delimiter"
+>
+  <div
+    className="scoreBarChild delimiterChild"
+  >
+    <div
+      className="barraIzq"
+    >
+      <p>
+         
+        <img
+          alt="iconLocation"
+          className="iconLocation"
+          src="iconLocation.svg"
+        />
+          
+         ciudad , pais
+      </p>
+      <p>
+        referencia
+      </p>
+    </div>
+    <div
+      className="barraDer"
+    >
+      <div
+        className="calificacionLetra"
+      >
+        <p>
+          Regular
+        </p>
+        <div
+          className="calificacionEstrellas"
+        >
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+        </div>
+      </div>
+      <p
+        className="calificacionEntero"
+      >
+        3
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correctamente con calificacion de 5.1 1`] = `
+<div
+  className="scoreBar delimiter"
+>
+  <div
+    className="scoreBarChild delimiterChild"
+  >
+    <div
+      className="barraIzq"
+    >
+      <p>
+         
+        <img
+          alt="iconLocation"
+          className="iconLocation"
+          src="iconLocation.svg"
+        />
+          
+         ciudad , pais
+      </p>
+      <p>
+        referencia
+      </p>
+    </div>
+    <div
+      className="barraDer"
+    >
+      <div
+        className="calificacionLetra"
+      >
+        <p>
+          Bueno
+        </p>
+        <div
+          className="calificacionEstrellas"
+        >
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+        </div>
+      </div>
+      <p
+        className="calificacionEntero"
+      >
+        5
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correctamente con calificacion de 6.1 1`] = `
+<div
+  className="scoreBar delimiter"
+>
+  <div
+    className="scoreBarChild delimiterChild"
+  >
+    <div
+      className="barraIzq"
+    >
+      <p>
+         
+        <img
+          alt="iconLocation"
+          className="iconLocation"
+          src="iconLocation.svg"
+        />
+          
+         ciudad , pais
+      </p>
+      <p>
+        referencia
+      </p>
+    </div>
+    <div
+      className="barraDer"
+    >
+      <div
+        className="calificacionLetra"
+      >
+        <p>
+          Muy Bueno
+        </p>
+        <div
+          className="calificacionEstrellas"
+        >
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+        </div>
+      </div>
+      <p
+        className="calificacionEntero"
+      >
+        6
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correctamente con calificacion de 9.1 1`] = `
+<div
+  className="scoreBar delimiter"
+>
+  <div
+    className="scoreBarChild delimiterChild"
+  >
+    <div
+      className="barraIzq"
+    >
+      <p>
+         
+        <img
+          alt="iconLocation"
+          className="iconLocation"
+          src="iconLocation.svg"
+        />
+          
+         ciudad , pais
+      </p>
+      <p>
+        referencia
+      </p>
+    </div>
+    <div
+      className="barraDer"
+    >
+      <div
+        className="calificacionLetra"
+      >
+        <p>
+          Excelente
+        </p>
+        <div
+          className="calificacionEstrellas"
+        >
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+          <svg
+            fill="none"
+            height="13"
+            viewBox="0 0 15 13"
+            width="15"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+              fill="#1DBEB4"
+            />
+          </svg>
+        </div>
+      </div>
+      <p
+        className="calificacionEntero"
+      >
+        9
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Probando el componente <Share/> Deberia mostrar <Share/> correctamente 1`] = `
 <div>
   <ModalGateway
     target={<body />}
   />
+</div>
+`;
+
+exports[`Probando el componente <Titlebar/> Deberia mostrar <TitleBar/> correctamente 1`] = `
+<div
+  className="titleBar delimiter"
+>
+  <div
+    className="titleBarChild delimiterChild"
+  >
+    <div>
+      <p>
+        <Component />
+      </p>
+      <h2>
+        nombreHotel
+      </h2>
+    </div>
+    <div>
+      <img
+        alt="IconLocation"
+        className="iconLocation"
+        src="iconBack.svg"
+      />
+    </div>
+  </div>
 </div>
 `;
