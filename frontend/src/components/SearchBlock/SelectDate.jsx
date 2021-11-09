@@ -3,11 +3,10 @@ import Calendar from "./Calendar";
 import Styles from "./styles.module.css"
 
 function SelectDate() {
-  const [calendarState, calendarSetState] = useState(Styles.hidden);
+  const [calendarState, calendarSetState] = useState("");
   const [responsiveState, responsiveSetState] = useState("desktop");
 
   const handleToggle = (event) => {
-    /* const windowSize = window.innerWidth <= 1080 ? "visible-tablet" : "visible"; */
     const windowSize = window.innerWidth >=680 ? (window.innerWidth<=1080?Styles.visibleTablet :Styles.visible) : Styles.visible;
     event.preventDefault();
     calendarSetState(calendarState === Styles.hidden ? windowSize : Styles.hidden);

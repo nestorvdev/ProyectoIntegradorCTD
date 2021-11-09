@@ -6,7 +6,7 @@ import TextField from "@mui/material/TextField";
 import StaticDateRangePicker from "@mui/lab/StaticDateRangePicker";
 import Box from "@mui/material/Box";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Styles from "./styles.module.css"
+import Styles from "./styles.module.css";
 const { format } = require("date-fns");
 
 function Calendar(props) {
