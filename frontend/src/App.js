@@ -35,9 +35,16 @@ function App() {
     
   }
 
+  const handleClean = () => {
+    setCategory("All");
+    setSearch(false);
+    setCity(""); 
+    setClickBusqueda(!clickBusqueda);   
+  }
+
   return ( 
     < BrowserRouter >      
-      <LayoutPrincipal isLogged = {log} activeCreate ={activeCreate} activeLogin = {activeLogin} >
+      <LayoutPrincipal isLogged = {log} activeCreate ={activeCreate} activeLogin = {activeLogin} handleClean={handleClean} >
         <Switch>
           <Route exact path="/">
             <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin} category= {category} handleCategory={handleCategory} search={search} handleSearch={handleSearch} city={city} handleCity={handleCity} clickBusqueda = {clickBusqueda}/>

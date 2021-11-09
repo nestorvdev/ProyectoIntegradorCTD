@@ -10,7 +10,7 @@ import { HeaderWrapper } from '../../components/MenuBurger/HeaderStyles';
 import MenuButton from '../../components/MenuBurger/MenuButton';
 import { Link } from "react-router-dom";
 
-export default function Header({ isLogged, showBurger, setShowBurger }) {
+export default function Header({ isLogged, showBurger, setShowBurger, handleClean }) {
 
     const [activeCreate, setIsActiveCreate] = useState((window.location.pathname === "/create") ? true : false)
     const [activeLogin, setIsActiveLogin] = useState((window.location.pathname === "/login") ? true : false)
@@ -60,7 +60,7 @@ export default function Header({ isLogged, showBurger, setShowBurger }) {
             <div className={showBurger === true ? `${Styles.headerTop} ${StylesLayout.opacity} ${StylesApp.delimiterChild}` : `${Styles.headerTop} ${StylesApp.delimiterChild}`}>
                 
                     <Link to="/"  className={Styles.home} onClick={handleHide}>
-                        <div className={Styles.logo}>
+                        <div className={Styles.logo} onClick={handleClean}>
                             <img src={logo} alt="logo" />
                             <h3>Un mundo por descubrir</h3>
                         </div>
