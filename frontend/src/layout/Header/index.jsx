@@ -58,30 +58,30 @@ export default function Header({ isLogged, showBurger, setShowBurger, handleClea
     return (
         <HeaderWrapper className={`${Styles.header} ${StylesApp.delimiter}`} >
             <div className={showBurger === true ? `${Styles.headerTop} ${StylesLayout.opacity} ${StylesApp.delimiterChild}` : `${Styles.headerTop} ${StylesApp.delimiterChild}`}>
-                
-                    <Link to="/"  className={Styles.home} onClick={handleHide}>
-                        <div className={Styles.logo} onClick={handleClean}>
-                            <img src={logo} alt="logo" />
-                            <h3>Un mundo por descubrir</h3>
-                        </div>
-                    </Link>
-                
+
+                <Link to="/" className={Styles.home} onClick={handleHide}>
+                    <div className={Styles.logo} onClick={handleClean}>
+                        <img src={logo} alt="logo" />
+                        <h3>Un mundo por descubrir</h3>
+                    </div>
+                </Link>
+
 
                 <div className={hideButtons}>
-                    
-                        <Link to="/create" >
-                            <button className={activeCreate ? Styles.hideButton : null} >
-                                Crear Cuenta
-                            </button>
-                        </Link>                  
 
-                        <Link to="/login">
-                            <button className={activeLogin ? Styles.hideButton : null} >
-                                Iniciar Sesión
-                            </button>
-                        </Link>
-                       
-                   
+                    <Link to="/create" >
+                        <button className={activeCreate ? Styles.hideButton : null} >
+                            Crear Cuenta
+                        </button>
+                    </Link>
+
+                    <Link to="/login">
+                        <button className={activeLogin ? Styles.hideButton : null} >
+                            Iniciar Sesión
+                        </button>
+                    </Link>
+
+
 
                 </div>
                 <div className={showUserName}>
@@ -91,8 +91,12 @@ export default function Header({ isLogged, showBurger, setShowBurger, handleClea
                     <div className={Styles.text}>
                         <h3 className={Styles.great}>Hola,</h3>
                         <h3 className={Styles.name}>{ValidCredentials.nombre} {ValidCredentials.apellido}</h3>
+
                     </div>
-                    <div className={Styles.close}><a href="/" onClick={handleLogOut}>X</a> </div>
+                    <div>
+                        <div className={Styles.close}><a href="/" onClick={handleLogOut}>X</a> </div>
+                    </div>
+
                 </div>
                 <MenuButton show={showBurger} handleShow={handleShow} />
             </div>
