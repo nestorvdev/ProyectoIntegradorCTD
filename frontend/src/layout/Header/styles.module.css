@@ -35,8 +35,7 @@ header.header {
     flex-direction: column;
   }
   
-  .home div.logo img {
-    height: 35px;
+  .home div.logo img {    
     width: 210px;
   }
   
@@ -143,6 +142,11 @@ header.header {
     a.home div.logo h3 {
       display: none;
     }
+
+    .home div.logo img {    
+      width: 200px;
+      margin-right: 10px;
+    }
   
     div.buttons button {
       width: 144px;
@@ -161,11 +165,8 @@ header.header {
       box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
       height: 93px;
       padding: 5px 11px;
-    }
-  
-    a.home div.logo img {
-      height: 50px;
-    }
+    } 
+   
   
     div.buttons {
       display: none;
