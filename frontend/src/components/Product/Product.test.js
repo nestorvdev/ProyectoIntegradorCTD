@@ -2,13 +2,16 @@ import React from "react";
 import { BrowserRouter, Router } from 'react-router-dom';
 import { shallow, mount } from "enzyme";
 import "@testing-library/jest-dom";
+import Calendar2 from "./Calendar2";
 import CarouselModal from "./CarouselModal";
+import DateBlock from "./DateBlock";
 import DescriptionBar from "./DescriptionBar";
 import FeaturesBar from "./FeaturesBar";
 import ImageBar from "./ImageBar";
 import InfoBar from "./InfoBar";
 import Map from "./Map";
 import MapBar from "./MapBar";
+import MapModal from "./MapModal";
 import Product from "./Product";
 import ScoreBar from "./ScoreBar";
 import Share from "./Share";
@@ -22,6 +25,19 @@ import { createSerializer } from 'enzyme-to-json';
 
 Enzyme.configure({ adapter: new Adapter() });
 expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
+
+describe("Probando el componente <Calendar2/>", () => {
+    let wrapper;
+    
+    beforeEach(() => {
+        wrapper = shallow(<Calendar2/>)
+    });
+
+    it("Deberia mostrar <Calendar2/> correctamente", () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
+})
 
 describe("Probando el componente <CarouselModal/>", () => {
     let wrapper;
@@ -45,6 +61,19 @@ describe("Probando el componente <CarouselModal/>", () => {
         wrapper.find("div.closeButton").simulate("close")
         expect(wrapper.prop("viewerIsOpen")).toBeFalsy()
     })
+})
+
+describe("Probando el componente <DateBlock/>", () => {
+    let wrapper;
+    
+    beforeEach(() => {
+        wrapper = shallow(<DateBlock/>)
+    });
+
+    it("Deberia mostrar <DateBlock/> correctamente", () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
 })
 
 describe("Probando el componente <DescriptionBar/>", () => {
@@ -135,9 +164,14 @@ describe("Probando el componente <ImageBar/>", () => {
 
 describe("Probando el componente <InfoBar/>", () => {
     let wrapper;
+    let props = {
+        rules: "normas1,normas2,normas3",
+        health: "salud1,salud2,salud3",
+        politics: "politicas1,politicas2,politicas3",
+    }
     
     beforeEach(() => {
-        wrapper = shallow(<InfoBar/>)
+        wrapper = shallow(<InfoBar {...props}/>)
     });
 
     it("Deberia mostrar <InfoBar/> correctamente", () => {
@@ -175,6 +209,25 @@ describe("Probando el componente <MapBar/>", () => {
     });
 
     it("Deberia mostrar <MapBar> correctamente", () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
+})
+
+describe("Probando el componente <MapModal/>", () => {
+    let wrapper;
+    let props ={
+        mapIsOpen:false,
+        latitude:-12, 
+        longitude:9, 
+        closeMapModal: jest.fn()
+    }
+    
+    beforeEach(() => {
+        wrapper = shallow(<MapModal {...props}/>)
+    });
+
+    it("Deberia mostrar <MapModal> correctamente", () => {
         expect(wrapper).toMatchSnapshot();
     });
 

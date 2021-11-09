@@ -9,15 +9,15 @@ function InfoBar(props) {
                 <div className={Styles.info}>
                     <div >
                         <h3>Normas de la casa</h3>
-                        {/* {props.rules.split(',').map((e,index)=><p key={index}>{e}</p>)} */}
+                        {props.rules.split(',').map((e,index)=><p key={index}>{e}</p>)}
                     </div>
                     <div >
                         <h3>Salud y Seguridad</h3>
-                        {/* {props.health.split(',').map((e,index)=><p key={index}>{e}</p>)} */}
+                        {props.health.split(',').map((e,index)=><p key={index}>{e}</p>)}
                     </div>
                     <div >
                         <h3>Política de Cancelación</h3>
-                        {/* {props.politics.split(',').map((e,index)=><p key={index}>{e}</p>)} */}
+                        {props.politics.split(',').map((e,index)=><p key={index}>{e}</p>)} 
                     </div>
                 </div>
             </div>

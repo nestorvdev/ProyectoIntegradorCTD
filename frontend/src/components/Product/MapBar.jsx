@@ -9,7 +9,10 @@ function MapBar(props) {
                 <h2>¿Dónde vas a estar?</h2>
                 <p>{props.city.name + " , " + props.city.country}</p>
                 <div className={Styles.map}>
-                    <Map latitude={props.latitude} longitude={props.longitude} zoom={15}/>
+                    {props.latitude && props.longitude ?
+                        <Map latitude={props.latitude} longitude={props.longitude} zoom={15} />
+                        :
+                        <p>No se puede mostrar el mapa</p>}
                 </div>
             </div>
         </div>

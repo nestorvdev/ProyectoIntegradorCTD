@@ -68,6 +68,14 @@
   font-weight: var(--font-bold);
 }
 
+.scoreBarReference {
+  padding-left: 22px;  
+}
+
+.scoreBarReference::first-letter {
+  text-transform: uppercase;
+}
+
 /* Estilos del Image card */
 
 .imageBar {
@@ -88,6 +96,29 @@
 .imageBar .iconImage {
   width: 35px;
   cursor:pointer;
+}
+
+.iconHeart {
+  width: 23px;
+  cursor:pointer;  
+  stroke:#545776;
+  stroke-width : 3px;
+  margin-top:5px;
+}
+
+.heartColor {
+  fill:white;  
+}
+.heartColor:hover {
+  fill:#545776;
+}
+
+.heartColor2 {
+  fill:#545776;
+}
+
+.heartColor2:active{
+  fill:white;
 }
 
 .imageBar .barraInf {
@@ -297,6 +328,11 @@
   height: clamp(300px, 50vh, 700px);
 }
 
+/*Estilos para el modalMap*/
+
+.containerModalMap{
+  width:70vw
+}
 
 
 /* Estilos infoBar */

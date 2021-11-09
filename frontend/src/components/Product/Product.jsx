@@ -11,6 +11,7 @@ import DateBlock from "./DateBlock";
 import MapBar from "./MapBar";
 import InfoBar from "./InfoBar";
 import axios from "axios";
+import StylesApp from "../../App.module.css";
 
 
 function Product(props) {
@@ -19,10 +20,10 @@ function Product(props) {
     const [viewerIsOpen, setViewerIsOpen] = useState(false);
 
     const [shareIsOpen, setShareIsOpen] = useState(false);
-    
+
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
-    let { id } = useParams();    
+    let { id } = useParams();
     const [prod, setProd] = useState({
         id: id,
         name: "",
@@ -32,27 +33,27 @@ function Product(props) {
         qualification: null,
         favorite: null,
         reference: "",
-        category: {id: null, title: "", description: "",url: ""},
-        city: { id: null, name: "", country: ""},
+        category: { id: null, title: "", description: "", url: "" },
+        city: { id: null, name: "", country: "" },
         images: [{ id: null, title: "", url: "", productId: null }],
         features: [{ id: null, title: "", state: null }],
         rules: "",
         health: "",
         politics: ""
-    });    
+    });
 
     useEffect(() => {
         axios
-          .get(`http://localhost:8080/products/get/${id}`)
-          .then((response) => {
-            setProd(response.data);
-            setLoading(false);
-            console.log(response.data);
-          })
-          .catch((error) => {
-            setErrorMessage(error);
-          });
-      }, []);   
+            .get(`http://localhost:8080/products/get/${id}`)
+            .then((response) => {
+                setProd(response.data);
+                setLoading(false);
+                console.log(response.data);
+            })
+            .catch((error) => {
+                setErrorMessage("No es posible mostrar la página");
+            });
+    }, []);
 
     /* let productAux = {
         id: id,
@@ -106,23 +107,34 @@ function Product(props) {
         politics: "politicas1,politicas2,politicas3",
     } */
 
-    
-    return (
-        <section>
-            <TitleBar category={prod.category.title} name={prod.name} goBack={props.history.goBack} />
-            <ScoreBar reference={prod.reference} city={prod.city} qualification={prod.qualification} />
-            <ImageBar images={prod.images} setViewerIsOpen={setViewerIsOpen}  setShareIsOpen={setShareIsOpen}/>
-            <Share id={prod.id} shareIsOpen={shareIsOpen} setShareIsOpen={setShareIsOpen}/>
-            <CarouselModal images={prod.images} viewerIsOpen={viewerIsOpen} setViewerIsOpen={setViewerIsOpen} setCurrentImage={setCurrentImage}/>
-            <DescriptionBar city={prod.city} description={prod.description} />
-            <FeaturesBar features={prod.features} />
-            <DateBlock/>
-            <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude}/>
-            <InfoBar health={prod.health} rules={prod.rules} politics={prod.politics}/> 
-            {console.log(prod.latitude, "latitude")}
-            {console.log(prod.longitude, "longitude")}
-        </section>
-    );
+    if (errorMessage && loading) {
+        return (
+            <section className={StylesApp.delimiter}>
+                <h1>{errorMessage}</h1>
+            </section>
+        );
+    } else {
+        return (
+            <section>
+                {loading ? (
+                    <p className={StylesApp.delimiter}>Loading Data...</p>
+                ) : (
+                    <>
+                        <TitleBar category={prod.category.title} name={prod.name} goBack={props.history.goBack} />
+                        <ScoreBar reference={prod.reference} city={prod.city} qualification={prod.qualification} />
+                        <ImageBar images={prod.images} setViewerIsOpen={setViewerIsOpen} setShareIsOpen={setShareIsOpen} />
+                        <Share id={prod.id} shareIsOpen={shareIsOpen} setShareIsOpen={setShareIsOpen} />
+                        <CarouselModal images={prod.images} viewerIsOpen={viewerIsOpen} setViewerIsOpen={setViewerIsOpen} setCurrentImage={setCurrentImage} />
+                        <DescriptionBar city={prod.city} description={prod.description} />
+                        <FeaturesBar features={prod.features} />
+                        <DateBlock />
+                        <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude} />
+                        <InfoBar health={prod.health} rules={prod.rules} politics={prod.politics} />
+                    </>
+                )}
+            </section>
+        );
+    }
 }
 
 export default Product;

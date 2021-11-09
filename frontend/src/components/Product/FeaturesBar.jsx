@@ -21,7 +21,7 @@ function FeaturesBar(props) {
             <div className={`${Styles.featuresBarChild} ${StylesApp.delimiterChild}`}>
                 <h2>¿Qué ofrece este lugar?</h2>
                 <div className={Styles.icons}>
-                    {props.features.map((e, index) => e.state ? <p key={index}><img src={icons[index]} alt={e.titulo} />{e.title}</p> : null)}
+                    {props.features.map((e, index) => <p key={index}><img src={icons[index]} alt={e.title} />{e.title}</p> )}                    
                 </div>
             </div>
         </div>
