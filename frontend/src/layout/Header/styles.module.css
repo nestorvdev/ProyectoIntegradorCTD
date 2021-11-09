@@ -105,6 +105,7 @@ header.header {
     padding: 5px;
   }
   
+
   div.user div.text h3 {
     font-size: var(--heading3);
   }
@@ -117,7 +118,7 @@ header.header {
     color: var(--primary-color);
   }
   
-  div.user div.close {
+  div.user div.close{
     font-size: 22px;
     font-weight: var(--font-bold);
     position: relative;

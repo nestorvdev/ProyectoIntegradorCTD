@@ -161,4 +161,8 @@ export const MenuBurgerWrapper = styled.nav`
     justify-content:flex-start;
   }
 
+  .menuFavoritos p{
+    text-align: right;
+  }
+
 `
