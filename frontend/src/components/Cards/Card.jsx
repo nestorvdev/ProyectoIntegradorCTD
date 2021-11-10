@@ -19,14 +19,12 @@ import axios from 'axios';
 import MapModal from '../Product/MapModal';
 
 
-function Card({ image, cardCategory, name, city, country, description, id, reference, qualification, features }) {
+function Card({ image, cardCategory, name, city, country, description, id, reference, qualification, features, latitude, longitude, address }) {
     const [isLike, setLike] = useState("false");
     const [mapIsOpen, setMapIsOpen] = useState(false)
-    const [loading, setLoading] = useState(true);
-    const [errorMessage, setErrorMessage] = useState("");
     let icons = [wifi, pool, kitchen, tv, ac, pet, parking, creditCard, smoke, party, checkin, noSmoke];
 
-    const handleToggle = (e) => {setLike(!isLike);}
+    const handleToggle = (e) => { setLike(!isLike); }
 
     const scoreLetter = (valor) => {
         if (valor >= 8 && valor <= 10) return "Excelente";
@@ -37,40 +35,7 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
         else { return "Calificacion Invalida" }
     }
 
-    let cantStar = Math.floor(qualification / 2);
-
-    /*LOGICA DE MOSTRAR EN EL MAPA */
-
-    const [prod, setProd] = useState({
-        id: id,
-        name: "",
-        description: "",
-        latitude: null,
-        longitude: null,
-        qualification: null,
-        favorite: null,
-        reference: "",
-        category: { id: null, title: "", description: "", url: "" },
-        city: { id: null, name: "", country: "" },
-        images: [{ id: null, title: "", url: "", productId: null }],
-        features: [{ id: null, title: "", state: null }],
-        rules: "",
-        health: "",
-        politics: "",
-        address:"",
-    });
-    useEffect(() => {
-        axios
-            .get(`http://localhost:8080/products/get/${id}`)
-            .then((response) => {
-                setProd(response.data);
-                setLoading(false);
-               /*  console.log(response.data); */
-            })
-            .catch((error) => {
-                setErrorMessage("No es posible mostrar la página");
-            });
-    }, [id]); 
+    let cantStar = Math.floor(qualification / 2); 
 
     const openMapModal = (() => {
         console.log("Entro en el modal", mapIsOpen);
@@ -81,64 +46,57 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
         setMapIsOpen(false);
     };
 
-    if (errorMessage && loading) {
-        return (
-            <div className={Styles.cardBox}></div>
-        );        
-    } else {
-        return (
-            <div className={Styles.cardBox}>
-                {loading ? (
-                    <p>Loading Data...</p>
-                ) : (<>
-                    <div className={Styles.cardImage}>
-                        <svg className={Styles.iconHeart} onClick={handleToggle} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path className={isLike ? Styles.heartColor : Styles.heartColor2} id="heart" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" /></svg>
-                        <img className={Styles.image} src={image} alt="" />
-                    </div>
+    return (
+        <div className={Styles.cardBox}>
 
-                    <div className={Styles.cardInfo}>
-                        <div className={Styles.cardHeaderBox}>
-                            <div className={Styles.cardHeadline}>
-                                <div className={Styles.cardCategory}>
-                                    <p>{cardCategory}</p>
-                                    {cantStar >= 0 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
-                                    {cantStar >= 2 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
-                                    {cantStar >= 3 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
-                                    {cantStar >= 4 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
-                                    {cantStar >= 5 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
-                                </div>
-                                <div className={Styles.cardName}>{name}</div>
-                            </div>
-                            <div className={Styles.cardScore}>
-                                <div className={Styles.cardScoreNumber}>
-                                    <p>{Math.floor(qualification)}</p>
-                                </div>
-                                <div className={Styles.cardScoreWords}>{scoreLetter(qualification)}</div>
-                            </div>
-                        </div>
-                        <div className={Styles.cardLocation}>
-                            <img className={Styles.iconLocation} src={iconLocation} alt="" />
-                            {city},&#160;{country},&#160;{reference}
-                            <span onClick={openMapModal} >mostrar en el mapa</span>
-                            <MapModal mapIsOpen={mapIsOpen} latitude={prod.latitude} longitude={prod.longitude} closeMapModal={closeMapModal} name={prod.name} address={prod.address}/>
-
-
-                        </div>
-                        <div className={Styles.cardIcons}>
-                            {features.map((feature, index) => <img className={Styles.cardFeatures} key={index} src={icons[index]} alt={feature.title} />)}
-                        </div>
-                        <div className={Styles.cardDescription}>
-                            <p>{description}</p>
-                            <span>más...</span>
-                        </div>
-                        <Link to={`/product/${id}`} key={id} className={Styles.link}>
-                            <button className={Styles.cardButton2}>Ver más</button>
-                        </Link>
-                    </div>
-                </>)}
+            <div className={Styles.cardImage}>
+                <svg className={Styles.iconHeart} onClick={handleToggle} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path className={isLike ? Styles.heartColor : Styles.heartColor2} id="heart" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" /></svg>
+                <img className={Styles.image} src={image} alt="" />
             </div>
-        );
-    }
+
+            <div className={Styles.cardInfo}>
+                <div className={Styles.cardHeaderBox}>
+                    <div className={Styles.cardHeadline}>
+                        <div className={Styles.cardCategory}>
+                            <p>{cardCategory}</p>
+                            {cantStar >= 0 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                            {cantStar >= 2 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                            {cantStar >= 3 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                            {cantStar >= 4 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                            {cantStar >= 5 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                        </div>
+                        <div className={Styles.cardName}>{name}</div>
+                    </div>
+                    <div className={Styles.cardScore}>
+                        <div className={Styles.cardScoreNumber}>
+                            <p>{Math.floor(qualification)}</p>
+                        </div>
+                        <div className={Styles.cardScoreWords}>{scoreLetter(qualification)}</div>
+                    </div>
+                </div>
+                <div className={Styles.cardLocation}>
+                    <img className={Styles.iconLocation} src={iconLocation} alt="" />
+                    {city},&#160;{country},&#160;{reference}
+                    <span onClick={openMapModal} >mostrar en el mapa</span>
+                    <MapModal mapIsOpen={mapIsOpen} latitude={latitude} longitude={longitude} closeMapModal={closeMapModal} name={name} address={address} />
+
+
+                </div>
+                <div className={Styles.cardIcons}>
+                    {features.map((feature, index) => <img className={Styles.cardFeatures} key={index} src={icons[index]} alt={feature.title} />)}
+                </div>
+                <div className={Styles.cardDescription}>
+                    <p>{description}</p>
+                    <span>más...</span>
+                </div>
+                <Link to={`/product/${id}`} key={id} className={Styles.link}>
+                    <button className={Styles.cardButton2}>Ver más</button>
+                </Link>
+            </div>
+
+        </div>
+    );
+
 }
 
 export default Card;

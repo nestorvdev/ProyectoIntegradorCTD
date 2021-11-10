@@ -130,7 +130,7 @@
 .imageBar .barraIzq,
 .imageBar .barraDer {
   min-width: 50%;
-  height: 40vh;
+  height: 50vh;
 }
 
 .imageBar img {
@@ -329,12 +329,10 @@
   border-radius: 5px;
 }
 
-
-
 .contenedorReservaBox {
   width: 33%;
   min-width: 300px;
-  border-radius: 5px;
+  border-radius: 5px;  
 }
 
 .contenedorReserva {
@@ -343,10 +341,11 @@
   padding: 3%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;  
 }
 
 .negrita {
+  text-align: center;
   font-weight: bold;
   font-size: 14px;
   color: black;
@@ -365,6 +364,15 @@
   padding: 0.4rem 3.5rem;
   color: white;
   background: #f0572d;
+  transition: all 0.3s;
+}
+
+.selectedDatesButton:hover {
+  transform: scaleX(1.02);  
+}
+
+.selectedDatesButton:active {
+  transform: scale(0.9);
 }
 
 /* Estilos del map Bar  */
@@ -468,21 +476,37 @@
 
   .contenedorCalendario > div > div > div > div > div:first-child > button:first-child {
     background-color: #f0572d;
+    box-shadow: 0 3px 3px grey;
     color: white;
     position: absolute;
     left: 10px;
+    transition:all 0.3s;
     top: 150px;
     z-index: 1;
   }
 
+  .contenedorCalendario > div > div > div > div > div:first-child > button:hover {
+    transform: scale(1.1);
+  }
+
   .contenedorCalendario > div > div  > div > div > div:first-child > button:last-child {
     background-color: #f0572d;
+    box-shadow: 0 3px 3px grey;
     color: white;
     position: absolute;
     right: 10px;
     top: 150px;
+    transition:all 0.3s;
     z-index: 1;
   }
+
+  .contenedorReservaBox {    
+    box-shadow: 0 5px 5px grey;
+  }
+
+  .contenedorReserva {    
+    background-color: white;
+  }  
 }
 
 @media all and (min-width:720px){
@@ -575,5 +599,17 @@
   }
   .containerSharePrincipal {
     min-width: 55vw;
+  }
+
+  .contenedorReservaBox{
+    width: 100%;
+  }
+
+  .contenedorReserva{
+    flex-direction: column;
+  }
+
+  .contenedorReserva p, .contenedorReserva button {
+    width: 100%;
   }
 }

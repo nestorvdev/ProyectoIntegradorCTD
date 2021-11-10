@@ -99,6 +99,9 @@ export default function Cards({ category, city, search, clickBusqueda, favourite
                                 reference={e.reference}
                                 qualification={e.qualification}
                                 features={e.features}
+                                latitude={e.latitude}
+                                longitude={e.longitude}
+                                address={e.address}
                             />
                         )}
                     </div>
