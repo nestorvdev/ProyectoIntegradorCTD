@@ -24,7 +24,7 @@ function Product(props) {
     const [errorMessage, setErrorMessage] = useState("");
 
     /*ESTADO PARA EL CALENDARIO */
-    const [valueDate, setValueDate] = useState([null, null]);
+    const [valueDate, setValueDate] = useState([sessionStorage.getItem("startDate")!=null?sessionStorage.getItem("startDate"):null, sessionStorage.getItem("endDate")!=null?sessionStorage.getItem("endDate"):null]);
    
 
     let { id } = useParams();
