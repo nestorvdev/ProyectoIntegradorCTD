@@ -15,9 +15,9 @@ export default function Share(props) {
             `https://api.whatsapp.com/send?text=[Mira este alojamiento: localhost:3000/product/${props.id}]`]
         }
         else if (props.placeShareCall === "footer") {
-            return [`mailto:?Subject=Mira este alojamiento localhost:3000`,
-                `https://www.facebook.com/sharer/sharer.php?u=[localhost:3000]`, `https://twitter.com/intent/tweet?text=[Mira este producto ]&url=[localhost:3000]&hashtags=[GranAlojamiento]`,
-                `https://api.whatsapp.com/send?text=[Mira este alojamiento: localhost:3000]`]
+            return [`mailto:?Subject=Mira esta aplicación localhost:3000`,
+                `https://www.facebook.com/sharer/sharer.php?u=[localhost:3000]`, `https://twitter.com/intent/tweet?text=[Mira esta aplicación ]&url=[localhost:3000]&hashtags=[GranAlojamiento]`,
+                `https://api.whatsapp.com/send?text=[Mira esta aplicación: localhost:3000]`]
         }
     }
 
