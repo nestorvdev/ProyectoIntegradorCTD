@@ -66,7 +66,7 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
             .then((response) => {
                 setProd(response.data);
                 setLoading(false);
-                console.log(response.data);
+               /*  console.log(response.data); */
             })
             .catch((error) => {
                 setErrorMessage("No es posible mostrar la página");

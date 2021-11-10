@@ -13,6 +13,9 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
+    const limitCardPerPage = 8;
+    const [numberPages, setNumberPages] = useState(null);
+    
 
     useEffect(() => {
         if (category === "All" && search === false) {
@@ -49,9 +52,11 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
             setErrorMessage("Error");
             setLoading(false);
         }
+        setNumberPages(data.length/limitCardPerPage);
+        console.log(data);
     }, [category, clickBusqueda]);
 
-
+    
     /* const handleSearch = (e) => {
         e.preventDefault();
         const search = e.target.value;

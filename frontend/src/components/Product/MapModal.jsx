@@ -3,7 +3,7 @@ import Map from "./Map"
 import Styles from "./styles.module.css";
 
 export default function MapModal({ mapIsOpen, latitude, longitude, closeMapModal, name, address }) {
-    console.log("mapModal", mapIsOpen);
+   /*  console.log("mapModal", mapIsOpen); */
 
     return (
         <ModalGateway >
