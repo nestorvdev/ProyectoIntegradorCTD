@@ -10,7 +10,7 @@ import { HeaderWrapper } from '../../components/MenuBurger/HeaderStyles';
 import MenuButton from '../../components/MenuBurger/MenuButton';
 import { Link } from "react-router-dom";
 
-export default function Header({ isLogged, showBurger, setShowBurger, handleClean }) {
+export default function Header({ isLogged, showBurger, setShowBurger, handleClean, handleFavourite }) {
 
     const [activeCreate, setIsActiveCreate] = useState((window.location.pathname === "/create") ? true : false)
     const [activeLogin, setIsActiveLogin] = useState((window.location.pathname === "/login") ? true : false)
@@ -91,7 +91,7 @@ export default function Header({ isLogged, showBurger, setShowBurger, handleClea
                     <div className={Styles.text}>
                         <h3 className={Styles.great}>Hola,</h3>
                         <h3 className={Styles.name}>{ValidCredentials.nombre} {ValidCredentials.apellido}</h3>
-
+                        <h4 className={Styles.seeFavourite}onClick={handleFavourite}>Ver favoritos</h4>
                     </div>
                     <div>
                         <div className={Styles.close}><a href="/" onClick={handleLogOut}>X</a> </div>
@@ -100,7 +100,7 @@ export default function Header({ isLogged, showBurger, setShowBurger, handleClea
                 </div>
                 <MenuButton show={showBurger} handleShow={handleShow} />
             </div>
-            <MenuBurger show={showBurger} handleHide={handleHide} isLogged={isLogged} iniciales={iniciales} activeLogin={activeLogin} activeCreate={activeCreate} handleLogOut={handleLogOut} />
+            <MenuBurger show={showBurger} handleHide={handleHide} isLogged={isLogged} iniciales={iniciales} activeLogin={activeLogin} activeCreate={activeCreate} handleLogOut={handleLogOut} handleFavourite={handleFavourite} />
         </HeaderWrapper >
     )
 }

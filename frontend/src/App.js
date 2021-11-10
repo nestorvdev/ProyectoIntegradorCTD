@@ -17,10 +17,12 @@ function App() {
   const [search, setSearch] = useState(false);
   const [city,setCity] = useState("");
   const [clickBusqueda, setClickBusqueda] = useState(false);
+  const [favourite, setFavourite] = useState(false);
 
   const handleCategory = (c) => {           
     setSearch(false);
     setCity("");
+    setFavourite(false);
     setCategory(c);           
   }
 
@@ -31,23 +33,29 @@ function App() {
   }
 
   const handleCity = (c) => {    
-    setCity(c);     
-    
+    setCity(c);       
+  }
+
+  const handleFavourite = (e) => {
+    setSearch(false);
+    setCity("");
+    setFavourite(true);
   }
 
   const handleClean = () => {
     setCategory("All");
     setSearch(false);
     setCity(""); 
-    setClickBusqueda(!clickBusqueda);   
-  }
+    setClickBusqueda(!clickBusqueda); 
+    setFavourite(false);  
+  }  
 
   return ( 
     < BrowserRouter >      
-      <LayoutPrincipal isLogged = {log} activeCreate ={activeCreate} activeLogin = {activeLogin} handleClean={handleClean} >
+      <LayoutPrincipal isLogged = {log} activeCreate ={activeCreate} activeLogin = {activeLogin} handleClean={handleClean} handleFavourite={handleFavourite}>
         <Switch>
           <Route exact path="/">
-            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin} category= {category} handleCategory={handleCategory} search={search} handleSearch={handleSearch} city={city} handleCity={handleCity} clickBusqueda = {clickBusqueda}/>
+            <Home setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin} category= {category} handleCategory={handleCategory} search={search} handleSearch={handleSearch} city={city} handleCity={handleCity} clickBusqueda = {clickBusqueda} favourite= {favourite}/>
           </Route>
           <Route exact path="/login"  component={() => !log? <FormLogin setLog={setLog} setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />                  
           <Route exact path="/create" component={() => !log? <FormCreate setActiveCreate = {setActiveCreate} setActiveLogin ={setActiveLogin}/> : <Redirect to="/" />} />

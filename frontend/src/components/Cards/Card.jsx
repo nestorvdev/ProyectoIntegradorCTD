@@ -26,7 +26,6 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
     const [errorMessage, setErrorMessage] = useState("");
     let icons = [wifi, pool, kitchen, tv, ac, pet, parking, creditCard, smoke, party, checkin, noSmoke];
 
-
     const handleToggle = (e) => {setLike(!isLike);}
 
     const scoreLetter = (valor) => {

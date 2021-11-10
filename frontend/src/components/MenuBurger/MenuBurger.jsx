@@ -7,7 +7,7 @@ import line from "./img/Line.png";
 import ValidCredentials from "../../credentials/ValidCredentials";
 import { MenuBurgerWrapper } from "./MenuBurgerWrapped.jsx";
 
-export default function MenuMobile({ show, handleHide, isLogged, iniciales, activeLogin, activeCreate, handleLogOut }) {
+export default function MenuMobile({ show, handleHide, isLogged, iniciales, activeLogin, activeCreate, handleLogOut, handleFavourite }) {
 
     const hideObject = (isLogged) ? "hide" : null; //Para esconder los botones cuando esta logueado
     const showObject = (isLogged) ? null : "hide"; //Para que se vea el avatar cuando se loguea
@@ -29,7 +29,7 @@ export default function MenuMobile({ show, handleHide, isLogged, iniciales, acti
             </div>
             <div className="mobileBody">
                 <div onClick={handleHide} className={`menuFavoritos ${!isLogged ? "hide" : null} `}>
-                    <p >Favoritos</p>
+                    <p onClick={handleFavourite}>Favoritos</p>
                     <img src={line} alt="" />
                 </div>
                 <div className={`botones ${hideObject} ${(!activeLogin && activeCreate) ? "subir" : null}`}>

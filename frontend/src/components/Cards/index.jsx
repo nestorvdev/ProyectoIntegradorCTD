@@ -4,10 +4,11 @@ import StylesApp from "../../App.module.css"
 import Card from './Card.jsx';
 import axios from "axios";
 
-export default function Cards({ titulo, category, city, search, clickBusqueda }) {
+export default function Cards({ category, city, search, clickBusqueda, favourite }) {
     const baseUrlProductosRecomendados = "http://localhost:8080/products/all";
     const baseUrlPorCategoria = `http://localhost:8080/products/get/category/${category}`;
     const baseUrlPorCiudad = `http://localhost:8080/products/get/city/${city}`;
+    const baseUrlFavourite = "http://localhost:8080/products/all";
     //const baseUrlPorFecha = `http://localhost:8080/products/date`;
     //const baseUrlPorCiudadYFecha = `http://localhost:8080/products/search/date/${search}`;
     const [data, setData] = useState([]);
@@ -15,24 +16,26 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
     const [errorMessage, setErrorMessage] = useState("");
     const limitCardPerPage = 8;
     const [numberPages, setNumberPages] = useState(null);
-    
+    const [titulo, setTitulo] = useState("Recomendaciones");
 
     useEffect(() => {
-        if (category === "All" && search === false) {
+        if (category === "All" && search === false && favourite === false) {
             axios.get(baseUrlProductosRecomendados)
                 .then(response => {
                     setData(response.data);
                     setLoading(false);
+                    setTitulo("Recomendaciones");
                 })
                 .catch(error => {
                     setErrorMessage(error.message);
                     setLoading(false);
                 });
-        } else if (category !== "All" && search === false && city === "") {
+        } else if (category !== "All" && search === false && city === "" && favourite === false) {
             axios.get(baseUrlPorCategoria)
                 .then(response => {
                     setData(response.data);
                     setLoading(false);
+                    setTitulo(`Resultados para ${category}`);
                 })
                 .catch(error => {
                     setErrorMessage(error.message);
@@ -43,6 +46,18 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
                 .then(response => {
                     setData(response.data);
                     setLoading(false);
+                    setTitulo(`Resultados para ${response.data[0].city.name}`);
+                })
+                .catch(error => {
+                    setErrorMessage(error.message);
+                    setLoading(false);
+                });
+        } else if (favourite) {
+            axios.get(baseUrlFavourite)
+                .then(response => {
+                    setData(response.data);
+                    setLoading(false);
+                    setTitulo(`Favoritos`);
                 })
                 .catch(error => {
                     setErrorMessage(error.message);
@@ -52,19 +67,9 @@ export default function Cards({ titulo, category, city, search, clickBusqueda })
             setErrorMessage("Error");
             setLoading(false);
         }
-        setNumberPages(data.length/limitCardPerPage);
+        setNumberPages(data.length / limitCardPerPage);
         console.log(data);
-    }, [category, clickBusqueda]);
-
-    
-    /* const handleSearch = (e) => {
-        e.preventDefault();
-        const search = e.target.value;
-        const dataSearch = data.filter((item) => {
-            return item.name.toLowerCase().includes(search.toLowerCase());
-        });
-        setData(dataSearch);
-    }; */
+    }, [category, clickBusqueda, favourite]);
 
     if (errorMessage && loading) {
         return (
