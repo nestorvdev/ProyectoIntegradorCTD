@@ -8,7 +8,7 @@ import line from "./img/Line.png";
 import ValidCredentials from "../../credentials/ValidCredentials";
 import { MenuBurgerWrapper } from "./MenuBurgerWrapped.jsx";
 import Share from '../../components/Product/Share';
-import iconSocial from "./img/iconSocial.svg"
+import iconSocial from "./img/icon-share.svg"
 
 export default function MenuMobile({ show, handleHide, isLogged, iniciales, activeLogin, activeCreate, handleLogOut, handleFavourite }) {
 

@@ -153,7 +153,7 @@ export const MenuBurgerWrapper = styled.nav`
   }
 
   .iconSocial{
-    padding-top:2px,
+    opacity:0.6;
   }
 
   .hide{
