@@ -690,10 +690,20 @@ div.buttons button.create:hover {
 
   .modalFavourite{
     width: 70vw;
-    height:18vh
+    height:21vh
     
-    }
-    .modalFavourite p{
-    font-size: 18px;
-    }
+  }
+  
+  .modalFavourite p{
+    font-size: 18px ;
+    font-weight: 700;
+  }
+
+  div.buttons button {
+    font-size: 12pt;
+    font-weight: var(--font-bold);
+    padding: 3pt;
+    transition: 0.5s;
+    width: clamp(135px,22.2vw,206px);
+  }
 }
