@@ -6,20 +6,20 @@
 }
 
 .titleBar .titleBarChild {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   min-height: 60px;
   padding-left: clamp(20px, 3.9%, 40px);
   padding-right: clamp(20px, 3.9%, 40px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .titleBarChild div p {
   text-transform: uppercase;
 }
 
 .titleBarChild .iconLocation {
-  width: 25px;
   cursor: pointer;
+  width: 25px;
 }
 
 /* Estilos de scoreBar */
@@ -29,12 +29,12 @@
 }
 
 .scoreBar .scoreBarChild {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   min-height: 55px;
   padding-left: clamp(20px, 3.9%, 40px);
   padding-right: clamp(20px, 3.9%, 40px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .scoreBar .barraIzq {
@@ -60,12 +60,12 @@
 }
 
 .scoreBar .calificacionEntero {
-  height: 100%;
   background: var(--secondary-color);
-  padding: 8px 14px;
-  color: white;
   border-radius: 10px;
+  color: white;
   font-weight: var(--font-bold);
+  height: 100%;
+  padding: 8px 14px;
 }
 
 .scoreBarReference {
@@ -94,16 +94,16 @@
   display: flex;
 }
 .imageBar .iconImage {
-  width: 35px;
   cursor: pointer;
+  width: 35px;
 }
 
 .iconHeart {
-  width: 23px;
   cursor: pointer;
+  margin-top: 5px;
   stroke: #545776;
   stroke-width: 3px;
-  margin-top: 5px;
+  width: 23px;
 }
 
 .heartColor {
@@ -129,20 +129,20 @@
 
 .imageBar .barraInf {
   display: flex;
-  justify-content: center;
   flex-wrap: nowrap;
+  justify-content: center;
 }
 
 .imageBar .barraIzq,
 .imageBar .barraDer {
-  min-width: 50%;
   height: 50vh;
+  min-width: 50%;
 }
 
 .imageBar img {
-  padding: 4px;
   border-radius: 15px;
   height: 100%;
+  padding: 4px;
   width: 100%;
 }
 
@@ -157,19 +157,19 @@
 }
 
 .imageBar .barraDer img {
-  width: 50%;
   height: 50%;
+  width: 50%;
 }
 
 .imageBar .verMas {
-  position: absolute;
   bottom: 10px;
-  right: 20px;
-  text-decoration: underline;
-  font-weight: var(--font-bold);
-  font-size: var(--heading3);
   color: white;
   cursor: pointer;
+  font-size: var(--heading3);
+  font-weight: var(--font-bold);
+  position: absolute;
+  right: 20px;
+  text-decoration: underline;
 }
 
 .imageBar .slider {
@@ -178,31 +178,29 @@
 }
 
 .imageBar .slider p {
-  position: absolute;
   bottom: 10px;
-  right: 10px;
   color: white;
-  font-weight: var(--font-bold);
   font-size: var(--text3);
+  font-weight: var(--font-bold);
+  position: absolute;
+  right: 10px;
 }
 
 .modalFavourite{
+  border: 4px solid var(--primary-color);
   display: flex;
   flex-direction: column;
   justify-content: center;
   height:22vh;
   width:39vw;
-  border: 4px solid var(--primary-color);
-
 }
 
 .modalFavourite p{
   color: black;
   font-size: 24px;
   font-weight: 900;
-  text-align: center;
   padding: 10px 5px;
-  
+  text-align: center;
 }
 
 .modalFavourite p a{
@@ -211,24 +209,23 @@
 
 div.buttons {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
+  height: 10vh;
   justify-content: space-evenly;
   padding-right: 8px;
-  height: 10vh;
 }
 
 div.buttons button {
-  background-color: white;
+  background-color: var(--primary-color);
   border-radius: 5px;
   border: 2px solid  var(--primary-color);
-  background-color: var(--primary-color);
   color: white;
   font-size: var(--button1);
   font-weight: var(--font-bold);
   padding: 5pt;
-  width: clamp(164px,22.2vw,206px);
   transition: 0.5s;
+  width: clamp(164px,22.2vw,206px);
 }
 
 div.buttons button.create{
@@ -239,7 +236,6 @@ div.buttons button.create{
 div.buttons button.login:hover {
   background-color: #cf411d;
   border: 2px solid  #b9411f;
-
 }
   
 div.buttons button.create:hover {
@@ -250,13 +246,12 @@ div.buttons button.create:hover {
 
 /* ESTILOS DEL SHARE*/
 .containerSharePrincipal {
-  
   border-radius: 10px;
   border: 4px solid var(--primary-color);
-  width: 35vw;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  width: 35vw;
 }
 
 .containerSharePrincipal h3 {
@@ -265,8 +260,9 @@ div.buttons button.create:hover {
 .containerShare {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  
 }
 
 .shareBlock {
@@ -275,9 +271,10 @@ div.buttons button.create:hover {
 
 .shareItem {
   display: flex;
+  align-items: center;
   flex-direction: column;
   padding: 17px;
-  align-items: center;
+ 
 }
 
 .shareItem a:focus {
@@ -285,15 +282,15 @@ div.buttons button.create:hover {
 }
 
 .closeButton {
-  position: absolute;
-  z-index: 10;
   background-color: transparent;
   border: none;
   color: black;
+  cursor: pointer;
   font-size: 18px;
   font-weight: 500;
+  position: absolute;
   right: 35.5vw;
-  cursor: pointer;
+  z-index: 10;
 }
 
 /*  estilos de descripcionBar */

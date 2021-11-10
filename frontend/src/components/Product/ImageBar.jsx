@@ -29,6 +29,7 @@ function ImageBar(props) {
     const handleToggle = (e) => {
         setLike(!isLike);
     }
+    let placeShareCall = "producto"
 
     let loggued = sessionStorage.getItem("log");
 
@@ -37,7 +38,7 @@ function ImageBar(props) {
             <div className={`${Styles.imageBarChild} ${StylesApp.delimiterChild}`}>
                 <div className={Styles.barraSup}>
                     <img src={iconSocial} alt="iconSocial" className={Styles.iconImage} onClick={openShareModal} />
-                    <Share id={props.id} shareIsOpen={props.shareIsOpen} setShareIsOpen={props.setShareIsOpen} />
+                    <Share id={props.id} shareIsOpen={props.shareIsOpen} setShareIsOpen={props.setShareIsOpen} placeShareCall={placeShareCall}/>
                     <svg className={Styles.iconHeart} onClick={loggued === "true" ? handleToggle : openModalFavourite} xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 25 25"><path className={isLike ? Styles.heartColor : Styles.heartColor2} d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" /></svg>
                     <Modal open={modalFavouriteIsOpen} onClose={closeModalFavourite} center>
                         <div className={Styles.modalFavourite}>
