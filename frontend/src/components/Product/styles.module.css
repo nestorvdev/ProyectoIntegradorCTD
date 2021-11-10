@@ -130,7 +130,7 @@
 .imageBar .barraIzq,
 .imageBar .barraDer {
   min-width: 50%;
-  height: 40vw;
+  height: 40vh;
 }
 
 .imageBar img {
