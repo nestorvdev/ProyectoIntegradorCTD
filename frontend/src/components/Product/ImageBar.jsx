@@ -4,6 +4,7 @@ import iconSocial from "./icons/iconSocial.svg";
 import React, { useState } from "react";
 import white from "./icons/NoImage.png";
 import CarouselModal from "./CarouselModal";
+import Share from "./Share";
 
 
 function ImageBar(props) {
@@ -12,7 +13,7 @@ function ImageBar(props) {
     /*  console.log(props, "imageBar"); */
     const changeSlider = () => countSlider === images.length - 1 ? setCountSlider(0) : setCountSlider(countSlider + 1);
     /*setTimeout(changeSlider,3000);*/
-    const openLightBox = (() => { props.setViewerIsOpen(true); });
+    const openLightBox = (() => { props.setViewerIsOpen(true) });
     const openShareModal = (() => { props.setShareIsOpen(true) })
     const [isLike, setLike] = useState("false");
 
@@ -27,6 +28,7 @@ function ImageBar(props) {
             <div className={`${Styles.imageBarChild} ${StylesApp.delimiterChild}`}>
                 <div className={Styles.barraSup}>
                     <img src={iconSocial} alt="iconSocial" className={Styles.iconImage} onClick={openShareModal} />
+                    <Share id={props.id} shareIsOpen={props.shareIsOpen} setShareIsOpen={props.setShareIsOpen} />
                     <svg className={Styles.iconHeart} onClick={handleToggle} xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 25 25"><path className={isLike ? Styles.heartColor : Styles.heartColor2} d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" /></svg>
                 </div>
                 <div className={Styles.barraInf}>
