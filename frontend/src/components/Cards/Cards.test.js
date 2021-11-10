@@ -6,6 +6,7 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { createSerializer } from 'enzyme-to-json';
 import Card from './Card';
 import Cards from './index';
+import MapModal from "./MapModal";
 
 Enzyme.configure({ adapter: new Adapter() });
 expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
@@ -65,3 +66,22 @@ describe('Pruebas en Cards', () => {
     });
 
 });
+
+describe("Probando el componente <MapModal/>", () => {
+    let wrapper;
+    let props ={
+        mapIsOpen:false,
+        latitude:-12, 
+        longitude:9, 
+        closeMapModal: jest.fn()
+    }
+    
+    beforeEach(() => {
+        wrapper = shallow(<MapModal {...props}/>)
+    });
+
+    it("Deberia mostrar <MapModal> correctamente", () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
+})

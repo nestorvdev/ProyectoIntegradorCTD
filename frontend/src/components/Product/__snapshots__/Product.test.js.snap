@@ -39,30 +39,40 @@ exports[`Probando el componente <FeaturesBar/> Deberia mostrar <FeaturesBar/> co
     <div
       className="icons"
     >
-      <p
+      <div
+        className="featureBox"
         key="0"
       >
         <img
           alt="wifi"
           src="wifi.svg"
         />
-        wifi
-      </p>
-      <p
+        <p
+          className="featureTitle"
+        >
+          wifi
+        </p>
+      </div>
+      <div
+        className="featureBox"
         key="1"
       >
         <img
           alt="pool"
           src="pool.svg"
         />
-        pool
-      </p>
+        <p
+          className="featureTitle"
+        >
+          pool
+        </p>
+      </div>
     </div>
   </div>
 </div>
 `;
 
-exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correctamente con una imagen 1`] = `
+exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correctamente 1`] = `
 <div
   className="imageBar delimiter"
 >
@@ -78,11 +88,19 @@ exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correcta
         onClick={[Function]}
         src="iconSocial.svg"
       />
-      <img
-        alt="iconHeart"
-        className="iconImage"
-        src="iconHeart.svg"
-      />
+      <svg
+        className="iconHeart"
+        height="18"
+        onClick={null}
+        viewBox="0 0 25 25"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          className="heartColor"
+          d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+        />
+      </svg>
     </div>
     <div
       className="barraInf"
@@ -91,7 +109,6 @@ exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correcta
         className="barraIzq"
       >
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
       </div>
@@ -99,19 +116,15 @@ exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correcta
         className="barraDer"
       >
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
         <div
@@ -126,11 +139,10 @@ exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correcta
         onClick={[Function]}
       >
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
         <p>
-          1/1
+          1/5
         </p>
       </div>
     </div>
@@ -154,11 +166,19 @@ exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correcta
         onClick={[Function]}
         src="iconSocial.svg"
       />
-      <img
-        alt="iconHeart"
-        className="iconImage"
-        src="iconHeart.svg"
-      />
+      <svg
+        className="iconHeart"
+        height="18"
+        onClick={null}
+        viewBox="0 0 25 25"
+        width="18"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          className="heartColor"
+          d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+        />
+      </svg>
     </div>
     <div
       className="barraInf"
@@ -167,7 +187,6 @@ exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correcta
         className="barraIzq"
       >
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
       </div>
@@ -175,19 +194,15 @@ exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correcta
         className="barraDer"
       >
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
         <img
-          alt="fotoImagen1"
           src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
         <div
@@ -202,11 +217,10 @@ exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correcta
         onClick={[Function]}
       >
         <img
-          alt="fotoImagen1"
-          src="https://media.istockphoto.com/photos/hotel-reception-lobby-picture-id1292355630"
+          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
         />
         <p>
-          2/3
+          2/5
         </p>
       </div>
     </div>
@@ -355,12 +369,6 @@ exports[`Probando el componente <MapBar/> Deberia mostrar <MapBar> correctamente
     </div>
   </div>
 </div>
-`;
-
-exports[`Probando el componente <MapModal/> Deberia mostrar <MapModal> correctamente 1`] = `
-<ModalGateway
-  target={<body />}
-/>
 `;
 
 exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correctamente con calificacion de 1.1 1`] = `
@@ -794,11 +802,98 @@ exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correcta
 `;
 
 exports[`Probando el componente <Share/> Deberia mostrar <Share/> correctamente 1`] = `
-<div>
-  <ModalGateway
-    target={<body />}
-  />
-</div>
+<ForwardRef
+  center={true}
+  onClose={[Function]}
+>
+  <div
+    className="containerSharePrincipal"
+  >
+    <h3>
+      Compartir
+    </h3>
+    <div
+      className="containerShare"
+    >
+      <div
+        className="shareBlock"
+      >
+        <div
+          className="shareItem"
+        >
+          <a
+            href="mailto:?Subject=Mira este alojamiento localhost:3000/product/undefined"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="logo email"
+              src="email.png"
+            />
+          </a>
+          <p>
+            Correo
+          </p>
+        </div>
+        <div
+          className="shareItem"
+        >
+          <a
+            href="https://www.facebook.com/sharer/sharer.php?u=[localhost:3000/product/undefined]"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="logo facebook"
+              src="facebook.svg"
+            />
+          </a>
+          <p>
+            Facebook
+          </p>
+        </div>
+      </div>
+      <div
+        className="shareBlock"
+      >
+        <div
+          className="shareItem"
+        >
+          <a
+            href="https://twitter.com/intent/tweet?text=[Mira este producto ]&url=[localhost:3000/product/undefined]&hashtags=[GranAlojamiento]"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="logo twitter"
+              src="twitter.svg"
+            />
+          </a>
+          <p>
+            Twitter
+          </p>
+        </div>
+        <div
+          className="shareItem"
+        >
+          <a
+            href="https://api.whatsapp.com/send?text=[Mira este alojamiento: localhost:3000/product/undefined]"
+            rel="noreferrer"
+            target="_blank"
+          >
+            <img
+              alt="logo whatsapp"
+              src="whatsapp.svg"
+            />
+          </a>
+          <p>
+            Whatsapp
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</ForwardRef>
 `;
 
 exports[`Probando el componente <Titlebar/> Deberia mostrar <TitleBar/> correctamente 1`] = `

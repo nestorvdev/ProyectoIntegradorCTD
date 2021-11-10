@@ -71,17 +71,24 @@ exports[`Probando el componente <Header/> Deberia mostrar <Header/> correctament
            
           Uno
         </h3>
-      </div>
-      <div
-        className="close"
-      >
-        <a
-          href="/"
-          onClick={[Function]}
+        <h4
+          className="seeFavourite"
         >
-          X
-        </a>
-         
+          Ver favoritos
+        </h4>
+      </div>
+      <div>
+        <div
+          className="close"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            X
+          </a>
+           
+        </div>
       </div>
     </div>
     <MenuButton

@@ -1,7 +1,7 @@
 import React from "react";
-import { BrowserRouter, Router } from 'react-router-dom';
 import { shallow, mount } from "enzyme";
 import "@testing-library/jest-dom";
+import CarouselModal from "./CarouselModal";
 import DateBar from "./DateBar";
 import DescriptionBar from "./DescriptionBar";
 import FeaturesBar from "./FeaturesBar";
@@ -9,7 +9,7 @@ import ImageBar from "./ImageBar";
 import InfoBar from "./InfoBar";
 import Map from "./Map";
 import MapBar from "./MapBar";
-import MapModal from "./MapModal";
+
 import Product from "./Product";
 import ScoreBar from "./ScoreBar";
 import Share from "./Share";
@@ -41,11 +41,11 @@ describe("Probando el componente <CarouselModal/>", () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    it("Deberia cerrarse el carousel al hacer click en la cruz", ()=>{
+    /*it("Deberia cerrarse el carousel al hacer click en la cruz", ()=>{
         wrapper = shallow(<CarouselModal {...props}/>)
         wrapper.find("div.closeButton").simulate("close")
         expect(wrapper.prop("viewerIsOpen")).toBeFalsy()
-    })
+    })*/
 })
 
 describe("Probando el componente <DateBar/>", () => {
@@ -101,47 +101,45 @@ describe("Probando el componente <FeaturesBar/>", ()=>{
 
 describe("Probando el componente <ImageBar/>", () => {
     let wrapper;
-    let props={
-        images: [
-            { id: 1, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
-            { id: 2, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/hotel-reception-lobby-picture-id1292355630", productId: 1 },
-            { id: 3, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/hotel-reception-lobby-picture-id1292355630", productId: 1 },
-        ],
-        setViewerIsOpen:jest.fn(),
-        setShareIsOpen:jest.fn()
-    }
+    let images= [
+            { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
+            { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
+            { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
+            { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
+            { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
+        ]
+     let setViewerIsOpen=jest.fn()
+    let setShareIsOpen=jest.fn()
+    
 
-    let props2={
+    /*let props2={
         images: [
             { id: 1, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
             ],
         setViewerIsOpen:jest.fn(),
         setShareIsOpen:jest.fn()
-    }
+    }*/
     
     beforeEach(() => {
-        wrapper = shallow(<ImageBar {...props}/>)
+        wrapper = mount(<ImageBar images={images} setShareIsOpen={setShareIsOpen} setViewerIsOpen={setViewerIsOpen} />)
     });
 
+    it("Deberia mostrar <ImageBar/> correctamente", () => {
+        expect(wrapper).toMatchSnapshot();
+    });
     it("Deberia mostrar <ImageBar/> correctamente con varias imagenes", () => {
         wrapper.find("div.slider").simulate("click") //Simula el click para probar el if de la linea 11 si hay mas de una imagen
         expect(wrapper).toMatchSnapshot();
     });
 
-    it("Deberia mostrar <ImageBar/> correctamente con una imagen", () => {
-        wrapper = shallow(<ImageBar {...props2}/>)
-        wrapper.find("div.slider").simulate("click") //Simula el click para probar el if de la linea 11 si hay solo una imagen
-        expect(wrapper).toMatchSnapshot();
-    });
-
     it("Deberia llamar a setViewerIsOpen al hacer click en el boton ver mas", ()=>{
         wrapper.find("div.verMas").simulate("click")
-        expect(props.setViewerIsOpen).toHaveBeenCalled()
+        expect(setViewerIsOpen).toHaveBeenCalled()
 
     })
     it("Deberia llamar a setShareIsOpen al hacer click en el icono de compartir", ()=>{
         wrapper.find("img.iconImage").first().simulate("click")
-        expect(props.setShareIsOpen).toBeCalled()
+        expect(setShareIsOpen).toBeCalled()
 
     })
         
@@ -198,26 +196,6 @@ describe("Probando el componente <MapBar/>", () => {
     });
 
 })
-
-describe("Probando el componente <MapModal/>", () => {
-    let wrapper;
-    let props ={
-        mapIsOpen:false,
-        latitude:-12, 
-        longitude:9, 
-        closeMapModal: jest.fn()
-    }
-    
-    beforeEach(() => {
-        wrapper = shallow(<MapModal {...props}/>)
-    });
-
-    it("Deberia mostrar <MapModal> correctamente", () => {
-        expect(wrapper).toMatchSnapshot();
-    });
-
-})
-
 
 
 /*describe("Probando el componente <Product/>", () => {

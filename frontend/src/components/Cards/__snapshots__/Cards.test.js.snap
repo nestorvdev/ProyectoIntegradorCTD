@@ -1,5 +1,28 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Probando el componente <MapModal/> Deberia mostrar <MapModal> correctamente 1`] = `
+<ForwardRef
+  center={true}
+  onClose={[MockFunction]}
+  open={false}
+>
+  <div
+    className="containerModalMap"
+  >
+    <Memo(Map)
+      latitude={-12}
+      longitude={9}
+      style={
+        Object {
+          "width": "250px",
+        }
+      }
+      zoom={15}
+    />
+  </div>
+</ForwardRef>
+`;
+
 exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1 1`] = `
 <div
   className="cardBox"
@@ -10,7 +33,7 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
     <svg
       className="iconHeart"
       height="24"
-      onClick={[Function]}
+      onClick={null}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -91,9 +114,8 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
       </span>
       <MapModal
         closeMapModal={[Function]}
-        latitude={null}
-        longitude={null}
         mapIsOpen={false}
+        name="test"
       />
     </div>
     <div
@@ -134,7 +156,7 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 3
     <svg
       className="iconHeart"
       height="24"
-      onClick={[Function]}
+      onClick={null}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -215,9 +237,8 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 3
       </span>
       <MapModal
         closeMapModal={[Function]}
-        latitude={null}
-        longitude={null}
         mapIsOpen={false}
+        name="test"
       />
     </div>
     <div
@@ -258,7 +279,7 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 5
     <svg
       className="iconHeart"
       height="24"
-      onClick={[Function]}
+      onClick={null}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -344,9 +365,8 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 5
       </span>
       <MapModal
         closeMapModal={[Function]}
-        latitude={null}
-        longitude={null}
         mapIsOpen={false}
+        name="test"
       />
     </div>
     <div
@@ -387,7 +407,7 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 7
     <svg
       className="iconHeart"
       height="24"
-      onClick={[Function]}
+      onClick={null}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -478,9 +498,8 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 7
       </span>
       <MapModal
         closeMapModal={[Function]}
-        latitude={null}
-        longitude={null}
         mapIsOpen={false}
+        name="test"
       />
     </div>
     <div
@@ -521,7 +540,7 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
     <svg
       className="iconHeart"
       height="24"
-      onClick={[Function]}
+      onClick={null}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -622,9 +641,8 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
       </span>
       <MapModal
         closeMapModal={[Function]}
-        latitude={null}
-        longitude={null}
         mapIsOpen={false}
+        name="test"
       />
     </div>
     <div
@@ -663,7 +681,7 @@ exports[`Pruebas en Cards Debe de mostrarse correctamente 1`] = `
     className="cardsBlock delimiterChild"
   >
     <h2>
-      test
+      Recomendaciones
     </h2>
     <div
       className="cardsBox"
@@ -679,7 +697,9 @@ exports[`Pruebas en Cards Debe de mostrarse correctamente 2`] = `
   <div
     className="cardsBlock delimiterChild"
   >
-    <h2 />
+    <h2>
+      Recomendaciones
+    </h2>
     <div
       className="cardsBox"
     />

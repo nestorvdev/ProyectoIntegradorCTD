@@ -4,15 +4,15 @@ import "./carouselModal.css"
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import 'react-responsive-modal/styles.css';
 
-export default function CarouselModal(props) {
+export default function CarouselModal({setCurrentImage, setViewerIsOpen, viewerIsOpen, images}) {
 
     const closeLightbox = () => {
-        props.setCurrentImage(0);
-        props.setViewerIsOpen(false);
+        setCurrentImage(0);
+        setViewerIsOpen(false);
     };
 
     return (
-        <Modal open={props.viewerIsOpen} onClose={closeLightbox} center>
+        <Modal open={viewerIsOpen} onClose={closeLightbox} center>
             <div>
                 <div className={`closeButton`} onClick={closeLightbox}>X</div>
                 <Carousel
@@ -26,7 +26,7 @@ export default function CarouselModal(props) {
                     infiniteLoop={true}
                     useKeyboardArrows={true}
                 >
-                    {props.images.map((image, index) => {
+                    {images.map((image, index) => {
                         return (<div key={`image-${index}`}>
                             <img src={image.url} alt={`img-alojamiento-${index}`} />
                         </div>)

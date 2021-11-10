@@ -53,6 +53,17 @@ exports[`Probando el componente <MenuBurger/> Deberia mostrar <MenuBurger/> corr
     className="mobileBody"
   >
     <div
+      className="menuFavoritos hide "
+    >
+      <p>
+        Favoritos
+      </p>
+      <img
+        alt=""
+        src="Line.png"
+      />
+    </div>
+    <div
       className="botones null null"
     >
       <Link
@@ -126,7 +137,7 @@ exports[`Probando el componente <MenuBurger/> Deberia mostrar <MenuBurger/> corr
 
 exports[`Probando el componente <MenuBurgerWrapper Deberia mostrar <MenuBurgerWrapper/> correctamente 1`] = `
 <nav
-  className="sc-bdvvtL gcUmMU"
+  className="sc-bdvvtL hKiVBW"
 />
 `;
 
