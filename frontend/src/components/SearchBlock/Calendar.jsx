@@ -26,6 +26,8 @@ function Calendar(props) {
   const handleSelection = (event) => {
     event.preventDefault();
     props.handleSelected(`${startDateToString} - ${endDateToString}`);
+    localStorage.setItem("startDate",startDate.toDateString());
+    localStorage.setItem("endDate", endDate.toDateString());
   };
 
   const theme = createTheme({

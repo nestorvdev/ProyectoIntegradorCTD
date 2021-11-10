@@ -5,7 +5,7 @@ import iconLocation from "./icons/iconLocation.svg";
 
 function ScoreBar(props) {
 
-    console.log(props, "scoreBar");
+    /* console.log(props, "scoreBar"); */
 
     const scoreLetter = (valor) => {
         if (valor >= 8 && valor <= 10) return "Excelente";

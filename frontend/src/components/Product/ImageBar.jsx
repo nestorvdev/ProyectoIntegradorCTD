@@ -7,7 +7,7 @@ import white from "./icons/NoImage.png";
 function ImageBar(props) {
     const [countSlider, setCountSlider] = useState(0); // se separa las imagenes a mostrar para la galeria de vista tablet y mobile
     const { images } = props;
-    console.log(props, "imageBar");
+   /*  console.log(props, "imageBar"); */
     const changeSlider = () => countSlider === images.length - 1 ? setCountSlider(0) : setCountSlider(countSlider + 1);
     /*setTimeout(changeSlider,3000);*/
     const openLightBox = (() => { props.setViewerIsOpen(true); });

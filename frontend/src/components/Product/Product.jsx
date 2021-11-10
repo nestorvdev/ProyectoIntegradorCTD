@@ -7,7 +7,7 @@ import Share from "./Share";
 import CarouselModal from "./CarouselModal"
 import DescriptionBar from "./DescriptionBar";
 import FeaturesBar from "./FeaturesBar";
-import DateBlock from "./DateBlock";
+import Datebar from "./DateBar";
 import MapBar from "./MapBar";
 import InfoBar from "./InfoBar";
 import axios from "axios";
@@ -23,6 +23,11 @@ function Product(props) {
 
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
+
+    /*ESTADO PARA EL CALENDARIO */
+    const [valueDate, setValueDate] = useState([null, null]);
+   
+
     let { id } = useParams();
     const [prod, setProd] = useState({
         id: id,
@@ -40,7 +45,7 @@ function Product(props) {
         rules: "",
         health: "",
         politics: "",
-        address:"",
+        address: "",
     });
 
     useEffect(() => {
@@ -76,7 +81,7 @@ function Product(props) {
                         <CarouselModal images={prod.images} viewerIsOpen={viewerIsOpen} setViewerIsOpen={setViewerIsOpen} setCurrentImage={setCurrentImage} />
                         <DescriptionBar city={prod.city} description={prod.description} />
                         <FeaturesBar features={prod.features} />
-                        <DateBlock />
+                        <Datebar valueDate={valueDate} setValueDate={setValueDate} />
                         {props.latitude !== null || props.longitude !== null ?
                             <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude} name={prod.name} address={prod.address} />
                             : null}

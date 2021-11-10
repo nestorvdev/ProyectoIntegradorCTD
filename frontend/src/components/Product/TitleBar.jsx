@@ -5,7 +5,7 @@ import iconLocation from "./icons/iconBack.svg"
 
 function TitleBar(props) {
 
-    console.log(props, "topBar");
+    /* console.log(props, "topBar"); */
            
     return (
         <div className={`${Styles.titleBar} ${StylesApp.delimiter}`}>
