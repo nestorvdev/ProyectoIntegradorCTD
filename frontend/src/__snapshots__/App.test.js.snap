@@ -4,6 +4,7 @@ exports[`Probando el componente <App/> Deberia mostrar <App/> correctamente 1`] 
 <BrowserRouter>
   <LayoutPrincipal
     handleClean={[Function]}
+    handleFavourite={[Function]}
     isLogged={false}
   >
     <Switch>
@@ -15,6 +16,7 @@ exports[`Probando el componente <App/> Deberia mostrar <App/> correctamente 1`] 
           category="All"
           city=""
           clickBusqueda={false}
+          favourite={false}
           handleCategory={[Function]}
           handleCity={[Function]}
           handleSearch={[Function]}

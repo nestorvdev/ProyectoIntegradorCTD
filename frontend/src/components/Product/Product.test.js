@@ -2,9 +2,7 @@ import React from "react";
 import { BrowserRouter, Router } from 'react-router-dom';
 import { shallow, mount } from "enzyme";
 import "@testing-library/jest-dom";
-import Calendar2 from "./Calendar2";
-import CarouselModal from "./CarouselModal";
-import DateBlock from "./DateBlock";
+import DateBar from "./DateBar";
 import DescriptionBar from "./DescriptionBar";
 import FeaturesBar from "./FeaturesBar";
 import ImageBar from "./ImageBar";
@@ -25,19 +23,6 @@ import { createSerializer } from 'enzyme-to-json';
 
 Enzyme.configure({ adapter: new Adapter() });
 expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
-
-describe("Probando el componente <Calendar2/>", () => {
-    let wrapper;
-    
-    beforeEach(() => {
-        wrapper = shallow(<Calendar2/>)
-    });
-
-    it("Deberia mostrar <Calendar2/> correctamente", () => {
-        expect(wrapper).toMatchSnapshot();
-    });
-
-})
 
 describe("Probando el componente <CarouselModal/>", () => {
     let wrapper;
@@ -63,14 +48,14 @@ describe("Probando el componente <CarouselModal/>", () => {
     })
 })
 
-describe("Probando el componente <DateBlock/>", () => {
+describe("Probando el componente <DateBar/>", () => {
     let wrapper;
     
     beforeEach(() => {
-        wrapper = shallow(<DateBlock/>)
+        wrapper = shallow(<DateBar/>)
     });
 
-    it("Deberia mostrar <DateBlock/> correctamente", () => {
+    it("Deberia mostrar <DateBar/> correctamente", () => {
         expect(wrapper).toMatchSnapshot();
     });
 

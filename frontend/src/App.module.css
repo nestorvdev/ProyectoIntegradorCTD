@@ -27,7 +27,8 @@
 }
 
 body {
-    background-color: var(--quaternary-color);    
+    background-color: var(--quaternary-color);
+    overflow: inherit !important;    
 }
 
 .opacity{

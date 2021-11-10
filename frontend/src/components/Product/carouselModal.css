@@ -4,6 +4,7 @@
     height: 61vh;
     width: 44vw;
     margin: 0 auto;
+    max-width: 800px;
 ;
  }
 
@@ -102,7 +103,8 @@
         color: white;
         font-size: 24px;
         font-weight: 500;
-        right:28.5vw;
+        right:1vw;
+        top: 0.5vw;
         cursor:pointer;
     }
 
@@ -111,3 +113,13 @@
         width: 55% !important
     }
     
+    .react-responsive-modal-modal{
+        border-radius: 10px;
+        overflow-x: hidden;
+        padding: 0rem !important;
+        
+    }
+
+    .react-responsive-modal-closeButton{
+        display: none !important;
+    }
