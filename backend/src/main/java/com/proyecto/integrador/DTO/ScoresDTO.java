@@ -1,8 +1,6 @@
 package com.proyecto.integrador.DTO;
 
-import com.proyecto.integrador.persistence.entity.Category;
-import com.proyecto.integrador.persistence.entity.City;
-import com.proyecto.integrador.persistence.entity.Product;
+
 import com.proyecto.integrador.persistence.entity.Scores;
 import lombok.Getter;
 import lombok.Setter;

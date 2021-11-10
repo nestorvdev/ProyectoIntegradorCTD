@@ -1,11 +1,8 @@
 package com.proyecto.integrador.service.impl;
 
-import com.proyecto.integrador.DTO.ProductDTO;
+
 import com.proyecto.integrador.DTO.ScoresDTO;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.persistence.entity.Category;
-import com.proyecto.integrador.persistence.entity.City;
-import com.proyecto.integrador.persistence.entity.Product;
 import com.proyecto.integrador.persistence.entity.Scores;
 import com.proyecto.integrador.persistence.repository.IScoresRepository;
 import com.proyecto.integrador.service.IScoresService;
