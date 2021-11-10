@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Styles from './styles.module.css';
 import iconStar from "./img/starOrange.png";
 import iconLocation from "./img/IconLocation.svg";
@@ -15,13 +15,14 @@ import smoke from '../Product/icons/smoke.svg';
 import party from '../Product/icons/party.svg';
 import checkin from '../Product/icons/checkIn.svg';
 import noSmoke from '../Product/icons/noSmoke.svg';
-import axios from 'axios';
 import MapModal from './MapModal';
+import { Modal } from 'react-responsive-modal';
 
 
 function Card({ image, cardCategory, name, city, country, description, id, reference, qualification, features, latitude, longitude, address }) {
     const [isLike, setLike] = useState("false");
     const [mapIsOpen, setMapIsOpen] = useState(false)
+    const [modalFavouriteIsOpen, setModalFavouriteIsOpen] = useState(false)
     let icons = [wifi, pool, kitchen, tv, ac, pet, parking, creditCard, smoke, party, checkin, noSmoke];
 
     const handleToggle = (e) => { setLike(!isLike); }
@@ -36,6 +37,12 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
     }
 
     let cantStar = Math.floor(qualification / 2); 
+
+    const openModalFavourite = (() => { setModalFavouriteIsOpen(true) })
+    const closeModalFavourite = () => {
+        setModalFavouriteIsOpen(false);
+    };
+
 
     const openMapModal = (() => {
         console.log("Entro en el modal", mapIsOpen);
@@ -52,7 +59,24 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
         <div className={Styles.cardBox}>
 
             <div className={Styles.cardImage}>
-                <svg className={Styles.iconHeart} onClick={loggued === "true"? handleToggle : null} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path className={isLike ? Styles.heartColor : Styles.heartColor2} id="heart" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" /></svg>
+                <svg className={Styles.iconHeart} onClick={loggued === "true"? handleToggle : openModalFavourite} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path className={isLike ? Styles.heartColor : Styles.heartColor2} id="heart" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" /></svg>
+                <Modal open={modalFavouriteIsOpen} onClose={closeModalFavourite} center>
+                        <div className={Styles.modalFavourite}>
+                            <p>Para agregar favoritos, ingresa a tu cuenta</p>
+                            <div className={Styles.buttons}>
+                                <Link to="/login" >
+                                    <button className={Styles.login} >
+                                        Iniciar Sesión
+                                    </button>
+                                </Link>
+                                <Link to="/create" >
+                                    <button className={Styles.create}>
+                                        Crear Cuenta
+                                    </button>
+                                </Link>
+                            </div>
+                        </div>
+                    </Modal>
                 <img className={Styles.image} src={image} alt="" />
             </div>
 
