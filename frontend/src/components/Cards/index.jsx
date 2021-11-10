@@ -7,7 +7,7 @@ import arrow from "./img/arrow.svg";
 
 export default function Cards({ category, city, search, clickBusqueda, favourite }) {
     const baseUrl = "http://localhost:8080/"
-    const baseUrlProductosRecomendados = `${baseUrl}products/all`;
+    const baseUrlProductosRecomendados = `${baseUrl}products/get/recommended`;
     const baseUrlPorCategoria = `${baseUrl}products/get/category/${category}`;
     const baseUrlPorCiudad = `${baseUrl}products/get/city/${city}`;
     const baseUrlFavourite = `${baseUrl}products/all`;

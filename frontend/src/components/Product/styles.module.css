@@ -483,8 +483,7 @@ div.buttons button.create:hover {
 
 .qualificationBar {
   background-color: var(--quaternary-color);
-  padding: 20px 0;
-  
+  padding: 20px 0; 
  
 }
 
@@ -528,8 +527,7 @@ div.buttons button.create:hover {
 }
 
 .starsMap {
-  display: flex;
-  margin-left: 30px;
+  display: flex;  
   width: 25%;
   justify-content: space-evenly;
 }
@@ -702,6 +700,10 @@ div.buttons button.create:hover {
   .contenedorReserva button {
     width: 50%;
   }
+
+  .qualificationBarChild h2 {    
+    font-size: var(--heading3);    
+  }
 }
 
 @media all and (max-width: 769px) {
@@ -746,7 +748,28 @@ div.buttons button.create:hover {
   .modalFavourite{
     height:28vh;
     width: 50vw;
-    }
+  }
+
+  .qualificationBarChild {    
+    display: flex;    
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;   
+  }
+
+  .qualificationButtons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;    
+    width: 100%;
+    margin-top: 3%;
+    
+  }
+
+  
+  
+  
+  
 }
 
 @media all and (max-width: 415px) {
@@ -786,5 +809,30 @@ div.buttons button.create:hover {
     padding: 3pt;
     transition: 0.5s;
     width: clamp(135px,22.2vw,206px);
+  }
+
+  .qualificationBarChild {    
+    display: flex; 
+    flex-direction: column;   
+    align-items: center;
+    justify-content: center;      
+  }
+
+  .starsMap {
+    display: flex;
+    margin: 2% 0;
+    width: 70%;
+    justify-content: space-evenly;
+  }
+
+  .starBox {
+    margin: 2% 4%;
+    width: 100px;
+    height: 40px; 
+  }
+
+  .qualificationButtons {    
+    margin-top: 0;
+    
   }
 }
