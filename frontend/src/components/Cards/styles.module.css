@@ -252,6 +252,13 @@ a:visited, a:link, a:active {
   transform: scale(0.85);
 }  
 
+/*Estilos para el modalMap*/
+
+.containerModalMap {
+  width: 40vw;
+}
+
+
 @media all and (max-width:1350px){
   .cardsBox{
     justify-content: center;

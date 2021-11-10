@@ -16,7 +16,7 @@ import party from '../Product/icons/party.svg';
 import checkin from '../Product/icons/checkIn.svg';
 import noSmoke from '../Product/icons/noSmoke.svg';
 import axios from 'axios';
-import MapModal from '../Product/MapModal';
+import MapModal from './MapModal';
 
 
 function Card({ image, cardCategory, name, city, country, description, id, reference, qualification, features, latitude, longitude, address }) {
@@ -81,8 +81,6 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
                     {city},&#160;{country},&#160;{reference}
                     <span onClick={openMapModal} >mostrar en el mapa</span>
                     <MapModal mapIsOpen={mapIsOpen} latitude={latitude} longitude={longitude} closeMapModal={closeMapModal} name={name} address={address} />
-
-
                 </div>
                 <div className={Styles.cardIcons}>
                     {features.map((feature, index) => <img className={Styles.cardFeatures} key={index} src={icons[index]} alt={feature.title} />)}

@@ -420,12 +420,6 @@
   /* height: clamp(300px, 50vh, 700px); */
 }
 
-/*Estilos para el modalMap*/
-
-.containerModalMap {
-  width: 70vw;
-}
-
 /* Estilos para Qualification Bar */
 
 .qualificationBar {
