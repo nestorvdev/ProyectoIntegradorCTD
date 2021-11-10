@@ -10,7 +10,7 @@ import java.util.Set;
 
 @Getter
 @Setter
-public class ProductDTO {
+public class ProductDTO /*implements Comparable<ProductDTO>*/ {
     private Integer id;
     private String name;
     private String description;

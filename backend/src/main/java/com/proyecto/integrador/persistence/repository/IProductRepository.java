@@ -11,4 +11,6 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
     List<Product> findByCategory_Title(final String title);
 
     List<Product> findByCity_Id(final Integer id);
+
+    List<Product> findFirst12ByOrderByQualificationDesc();
 }

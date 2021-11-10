@@ -14,4 +14,5 @@ public interface IProductService extends IBookingService<ProductDTO> {
     ProductDTO update(ProductDTO product) throws FindByIdException;
     List<ProductDTO> findAllByCategory(String categoryName) throws FindByIdException, BadRequestException;
     List<ProductDTO> findAllByCity(Integer cityId) throws FindByIdException, BadRequestException;
+    List<ProductDTO> findRecommendations() throws FindByIdException;
 }

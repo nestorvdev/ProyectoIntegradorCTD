@@ -62,4 +62,10 @@ public class ProductController implements CRUDController<ProductDTO> {
         return ResponseEntity.ok(productService.findAllByCity(cityId));
     }
 
+    @Operation(summary = "Find recommended products")
+    @GetMapping("/get/recommended")
+    public ResponseEntity<List<ProductDTO>> getRecommended() throws FindByIdException {
+        return ResponseEntity.ok(productService.findRecommendations());
+    }
+
 }

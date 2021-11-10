@@ -144,4 +144,12 @@ public class ProductServiceImpl implements IProductService {
         logger.debug("Terminó la ejecución del método buscar productos por ciudad");
         return productsByCity;
     }
+
+    public List<ProductDTO> findRecommendations() throws FindByIdException {
+        List<ProductDTO> recommendedProducts = new ArrayList<>();
+        for (Product product: productRepository.findFirst12ByOrderByQualificationDesc()) {
+            recommendedProducts.add(loadDataIntoProductDTO(product));
+        }
+        return recommendedProducts;
+    }
 }
