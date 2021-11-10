@@ -3,11 +3,13 @@ import Styles from "./styles.module.css";
 import iconSocial from "./icons/iconSocial.svg";
 import React, { useState } from "react";
 import white from "./icons/NoImage.png";
+import CarouselModal from "./CarouselModal";
+
 
 function ImageBar(props) {
     const [countSlider, setCountSlider] = useState(0); // se separa las imagenes a mostrar para la galeria de vista tablet y mobile
     const { images } = props;
-   /*  console.log(props, "imageBar"); */
+    /*  console.log(props, "imageBar"); */
     const changeSlider = () => countSlider === images.length - 1 ? setCountSlider(0) : setCountSlider(countSlider + 1);
     /*setTimeout(changeSlider,3000);*/
     const openLightBox = (() => { props.setViewerIsOpen(true); });
@@ -17,6 +19,8 @@ function ImageBar(props) {
     const handleToggle = (e) => {
         setLike(!isLike);
     }
+
+   
 
     return (
         <div className={`${Styles.imageBar} ${StylesApp.delimiter}`}>
@@ -36,6 +40,8 @@ function ImageBar(props) {
                         {images[4].url !== null ? <img src={images[4].url} alt={images[4].title} /> : <img src={white} alt="white" />}
                         <div className={Styles.verMas} onClick={openLightBox}>Ver Más</div>
                     </div>
+                    <CarouselModal viewerIsOpen={props.viewerIsOpen} images={images} setCurrentImage = {props.setCurrentImage} setViewerIsOpen={props.setViewerIsOpen}/>
+
                     <div className={Styles.slider} onClick={changeSlider} >
                         <img src={images[countSlider].url} alt={images[countSlider].title} />
                         <p>{(countSlider + 1) + "/" + (images.length)}</p>
