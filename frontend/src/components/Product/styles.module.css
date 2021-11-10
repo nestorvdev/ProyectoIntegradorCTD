@@ -108,17 +108,23 @@
 
 .heartColor {
   fill: white;
+  transition: all 0.3s;
 }
 .heartColor:hover {
-  fill: #545776;
+  transform: scale(1.1);
+}
+
+.heartColor:active{
+  transform: scale(0.8);
 }
 
 .heartColor2 {
   fill: #545776;
+  transition: all 0.3s;
 }
 
 .heartColor2:active {
-  fill: white;
+  transform: scale(0.8);
 }
 
 .imageBar .barraInf {
