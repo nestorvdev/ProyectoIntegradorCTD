@@ -434,13 +434,15 @@
   padding-right: clamp(20px, 3.9%, 40px); 
   display: flex;
   align-items: center;
+  justify-content: flex-start;
  
 }
 
 .qualificationBarChild h2 {
   color: var(--secondary-color);
   font-size: var(--heading2);
-  font-weight: var(--font-bold);  
+  font-weight: var(--font-bold);
+  display: flex;
 }
 
 .starBox {
@@ -450,7 +452,7 @@
 }
 
 .star {
-  fill: none;
+  fill: white;
   stroke: var(--secondary-color);
   stroke-width: 0.7px;  
 }
@@ -471,6 +473,39 @@
   margin-left: 30px;
   width: 25%;
   justify-content: space-evenly;
+}
+
+.qualificationButtons {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;    
+  width: 40%;
+  
+}
+
+.qualificationReset, .qualificationSubmit {
+  border: none;
+  border-radius: 5px;
+  font-size: var(--button3);
+  font-weight: var(--font-bold);
+  padding: 0.4rem 3.5rem;
+  color: white;
+  background: #f0572d;
+  transition: all 0.3s;
+  
+}
+
+.qualificationReset {
+  color: #f0572d;
+  background: white;
+}
+
+.qualificationReset:hover, .qualificationSubmit:hover {
+  transform: scaleX(1.02);  
+}
+
+.qualificationReset:active, .qualificationSubmit:active {
+  transform: scale(0.9);
 }
 
 /* Estilos infoBar */
