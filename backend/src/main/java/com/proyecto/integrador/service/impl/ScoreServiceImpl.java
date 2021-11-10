@@ -3,7 +3,6 @@ package com.proyecto.integrador.service.impl;
 
 import com.proyecto.integrador.DTO.ScoresDTO;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.persistence.entity.Product;
 import com.proyecto.integrador.persistence.entity.Scores;
 import com.proyecto.integrador.persistence.repository.IScoresRepository;
 import com.proyecto.integrador.service.IScoresService;
@@ -20,19 +19,19 @@ public class ScoreServiceImpl implements IScoresService {
     @Autowired
     IScoresRepository scoresRepository;
 
-    public Double average(Integer idProduct) throws FindByIdException{
+    public Integer average(Integer idProduct) throws FindByIdException{
         logger.debug("Iniciando método promedio de todas las puntuaciones");
 
         List<Scores> scores = scoresRepository.findByProductId(idProduct);
-        double totalScore = 0;
+        int totalScore = 0;
         if(scores != null && scores.size()!=0) {
             for (Scores item : scores) {
-                totalScore += Double.parseDouble(item.getScore());
+                totalScore += item.getScore();
             }
 
             return (totalScore / scores.size());
         }else{
-            return 0.0;
+            return 0;
         }
     }
     @Override

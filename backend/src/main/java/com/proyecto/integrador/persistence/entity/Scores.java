@@ -17,9 +17,9 @@ public class Scores {
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Integer idScores;
     @Column(name = "id_user", nullable = false)
-    private String idUser;
+    private Integer idUser;
     @Column(name = "score", nullable = false)
-    private String score;
+    private Integer score;
     @Column(name = "favorite", nullable = false)
     private Boolean favorite;
 

@@ -9,8 +9,8 @@ import lombok.Setter;
 @Setter
 public class ScoresDTO {
     private Integer idScores;
-    private String idUser;
-    private String score;
+    private Integer idUser;
+    private Integer score;
     private Boolean favorite;
 
     public Scores toEntity(){
