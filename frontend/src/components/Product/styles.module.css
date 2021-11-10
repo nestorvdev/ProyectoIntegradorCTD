@@ -426,6 +426,13 @@
   width: 70vw;
 }
 
+/* Estilos para Qualification Bar */
+
+.qualificationBar {
+  background-color: var(--quaternary-color);
+  /* padding: 20px 0; */
+}
+
 /* Estilos infoBar */
 
 .infoBar {
@@ -598,13 +605,8 @@
   .contenedorCalendario {
     min-width: 320px;
     width: 100%;
-  }
- 
-  
+  }  
 }
-
-
-
 
 @media all and (max-width: 415px) {
   .shareBlock {
