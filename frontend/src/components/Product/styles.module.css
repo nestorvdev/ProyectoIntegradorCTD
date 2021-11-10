@@ -125,16 +125,20 @@
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
+ 
 }
 
 .imageBar .barraIzq,
 .imageBar .barraDer {
   min-width: 50%;
+  height: 40vw;
 }
 
 .imageBar img {
   padding: 4px;
   border-radius: 15px;
+  height: 100%;
+  width: 100%;
 }
 
 .imageBar .barraIzq img {
