@@ -61,4 +61,5 @@ public class ProductController implements CRUDController<ProductDTO> {
     public ResponseEntity<List<ProductDTO>> getAllByCity(@PathVariable Integer cityId) throws FindByIdException, BadRequestException {
         return ResponseEntity.ok(productService.findAllByCity(cityId));
     }
+
 }

@@ -26,6 +26,7 @@ public class ProductDTO {
     private String health;
     private String politics;
     private Set<ImageDTO> images = new HashSet<>();
+    private Set<ScoresDTO> scores;
     private Set<FeatureDTO> features = new HashSet<>();
 
     public ProductDTO() {
@@ -63,6 +64,7 @@ public class ProductDTO {
         this.health = health;
         this.politics = politics;
     }
+
 
     public Product toEntity(){
         Product product = new Product();

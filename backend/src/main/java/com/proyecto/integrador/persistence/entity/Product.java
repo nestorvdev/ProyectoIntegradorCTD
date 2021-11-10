@@ -9,7 +9,6 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
@@ -53,8 +52,10 @@ public class Product {
     private City city;
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
     private Set<Image> images = new HashSet<>();
+
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private  Set<Scores> scores = new  HashSet<>();
+    private  Set<Scores> scores;
+
     @ManyToMany(targetEntity = Feature.class, mappedBy = "products", cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
     private Set<Feature> features = new HashSet<>();
 

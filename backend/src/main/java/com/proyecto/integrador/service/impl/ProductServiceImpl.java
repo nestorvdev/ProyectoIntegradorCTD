@@ -8,8 +8,10 @@ import com.proyecto.integrador.persistence.entity.City;
 import com.proyecto.integrador.persistence.entity.Product;
 import com.proyecto.integrador.exceptions.BadRequestException;
 import com.proyecto.integrador.exceptions.FindByIdException;
+import com.proyecto.integrador.persistence.entity.Scores;
 import com.proyecto.integrador.persistence.repository.IProductRepository;
 import com.proyecto.integrador.service.IProductService;
+import com.proyecto.integrador.service.IScoresService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -32,6 +34,8 @@ public class ProductServiceImpl implements IProductService {
     ImageServiceImpl imageService;
     @Autowired
     FeatureServiceImpl featureService;
+    @Autowired
+    IScoresService scoreService;
 
 
     private Set<ImageDTO> findAssociatedImages(Integer productId) {
@@ -47,6 +51,10 @@ public class ProductServiceImpl implements IProductService {
         productDto.setCategory(categoryService.findById(product.getCategory().getId()));
         productDto.setCity(cityService.findById(product.getCity().getId()));
         productDto.setImages(findAssociatedImages(product.getId()));
+        List<Scores> scoresList = scoreService.findAllByIdProduct(product.getId());
+             productDto.setScores(scoresList.stream()
+                .map(ScoreServiceImpl::toDTO)
+                .collect(Collectors.toSet()));
         productDto.setFeatures(findAssociatedFeatures(product));
         return productDto;
     }

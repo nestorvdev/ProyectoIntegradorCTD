@@ -1,5 +1,9 @@
 package com.proyecto.integrador.persistence.entity;
 
+import com.proyecto.integrador.DTO.CategoryDTO;
+import com.proyecto.integrador.DTO.CityDTO;
+import com.proyecto.integrador.DTO.ProductDTO;
+import com.proyecto.integrador.DTO.ScoresDTO;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -18,7 +22,19 @@ public class Scores {
     private String idUser;
     @Column(name = "score", nullable = false)
     private String score;
+    @Column(name = "favorite", nullable = false)
+    private Boolean favorite;
+
     @ManyToOne
-    @JoinColumn(name = "idProduct", nullable = false)
+    @JoinColumn(name = "id_product", nullable = false)
     private Product product;
+
+    public ScoresDTO toDto(){
+        ScoresDTO scoreDTO = new ScoresDTO();
+        scoreDTO.setIdScores(idScores);
+        scoreDTO.setIdUser(idUser);
+        scoreDTO.setScore(score);
+        scoreDTO.setFavorite(favorite);
+        return scoreDTO;
+    }
 }
