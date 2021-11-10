@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface IScoresRepository extends JpaRepository<Scores, Integer> {
     List<Scores>findByProductId(Integer idProduct);
+
 }
