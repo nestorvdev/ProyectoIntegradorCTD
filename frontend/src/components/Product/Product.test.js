@@ -27,25 +27,29 @@ expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
 describe("Probando el componente <CarouselModal/>", () => {
     let wrapper;
     let props={
-        images:[{url:""}],
+        images:[{ url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
+        { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
+        { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
+        { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
+        { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
+    ],
         viewerIsOpen:true,
         setCurrentImage: jest.fn(),
         setViewerIsOpen: jest.fn()
     }
    
     beforeEach(() => {
-        wrapper = shallow(<CarouselModal/>)
+        wrapper = mount(<CarouselModal {...props}/>)
     });
 
     it("Deberia mostrar <CarouselModal/> correctamente", () => {
         expect(wrapper).toMatchSnapshot();
     });
 
-    /*it("Deberia cerrarse el carousel al hacer click en la cruz", ()=>{
-        wrapper = shallow(<CarouselModal {...props}/>)
-        wrapper.find("div.closeButton").simulate("close")
-        expect(wrapper.prop("viewerIsOpen")).toBeFalsy()
-    })*/
+    it("Deberia cerrarse el carousel al hacer click en la cruz", ()=>{
+        wrapper.find("div.closeButton").simulate("click")
+        expect(props.setViewerIsOpen).toBeCalled()
+    })
 })
 
 describe("Probando el componente <DateBar/>", () => {
@@ -108,17 +112,8 @@ describe("Probando el componente <ImageBar/>", () => {
             { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
             { url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"},
         ]
-     let setViewerIsOpen=jest.fn()
+    let setViewerIsOpen=jest.fn()
     let setShareIsOpen=jest.fn()
-    
-
-    /*let props2={
-        images: [
-            { id: 1, title: "fotoImagen1", url: "https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612", productId: 1 },
-            ],
-        setViewerIsOpen:jest.fn(),
-        setShareIsOpen:jest.fn()
-    }*/
     
     beforeEach(() => {
         wrapper = mount(<ImageBar images={images} setShareIsOpen={setShareIsOpen} setViewerIsOpen={setViewerIsOpen} />)

@@ -1,11 +1,613 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Probando el componente <CarouselModal/> Deberia mostrar <CarouselModal/> correctamente 1`] = `
-<div>
-  <ModalGateway
-    target={<body />}
-  />
-</div>
+<Portal
+  containerInfo={
+    <div>
+      <div
+        class="react-responsive-modal-root"
+        data-testid="root"
+      >
+        <div
+          aria-hidden="true"
+          class="react-responsive-modal-overlay"
+          data-testid="overlay"
+          style="animation: react-responsive-modal-overlay-in 300ms;"
+        />
+        <div
+          class="react-responsive-modal-container react-responsive-modal-containerCenter"
+          data-testid="modal-container"
+        >
+          <div
+            aria-modal="true"
+            class="react-responsive-modal-modal"
+            data-testid="modal"
+            role="dialog"
+            style="animation: react-responsive-modal-modal-in 300ms;"
+            tabindex="-1"
+          >
+            <div>
+              <div
+                class="closeButton"
+              >
+                X
+              </div>
+              <div
+                class="carousel-root"
+                tabindex="0"
+              >
+                <div
+                  class="carousel carousel-slider"
+                  style="width: 100%;"
+                >
+                  <button
+                    aria-label="previous slide / item"
+                    class="control-arrow control-prev"
+                    type="button"
+                  />
+                  <div
+                    class="slider-wrapper axis-horizontal"
+                  >
+                    <ul
+                      class="slider animated"
+                      style="transform: translate3d(-100%,0,0); transition-duration: 350ms;"
+                    >
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <img
+                            alt="img-alojamiento-4"
+                            src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                          />
+                        </div>
+                      </li>
+                      <li
+                        class="slide selected previous"
+                      >
+                        <div>
+                          <img
+                            alt="img-alojamiento-0"
+                            src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                          />
+                        </div>
+                      </li>
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <img
+                            alt="img-alojamiento-1"
+                            src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                          />
+                        </div>
+                      </li>
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <img
+                            alt="img-alojamiento-2"
+                            src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                          />
+                        </div>
+                      </li>
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <img
+                            alt="img-alojamiento-3"
+                            src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                          />
+                        </div>
+                      </li>
+                      <li
+                        class="slide"
+                      >
+                        <div>
+                          <img
+                            alt="img-alojamiento-4"
+                            src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                          />
+                        </div>
+                      </li>
+                      <li
+                        class="slide selected previous"
+                      >
+                        <div>
+                          <img
+                            alt="img-alojamiento-0"
+                            src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                          />
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <button
+                    aria-label="next slide / item"
+                    class="control-arrow control-next"
+                    type="button"
+                  />
+                  <p
+                    class="carousel-status"
+                  >
+                    1/5
+                  </p>
+                </div>
+                <div
+                  class="carousel"
+                >
+                  <div
+                    class="thumbs-wrapper axis-vertical"
+                  >
+                    <button
+                      aria-label="previous slide / item"
+                      class="control-arrow control-prev control-disabled"
+                      type="button"
+                    />
+                    <ul
+                      class="thumbs animated"
+                      style="transform: translate3d(0,0,0); transition-duration: 350ms;"
+                    >
+                      <li
+                        aria-label="slide item 1"
+                        class="thumb selected"
+                        role="button"
+                        style="width: 150px;"
+                        tabindex="0"
+                      >
+                        <img
+                          alt="img-alojamiento-0"
+                          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                        />
+                      </li>
+                      <li
+                        aria-label="slide item 2"
+                        class="thumb"
+                        role="button"
+                        style="width: 150px;"
+                        tabindex="0"
+                      >
+                        <img
+                          alt="img-alojamiento-1"
+                          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                        />
+                      </li>
+                      <li
+                        aria-label="slide item 3"
+                        class="thumb"
+                        role="button"
+                        style="width: 150px;"
+                        tabindex="0"
+                      >
+                        <img
+                          alt="img-alojamiento-2"
+                          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                        />
+                      </li>
+                      <li
+                        aria-label="slide item 4"
+                        class="thumb"
+                        role="button"
+                        style="width: 150px;"
+                        tabindex="0"
+                      >
+                        <img
+                          alt="img-alojamiento-3"
+                          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                        />
+                      </li>
+                      <li
+                        aria-label="slide item 5"
+                        class="thumb"
+                        role="button"
+                        style="width: 150px;"
+                        tabindex="0"
+                      >
+                        <img
+                          alt="img-alojamiento-4"
+                          src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                        />
+                      </li>
+                    </ul>
+                    <button
+                      aria-label="next slide / item"
+                      class="control-arrow control-next"
+                      type="button"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="react-responsive-modal-closeButton"
+              data-testid="close-button"
+            >
+              <svg
+                data-testid="close-icon"
+                height="28"
+                viewBox="0 0 36 36"
+                width="28"
+              >
+                <path
+                  d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  }
+>
+  <div
+    className="react-responsive-modal-root"
+    data-testid="root"
+  >
+    <div
+      aria-hidden={true}
+      className="react-responsive-modal-overlay"
+      data-testid="overlay"
+      style={
+        Object {
+          "animation": "react-responsive-modal-overlay-in 300ms",
+        }
+      }
+    />
+    <div
+      className="react-responsive-modal-container react-responsive-modal-containerCenter"
+      data-testid="modal-container"
+      onClick={[Function]}
+    >
+      <div
+        aria-modal="true"
+        className="react-responsive-modal-modal"
+        data-testid="modal"
+        onAnimationEnd={[Function]}
+        onClick={[Function]}
+        onMouseDown={[Function]}
+        onMouseUp={[Function]}
+        role="dialog"
+        style={
+          Object {
+            "animation": "react-responsive-modal-modal-in 300ms",
+          }
+        }
+        tabIndex={-1}
+      >
+        <div>
+          <div
+            className="closeButton"
+            onClick={[Function]}
+          >
+            X
+          </div>
+          <div
+            className="carousel-root"
+            tabIndex={0}
+          >
+            <div
+              className="carousel carousel-slider"
+              style={
+                Object {
+                  "width": "100%",
+                }
+              }
+            >
+              <button
+                aria-label="previous slide / item"
+                className="control-arrow control-prev"
+                onClick={[Function]}
+                type="button"
+              />
+              <div
+                className="slider-wrapper axis-horizontal"
+                style={Object {}}
+              >
+                <ul
+                  className="slider animated"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "MozTransitionDuration": "350ms",
+                      "OTransform": "translate3d(-100%,0,0)",
+                      "OTransitionDuration": "350ms",
+                      "WebkitTransform": "translate3d(-100%,0,0)",
+                      "WebkitTransitionDuration": "350ms",
+                      "msTransform": "translate3d(-100%,0,0)",
+                      "msTransitionDuration": "350ms",
+                      "transform": "translate3d(-100%,0,0)",
+                      "transitionDuration": "350ms",
+                    }
+                  }
+                >
+                  <li
+                    className="slide"
+                    key="itemKey4clone/.$image-4"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    <div
+                      key="image-4"
+                    >
+                      <img
+                        alt="img-alojamiento-4"
+                        src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                      />
+                    </div>
+                  </li>
+                  <li
+                    className="slide selected previous"
+                    key="itemKey0/.$image-0"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    <div
+                      key="image-0"
+                    >
+                      <img
+                        alt="img-alojamiento-0"
+                        src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                      />
+                    </div>
+                  </li>
+                  <li
+                    className="slide"
+                    key="itemKey1/.$image-1"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    <div
+                      key="image-1"
+                    >
+                      <img
+                        alt="img-alojamiento-1"
+                        src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                      />
+                    </div>
+                  </li>
+                  <li
+                    className="slide"
+                    key="itemKey2/.$image-2"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    <div
+                      key="image-2"
+                    >
+                      <img
+                        alt="img-alojamiento-2"
+                        src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                      />
+                    </div>
+                  </li>
+                  <li
+                    className="slide"
+                    key="itemKey3/.$image-3"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    <div
+                      key="image-3"
+                    >
+                      <img
+                        alt="img-alojamiento-3"
+                        src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                      />
+                    </div>
+                  </li>
+                  <li
+                    className="slide"
+                    key="itemKey4/.$image-4"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    <div
+                      key="image-4"
+                    >
+                      <img
+                        alt="img-alojamiento-4"
+                        src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                      />
+                    </div>
+                  </li>
+                  <li
+                    className="slide selected previous"
+                    key="itemKey0clone/.$image-0"
+                    onClick={[Function]}
+                    style={Object {}}
+                  >
+                    <div
+                      key="image-0"
+                    >
+                      <img
+                        alt="img-alojamiento-0"
+                        src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                      />
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <button
+                aria-label="next slide / item"
+                className="control-arrow control-next"
+                onClick={[Function]}
+                type="button"
+              />
+              <p
+                className="carousel-status"
+              >
+                1/5
+              </p>
+            </div>
+            <div
+              className="carousel"
+            >
+              <div
+                className="thumbs-wrapper axis-vertical"
+              >
+                <button
+                  aria-label="previous slide / item"
+                  className="control-arrow control-prev control-disabled"
+                  onClick={[Function]}
+                  type="button"
+                />
+                <ul
+                  className="thumbs animated"
+                  onMouseDown={[Function]}
+                  onTouchEnd={[Function]}
+                  onTouchStart={[Function]}
+                  style={
+                    Object {
+                      "MozTransform": "translate3d(0,0,0)",
+                      "MozTransitionDuration": "350ms",
+                      "MsTransform": "translate3d(0,0,0)",
+                      "MsTransitionDuration": "350ms",
+                      "OTransform": "translate3d(0,0,0)",
+                      "OTransitionDuration": "350ms",
+                      "WebkitTransform": "translate3d(0,0,0)",
+                      "WebkitTransitionDuration": "350ms",
+                      "msTransform": "translate3d(0,0,0)",
+                      "msTransitionDuration": "350ms",
+                      "transform": "translate3d(0,0,0)",
+                      "transitionDuration": "350ms",
+                    }
+                  }
+                >
+                  <li
+                    aria-label="slide item 1"
+                    className="thumb selected"
+                    key="0"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    style={
+                      Object {
+                        "width": 150,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="img-alojamiento-0"
+                      key=".0/.$image-0"
+                      src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                    />
+                  </li>
+                  <li
+                    aria-label="slide item 2"
+                    className="thumb"
+                    key="1"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    style={
+                      Object {
+                        "width": 150,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="img-alojamiento-1"
+                      key=".0/.$image-1"
+                      src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                    />
+                  </li>
+                  <li
+                    aria-label="slide item 3"
+                    className="thumb"
+                    key="2"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    style={
+                      Object {
+                        "width": 150,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="img-alojamiento-2"
+                      key=".0/.$image-2"
+                      src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                    />
+                  </li>
+                  <li
+                    aria-label="slide item 4"
+                    className="thumb"
+                    key="3"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    style={
+                      Object {
+                        "width": 150,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="img-alojamiento-3"
+                      key=".0/.$image-3"
+                      src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                    />
+                  </li>
+                  <li
+                    aria-label="slide item 5"
+                    className="thumb"
+                    key="4"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    role="button"
+                    style={
+                      Object {
+                        "width": 150,
+                      }
+                    }
+                    tabIndex={0}
+                  >
+                    <img
+                      alt="img-alojamiento-4"
+                      key=".0/.$image-4"
+                      src="https://media.istockphoto.com/photos/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab-picture-id472899538?s=612x612"
+                    />
+                  </li>
+                </ul>
+                <button
+                  aria-label="next slide / item"
+                  className="control-arrow control-next"
+                  onClick={[Function]}
+                  type="button"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          className="react-responsive-modal-closeButton"
+          data-testid="close-button"
+          onClick={[Function]}
+        >
+          <svg
+            data-testid="close-icon"
+            height={28}
+            viewBox="0 0 36 36"
+            width={28}
+          >
+            <path
+              d="M28.5 9.62L26.38 7.5 18 15.88 9.62 7.5 7.5 9.62 15.88 18 7.5 26.38l2.12 2.12L18 20.12l8.38 8.38 2.12-2.12L20.12 18z"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+</Portal>
 `;
 
 exports[`Probando el componente <DescriptionBar/> Deberia mostrar <DescriptionBar/> correctamente 1`] = `
