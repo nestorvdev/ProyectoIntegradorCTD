@@ -38,7 +38,7 @@ function DateBar(props) {
             boxShadow: '10px 5px 5px grey',
             fontSize: 20,
             background: "white",
-            height: "330px",
+            height: "360px",
             width: "100%",
         }
     });

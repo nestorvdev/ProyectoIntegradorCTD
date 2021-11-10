@@ -6,7 +6,7 @@
 }
 
 .titleBar .titleBarChild {
-  height: 60px;
+  min-height: 60px;
   padding-left: clamp(20px, 3.9%, 40px);
   padding-right: clamp(20px, 3.9%, 40px);
   display: flex;
@@ -29,7 +29,7 @@
 }
 
 .scoreBar .scoreBarChild {
-  height: 55px;
+  min-height: 55px;
   padding-left: clamp(20px, 3.9%, 40px);
   padding-right: clamp(20px, 3.9%, 40px);
   display: flex;
@@ -125,7 +125,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: nowrap;
- 
 }
 
 .imageBar .barraIzq,
@@ -319,9 +318,9 @@
   flex-wrap: wrap;
 }
 
-.contenedorCalendario{
+.contenedorCalendario {
   width: 66%;
-  min-width: 640px;
+  min-width: 700px;
   background-color: white;
   box-shadow: 0 5px 5px grey;
   display: flex;
@@ -330,13 +329,13 @@
   border-radius: 5px;
 }
 
-.contenedorReservaBox{
+
+
+.contenedorReservaBox {
   width: 33%;
   min-width: 300px;
   border-radius: 5px;
 }
-
-
 
 .contenedorReserva {
   border-radius: 6px;
@@ -367,7 +366,6 @@
   color: white;
   background: #f0572d;
 }
-
 
 /* Estilos del map Bar  */
 
@@ -458,32 +456,72 @@
 }
 
 /*  media queries responsive */
+@media all and (min-width: 769px) {
+  .contenedorCalendario > div > div > div > div {
+    width: 50%;
+  }
 
-@media all and (max-width: 1080px) {
+  .contenedorCalendario > div > div > div > div > div:first-child {
+    position: relative;
+    justify-content: center;
+  }
+
+  .contenedorCalendario > div > div > div > div > div:first-child > button:first-child {
+    background-color: #f0572d;
+    color: white;
+    position: absolute;
+    left: 10px;
+    top: 150px;
+    z-index: 1;
+  }
+
+  .contenedorCalendario > div > div  > div > div > div:first-child > button:last-child {
+    background-color: #f0572d;
+    color: white;
+    position: absolute;
+    right: 10px;
+    top: 150px;
+    z-index: 1;
+  }
+}
+
+@media all and (min-width:720px){
+  .contenedorCalendario > div {
+    width: 100%;
+  }
+}
+
+@media all and (min-width: 415px) {
+  .contenedorCalendario > div > div > div {
+    justify-content: center;
+  }
+}
+
+@media all and (max-width: 1150px) {
   .contenedorInterno {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
-  
-  .contenedorCalendario{
+
+  .contenedorCalendario {
     width: 100%;
   }
-  
-  .contenedorReservaBox{
+
+  .contenedorReservaBox {
     width: 100%;
     margin-top: 20px;
     background-color: none;
   }
-  .contenedorReserva{
+  .contenedorReserva {
     display: flex;
     flex-direction: row;
   }
-  .contenedorReserva p, .contenedorReserva button{
+  .contenedorReserva p,
+  .contenedorReserva button {
     width: 50%;
   }
-  
 }
 
 @media all and (max-width: 769px) {
@@ -520,11 +558,16 @@
     width: 50vw;
   }
 
-  .contenedorCalendario{
+  .contenedorCalendario {
     min-width: 320px;
     width: 100%;
   }
+ 
+  
 }
+
+
+
 
 @media all and (max-width: 415px) {
   .shareBlock {
