@@ -1,5 +1,5 @@
 import React from "react";
-import { shallow, mount } from "enzyme";
+import { shallow, mount, render } from "enzyme";
 import "@testing-library/jest-dom";
 import CarouselModal from "./CarouselModal";
 import DateBar from "./DateBar";
@@ -11,6 +11,7 @@ import Map from "./Map";
 import MapBar from "./MapBar";
 
 import Product from "./Product";
+import QualificationBar from "./QualificationBar";
 import ScoreBar from "./ScoreBar";
 import Share from "./Share";
 import TitleBar from "./TitleBar";
@@ -54,14 +55,23 @@ describe("Probando el componente <CarouselModal/>", () => {
 
 describe("Probando el componente <DateBar/>", () => {
     let wrapper;
+    let props ={
+        valueDate:[],
+        setValueDate:jest.fn()
+    }
     
     beforeEach(() => {
-        wrapper = shallow(<DateBar/>)
+        wrapper = shallow(<DateBar {...props}/>)
     });
 
-    it("Deberia mostrar <DateBar/> correctamente", () => {
-        expect(wrapper).toMatchSnapshot();
-    });
+    it("Deberia llamar a event.preventDefault cuando se hace click en el boton", ()=>{
+        const event = { preventDefault: () => {} }
+        jest.spyOn(event, 'preventDefault')
+        wrapper.find('button.selectedDatesButton').simulate('click', event)
+                
+        expect(event.preventDefault).toBeCalled()
+    })
+
 
 })
 
@@ -192,6 +202,18 @@ describe("Probando el componente <MapBar/>", () => {
 
 })
 
+describe("Probando el componente <QualificationBar/>", () => {
+    let wrapper;
+    
+    beforeEach(() => {
+        wrapper = shallow(<QualificationBar/>)
+    });
+
+    it("Deberia mostrar <QualificationBar/> correctamente", () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
+})
 
 /*describe("Probando el componente <Product/>", () => {
     let wrapper; 

@@ -973,6 +973,20 @@ exports[`Probando el componente <MapBar/> Deberia mostrar <MapBar> correctamente
 </div>
 `;
 
+exports[`Probando el componente <QualificationBar/> Deberia mostrar <QualificationBar/> correctamente 1`] = `
+<div
+  className="qualificationBar delimiter"
+>
+  <div
+    className="qualificationBarChild delimiterChild"
+  >
+    <h2>
+      Califica este alojamiento: 
+    </h2>
+  </div>
+</div>
+`;
+
 exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correctamente con calificacion de 1.1 1`] = `
 <div
   className="scoreBar delimiter"

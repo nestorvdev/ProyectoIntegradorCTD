@@ -673,6 +673,149 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
 </div>
 `;
 
+exports[`Pruebas en Card Debe mostrar un error con una calificacion invalida 1`] = `
+<div
+  className="cardBox"
+>
+  <div
+    className="cardImage"
+  >
+    <svg
+      className="iconHeart"
+      height="24"
+      onClick={null}
+      viewBox="0 0 24 24"
+      width="24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        className="heartColor"
+        d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z"
+        id="heart"
+      />
+    </svg>
+    <img
+      alt=""
+      className="image"
+      src="test"
+    />
+  </div>
+  <div
+    className="cardInfo"
+  >
+    <div
+      className="cardHeaderBox"
+    >
+      <div
+        className="cardHeadline"
+      >
+        <div
+          className="cardCategory"
+        >
+          <p>
+            test
+          </p>
+          <img
+            alt=""
+            className="star"
+            src="starOrange.png"
+          />
+          <img
+            alt=""
+            className="star"
+            src="starOrange.png"
+          />
+          <img
+            alt=""
+            className="star"
+            src="starOrange.png"
+          />
+          <img
+            alt=""
+            className="star"
+            src="starOrange.png"
+          />
+          <img
+            alt=""
+            className="star"
+            src="starOrange.png"
+          />
+        </div>
+        <div
+          className="cardName"
+        >
+          test
+        </div>
+      </div>
+      <div
+        className="cardScore"
+      >
+        <div
+          className="cardScoreNumber"
+        >
+          <p>
+            12
+          </p>
+        </div>
+        <div
+          className="cardScoreWords"
+        >
+          Calificacion Invalida
+        </div>
+      </div>
+    </div>
+    <div
+      className="cardLocation"
+    >
+      <img
+        alt=""
+        className="iconLocation"
+        src="IconLocation.svg"
+      />
+      test
+      , 
+      test
+      , 
+      test
+      <span
+        onClick={[Function]}
+      >
+        mostrar en el mapa
+      </span>
+      <MapModal
+        closeMapModal={[Function]}
+        mapIsOpen={false}
+        name="test"
+      />
+    </div>
+    <div
+      className="cardIcons"
+    />
+    <div
+      className="cardDescription"
+    >
+      <p>
+        test
+      </p>
+      <span>
+        más...
+      </span>
+    </div>
+    <Link
+      className="link"
+      key="1"
+      to="/product/1"
+    >
+      <button
+        className="cardButton2"
+      >
+        Ver más
+      </button>
+    </Link>
+  </div>
+</div>
+`;
+
 exports[`Pruebas en Cards Debe de mostrarse correctamente 1`] = `
 <div
   className="delimiter"

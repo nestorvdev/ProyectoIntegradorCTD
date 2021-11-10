@@ -20,13 +20,6 @@ let props = { image: "test", cardCategory: "test", name: "test", city: "test", c
         expect(wrapper).toMatchSnapshot();
     });
 
-    /* it("Deberia llamar a handleToggle cuando se hace click en el corazón", () => {
-        let handleToggle = jest.fn()
-        wrapper = shallow(<Card handleToggle={handleToggle} />);
-        wrapper.find('div div svg.iconHeart').simulate('click', handleToggle);
-        expect(handleToggle).toBeCalled()
-    }) */ 
-
     let props2 = { image: "test", cardCategory: "test", name: "test", city: "test", country: "test", description: "test", id: 1, reference: "test", qualification: 7, features: [] }
     it('Debe de mostrarse correctamente con una puntuacion de 7', () => {
         wrapper = shallow(<Card {...props2} />);
@@ -48,6 +41,12 @@ let props = { image: "test", cardCategory: "test", name: "test", city: "test", c
     let props5 = { image: "test", cardCategory: "test", name: "test", city: "test", country: "test", description: "test", id: 1, reference: "test", qualification: 1, features: [] }
     it('Debe de mostrarse correctamente con una puntuacion de 1', () => {
         wrapper = shallow(<Card {...props5} />);
+        expect(wrapper).toMatchSnapshot();
+    });
+
+    let props6 = { image: "test", cardCategory: "test", name: "test", city: "test", country: "test", description: "test", id: 1, reference: "test", qualification: 12, features: [] }
+    it('Debe mostrar un error con una calificacion invalida', () => {
+        wrapper = shallow(<Card {...props6} />);
         expect(wrapper).toMatchSnapshot();
     });
 });
