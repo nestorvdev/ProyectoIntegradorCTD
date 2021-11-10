@@ -3,7 +3,6 @@ import { useParams } from "react-router-dom";
 import TitleBar from "./TitleBar";
 import ScoreBar from "./ScoreBar";
 import ImageBar from "./ImageBar";
-import Share from "./Share";
 import DescriptionBar from "./DescriptionBar";
 import FeaturesBar from "./FeaturesBar";
 import Datebar from "./DateBar";
@@ -11,6 +10,7 @@ import MapBar from "./MapBar";
 import InfoBar from "./InfoBar";
 import axios from "axios";
 import StylesApp from "../../App.module.css";
+import QualificationBar from "./QualificationBar";
 
 
 function Product(props) {
@@ -75,14 +75,14 @@ function Product(props) {
                     <>
                         <TitleBar category={prod.category.title} name={prod.name} goBack={props.history.goBack} />
                         <ScoreBar reference={prod.reference} city={prod.city} qualification={prod.qualification} />
-                        <ImageBar images={prod.images} viewerIsOpen={viewerIsOpen}  setViewerIsOpen={setViewerIsOpen} setShareIsOpen={setShareIsOpen} setCurrentImage={setCurrentImage} />
-                        <Share id={prod.id} shareIsOpen={shareIsOpen} setShareIsOpen={setShareIsOpen} />
+                        <ImageBar images={prod.images} viewerIsOpen={viewerIsOpen}  setViewerIsOpen={setViewerIsOpen} setShareIsOpen={setShareIsOpen} setCurrentImage={setCurrentImage} id={prod.id} shareIsOpen={shareIsOpen} setShareIsOpen={setShareIsOpen} />
                         <DescriptionBar city={prod.city} description={prod.description} />
                         <FeaturesBar features={prod.features} />
                         <Datebar valueDate={valueDate} setValueDate={setValueDate} />
                         {props.latitude !== null || props.longitude !== null ?
                             <MapBar city={prod.city} latitude={prod.latitude} longitude={prod.longitude} name={prod.name} address={prod.address} />
                             : null}
+                        <QualificationBar />
                         <InfoBar health={prod.health} rules={prod.rules} politics={prod.politics} />
                     </>
                 )}

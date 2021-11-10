@@ -12,11 +12,8 @@ expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
 describe("Probando el componente <LayoutPrincipal/>", () => {
     let wrapper;
     
-    beforeEach(() => {
-        wrapper = shallow(<LayoutPrincipal/>)
-    });
-
     it("Deberia mostrar <LayoutPrincipal/> correctamente", () => {
+        wrapper = shallow(<LayoutPrincipal/>)
         expect(wrapper).toMatchSnapshot();
     });
 

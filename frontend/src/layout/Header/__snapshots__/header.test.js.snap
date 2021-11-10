@@ -14,6 +14,7 @@ exports[`Probando el componente <Header/> Deberia mostrar <Header/> correctament
     >
       <div
         className="logo"
+        onClick={[MockFunction]}
       >
         <img
           alt="logo"
@@ -71,17 +72,25 @@ exports[`Probando el componente <Header/> Deberia mostrar <Header/> correctament
            
           Uno
         </h3>
-      </div>
-      <div
-        className="close"
-      >
-        <a
-          href="/"
-          onClick={[Function]}
+        <h4
+          className="seeFavourite"
+          onClick={[MockFunction]}
         >
-          X
-        </a>
-         
+          Ver favoritos
+        </h4>
+      </div>
+      <div>
+        <div
+          className="close"
+        >
+          <a
+            href="/"
+            onClick={[Function]}
+          >
+            X
+          </a>
+           
+        </div>
       </div>
     </div>
     <MenuButton
@@ -91,6 +100,7 @@ exports[`Probando el componente <Header/> Deberia mostrar <Header/> correctament
   <MenuMobile
     activeCreate={false}
     activeLogin={false}
+    handleFavourite={[MockFunction]}
     handleHide={[Function]}
     handleLogOut={[Function]}
     iniciales="GU"

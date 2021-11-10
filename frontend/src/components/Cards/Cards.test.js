@@ -6,6 +6,7 @@ import Adapter from '@wojtekmaj/enzyme-adapter-react-17';
 import { createSerializer } from 'enzyme-to-json';
 import Card from './Card';
 import Cards from './index';
+import MapModal from "./MapModal";
 
 Enzyme.configure({ adapter: new Adapter() });
 expect.addSnapshotSerializer(createSerializer({ mode: 'deep' }));
@@ -18,13 +19,6 @@ let props = { image: "test", cardCategory: "test", name: "test", city: "test", c
         wrapper = shallow(<Card {...props} />);
         expect(wrapper).toMatchSnapshot();
     });
-
-    /* it("Deberia llamar a handleToggle cuando se hace click en el corazón", () => {
-        let handleToggle = jest.fn()
-        wrapper = shallow(<Card handleToggle={handleToggle} />);
-        wrapper.find('div div svg.iconHeart').simulate('click', handleToggle);
-        expect(handleToggle).toBeCalled()
-    }) */ 
 
     let props2 = { image: "test", cardCategory: "test", name: "test", city: "test", country: "test", description: "test", id: 1, reference: "test", qualification: 7, features: [] }
     it('Debe de mostrarse correctamente con una puntuacion de 7', () => {
@@ -49,6 +43,12 @@ let props = { image: "test", cardCategory: "test", name: "test", city: "test", c
         wrapper = shallow(<Card {...props5} />);
         expect(wrapper).toMatchSnapshot();
     });
+
+    let props6 = { image: "test", cardCategory: "test", name: "test", city: "test", country: "test", description: "test", id: 1, reference: "test", qualification: 12, features: [] }
+    it('Debe mostrar un error con una calificacion invalida', () => {
+        wrapper = shallow(<Card {...props6} />);
+        expect(wrapper).toMatchSnapshot();
+    });
 });
 
 describe('Pruebas en Cards', () => {   
@@ -65,3 +65,22 @@ describe('Pruebas en Cards', () => {
     });
 
 });
+
+describe("Probando el componente <MapModal/>", () => {
+    let wrapper;
+    let props ={
+        mapIsOpen:false,
+        latitude:-12, 
+        longitude:9, 
+        closeMapModal: jest.fn()
+    }
+    
+    beforeEach(() => {
+        wrapper = shallow(<MapModal {...props}/>)
+    });
+
+    it("Deberia mostrar <MapModal> correctamente", () => {
+        expect(wrapper).toMatchSnapshot();
+    });
+
+})

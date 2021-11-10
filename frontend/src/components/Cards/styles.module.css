@@ -80,6 +80,70 @@ a:active {
   z-index: 99;
 }
 
+/*ESTILOS MODAL FAVOURITE*/
+
+.modalFavourite{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height:22vh;
+  width:39vw;
+  border: 4px solid var(--primary-color);
+  
+
+}
+
+.modalFavourite p{
+  color: black;
+  font-size: 24px;
+  font-weight: 900;
+  text-align: center;
+  padding: 10px 5px;
+  
+}
+
+.modalFavourite p a{
+  text-decoration: black;
+}
+
+div.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding-right: 8px;
+  height: 10vh;
+}
+
+div.buttons button {
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid  var(--primary-color);
+  background-color: var(--primary-color);
+  color: white;
+  font-size: var(--button1);
+  font-weight: var(--font-bold);
+  padding: 5pt;
+  width: clamp(164px,22.2vw,206px);
+  transition: 0.5s;
+}
+
+div.buttons button.create{
+  background-color: white;
+  border: 2px solid  white;
+  color: var(--primary-color);
+}
+div.buttons button.login:hover {
+  background-color: #cf411d;
+  border: 2px solid  #b9411f;
+
+}
+  
+div.buttons button.create:hover {
+  background-color: #ffd6c6;
+  border: 2px solid  #ffd6c6;
+}
+
 /* cambiar color del corazon */
 .heartColor {
   fill: white;
@@ -300,9 +364,15 @@ a:active {
 }
 
 
+/*Estilos para el modalMap*/
 
-@media all and (max-width: 1350px) {
-  .cardsBox {
+.containerModalMap {
+  width: 40vw;
+}
+
+
+@media all and (max-width:1350px){
+  .cardsBox{
     justify-content: center;
   }
 }
@@ -324,6 +394,11 @@ a:active {
   .cardImage {
     height: 100%;
   }
+
+  .modalFavourite{
+    height:28vh;
+    width: 50vw;
+    }
 }
 
 @media all and (max-width: 610px) {
@@ -363,5 +438,15 @@ a:active {
   .cardImage .image {
     top: -2px;
     z-index: 0;
+  }
+}
+@media all and (max-width: 415px){
+.modalFavourite{
+  width: 70vw;
+  height:18vh
+  
+  }
+  .modalFavourite p{
+  font-size: 18px;
   }
 }

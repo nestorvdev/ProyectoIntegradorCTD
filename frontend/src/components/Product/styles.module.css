@@ -6,20 +6,20 @@
 }
 
 .titleBar .titleBarChild {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   min-height: 60px;
   padding-left: clamp(20px, 3.9%, 40px);
   padding-right: clamp(20px, 3.9%, 40px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 .titleBarChild div p {
   text-transform: uppercase;
 }
 
 .titleBarChild .iconLocation {
-  width: 25px;
   cursor: pointer;
+  width: 25px;
 }
 
 /* Estilos de scoreBar */
@@ -29,12 +29,12 @@
 }
 
 .scoreBar .scoreBarChild {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   min-height: 55px;
   padding-left: clamp(20px, 3.9%, 40px);
   padding-right: clamp(20px, 3.9%, 40px);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .scoreBar .barraIzq {
@@ -60,12 +60,12 @@
 }
 
 .scoreBar .calificacionEntero {
-  height: 100%;
   background: var(--secondary-color);
-  padding: 8px 14px;
-  color: white;
   border-radius: 10px;
+  color: white;
   font-weight: var(--font-bold);
+  height: 100%;
+  padding: 8px 14px;
 }
 
 .scoreBarReference {
@@ -94,16 +94,16 @@
   display: flex;
 }
 .imageBar .iconImage {
-  width: 35px;
   cursor: pointer;
+  width: 35px;
 }
 
 .iconHeart {
-  width: 23px;
   cursor: pointer;
+  margin-top: 5px;
   stroke: #545776;
   stroke-width: 3px;
-  margin-top: 5px;
+  width: 23px;
 }
 
 .heartColor {
@@ -129,20 +129,20 @@
 
 .imageBar .barraInf {
   display: flex;
-  justify-content: center;
   flex-wrap: nowrap;
+  justify-content: center;
 }
 
 .imageBar .barraIzq,
 .imageBar .barraDer {
-  min-width: 50%;
   height: 50vh;
+  min-width: 50%;
 }
 
 .imageBar img {
-  padding: 4px;
   border-radius: 15px;
   height: 100%;
+  padding: 4px;
   width: 100%;
 }
 
@@ -157,19 +157,19 @@
 }
 
 .imageBar .barraDer img {
-  width: 50%;
   height: 50%;
+  width: 50%;
 }
 
 .imageBar .verMas {
-  position: absolute;
   bottom: 10px;
-  right: 20px;
-  text-decoration: underline;
-  font-weight: var(--font-bold);
-  font-size: var(--heading3);
   color: white;
   cursor: pointer;
+  font-size: var(--heading3);
+  font-weight: var(--font-bold);
+  position: absolute;
+  right: 20px;
+  text-decoration: underline;
 }
 
 .imageBar .slider {
@@ -178,23 +178,80 @@
 }
 
 .imageBar .slider p {
-  position: absolute;
   bottom: 10px;
-  right: 10px;
   color: white;
-  font-weight: var(--font-bold);
   font-size: var(--text3);
+  font-weight: var(--font-bold);
+  position: absolute;
+  right: 10px;
 }
+
+.modalFavourite{
+  border: 4px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height:22vh;
+  width:39vw;
+}
+
+.modalFavourite p{
+  color: black;
+  font-size: 24px;
+  font-weight: 900;
+  padding: 10px 5px;
+  text-align: center;
+}
+
+.modalFavourite p a{
+  text-decoration: black;
+}
+
+div.buttons {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 10vh;
+  justify-content: space-evenly;
+  padding-right: 8px;
+}
+
+div.buttons button {
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  border: 2px solid  var(--primary-color);
+  color: white;
+  font-size: var(--button1);
+  font-weight: var(--font-bold);
+  padding: 5pt;
+  transition: 0.5s;
+  width: clamp(164px,22.2vw,206px);
+}
+
+div.buttons button.create{
+  background-color: white;
+  border: 2px solid  white;
+  color: var(--primary-color);
+}
+div.buttons button.login:hover {
+  background-color: #cf411d;
+  border: 2px solid  #b9411f;
+}
+  
+div.buttons button.create:hover {
+  background-color: #ffd6c6;
+  border: 2px solid  #ffd6c6;
+}
+
 
 /* ESTILOS DEL SHARE*/
 .containerSharePrincipal {
-  background-color: rgb(218, 214, 214);
   border-radius: 10px;
   border: 4px solid var(--primary-color);
-  width: 35vw;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  margin: 0 auto;
+  width: 35vw;
 }
 
 .containerSharePrincipal h3 {
@@ -203,8 +260,9 @@
 .containerShare {
   display: flex;
   flex-direction: row;
-  justify-content: center;
   flex-wrap: wrap;
+  justify-content: center;
+  
 }
 
 .shareBlock {
@@ -213,9 +271,10 @@
 
 .shareItem {
   display: flex;
+  align-items: center;
   flex-direction: column;
   padding: 17px;
-  align-items: center;
+ 
 }
 
 .shareItem a:focus {
@@ -223,15 +282,15 @@
 }
 
 .closeButton {
-  position: absolute;
-  z-index: 10;
   background-color: transparent;
   border: none;
   color: black;
+  cursor: pointer;
   font-size: 18px;
   font-weight: 500;
+  position: absolute;
   right: 35.5vw;
-  cursor: pointer;
+  z-index: 10;
 }
 
 /*  estilos de descripcionBar */
@@ -291,12 +350,19 @@
   margin-bottom: 30px;
 }
 
-.featuresBarChild p {
+.featuresBarChild div.featureBox {
   min-width: clamp(200px, 25%, 320px); /* ojo revisar ahorita */
   margin-bottom: 10px;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;  
 }
 
-.featuresBarChild p img {
+.featureTitle::first-letter {
+  text-transform: uppercase;
+}
+
+.featuresBarChild div.featureBox img {
   margin-right: 20px;
 }
 
@@ -413,10 +479,11 @@
   /* height: clamp(300px, 50vh, 700px); */
 }
 
-/*Estilos para el modalMap*/
+/* Estilos para Qualification Bar */
 
-.containerModalMap {
-  width: 70vw;
+.qualificationBar {
+  background-color: var(--quaternary-color);
+  /* padding: 20px 0; */
 }
 
 /* Estilos infoBar */
@@ -513,6 +580,8 @@
   .contenedorReserva {    
     background-color: white;
   }  
+
+  
 }
 
 @media all and (min-width:720px){
@@ -573,7 +642,7 @@
     height: 70vw;
   }
 
-  .featuresBarChild p {
+  .featuresBarChild div.featureBox {
     min-width: clamp(180px, 50%, 354px); /* ojo revisar ahorita */
     margin-bottom: 10px;
   }
@@ -591,13 +660,13 @@
   .contenedorCalendario {
     min-width: 320px;
     width: 100%;
-  }
- 
-  
+  }  
+
+  .modalFavourite{
+    height:28vh;
+    width: 50vw;
+    }
 }
-
-
-
 
 @media all and (max-width: 415px) {
   .shareBlock {
@@ -618,4 +687,13 @@
   .contenedorReserva p, .contenedorReserva button {
     width: 100%;
   }
+
+  .modalFavourite{
+    width: 70vw;
+    height:18vh
+    
+    }
+    .modalFavourite p{
+    font-size: 18px;
+    }
 }
