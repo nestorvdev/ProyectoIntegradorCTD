@@ -291,12 +291,19 @@
   margin-bottom: 30px;
 }
 
-.featuresBarChild p {
+.featuresBarChild div.featureBox {
   min-width: clamp(200px, 25%, 320px); /* ojo revisar ahorita */
   margin-bottom: 10px;
+  display:flex;
+  justify-content: flex-start;
+  align-items: center;  
 }
 
-.featuresBarChild p img {
+.featureTitle::first-letter {
+  text-transform: uppercase;
+}
+
+.featuresBarChild div.featureBox img {
   margin-right: 20px;
 }
 
@@ -573,7 +580,7 @@
     height: 70vw;
   }
 
-  .featuresBarChild p {
+  .featuresBarChild div.featureBox {
     min-width: clamp(180px, 50%, 354px); /* ojo revisar ahorita */
     margin-bottom: 10px;
   }
