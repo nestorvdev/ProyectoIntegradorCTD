@@ -2,7 +2,7 @@ import { useState } from "react";
 import Styles from "./styles.module.css"
 import StylesApp from "../../App.module.css";
 import * as React from 'react';
-import addDays from 'date-fns/addDays';
+/* import addDays from 'date-fns/addDays'; */
 import TextField from '@mui/material/TextField';
 import StaticDateRangePicker from '@mui/lab/StaticDateRangePicker';
 import AdapterDateFns from '@mui/lab/AdapterDateFns';
@@ -10,7 +10,7 @@ import LocalizationProvider from '@mui/lab/LocalizationProvider';
 import { makeStyles } from '@mui/styles';
 import Box from '@mui/material/Box';
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-const { format } = require("date-fns");
+/* const { format } = require("date-fns"); */
 
 
 function DateBar(props) {
