@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3000") // @CrossOrigin(origins = "http://ec2-50-19-20-201.compute-1.amazonaws.com/")
 @RestController
 @RequestMapping("/cities")
 public class CityController implements CRUDController<CityDTO>{
