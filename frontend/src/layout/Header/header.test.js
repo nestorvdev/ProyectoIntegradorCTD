@@ -14,9 +14,11 @@ describe("Probando el componente <Header/>", () => {
     let wrapper;
     let setActiveCreate = jest.fn(); //Simula la funcion del set
     let setActiveLogin = jest.fn() //Simula la funcion del set
+    let handleClean = jest.fn()
+    let handleFavourite = jest.fn()
    
     beforeEach(() => {
-        wrapper = shallow(<Header setActiveCreate={setActiveCreate} setActiveLogin={setActiveLogin} />)
+        wrapper = shallow(<Header setActiveCreate={setActiveCreate} setActiveLogin={setActiveLogin} handleClean={handleClean} handleFavourite ={handleFavourite}/>)
     });
 
     it("Deberia mostrar <Header/> correctamente", () => {
@@ -38,5 +40,14 @@ describe("Probando el componente <Header/>", () => {
         expect(node.length).toEqual(2)
     });
 
+    it("Deberia llamar a handleClean cuando se hace click en el logo", ()=>{
+        wrapper.find("div.logo").simulate("click")
+        expect(handleClean).toBeCalled()
+    })
+
+    it("Deberia llamar a handleClean cuando se hace click en el logo", ()=>{
+        wrapper.find("h4.seeFavourite").simulate("click")
+        expect(handleFavourite).toBeCalled()
+    })
 });
 

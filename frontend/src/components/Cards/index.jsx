@@ -3,19 +3,21 @@ import Styles from './styles.module.css';
 import StylesApp from "../../App.module.css"
 import Card from './Card.jsx';
 import axios from "axios";
+import arrow from "./img/arrow.svg";
 
 export default function Cards({ category, city, search, clickBusqueda, favourite }) {
-    const baseUrlProductosRecomendados = "http://localhost:8080/products/all";
-    const baseUrlPorCategoria = `http://localhost:8080/products/get/category/${category}`;
-    const baseUrlPorCiudad = `http://localhost:8080/products/get/city/${city}`;
-    const baseUrlFavourite = "http://localhost:8080/products/all";
+    const baseUrl = "http://localhost:8080/"
+    const baseUrlProductosRecomendados = `${baseUrl}products/all`;
+    const baseUrlPorCategoria = `${baseUrl}products/get/category/${category}`;
+    const baseUrlPorCiudad = `${baseUrl}products/get/city/${city}`;
+    const baseUrlFavourite = `${baseUrl}products/all`;
     //const baseUrlPorFecha = `http://localhost:8080/products/date`;
     //const baseUrlPorCiudadYFecha = `http://localhost:8080/products/search/date/${search}`;
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
-    const limitCardPerPage = 8;
-    const [numberPages, setNumberPages] = useState(null);
+    const limitCardPerPage = 4;
+    const [numberPage, setNumberPage] = useState(1);
     const [titulo, setTitulo] = useState("Recomendaciones");
 
     useEffect(() => {
@@ -25,6 +27,7 @@ export default function Cards({ category, city, search, clickBusqueda, favourite
                     setData(response.data);
                     setLoading(false);
                     setTitulo("Recomendaciones");
+
                 })
                 .catch(error => {
                     setErrorMessage(error.message);
@@ -67,9 +70,16 @@ export default function Cards({ category, city, search, clickBusqueda, favourite
             setErrorMessage("Error");
             setLoading(false);
         }
-        setNumberPages(data.length / limitCardPerPage);
-        console.log(data);
+
     }, [category, clickBusqueda, favourite]);
+
+    const dataLimited = () => { return data.slice((numberPage - 1) * limitCardPerPage, numberPage * limitCardPerPage); };
+    const indexPages = () => {
+        let pages = [];
+        let cant = data.length % limitCardPerPage === 0 ? data.length / limitCardPerPage : Math.floor(data.length / limitCardPerPage) + 1
+        for (let i = 0; i < cant; i++) { pages.push(<button onClick={() => setNumberPage(i + 1)} disabled={numberPage-1===i}>{i + 1}</button>) };
+        return pages
+    };
 
     if (errorMessage && loading) {
         return (
@@ -87,7 +97,7 @@ export default function Cards({ category, city, search, clickBusqueda, favourite
                 <div className={`${Styles.cardsBlock} ${StylesApp.delimiterChild}`}>
                     <h2>{titulo}</h2>
                     <div className={Styles.cardsBox}>
-                        {data.map((e, index) =>
+                        {dataLimited().map((e, index) =>
                             <Card image={e.images.length > 0 ? e.images[0].url : ""}
                                 cardCategory={e.category.title}
                                 name={e.name}
@@ -104,6 +114,11 @@ export default function Cards({ category, city, search, clickBusqueda, favourite
                                 address={e.address}
                             />
                         )}
+                    </div>
+                    <div className={Styles.pages}>
+                        {numberPage > 1 && <img className={Styles.left} onClick={() => setNumberPage(numberPage - 1)} src={arrow} alt="arrowLeft" />}
+                        {indexPages()}
+                        {numberPage < indexPages().length && <img className={Styles.right} onClick={() => setNumberPage(numberPage + 1)} src={arrow} alt="arrowRight" />}
                     </div>
                 </div>
             </div>
