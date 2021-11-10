@@ -1,8 +1,8 @@
-a:visited, a:link, a:active {
+a:visited,
+a:link,
+a:active {
   text-decoration: none;
 }
-
-
 
 .cardsBlock h2 {
   color: var(--secondary-color);
@@ -17,8 +17,8 @@ a:visited, a:link, a:active {
   flex-direction: column;
   justify-content: flex-start;
   padding: 0 32px;
-  padding-left: clamp(10px,3.9%,40px);
-  padding-right: clamp(10px,3.9%,40px);
+  padding-left: clamp(10px, 3.9%, 40px);
+  padding-right: clamp(10px, 3.9%, 40px);
 }
 
 .cardsBox {
@@ -40,12 +40,12 @@ a:visited, a:link, a:active {
   justify-content: flex-start;
   margin: 5px 0;
   margin-right: 1px;
-  width: clamp(590px,50%,630px);
+  width: clamp(590px, 50%, 630px);
   transition: all 0.3s;
 }
 
 .cardBox:hover {
-  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.5);  
+  box-shadow: 0 4px 4px 0px rgba(0, 0, 0, 0.5);
 }
 
 .cardImage {
@@ -64,12 +64,12 @@ a:visited, a:link, a:active {
   z-index: 1;
 }
 
-.cardImage .iconHeart {    
+.cardImage .iconHeart {
   position: absolute;
   right: 10px;
   top: 10px;
   transition: all 0.3s;
-  width: 25px;  
+  width: 25px;
 }
 
 .cardImage {
@@ -81,8 +81,8 @@ a:visited, a:link, a:active {
 }
 
 /* cambiar color del corazon */
-.heartColor{
-  fill:white;
+.heartColor {
+  fill: white;
 }
 
 .heartColor2 {
@@ -91,9 +91,9 @@ a:visited, a:link, a:active {
 
 .cardImage .iconHeart:hover {
   transform: scale(1.1);
-} 
+}
 
-.cardImage .iconHeart:active {  
+.cardImage .iconHeart:active {
   transform: scale(0.8);
 }
 
@@ -148,8 +148,8 @@ a:visited, a:link, a:active {
   max-width: 70%;
 }
 
-.cardScore {   
-  align-items: flex-end;    
+.cardScore {
+  align-items: flex-end;
   position: relative;
   z-index: 99;
 }
@@ -159,10 +159,9 @@ a:visited, a:link, a:active {
   font-weight: var(--font-bold);
   overflow: hidden;
   white-space: nowrap;
-  
 }
 
-.cardScoreNumber {  
+.cardScoreNumber {
   align-items: center;
   background: var(--secondary-color);
   border-radius: 15px;
@@ -194,11 +193,11 @@ a:visited, a:link, a:active {
 }
 
 .cardIcons {
-  display: flex;  
+  display: flex;
 }
 
 .cardFeatures {
-  margin-right: 7px
+  margin-right: 7px;
 }
 
 .cardDescription {
@@ -225,7 +224,7 @@ a:visited, a:link, a:active {
 .cardDescription span:hover {
   cursor: pointer;
 }
-.link{
+.link {
   width: 100%;
 }
 
@@ -248,24 +247,74 @@ a:visited, a:link, a:active {
   transform: scale(1.02);
 }
 
-.cardButton2:active {  
+.cardButton2:active {
   transform: scale(0.85);
-}  
+}
 
-@media all and (max-width:1350px){
-  .cardsBox{
+.pages {
+  display: flex;
+  justify-content: flex-end;
+  font-size: var(--heading3);
+  font-weight: var(--font-bold);
+  padding: 5px;
+}
+
+.pages .left {
+  width: 30px;
+  transform: rotate(180deg);
+  padding: 0 5px;
+}
+
+.pages .right {
+  width: 30px;
+  padding: 0 5px;
+}
+
+.pages button {
+  padding: 0 10px;
+  border: solid 1px var(--primary-color);
+  margin: 0 5px;
+  color: var(--primary-color);
+  font-size: var(--text1);
+  font-weight: var(--font-bold);
+}
+
+.pages button:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.pages img:hover{
+  background-color: white;
+  color: white; 
+}
+.pages img:hover , .pages button:hover {
+  pointer-events: painted;
+}
+
+.pages button:disabled {
+  pointer-events: none;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+
+
+@media all and (max-width: 1350px) {
+  .cardsBox {
     justify-content: center;
   }
 }
 
 @media all and (max-width: 769px) {
   .cardsBlock h2 {
-    margin-left: 1.8%;  
+    margin-left: 1.8%;
   }
   .cardBox {
-  max-width: 710px; 
-  min-width: 585px;  
-  width: 97vw;
+    max-width: 710px;
+    min-width: 585px;
+    width: 97vw;
   }
 
   .cardBox:nth-child(even) {
@@ -277,9 +326,9 @@ a:visited, a:link, a:active {
   }
 }
 
-@media all and (max-width: 610px){
+@media all and (max-width: 610px) {
   .cardsBlock h2 {
-    margin-left: 0%;  
+    margin-left: 0%;
   }
   .cardBox {
     border: 0;
@@ -290,11 +339,11 @@ a:visited, a:link, a:active {
     width: 95vw;
   }
 
-  .cardImage{
+  .cardImage {
     width: 100%;
     height: 47%;
   }
-  .cardInfo{
+  .cardInfo {
     height: 47%;
     margin-left: 0%;
     margin-top: 3%;
@@ -306,10 +355,11 @@ a:visited, a:link, a:active {
     display: none;
   }
 
-  .cardImage, .cardImage .image {
+  .cardImage,
+  .cardImage .image {
     border-radius: 0 0 10px 10px;
-  }    
-  
+  }
+
   .cardImage .image {
     top: -2px;
     z-index: 0;
