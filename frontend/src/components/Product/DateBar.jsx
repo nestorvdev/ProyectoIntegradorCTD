@@ -46,8 +46,9 @@ function DateBar(props) {
 
     const handleChange = (event) => {
         event.preventDefault();
-        localStorage.setItem("startDate", startDate.toDateString());
-        localStorage.setItem("endDate", endDate.toDateString());
+        /*  String Date  - aaaa,mm,dd  */
+        sessionStorage.setItem("startDate", startDate.toDateString());
+        sessionStorage.setItem("endDate", endDate.toDateString());
         console.log(valueDate, "valueDate");
     };
 
