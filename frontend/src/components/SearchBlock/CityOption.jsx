@@ -1,11 +1,11 @@
 import React from "react";
-import "./styles.css";
+import Styles from "./styles.module.css"
 
-function CityOption(props) {
+function CityOption({handleCity, id, city, country}) {
   return (
     <React.Fragment>
-        <h3 className="titleCity">{props.city}, </h3>
-        <h3 className="titleCountry">{props.country}</h3>
+      <h3 className={Styles.titleCity} onClick = {() => {handleCity(id)}} >{city},&#160;</h3>
+      <h3 className={Styles.titleCountry} onClick = {() => {handleCity(id)}} >{country}</h3>
     </React.Fragment>
   );
 }

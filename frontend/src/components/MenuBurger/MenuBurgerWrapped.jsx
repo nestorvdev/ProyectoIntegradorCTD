@@ -108,6 +108,13 @@ export const MenuBurgerWrapper = styled.nav`
 
   .botones p{
     color: var(--secondary-color);
+    padding: 1px 5px;
+  }
+
+  .botones p:hover{
+    background-color: var(--primary-color);
+    border-radius:5px;
+    color: white;
   }
 
   .mobileFooter{
@@ -145,6 +152,10 @@ export const MenuBurgerWrapper = styled.nav`
     width: 33vw;
   }
 
+  .iconSocial{
+    opacity:0.6;
+  }
+
   .hide{
     display: none;
     text-align:right;
@@ -152,6 +163,10 @@ export const MenuBurgerWrapper = styled.nav`
 
   .subir{
     justify-content:flex-start;
+  }
+
+  .menuFavoritos p{
+    text-align: right;
   }
 
 `

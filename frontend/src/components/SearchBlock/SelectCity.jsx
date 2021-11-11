@@ -1,11 +1,26 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import Select from 'react-select';
 import CityOption from './CityOption';
-import "./styles.css";
 import vector from './img/Vector.png'
 import localizador from './img/localizador.png'
+import axios from "axios";
 
-function SelectCity() {
+function SelectCity({handleCity}) {
+  const baseURL = "http://localhost:8080/cities/all";
+  const [data, setData] = useState([]);  
+  const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    axios
+      .get(baseURL)
+      .then((response) => {
+        setData(response.data);        
+      })
+      .catch((error) => {
+        setErrorMessage(error);
+        console.log(errorMessage);
+      });
+  }, []);
 
   const customStyles = {
     option: () => ({
@@ -29,6 +44,13 @@ function SelectCity() {
         top: '16px',
         width: '25px',
       },
+      ':hover': {
+        backgroundColor: '#f0d7d1',
+        cursor: 'pointer',
+      },
+      ':last-child': {
+        borderBottom: 'none',        
+      }
     }),
 
     indicatorsContainer: () => ({
@@ -46,7 +68,7 @@ function SelectCity() {
       overflow: 'hidden',
       padding: '0 0 0 0%',
       textAlign: 'left',
-      width: '100%',
+      width: '100%',      
     }),
 
     control: (styles) => ({
@@ -93,12 +115,12 @@ function SelectCity() {
 
   }
 
-  const options = [
-    { value: 'buenos-aires, Argentina', label: <CityOption city='Buenos Aires' country='Argentina' /> },
-    { value: 'mendoza, Argentina', label: <CityOption city='Mendoza' country='Argentina'/> },
-    { value: 'cordoba, Argentina', label: <CityOption city='Córdoba' country='Argentina'/> },
-    { value: 'bariloche, Argentina', label: <CityOption city='San Carlos de Bariloche' country='Argentina'/> },
-  ];
+  const options = data.map((city) => {
+    return {
+      value: `${city.name}, ${city.country}`,
+      label: <CityOption city={city.name} id ={city.id} handleCity={handleCity} country={city.country} />,
+    };
+  })
 
   return (
     <Select
@@ -107,7 +129,7 @@ function SelectCity() {
       options={options}      
       isSearchable
       isClearable
-      getOptionValue={(option) => `${option.value}:`
+      getOptionValue={(option) => `${option.value}:`      
       }
     />
   );
