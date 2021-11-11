@@ -23,44 +23,55 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
     const [isLike, setLike] = useState("false");
     const [mapIsOpen, setMapIsOpen] = useState(false)
     const [modalFavouriteIsOpen, setModalFavouriteIsOpen] = useState(false)
+    const [despliegue, setDespliegue] = useState(false)
+    const [textoDespliegue, setTextoDespliegue] = useState("más...")
     let icons = [wifi, pool, kitchen, tv, ac, pet, parking, creditCard, smoke, party, checkin, noSmoke];
 
     const handleToggle = (e) => { setLike(!isLike); }
 
-    const scoreLetter = (valor) => {
-        if (valor >= 8 && valor <= 10) return "Excelente";
-        if (valor >= 6 && valor < 8) return "Muy Bueno";
-        if (valor >= 4 && valor < 6) return "Bueno";
-        if (valor >= 2 && valor < 4) return "Regular";
-        if (valor >= 0 && valor < 2) return "Malo";
-        else { return "Calificacion Invalida" }
+    const handleDespliegue = () => {
+        setDespliegue(!despliegue);
+        if (despliegue) {
+            setTextoDespliegue("más...")
+        } else {
+            setTextoDespliegue("menos...");
+        }
     }
 
-    let cantStar = Math.floor(qualification / 2); 
+        const scoreLetter = (valor) => {
+            if (valor >= 8 && valor <= 10) return "Excelente";
+            if (valor >= 6 && valor < 8) return "Muy Bueno";
+            if (valor >= 4 && valor < 6) return "Bueno";
+            if (valor >= 2 && valor < 4) return "Regular";
+            if (valor >= 0 && valor < 2) return "Malo";
+            else { return "Calificacion Invalida" }
+        }
 
-    const openModalFavourite = (() => { setModalFavouriteIsOpen(true) })
-    const closeModalFavourite = () => {
-        setModalFavouriteIsOpen(false);
-    };
+        let cantStar = Math.floor(qualification / 2);
+
+        const openModalFavourite = (() => { setModalFavouriteIsOpen(true) })
+        const closeModalFavourite = () => {
+            setModalFavouriteIsOpen(false);
+        };
 
 
-    const openMapModal = (() => {
-        console.log("Entro en el modal", mapIsOpen);
-        setMapIsOpen(true)
-    })
+        const openMapModal = (() => {
+            console.log("Entro en el modal", mapIsOpen);
+            setMapIsOpen(true)
+        })
 
-    const closeMapModal = () => {
-        setMapIsOpen(false);
-    };
+        const closeMapModal = () => {
+            setMapIsOpen(false);
+        };
 
-    let loggued = sessionStorage.getItem("log");
+        let loggued = sessionStorage.getItem("log");
 
-    return (
-        <div className={Styles.cardBox}>
+        return (
+            <div className={Styles.cardBox}>
 
-            <div className={Styles.cardImage}>
-                <svg className={Styles.iconHeart} onClick={loggued === "true"? handleToggle : openModalFavourite} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path className={isLike ? Styles.heartColor : Styles.heartColor2} id="heart" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" /></svg>
-                <Modal open={modalFavouriteIsOpen} onClose={closeModalFavourite} center>
+                <div className={Styles.cardImage}>
+                    <svg className={Styles.iconHeart} onClick={loggued === "true" ? handleToggle : openModalFavourite} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path className={isLike ? Styles.heartColor : Styles.heartColor2} id="heart" d="M12 4.248c-3.148-5.402-12-3.825-12 2.944 0 4.661 5.571 9.427 12 15.808 6.43-6.381 12-11.147 12-15.808 0-6.792-8.875-8.306-12-2.944z" /></svg>
+                    <Modal open={modalFavouriteIsOpen} onClose={closeModalFavourite} center>
                         <div className={Styles.modalFavourite}>
                             <p>Para agregar favoritos, ingresa a tu cuenta</p>
                             <div className={Styles.buttons}>
@@ -77,50 +88,50 @@ function Card({ image, cardCategory, name, city, country, description, id, refer
                             </div>
                         </div>
                     </Modal>
-                <img className={Styles.image} src={image} alt="" />
-            </div>
+                    <img className={Styles.image} src={image} alt="" />
+                </div>
 
-            <div className={Styles.cardInfo}>
-                <div className={Styles.cardHeaderBox}>
-                    <div className={Styles.cardHeadline}>
-                        <div className={Styles.cardCategory}>
-                            <p>{cardCategory}</p>
-                            {cantStar >= 0 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
-                            {cantStar >= 2 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
-                            {cantStar >= 3 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
-                            {cantStar >= 4 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
-                            {cantStar >= 5 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                <div className={Styles.cardInfo}>
+                    <div className={Styles.cardHeaderBox}>
+                        <div className={Styles.cardHeadline}>
+                            <div className={Styles.cardCategory}>
+                                <p>{cardCategory}</p>
+                                {cantStar >= 0 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                                {cantStar >= 2 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                                {cantStar >= 3 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                                {cantStar >= 4 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                                {cantStar >= 5 ? <img className={Styles.star} src={iconStar} alt="" /> : null}
+                            </div>
+                            <div className={Styles.cardName}>{name}</div>
                         </div>
-                        <div className={Styles.cardName}>{name}</div>
-                    </div>
-                    <div className={Styles.cardScore}>
-                        <div className={Styles.cardScoreNumber}>
-                            <p>{Math.floor(qualification)}</p>
+                        <div className={Styles.cardScore}>
+                            <div className={Styles.cardScoreNumber}>
+                                <p>{Math.floor(qualification)}</p>
+                            </div>
+                            <div className={Styles.cardScoreWords}>{scoreLetter(qualification)}</div>
                         </div>
-                        <div className={Styles.cardScoreWords}>{scoreLetter(qualification)}</div>
                     </div>
+                    <div className={Styles.cardLocation}>
+                        <img className={Styles.iconLocation} src={iconLocation} alt="" />
+                        {city},&#160;{country},&#160;{reference}
+                        <span onClick={openMapModal} >mostrar en el mapa</span>
+                        <MapModal mapIsOpen={mapIsOpen} latitude={latitude} longitude={longitude} closeMapModal={closeMapModal} name={name} address={address} />
+                    </div>
+                    <div className={Styles.cardIcons}>
+                        {features.map((feature, index) => <img className={Styles.cardFeatures} key={index} src={icons[index]} alt={feature.title} />)}
+                    </div>
+                    <div className={Styles.cardDescription}>
+                        <p className={despliegue ? Styles.desplegado : Styles.noDesplegado}>{description}</p>
+                        <span onClick={handleDespliegue}>{textoDespliegue}</span>
+                    </div>
+                    <Link to={`/product/${id}`} key={id} className={Styles.link}>
+                        <button className={Styles.cardButton2}>Ver más</button>
+                    </Link>
                 </div>
-                <div className={Styles.cardLocation}>
-                    <img className={Styles.iconLocation} src={iconLocation} alt="" />
-                    {city},&#160;{country},&#160;{reference}
-                    <span onClick={openMapModal} >mostrar en el mapa</span>
-                    <MapModal mapIsOpen={mapIsOpen} latitude={latitude} longitude={longitude} closeMapModal={closeMapModal} name={name} address={address} />
-                </div>
-                <div className={Styles.cardIcons}>
-                    {features.map((feature, index) => <img className={Styles.cardFeatures} key={index} src={icons[index]} alt={feature.title} />)}
-                </div>
-                <div className={Styles.cardDescription}>
-                    <p>{description}</p>
-                    <span>más...</span>
-                </div>
-                <Link to={`/product/${id}`} key={id} className={Styles.link}>
-                    <button className={Styles.cardButton2}>Ver más</button>
-                </Link>
+
             </div>
+        );
 
-        </div>
-    );
+    }
 
-}
-
-export default Card;
+    export default Card;
