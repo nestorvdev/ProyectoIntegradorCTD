@@ -46,6 +46,7 @@ export default function Header({ isLogged, showBurger, setShowBurger, handleClea
 
     function handleLogOut() {
         sessionStorage.setItem("log", "false")
+        sessionStorage.removeItem("email")
     }
 
     function handleShow() {

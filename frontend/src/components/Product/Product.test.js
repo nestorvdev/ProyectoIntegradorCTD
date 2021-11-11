@@ -327,19 +327,6 @@ describe("Probando el componente <ScoreBar/>", () => {
 })
 
 
-describe("Probando el componente <Share/>", () => {
-    let wrapper;
-    
-    beforeEach(() => {
-        wrapper = shallow(<Share/>)
-    });
-
-    it("Deberia mostrar <Share/> correctamente", () => {
-        expect(wrapper).toMatchSnapshot();
-    });
-
-})
-
 describe("Probando el componente <Titlebar/>", () => {
     let wrapper;
     let props ={

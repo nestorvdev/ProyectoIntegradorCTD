@@ -1,3 +1,4 @@
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import logoFb from "./img/IconFb.png";
 import logoLinkedIn from "./img/IconLinkedIn.png";
@@ -6,11 +7,17 @@ import logoIg from "./img/IconIg.png";
 import line from "./img/Line.png";
 import ValidCredentials from "../../credentials/ValidCredentials";
 import { MenuBurgerWrapper } from "./MenuBurgerWrapped.jsx";
+import Share from '../../components/Product/Share';
+import iconSocial from "./img/icon-share.svg"
 
 export default function MenuMobile({ show, handleHide, isLogged, iniciales, activeLogin, activeCreate, handleLogOut, handleFavourite }) {
 
     const hideObject = (isLogged) ? "hide" : null; //Para esconder los botones cuando esta logueado
     const showObject = (isLogged) ? null : "hide"; //Para que se vea el avatar cuando se loguea
+
+    const [shareIsOpenFooter, setShareIsOpenFooter]= useState(false);
+    const openShareModal = (() => { setShareIsOpenFooter(true)});
+    let placeShareCall="footer"
 
     return (
         <MenuBurgerWrapper show={show} className="containerMobile">
@@ -45,6 +52,8 @@ export default function MenuMobile({ show, handleHide, isLogged, iniciales, acti
                     <img className="iconsImgMobile" src={line} alt="" />
                 </div>
                 <div className="iconsMobile">
+                    <img src={iconSocial} alt="iconSocial" onClick={openShareModal} className= "iconSocial"/>
+                    <Share shareIsOpen={shareIsOpenFooter} placeShareCall={placeShareCall} setShareIsOpen={setShareIsOpenFooter} />
                     <img src={logoFb} alt="" />
                     <img src={logoLinkedIn} alt="" />
                     <img src={logoTwitter} alt="" />

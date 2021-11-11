@@ -48,6 +48,7 @@ export default function FormLogin( { setActiveLogin, setActiveCreate, setLog } )
             setFormValido(true)
             setLog(true)
             sessionStorage.setItem("log", "true")
+            sessionStorage.setItem("email", email.campo)
             window.location.pathname = "/"
         }else{
             setFormValido(false)

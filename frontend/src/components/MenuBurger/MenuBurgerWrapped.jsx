@@ -152,6 +152,10 @@ export const MenuBurgerWrapper = styled.nav`
     width: 33vw;
   }
 
+  .iconSocial{
+    opacity:0.6;
+  }
+
   .hide{
     display: none;
     text-align:right;

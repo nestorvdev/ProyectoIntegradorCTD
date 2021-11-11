@@ -693,7 +693,7 @@ exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correcta
       <svg
         className="iconHeart"
         height="18"
-        onClick={null}
+        onClick={[Function]}
         viewBox="0 0 25 25"
         width="18"
         xmlns="http://www.w3.org/2000/svg"
@@ -771,7 +771,7 @@ exports[`Probando el componente <ImageBar/> Deberia mostrar <ImageBar/> correcta
       <svg
         className="iconHeart"
         height="18"
-        onClick={null}
+        onClick={[Function]}
         viewBox="0 0 25 25"
         width="18"
         xmlns="http://www.w3.org/2000/svg"
@@ -983,6 +983,116 @@ exports[`Probando el componente <QualificationBar/> Deberia mostrar <Qualificati
     <h2>
       Califica este alojamiento: 
     </h2>
+    <div
+      className="starsMap"
+    >
+      <div
+        className="starBox"
+        key="0"
+        onClick={null}
+      >
+        <svg
+          fill="none"
+          index={0}
+          key="0"
+          viewBox="0 0 15 17"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="star"
+            d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+          />
+        </svg>
+      </div>
+      <div
+        className="starBox"
+        key="1"
+        onClick={null}
+      >
+        <svg
+          fill="none"
+          index={1}
+          key="1"
+          viewBox="0 0 15 17"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="star"
+            d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+          />
+        </svg>
+      </div>
+      <div
+        className="starBox"
+        key="2"
+        onClick={null}
+      >
+        <svg
+          fill="none"
+          index={2}
+          key="2"
+          viewBox="0 0 15 17"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="star"
+            d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+          />
+        </svg>
+      </div>
+      <div
+        className="starBox"
+        key="3"
+        onClick={null}
+      >
+        <svg
+          fill="none"
+          index={3}
+          key="3"
+          viewBox="0 0 15 17"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="star"
+            d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+          />
+        </svg>
+      </div>
+      <div
+        className="starBox"
+        key="4"
+        onClick={null}
+      >
+        <svg
+          fill="none"
+          index={4}
+          key="4"
+          viewBox="0 0 15 17"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            className="star"
+            d="M7.27778 0L8.91174 4.83688H14.1994L9.92159 7.82624L11.5555 12.6631L7.27778 9.67376L3.00001 12.6631L4.63397 7.82624L0.3562 4.83688H5.64382L7.27778 0Z"
+          />
+        </svg>
+      </div>
+    </div>
+    <div
+      className="qualificationButtons"
+    >
+      <button
+        className="qualificationReset"
+        onClick={[Function]}
+      >
+         Resetear 
+      </button>
+      <button
+        className="qualificationSubmit"
+        onClick={[Function]}
+      >
+         Enviar     
+      </button>
+    </div>
   </div>
 </div>
 `;
@@ -1415,101 +1525,6 @@ exports[`Probando el componente <ScoreBar/> Deberia mostrar <ScoreBar/> correcta
     </div>
   </div>
 </div>
-`;
-
-exports[`Probando el componente <Share/> Deberia mostrar <Share/> correctamente 1`] = `
-<ForwardRef
-  center={true}
-  onClose={[Function]}
->
-  <div
-    className="containerSharePrincipal"
-  >
-    <h3>
-      Compartir
-    </h3>
-    <div
-      className="containerShare"
-    >
-      <div
-        className="shareBlock"
-      >
-        <div
-          className="shareItem"
-        >
-          <a
-            href="mailto:?Subject=Mira este alojamiento localhost:3000/product/undefined"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <img
-              alt="logo email"
-              src="email.png"
-            />
-          </a>
-          <p>
-            Correo
-          </p>
-        </div>
-        <div
-          className="shareItem"
-        >
-          <a
-            href="https://www.facebook.com/sharer/sharer.php?u=[localhost:3000/product/undefined]"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <img
-              alt="logo facebook"
-              src="facebook.svg"
-            />
-          </a>
-          <p>
-            Facebook
-          </p>
-        </div>
-      </div>
-      <div
-        className="shareBlock"
-      >
-        <div
-          className="shareItem"
-        >
-          <a
-            href="https://twitter.com/intent/tweet?text=[Mira este producto ]&url=[localhost:3000/product/undefined]&hashtags=[GranAlojamiento]"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <img
-              alt="logo twitter"
-              src="twitter.svg"
-            />
-          </a>
-          <p>
-            Twitter
-          </p>
-        </div>
-        <div
-          className="shareItem"
-        >
-          <a
-            href="https://api.whatsapp.com/send?text=[Mira este alojamiento: localhost:3000/product/undefined]"
-            rel="noreferrer"
-            target="_blank"
-          >
-            <img
-              alt="logo whatsapp"
-              src="whatsapp.svg"
-            />
-          </a>
-          <p>
-            Whatsapp
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</ForwardRef>
 `;
 
 exports[`Probando el componente <Titlebar/> Deberia mostrar <TitleBar/> correctamente 1`] = `

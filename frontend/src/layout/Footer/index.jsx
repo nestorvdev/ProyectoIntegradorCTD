@@ -7,7 +7,7 @@ import logoLinkedin from "./img/icon linkedin.png";
 import logoTwitter from "./img/tweet.png";
 import logoInstagram from "./img/icon ig.png"
 import Share from '../../components/Product/Share';
-import iconSocial from "./img/iconSocial.svg"
+import iconSocial from "./img/icon-social.svg"
 
 function Footer({ showBurger }) {
     const [shareIsOpenFooter, setShareIsOpenFooter]= useState(false);
@@ -21,7 +21,7 @@ function Footer({ showBurger }) {
                     <h3 className={Styles.footerTittle} >2021 @ World Guest Booking</h3>
                 </div>
                 <div className={Styles.icons}>
-                    <img src={iconSocial} alt="iconSocial" className={Styles.iconImage} onClick={openShareModal} />
+                    <img src={iconSocial} alt="iconSocial" className={`${Styles.iconsImg}`} onClick={openShareModal} />
                     <Share shareIsOpen={shareIsOpenFooter} placeShareCall={placeShareCall} setShareIsOpen={setShareIsOpenFooter} />
                     <img className={Styles.iconsImg} src={logoFacebook} alt="" />
                     <img className={Styles.iconsImg} src={logoLinkedin} alt="" />
