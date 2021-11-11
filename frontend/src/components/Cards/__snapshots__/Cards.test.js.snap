@@ -33,7 +33,7 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
     <svg
       className="iconHeart"
       height="24"
-      onClick={null}
+      onClick={[Function]}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -44,6 +44,41 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
         id="heart"
       />
     </svg>
+    <ForwardRef
+      center={true}
+      onClose={[Function]}
+      open={false}
+    >
+      <div
+        className="modalFavourite"
+      >
+        <p>
+          Para agregar favoritos, ingresa a tu cuenta
+        </p>
+        <div
+          className="buttons"
+        >
+          <Link
+            to="/login"
+          >
+            <button
+              className="login"
+            >
+              Iniciar Sesión
+            </button>
+          </Link>
+          <Link
+            to="/create"
+          >
+            <button
+              className="create"
+            >
+              Crear Cuenta
+            </button>
+          </Link>
+        </div>
+      </div>
+    </ForwardRef>
     <img
       alt=""
       className="image"
@@ -156,7 +191,7 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 3
     <svg
       className="iconHeart"
       height="24"
-      onClick={null}
+      onClick={[Function]}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -167,6 +202,41 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 3
         id="heart"
       />
     </svg>
+    <ForwardRef
+      center={true}
+      onClose={[Function]}
+      open={false}
+    >
+      <div
+        className="modalFavourite"
+      >
+        <p>
+          Para agregar favoritos, ingresa a tu cuenta
+        </p>
+        <div
+          className="buttons"
+        >
+          <Link
+            to="/login"
+          >
+            <button
+              className="login"
+            >
+              Iniciar Sesión
+            </button>
+          </Link>
+          <Link
+            to="/create"
+          >
+            <button
+              className="create"
+            >
+              Crear Cuenta
+            </button>
+          </Link>
+        </div>
+      </div>
+    </ForwardRef>
     <img
       alt=""
       className="image"
@@ -279,7 +349,7 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 5
     <svg
       className="iconHeart"
       height="24"
-      onClick={null}
+      onClick={[Function]}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -290,6 +360,41 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 5
         id="heart"
       />
     </svg>
+    <ForwardRef
+      center={true}
+      onClose={[Function]}
+      open={false}
+    >
+      <div
+        className="modalFavourite"
+      >
+        <p>
+          Para agregar favoritos, ingresa a tu cuenta
+        </p>
+        <div
+          className="buttons"
+        >
+          <Link
+            to="/login"
+          >
+            <button
+              className="login"
+            >
+              Iniciar Sesión
+            </button>
+          </Link>
+          <Link
+            to="/create"
+          >
+            <button
+              className="create"
+            >
+              Crear Cuenta
+            </button>
+          </Link>
+        </div>
+      </div>
+    </ForwardRef>
     <img
       alt=""
       className="image"
@@ -407,7 +512,7 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 7
     <svg
       className="iconHeart"
       height="24"
-      onClick={null}
+      onClick={[Function]}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -418,6 +523,41 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 7
         id="heart"
       />
     </svg>
+    <ForwardRef
+      center={true}
+      onClose={[Function]}
+      open={false}
+    >
+      <div
+        className="modalFavourite"
+      >
+        <p>
+          Para agregar favoritos, ingresa a tu cuenta
+        </p>
+        <div
+          className="buttons"
+        >
+          <Link
+            to="/login"
+          >
+            <button
+              className="login"
+            >
+              Iniciar Sesión
+            </button>
+          </Link>
+          <Link
+            to="/create"
+          >
+            <button
+              className="create"
+            >
+              Crear Cuenta
+            </button>
+          </Link>
+        </div>
+      </div>
+    </ForwardRef>
     <img
       alt=""
       className="image"
@@ -540,7 +680,7 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
     <svg
       className="iconHeart"
       height="24"
-      onClick={null}
+      onClick={[Function]}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -551,6 +691,41 @@ exports[`Pruebas en Card Debe de mostrarse correctamente con una puntuacion de 1
         id="heart"
       />
     </svg>
+    <ForwardRef
+      center={true}
+      onClose={[Function]}
+      open={false}
+    >
+      <div
+        className="modalFavourite"
+      >
+        <p>
+          Para agregar favoritos, ingresa a tu cuenta
+        </p>
+        <div
+          className="buttons"
+        >
+          <Link
+            to="/login"
+          >
+            <button
+              className="login"
+            >
+              Iniciar Sesión
+            </button>
+          </Link>
+          <Link
+            to="/create"
+          >
+            <button
+              className="create"
+            >
+              Crear Cuenta
+            </button>
+          </Link>
+        </div>
+      </div>
+    </ForwardRef>
     <img
       alt=""
       className="image"
@@ -683,7 +858,7 @@ exports[`Pruebas en Card Debe mostrar un error con una calificacion invalida 1`]
     <svg
       className="iconHeart"
       height="24"
-      onClick={null}
+      onClick={[Function]}
       viewBox="0 0 24 24"
       width="24"
       xmlns="http://www.w3.org/2000/svg"
@@ -694,6 +869,41 @@ exports[`Pruebas en Card Debe mostrar un error con una calificacion invalida 1`]
         id="heart"
       />
     </svg>
+    <ForwardRef
+      center={true}
+      onClose={[Function]}
+      open={false}
+    >
+      <div
+        className="modalFavourite"
+      >
+        <p>
+          Para agregar favoritos, ingresa a tu cuenta
+        </p>
+        <div
+          className="buttons"
+        >
+          <Link
+            to="/login"
+          >
+            <button
+              className="login"
+            >
+              Iniciar Sesión
+            </button>
+          </Link>
+          <Link
+            to="/create"
+          >
+            <button
+              className="create"
+            >
+              Crear Cuenta
+            </button>
+          </Link>
+        </div>
+      </div>
+    </ForwardRef>
     <img
       alt=""
       className="image"
@@ -829,6 +1039,9 @@ exports[`Pruebas en Cards Debe de mostrarse correctamente 1`] = `
     <div
       className="cardsBox"
     />
+    <div
+      className="pages"
+    />
   </div>
 </div>
 `;
@@ -845,6 +1058,9 @@ exports[`Pruebas en Cards Debe de mostrarse correctamente 2`] = `
     </h2>
     <div
       className="cardsBox"
+    />
+    <div
+      className="pages"
     />
   </div>
 </div>

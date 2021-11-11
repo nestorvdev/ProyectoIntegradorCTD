@@ -18,6 +18,17 @@ exports[`Probando el componente <Footer/> Deberia mostrar <Footer/> correctament
       className="icons"
     >
       <img
+        alt="iconSocial"
+        className="iconsImg"
+        onClick={[Function]}
+        src="icon-social.svg"
+      />
+      <Share
+        placeShareCall="footer"
+        setShareIsOpen={[Function]}
+        shareIsOpen={false}
+      />
+      <img
         alt=""
         className="iconsImg"
         src="icon facebook.png"

@@ -30,6 +30,6 @@ describe("Probando el componente <Footer/>", () => {
 
     it("Deberia retornar 4 etiquetas img", () => {
         let node = footer.find("img")
-        expect(node.length).toEqual(4)
+        expect(node.length).toEqual(5)
     });
 });
