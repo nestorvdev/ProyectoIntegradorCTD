@@ -1,32 +1,34 @@
 package com.proyecto.integrador.service.impl;
 
 
-import com.proyecto.integrador.DTO.ScoresDTO;
+import com.proyecto.integrador.DTO.ScoreDTO;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.persistence.entity.Scores;
-import com.proyecto.integrador.persistence.repository.IScoresRepository;
-import com.proyecto.integrador.service.IScoresService;
+import com.proyecto.integrador.persistence.entity.Score;
+import com.proyecto.integrador.persistence.repository.IScoreRepository;
+import com.proyecto.integrador.service.IScoreService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.apache.log4j.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
-public class ScoreServiceImpl implements IScoresService {
-    private final Logger logger = Logger.getLogger(ProductServiceImpl.class);
+public class ScoreServiceImpl implements IScoreService {
+    private final Logger logger = Logger.getLogger(ScoreServiceImpl.class);
     @Autowired
-    IScoresRepository scoresRepository;
+    IScoreRepository scoresRepository;
 
-    public Integer average(Integer idProduct) throws FindByIdException{
+    public Integer average(Integer idProduct) {
         logger.debug("Iniciando método promedio de todas las puntuaciones");
 
-        List<Scores> scores = scoresRepository.findByProductId(idProduct);
+        List<Score> scores = scoresRepository.findByProductId(idProduct);
         int totalScore = 0;
         if(scores != null && scores.size()!=0) {
-            for (Scores item : scores) {
-                totalScore += item.getScore();
+            for (Score score : scores) {
+                totalScore += score.getScore();
             }
 
             return (totalScore / scores.size());
@@ -35,33 +37,33 @@ public class ScoreServiceImpl implements IScoresService {
         }
     }
     @Override
-    public List<ScoresDTO> findAll() throws FindByIdException {
+    public List<ScoreDTO> findAll() throws FindByIdException {
         logger.debug("Iniciando método buscar todas las puntuaciones");
-        List<ScoresDTO> scoresList = new ArrayList<>();
-        for (Scores item: scoresRepository.findAll()) {
-            scoresList.add(toDTO(item));
+        List<ScoreDTO> scoresList = new ArrayList<>();
+        for (Score score: scoresRepository.findAll()) {
+            scoresList.add(score.toDto());
         }
         logger.debug("Terminó la ejecución del método buscar todas las puntuaciones");
         return scoresList;
     }
 
     @Override
-    public ScoresDTO save(ScoresDTO scores) throws FindByIdException {
+    public ScoreDTO save(ScoreDTO scores) throws FindByIdException {
         logger.debug("Iniciando método guardar puntuación");
-        Scores newScores = scoresRepository.save(scores.toEntity());
+        Score newScore = scoresRepository.save(scores.toEntity());
         logger.debug("Terminó la ejecución del método guardar puntuación");
-        return toDTO(newScores);
+        return newScore.toDto();
     }
 
     @Override
-    public ScoresDTO findById(Integer idScores) throws FindByIdException {
+    public ScoreDTO findById(Integer idScores) throws FindByIdException {
         logger.debug("Iniciando método buscar producto por ID");
         if (!scoresRepository.existsById(idScores)) {
             throw new FindByIdException("No existe una puntuación con el id ingresado");
         }
-        Scores foundScores = scoresRepository.findById(idScores).get();
+        Score foundScore = scoresRepository.findById(idScores).get();
         logger.debug("Terminó la ejecución del método buscar puntuación por ID");
-        return toDTO(foundScores);
+        return foundScore.toDto();
     }
 
     @Override
@@ -75,38 +77,21 @@ public class ScoreServiceImpl implements IScoresService {
     }
 
     @Override
-    public ScoresDTO update(ScoresDTO scores) throws FindByIdException {
+    public ScoreDTO update(ScoreDTO scores) throws FindByIdException {
         logger.debug("Iniciando método actualizar producto");
         if (!scoresRepository.existsById(scores.getIdScores())) {
             throw new FindByIdException("No existe una puntuación con el id ingresado");
         }
-        Scores scores1 = scoresRepository.findById(scores.getIdScores()).get();
-        scores1.setIdUser(scores.getIdUser());
-        scores1.setScore(scores.getScore());
-        scores1.setFavorite(scores.getFavorite());
+        Score score1 = scoresRepository.findById(scores.getIdScores()).get();
+        score1.setIdUser(scores.getIdUser());
+        score1.setScore(scores.getScore());
+        score1.setFavorite(scores.getFavorite());
         logger.debug("Terminó la ejecución del método actualizar puntuación");
-        return toDTO(scores1);
+        return score1.toDto();
     }
 
     @Override
-    public List<Scores> findAllByIdProduct(Integer idProduct) throws FindByIdException {
-        return scoresRepository.findByProductId(idProduct);
-    }
-
-    public static ScoresDTO toDTO(Scores score){//entidad a DTO
-        ScoresDTO scoreDTO = new ScoresDTO();
-        scoreDTO.setIdScores(score.getIdScores());
-        scoreDTO.setFavorite(score.getFavorite());
-        scoreDTO.setIdUser(score.getIdUser());
-        scoreDTO.setScore(score.getScore());
-        return  scoreDTO;
-    }
-    public static Scores toEntity(ScoresDTO score){//DTO a entidad
-        Scores scoreEntity = new Scores();
-        scoreEntity.setIdScores(score.getIdScores());
-        scoreEntity.setFavorite(score.getFavorite());
-        scoreEntity.setIdUser(score.getIdUser());
-        scoreEntity.setScore(score.getScore());
-        return  scoreEntity;
+    public Set<ScoreDTO> findAllByIdProduct(Integer idProduct) {
+        return scoresRepository.findByProductId(idProduct).stream().map(Score::toDto).collect(Collectors.toSet());
     }
 }

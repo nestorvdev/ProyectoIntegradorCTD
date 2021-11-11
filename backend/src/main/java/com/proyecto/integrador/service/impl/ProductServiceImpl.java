@@ -3,15 +3,16 @@ package com.proyecto.integrador.service.impl;
 import com.proyecto.integrador.DTO.FeatureDTO;
 import com.proyecto.integrador.DTO.ImageDTO;
 import com.proyecto.integrador.DTO.ProductDTO;
+import com.proyecto.integrador.DTO.ScoreDTO;
 import com.proyecto.integrador.persistence.entity.Category;
 import com.proyecto.integrador.persistence.entity.City;
 import com.proyecto.integrador.persistence.entity.Product;
 import com.proyecto.integrador.exceptions.BadRequestException;
 import com.proyecto.integrador.exceptions.FindByIdException;
-import com.proyecto.integrador.persistence.entity.Scores;
+import com.proyecto.integrador.persistence.entity.Score;
 import com.proyecto.integrador.persistence.repository.IProductRepository;
 import com.proyecto.integrador.service.IProductService;
-import com.proyecto.integrador.service.IScoresService;
+import com.proyecto.integrador.service.IScoreService;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,7 +36,7 @@ public class ProductServiceImpl implements IProductService {
     @Autowired
     FeatureServiceImpl featureService;
     @Autowired
-    IScoresService scoreService;
+    IScoreService scoreService;
 
 
     private Set<ImageDTO> findAssociatedImages(Integer productId) {
@@ -46,15 +47,13 @@ public class ProductServiceImpl implements IProductService {
         return featureService.findByProduct(product);
     }
 
+
     private ProductDTO loadDataIntoProductDTO(Product product) throws FindByIdException {
         ProductDTO productDto = product.toDto();
         productDto.setCategory(categoryService.findById(product.getCategory().getId()));
         productDto.setCity(cityService.findById(product.getCity().getId()));
         productDto.setImages(findAssociatedImages(product.getId()));
-        List<Scores> scoresList = scoreService.findAllByIdProduct(product.getId());
-             productDto.setScores(scoresList.stream()
-                .map(ScoreServiceImpl::toDTO)
-                .collect(Collectors.toSet()));
+        productDto.setScores(scoreService.findAllByIdProduct(product.getId()));
         productDto.setFeatures(findAssociatedFeatures(product));
         return productDto;
     }
@@ -151,5 +150,14 @@ public class ProductServiceImpl implements IProductService {
             recommendedProducts.add(loadDataIntoProductDTO(product));
         }
         return recommendedProducts;
+    }
+
+    public List<ProductDTO> findFavorites() throws FindByIdException {
+        List<ProductDTO> recommendedFavorites = new ArrayList<>();
+        for (Product product: productRepository.findFirst5ByOrderByQualificationDesc()) {
+            product.setFavourite(true);
+            recommendedFavorites.add(loadDataIntoProductDTO(product));
+        }
+        return recommendedFavorites;
     }
 }

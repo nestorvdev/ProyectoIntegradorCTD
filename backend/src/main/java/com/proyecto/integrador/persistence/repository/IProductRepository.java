@@ -13,4 +13,6 @@ public interface IProductRepository extends JpaRepository<Product, Integer> {
     List<Product> findByCity_Id(final Integer id);
 
     List<Product> findFirst12ByOrderByQualificationDesc();
+
+    List<Product> findFirst5ByOrderByQualificationDesc();
 }

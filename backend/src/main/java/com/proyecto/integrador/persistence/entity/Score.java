@@ -1,22 +1,24 @@
 package com.proyecto.integrador.persistence.entity;
 
 
-import com.proyecto.integrador.DTO.ScoresDTO;
+import com.proyecto.integrador.DTO.ScoreDTO;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.Check;
 
 import javax.persistence.*;
 
 @Entity
 @Getter
 @Setter
-@Table(name = "scores")
-public class Scores {
+@Table(name = "score")
+@Check(constraints = "score >= 1 && score <= 5")
+public class Score {
     @Id
-    @Column(name = "id_scores", nullable = false)
+    @Column(name = "idScores", nullable = false)
     @GeneratedValue( strategy = GenerationType.IDENTITY)
     private Integer idScores;
-    @Column(name = "id_user", nullable = false)
+    @Column(name = "idUser", nullable = false)
     private Integer idUser;
     @Column(name = "score", nullable = false)
     private Integer score;
@@ -24,11 +26,11 @@ public class Scores {
     private Boolean favorite;
 
     @ManyToOne
-    @JoinColumn(name = "id_product", nullable = false)
+    @JoinColumn(name = "idProduct", nullable = false)
     private Product product;
 
-    public ScoresDTO toDto(){
-        ScoresDTO scoreDTO = new ScoresDTO();
+    public ScoreDTO toDto(){
+        ScoreDTO scoreDTO = new ScoreDTO();
         scoreDTO.setIdScores(idScores);
         scoreDTO.setIdUser(idUser);
         scoreDTO.setScore(score);

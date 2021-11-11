@@ -26,7 +26,7 @@ public class ProductDTO /*implements Comparable<ProductDTO>*/ {
     private String health;
     private String politics;
     private Set<ImageDTO> images = new HashSet<>();
-    private Set<ScoresDTO> scores;
+    private Set<ScoreDTO> scores;
     private Set<FeatureDTO> features = new HashSet<>();
 
     public ProductDTO() {

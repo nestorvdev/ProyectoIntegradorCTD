@@ -1,7 +1,5 @@
 package com.proyecto.integrador.persistence.entity;
 
-import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.proyecto.integrador.DTO.CategoryDTO;
 import com.proyecto.integrador.DTO.CityDTO;
 import com.proyecto.integrador.DTO.ProductDTO;
@@ -54,7 +52,7 @@ public class Product {
     private Set<Image> images = new HashSet<>();
 
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL)
-    private  Set<Scores> scores;
+    private  Set<Score> scores;
 
     @ManyToMany(targetEntity = Feature.class, mappedBy = "products", cascade = {CascadeType.DETACH,CascadeType.MERGE,CascadeType.REFRESH})
     private Set<Feature> features = new HashSet<>();
