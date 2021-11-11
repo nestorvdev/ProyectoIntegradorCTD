@@ -70,3 +70,7 @@ La documentación del proyecto se encuentra en la Wiki en la carpeta [Documentac
 
 Las pruebas realizadas se encuentran en la carpeta Testing de este proyecto y también en la carpeta compartida de [Drive](https://drive.google.com/drive/folders/1SF8EC--OmTVsqam1LNORqiypWBsL9-Lq?usp=sharing)
 
+
+## Infraestructura
+
+Aplicación estática (sin backend) disponible en instancia de EC2: http://ec2-54-144-201-124.compute-1.amazonaws.com/
