@@ -598,7 +598,7 @@ div.buttons button.create:hover {
 }
 
 .info div {
-  width: clamp(229px, 30vw, 420px);
+  width: clamp(236.2px, 30vw, 420px);
 }
 
 .info div h3 {
