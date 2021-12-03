@@ -17,7 +17,7 @@ COPY --from=build-deps /usr/src/app/build/ .
 # Build stage
 #
 FROM maven:3.6.0-jdk-11-slim AS build
-COPY src /home/app/src
+COPY /backend/src /home/app/src
 COPY /backend/pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package
 
