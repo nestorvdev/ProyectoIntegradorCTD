@@ -1,7 +1,7 @@
 # Build
 FROM node:8.11 as build-deps
 WORKDIR /usr/src/app
-COPY /frontend/package.json 
+COPY /frontend/package.json ./
 RUN npm install
 COPY . ./
 RUN npm run build
@@ -14,7 +14,7 @@ EXPOSE 8080
 
 FROM maven:lastest
 WORKDIR /usr/src/mymaven
-COPY /backend/pom.xml
+COPY /backend/pom.xml ./
 RUN mvn clean package
 
 FROM adoptopenjdk/openjdk11
