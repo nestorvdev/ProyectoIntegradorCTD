@@ -1,5 +1,7 @@
-# Build
-FROM node:10.0.0 as build-deps
+#
+# Build React
+#
+FROM node:14.16.0 as build-deps
 WORKDIR /usr/src/app
 COPY /frontend/package.json ./
 RUN npm install
@@ -7,17 +9,22 @@ COPY /frontend/ ./
 RUN npm run build
 
 # Serve
-FROM httpd:2.4
-COPY /frontend/build /var/www/html
-EXPOSE 8080
+FROM httpd:alpine
+WORKDIR /var/www/html
+COPY --from=build-deps /usr/src/app/build/ .
 
-FROM maven:lastest
-WORKDIR /usr/src/mymaven
-COPY /backend/pom.xml ./
-RUN mvn clean package
+#
+# Build stage
+#
+FROM maven:3.6.0-jdk-11-slim AS build
+COPY src /home/app/src
+COPY /backend/pom.xml /home/app
+RUN mvn -f /home/app/pom.xml clean package
 
-FROM adoptopenjdk/openjdk11
-ARG JAR_FILE=/backend/target/integrador-0.0.1-SNAPSHOT.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
+#
+# Package stage
+#
+FROM openjdk:11-jre-slim
+COPY --from=build /home/app/target/integrador-0.0.1-SNAPSHOT.jar /usr/local/lib/app.jar
 EXPOSE 8080
+ENTRYPOINT ["java","-jar","/usr/local/lib/app.jar"]
