@@ -1,5 +1,5 @@
 # Build
-FROM node:8.11 as build-deps
+FROM node:10.0.0 as build-deps
 WORKDIR /usr/src/app
 COPY /frontend/package.json ./
 RUN npm install
