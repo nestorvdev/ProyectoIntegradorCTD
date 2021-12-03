@@ -3,13 +3,12 @@ FROM node:8.11 as build-deps
 WORKDIR /usr/src/app
 COPY /frontend/package.json ./
 RUN npm install
-COPY . ./
+COPY /frontend/ ./
 RUN npm run build
 
 # Serve
-FROM httpd:lastest
+FROM httpd:2.4
 COPY /frontend/build /var/www/html
-CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
 EXPOSE 8080
 
 FROM maven:lastest
