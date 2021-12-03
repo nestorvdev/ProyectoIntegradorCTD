@@ -1,19 +1,16 @@
-# This file is a template, and might need editing before it works on your project.
+# Build
 FROM node:8.11
-
-WORKDIR /frontend/src/index
-
-ARG NODE_ENV
-ENV NODE_ENV $NODE_ENV
-
-COPY package.json /frontend/
+WORKDIR /frontend
+COPY package.json ./
 RUN npm install
+COPY . ./
+RUN npm run build
 
-COPY . /frontend/src/build
-
-# replace this with your application's default port
+# Serve
+FROM httpd:lastest
+COPY --from=0 /frontend/build /var/www/html
+CMD [“/usr/sbin/httpd”, “-D”, “FOREGROUND”]
 EXPOSE 80
-CMD [ "npm", "start" ]
 
 FROM adoptopenjdk/openjdk11
 
