@@ -7,11 +7,18 @@ variables:
   TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
 
 publish:
-  image: docker:latest
+  image: docker/compose:latest
+  entrypoint: ["/bin/sh", "-c"]
   stage: publish
   services:
     - docker:dind
+  before_script:
+    - docker info
+    - docker-compose --version
   script:
+    - docker-compose down
+    - docker-compose build
+    - docker-compose -f docker-compose.yml up
     - docker build -t $TAG_COMMIT -t $TAG_LATEST .
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
     - docker push $TAG_COMMIT
