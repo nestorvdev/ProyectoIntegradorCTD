@@ -1,36 +1,14 @@
-#### Stage 1: Build the application
-FROM openjdk:11 as build
+#
+# Build stage Java
+#
+FROM maven:3.6.0-jdk-11-slim AS build-back
+COPY /backend/src /home/app/src
+COPY /backend/pom.xml /home/app
+RUN mvn -f /home/app/pom.xml clean package
 
-# Set the current working directory inside the image
-WORKDIR /usr/src/myapp
-
-# Copy maven executable to the image
-COPY mvnw .
-COPY .mvn .mvn
-
-# Copy the pom.xml file
-COPY pom.xml .
-
-# Build all the dependencies in preparation to go offline. 
-# This is a separate step so the dependencies will be cached unless 
-# the pom.xml file has changed.
-RUN ./mvnw dependency:go-offline -B
-
-# Copy the project source
-COPY src src
-
-# Package the application
-RUN ./mvnw package -DskipTests
-RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
-
-#### Stage 2: A minimal docker image with command to run the app 
+#
+# Package stage Java
+#
 FROM openjdk:11-jre-slim
-
-ARG DEPENDENCY=/app/target/dependency
-
-# Copy project dependencies from the build stage
-COPY --from=build ${DEPENDENCY}/BOOT-INF/lib /app/lib
-COPY --from=build ${DEPENDENCY}/META-INF /app/META-INF
-COPY --from=build ${DEPENDENCY}/BOOT-INF/classes /app
-
-ENTRYPOINT ["java","-cp","app:app/lib/*","com.proyecto.integrador.IntegradorApplication"]
+COPY --from=build-back /home/app/target/integrador-0.0.1-SNAPSHOT.jar /usr/local/lib/app.jar
+ENTRYPOINT ["java", "-jar", "app.jar"]
