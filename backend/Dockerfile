@@ -1,8 +1,8 @@
 #### Stage 1: Build the application
-FROM openjdk:11-jdk-alpine as build
+FROM openjdk:11 as build
 
 # Set the current working directory inside the image
-WORKDIR /app
+WORKDIR /usr/src/myapp
 
 # Copy maven executable to the image
 COPY mvnw .
@@ -24,7 +24,7 @@ RUN ./mvnw package -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 #### Stage 2: A minimal docker image with command to run the app 
-FROM openjdk:11-jre-alpine
+FROM openjdk:11-jre-slim
 
 ARG DEPENDENCY=/app/target/dependency
 
