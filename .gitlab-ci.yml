@@ -21,6 +21,8 @@ publish:
 
 deploy:
   stage: deploy
+  variables:
+    DOCKER_HOST: "tcp://$SERVER_IP:2376"
   tags:
     - deployment
   script:
