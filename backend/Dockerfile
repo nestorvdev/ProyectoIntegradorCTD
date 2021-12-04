@@ -2,8 +2,8 @@
 # Build stage Java
 #
 FROM maven:3.6.0-jdk-11-slim AS build-back
-COPY /backend/src /home/app/src
-COPY /backend/pom.xml /home/app
+COPY src /home/app/src
+COPY pom.xml /home/app
 RUN mvn -f /home/app/pom.xml clean package
 
 #
