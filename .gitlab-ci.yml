@@ -1,7 +1,11 @@
-image: creatiwww/docker-compose:latest
+image: tmaier/docker-compose:latest
 
 services:
   - docker:dind
+
+before_script:
+  - docker info
+  - docker-compose --version
 
 stages:
   - publish
