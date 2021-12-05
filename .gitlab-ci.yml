@@ -1,4 +1,4 @@
-image: tmaier/docker-compose:latest
+image: creatiwww/docker-compose:latest
 
 services:
   - docker:dind
