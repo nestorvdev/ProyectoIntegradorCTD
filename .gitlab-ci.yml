@@ -1,22 +1,19 @@
-# Official docker compose image.
-image:
-  name: docker/compose:latest
-
-services:
-  - docker:dind
+image: docker:19.03.0
 
 variables:
+  DOCKER_DRIVER: overlay2
+  # Create the certificates inside this directory for both the server
+  # and client. The certificates used by the client will be created in
+  # /certs/client so we only need to share this directory with the
+  # volume mount in `config.toml`.
+  DOCKER_TLS_CERTDIR: "/certs"
   TAG_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
   TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
-  # Use TLS https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#tls-enabled
-  DOCKER_HOST: tcp://docker:2375/
-  DOCKER_DRIVER: overlay2
-  DOCKER_TLS_CERTDIR: ""
-
 
 before_script:
-  - docker version
-  - docker-compose version
+  - apk --no-cache add docker-compose      # <---------- Mind this line
+  - docker info
+  - docker-compose --version
 
 stages:
   - publish
@@ -26,7 +23,6 @@ publish:
   stage: publish
   script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY
-    - echo "IMAGE_APP_TAG=$TAG_LATEST" >> .env
     - docker-compose build
     - docker-compose push
 
@@ -39,7 +35,7 @@ deploy:
     - apk update && apk add openssh-client
     - eval $(ssh-agent -s)
     - ssh -i $ID_RSA -o StrictHostKeyChecking=no $SERVER_USER@$SERVER_IP "docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $CI_REGISTRY"
-    - docker-compose -H "ssh://$SERVER_USER@$SERVER_IP" down --remove-orphans
+    - docker-compose -H "ssh://$SERVER_USER@$SERVER_IP" down --remove-orphans || true
     - docker-compose -H "ssh://$SERVER_USER@$SERVER_IP" pull
     - docker-compose -H "ssh://$SERVER_USER@$SERVER_IP" up -d
   environment:
