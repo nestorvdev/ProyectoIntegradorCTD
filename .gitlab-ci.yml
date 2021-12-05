@@ -5,6 +5,15 @@ image:
 services:
   - docker:dind
 
+variables:
+  TAG_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
+  TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
+  # Use TLS https://docs.gitlab.com/ee/ci/docker/using_docker_build.html#tls-enabled
+  DOCKER_HOST: tcp://docker:2375/
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+
+
 before_script:
   - docker version
   - docker-compose version
@@ -12,12 +21,6 @@ before_script:
 stages:
   - publish
   - deploy
-
-variables:
-  TAG_LATEST: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:latest
-  TAG_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHORT_SHA
-  DOCKER_HOST: tcp://docker:2375/
-  DOCKER_DRIVER: overlay2
 
 publish:
   stage: publish
