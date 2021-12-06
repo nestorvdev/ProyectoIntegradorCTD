@@ -10,7 +10,7 @@ services:
     build:
       context: backend # Use an image built from the specified dockerfile in the `polling-app-server` directory.
       dockerfile: Dockerfile
-    image: registry.gitlab.com/tatymoon74/grupo-1-back
+    image: tatymoon74/backend:tagname
     ports:
       - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
     restart: always
@@ -31,7 +31,7 @@ services:
       dockerfile: Dockerfile
       args:
         REACT_APP_API_BASE_URL: http://3.214.98.239
-    image: registry.gitlab.com/tatymoon74/grupo-1-front
+    image: tatymoon74/frontend:tagname
     ports:
       - "80:80" # Map the exposed port 80 on the container to port 9090 on the host machine
     restart: always
