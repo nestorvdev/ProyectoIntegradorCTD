@@ -195,10 +195,8 @@ function AxiosCrearProducto(
       }
     )
     .then((product) => {
-      console.log("primer post con éxito");
       setErrorProduct("");
       let idProduct = product.data.id;
-      console.log(qualificationInt, "qualificationint");
       axios
         .post(`http://worldguestbooking.com.ar:8080/products/scores/create`, {
           score: qualificationInt,
@@ -229,27 +227,25 @@ function AxiosCrearProducto(
             );
           });
       });
+      let featuresInt = [];
       features.forEach((feature) => {
-        let featuresInt = [];
-        features.forEach((feature) => {
-          featuresInt.push(parseInt(feature.id));
-        });
-        axios
-          .post(
-            `http://localhost:8080/features/update/${idProduct}`,
-            featuresInt,
-            {
-              headers: {
-                Authorization: `Bearer ${sessionStorage.getItem("token")}`,
-              },
-            }
-          )
-          .catch((error) => {
-            setErrorProduct(
-              `Lamentablemente no se han podido cargar los atributos debido a ${error}. Por favor, intente más tarde`
-            );
-          });
+        featuresInt.push(parseInt(feature.id));
       });
+      axios
+        .post(
+          `http://worldguestbooking.com.ar:8080/features/update/${idProduct}`,
+          featuresInt,
+          {
+            headers: {
+              Authorization: `Bearer ${sessionStorage.getItem("token")}`,
+            },
+          }
+        )
+        .catch((error) => {
+          setErrorProduct(
+            `Lamentablemente no se han podido cargar los atributos debido a ${error}. Por favor, intente más tarde`
+          );
+        });
     })
     .then(() => {
       openModalSucceed();
@@ -323,11 +319,6 @@ function AxiosModificarProducto(
           score: qualificationInt,
           userEmail: sessionStorage.getItem("email"),
           productId: idProduct,
-        })
-        .then((response) => {
-          if (response.status === 200) {
-            console.log("Se envió correctamente la puntuación");
-          }
         })
         .catch((error) => {
           setErrorProduct(error);
