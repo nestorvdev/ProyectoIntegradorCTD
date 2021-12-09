@@ -11,12 +11,12 @@ export default function Share(props) {
     function urlValue() {
         if (props.placeShareCall === "producto") {
             return [`mailto:?Subject=Mira este alojamiento worldguestbooking.com.ar/product/${props.id}`,
-            `https://www.facebook.com/sharer/sharer.php?u=[worldguestbooking.com.ar/product/${props.id}]`, `https://twitter.com/intent/tweet?text=[Mira este producto ]&url=[localhost:3000/product/${props.id}]&hashtags=[GranAlojamiento]`,
+            `https://www.facebook.com/sharer/sharer.php?u=[worldguestbooking.com.ar/product/${props.id}]`, `https://twitter.com/intent/tweet?text=[Mira este producto ]&url=[worldguestbooking.com.ar/product/${props.id}]&hashtags=[GranAlojamiento]`,
             `https://api.whatsapp.com/send?text=[Mira este alojamiento: worldguestbooking.com.ar/product/${props.id}]`]
         }
         else if (props.placeShareCall === "footer") {
             return [`mailto:?Subject=Mira esta aplicación worldguestbooking.com.ar`,
-                `https://www.facebook.com/sharer/sharer.php?u=[worldguestbooking.com.ar]`, `https://twitter.com/intent/tweet?text=[Mira esta aplicación ]&url=[localhost:3000]&hashtags=[GranAlojamiento]`,
+                `https://www.facebook.com/sharer/sharer.php?u=[worldguestbooking.com.ar]`, `https://twitter.com/intent/tweet?text=[Mira esta aplicación ]&url=[worldguestbooking.com.ar]&hashtags=[GranAlojamiento]`,
                 `https://api.whatsapp.com/send?text=[Mira esta aplicación: worldguestbooking.com.ar]`]
         }
     }
