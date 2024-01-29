@@ -1,14 +1,10 @@
 package com.proyecto.integrador.config;
 import com.proyecto.integrador.config.jwt.JwtAuthenticationEntryPoint;
 import com.proyecto.integrador.config.jwt.JwtRequestFilter;
-import com.proyecto.integrador.persistence.entity.enums.RolesTypes;
-import com.proyecto.integrador.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -16,12 +12,9 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.core.authority.mapping.GrantedAuthoritiesMapper;
-import org.springframework.security.core.authority.mapping.SimpleAuthorityMapper;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -59,23 +52,39 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }
-
+    private static final String[] AUTH_WHITELIST = {
+            // -- Swagger UI v2
+            "/v2/api-docs", "/swagger-resources", "/swagger-resources/**", "/configuration/ui", "/configuration/security", "/swagger-ui.html", "/webjars/**",
+            // -- Swagger UI v3 (OpenAPI)
+            "/v3/api-docs/**", "/swagger-ui/**",
+            // other public endpoints of your API may be appended to this array
+            "/users/activate/**", "/authenticate", "/categories/**", "/products/**", "/cities/**", "/users/create", "/users/login"
+    };
     @Override
     protected void configure(HttpSecurity httpSecurity) throws Exception {
+
+
+       /* httpSecurity.csrf().disable().cors().and().authorizeRequests().anyRequest().permitAll().and().httpBasic();
+*/
+
         // We don't need CSRF for this example
-        System.err.println(httpSecurity.csrf().disable()
-                .cors().and().
-                // dont authenticate these requests
-                        authorizeRequests().antMatchers("/users/activate/**", "/authenticate", "/categories/**", "/products/**", "/cities/**", "/users/create", "/users/login").permitAll()
+        System.err.println(httpSecurity.csrf().disable().cors()
+                .and().
+                // don't authenticate these requests
+                        authorizeRequests()
+                .antMatchers(AUTH_WHITELIST)
+                    .permitAll()
                 // requests need to be authenticated
-                .antMatchers("/reservations/**", "/products/scores/**", "/categories/create", "/products/create", "/cities/create","/categories/update", "/products/update", "/cities/update","/categories/delete", "/products/delete", "/cities/delete").access("hasAnyAuthority('ADMIN','USER')").
-                anyRequest().authenticated().and().
+                .antMatchers("/reservations/**", "/products/scores/**", "/categories/create", "/products/create", "/cities/create","/categories/update", "/products/update", "/cities/update","/categories/delete", "/products/delete", "/cities/delete").access("hasAnyAuthority('ADMIN','USER')")
+                    .anyRequest().authenticated().and().
                         formLogin().loginPage("/users/login").and().
         // make sure we use stateless session; session won't be used to
                 // store user's state.
                         exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint).and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().
                 exceptionHandling().accessDeniedPage("/users/403"));
+
+
     }
 
     @Override

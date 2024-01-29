@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS `proyecto_integrador`; 
-CREATE DATABASE `proyecto_integrador`;
-USE `proyecto_integrador`;
+DROP DATABASE IF EXISTS `bookingApp`;
+CREATE DATABASE `bookingApp`;
+USE `bookingApp`;
 
 --
 -- For table structure run the appication

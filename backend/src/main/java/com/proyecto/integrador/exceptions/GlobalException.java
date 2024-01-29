@@ -57,4 +57,6 @@ public class GlobalException extends ResponseEntityExceptionHandler {
     public final ResponseEntity<String> procesarErrorNoSeEncuentraElUsuario() {
         return new ResponseEntity<>("El email ingresado no se encuentra registrado en la base de datos", HttpStatus.NOT_FOUND);
     }
+
+
 }
