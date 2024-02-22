@@ -1,0 +1,38 @@
+{
+  "files": {
+    "main.css": "/static/css/main.9090e9d6.chunk.css",
+    "main.js": "/static/js/main.ea800d64.chunk.js",
+    "main.js.map": "/static/js/main.ea800d64.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.2af7709b.js",
+    "runtime-main.js.map": "/static/js/runtime-main.2af7709b.js.map",
+    "static/css/2.4c1ccda1.chunk.css": "/static/css/2.4c1ccda1.chunk.css",
+    "static/js/2.43250e4f.chunk.js": "/static/js/2.43250e4f.chunk.js",
+    "static/js/2.43250e4f.chunk.js.map": "/static/js/2.43250e4f.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.4c1ccda1.chunk.css.map": "/static/css/2.4c1ccda1.chunk.css.map",
+    "static/css/main.9090e9d6.chunk.css.map": "/static/css/main.9090e9d6.chunk.css.map",
+    "static/js/2.43250e4f.chunk.js.LICENSE.txt": "/static/js/2.43250e4f.chunk.js.LICENSE.txt",
+    "static/media/IconLocation.24aa96c0.svg": "/static/media/IconLocation.24aa96c0.svg",
+    "static/media/arrow.d7b334ac.svg": "/static/media/arrow.d7b334ac.svg",
+    "static/media/styles.module.css": "/static/media/iconOk.75c096e0.svg",
+    "static/media/delete.51fb9c4c.svg": "/static/media/delete.51fb9c4c.svg",
+    "static/media/facebook.1d60f030.svg": "/static/media/facebook.1d60f030.svg",
+    "static/media/icon-share.4804dcfc.svg": "/static/media/icon-share.4804dcfc.svg",
+    "static/media/icon-social.c61e0faf.svg": "/static/media/icon-social.c61e0faf.svg",
+    "static/media/iconBack.cd285788.svg": "/static/media/iconBack.cd285788.svg",
+    "static/media/iconError.dfc83254.svg": "/static/media/iconError.dfc83254.svg",
+    "static/media/iconLocation.552469b0.svg": "/static/media/iconLocation.552469b0.svg",
+    "static/media/iconSocial.5dad361a.svg": "/static/media/iconSocial.5dad361a.svg",
+    "static/media/logoWguest.0ba18431.jpg": "/static/media/logoWguest.0ba18431.jpg",
+    "static/media/tildeOk.e5262d00.svg": "/static/media/tildeOk.e5262d00.svg",
+    "static/media/twitter.b16c02d4.svg": "/static/media/twitter.b16c02d4.svg",
+    "static/media/whatsapp.5595c0c4.svg": "/static/media/whatsapp.5595c0c4.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2af7709b.js",
+    "static/css/2.4c1ccda1.chunk.css",
+    "static/js/2.43250e4f.chunk.js",
+    "static/css/main.9090e9d6.chunk.css",
+    "static/js/main.ea800d64.chunk.js"
+  ]
+}
