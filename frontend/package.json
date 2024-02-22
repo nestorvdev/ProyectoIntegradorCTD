@@ -39,7 +39,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "//""proxy": "http://worldguestbooking.com.ar:8080",
+
   "eslintConfig": {
     "extends": [
       "react-app",
