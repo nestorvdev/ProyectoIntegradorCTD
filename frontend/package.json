@@ -65,6 +65,7 @@
     "enzyme-to-json": "^3.6.2",
     "file-loader": "^6.2.0"
   },
+  "proxy": "http://worldguestbooking.com.ar:8080",
   "main": "index.js",
   "license": "MIT"
 }
