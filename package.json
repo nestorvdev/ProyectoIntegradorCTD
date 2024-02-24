@@ -31,8 +31,9 @@
     "styled-components": "^5.3.3",
     "web-vitals": "^1.1.2"
   },
-
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -56,7 +57,10 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://worldguestbooking.com.ar:8080",
+  "homepage": "https://nestorvdev.github.io/ProyectoIntegradorCTD",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gh-pages": "^6.1.1"
+  }
 }
